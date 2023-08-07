@@ -1,8 +1,12 @@
+import Navbar from "./Navbar"
 
 
 const Weather = () => {
   return (
-    <div>Weather</div>
+    <div>
+      <Navbar />
+      <div>Weather</div>
+    </div>
   )
 }
 

@@ -1,8 +1,12 @@
+import Navbar from "./Navbar"
 
 
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      <Navbar />
+      <div>About</div>
+    </div>
   )
 }
 

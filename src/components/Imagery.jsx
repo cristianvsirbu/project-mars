@@ -1,8 +1,11 @@
-
+import Navbar from "./Navbar"
 
 const Imagery = () => {
   return (
-    <div>Imagery</div>
+    <div>
+      <Navbar />
+      <div>Imagery</div>
+      </div>
   )
 }
 
