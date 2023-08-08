@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
   const navLinks = [
     {
-      to: '/',
+      to: '/home',
       text: 'Home'
     },
     {

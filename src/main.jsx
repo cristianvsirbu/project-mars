@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom/client'; 
+import * as ReactDOM from 'react-dom/client';
 import ErrorPage from './components/ErrorPage';
 
 import {
@@ -11,7 +11,7 @@ import App from './App';
 import About from './components/About';
 import Imagery from './components/Imagery';
 import Weather from './components/Weather';
-
+import Home from './components/Home';
 
 
 const router = createBrowserRouter([
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: '/home',
+        element: <Home />,
+      },
       {
         path: '/about',
         element: <About />,
