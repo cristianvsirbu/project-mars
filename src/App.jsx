@@ -9,6 +9,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <img className="absolute" src="src/assets/line.png" />
       <div>
         <Outlet />
       </div>

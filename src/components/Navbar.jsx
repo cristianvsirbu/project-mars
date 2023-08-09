@@ -22,11 +22,16 @@ const Navbar = () => {
     }
   ]
   return (
-    <div>
-      {navLinks.map(link => (
-        <Link key={link.to} to={link.to}>{link.text}</Link>
-      ))}
-    </div>
+    <nav className="navbar relative">
+      <img src="/src/assets/logo.png" className="absolute w-44 top-0 left-10" />
+      <ul className="navbar-links">
+        {navLinks.map(link => (
+          <li key={link.to}>
+            <Link to={link.to}>{link.text}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }
 
