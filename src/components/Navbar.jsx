@@ -6,6 +6,7 @@ import close from "../assets/close.webp";
 
 
 
+
 const Navbar = () => {
   const navLinks = [
     {
@@ -25,50 +26,51 @@ const Navbar = () => {
       text: 'Weather'
     }
   ]
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  }
-  return (
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  return (
     <>
-      
       {/* Navbar */}
       <nav
         className="flex
-                   h-24
                    justify-between
+                   h-24
                    mx-6
                    md:mx-10
                    xl:h-32
-                   xl:mx-2xl:h-36">
-        
+                   2xl:h-36">
+
         {/* Logo */}
         <img src="/src/assets/logo.png"
           className="h-20 
                      md:h-24
                      mt-2
+                     lg:ml-6
                      xl:h-32
                      xl:ml-12
                      xl:mt-4
                      2xl:h-40
                      2xl:ml-32"/>
-        
+
         {/* Menu */}
-        <ul className="hidden 
-                       md:flex
-                       items-center
-                       w-1/2
-                       justify-between
-                       2xl:justify-around">
+        <ul className={`hidden
+                        md:flex
+                        items-center
+                        w-1/2
+                        justify-between
+                        2xl:justify-around
+                        `}>
           {navLinks.map(link => (
-            <li className={` text-white 
+            <li className={`   text-slate-500
+                               hover:text-white
+                               ease-out
+                               duration-200
                                text-decoration-none
                                font-regular
                                text-[16px]
                                lg:text-[18px]
                                xl:text-[24px]
-                               2xl:text-[34px]`}
+                               2xl:text-[30px]`}
               key={link.to}
             >
               <NavLink to={link.to}>{link.text}</NavLink>
@@ -81,8 +83,34 @@ const Navbar = () => {
                         flex
                         flex-1
                         justify-end
-                        items-center">
-          <button className='h-12 w-12' onClick={toggleMenu}>{menuOpen ? (<img src={close} />) : (<img src={menu} />)}</button>
+                        items-center
+                        ">
+          <button className='h-12 w-12' onClick={() => setMenuIsOpen(!menuIsOpen)}>
+            {menuIsOpen ? (<img src={close} alt="Close Menu" />) : (<img src={menu} alt="Open Menu" />)}
+          </button>
+
+          {/* Dropdown Menu */}
+          <div className={`${menuIsOpen ? 'flex' : 'hidden'} 
+                           flex-col
+                           rounded-xl
+                           absolute
+                           top-32
+                           right-8
+                           p-8
+                           min-w-[260px]
+                         bg-slate-900
+                           h-1/2
+                           sidebar`}>
+            {menuIsOpen && (
+              <ul className="flex flex-col items-center text-white text-[26px] h-full justify-between">
+                {navLinks.map(link => (
+                  <li key={link.to}>
+                    <NavLink to={link.to}>{link.text}</NavLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </nav>
     </>
