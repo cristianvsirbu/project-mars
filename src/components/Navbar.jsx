@@ -56,7 +56,8 @@ const Navbar = () => {
         <ul className={`hidden
                         md:flex
                         items-center
-                        w-1/2
+                        md:w-3/4
+                        lg:w-1/2
                         justify-between
                         2xl:justify-around
                         `}>
