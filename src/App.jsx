@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <img className="absolute" src="src/assets/line.png" />
+      <img className="hidden md:block 2xl:flex mx-auto my-0 py-0" src="src/assets/line.png" />
       <div>
         <Outlet />
       </div>
