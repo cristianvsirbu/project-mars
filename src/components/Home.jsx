@@ -2,8 +2,9 @@
 
 const Home = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-row">
+    <div className="flex flex-col-reverse">
       <div className="p-4 flex flex-col">
+        {/* Title */}
         <div className="flex flex-col items-center py-12">
           <h2 className="text-white font-bold text-3xl">PROJECT</h2>
           <img src="src/assets/line2.svg" />
