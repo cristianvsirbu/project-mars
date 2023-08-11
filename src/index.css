@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: Martian Mono, Helvetica, Arial, sans-serif;
-  font-family: 'Lexend Giga', sans-serif;
+  font-family:'Lexend Giga', Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -43,4 +42,17 @@
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+}
+
+.button__style {
+  background: linear-gradient(135deg, #e2723d 0%, #992e00 100%);
+  border-radius: 1.5rem;
+  font-family: 'Lexend Giga', Martian Mono, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color:white;
+}
+
+p {
+  font-family: 'Lexend Giga', Helvetica, Arial, sans-serif;
 }
