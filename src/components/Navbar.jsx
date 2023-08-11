@@ -11,19 +11,19 @@ const Navbar = () => {
   const navLinks = [
     {
       to: '/home',
-      text: 'Home'
+      text: 'HOME'
     },
     {
       to: '/about',
-      text: 'About'
+      text: 'ABOUT'
     },
     {
       to: '/imagery',
-      text: 'Imagery'
+      text: 'IMAGERY'
     },
     {
       to: '/weather',
-      text: 'Weather'
+      text: 'WEATHER'
     }
   ]
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -62,12 +62,11 @@ const Navbar = () => {
                         2xl:justify-around
                         `}>
           {navLinks.map(link => (
-            <li className={`   text-slate-500
-                               hover:text-white
+            <li className={`   text-slate-100
+                               hover:text-slate-500 
                                ease-out
-                               duration-200
-                               text-decoration-none
-                               font-regular
+                               duration-200                 
+                               font-semibold
                                text-[16px]
                                lg:text-[18px]
                                xl:text-[24px]
@@ -97,13 +96,13 @@ const Navbar = () => {
                            absolute
                            top-32
                            right-8
-                           p-8
+                           px-8
+                           py-12
                            min-w-[260px]
                          bg-slate-900
-                           h-1/2
                            sidebar`}>
             {menuIsOpen && (
-              <ul className="flex flex-col items-center text-white text-[26px] h-full justify-between">
+              <ul className="flex flex-col items-center text-white text-[26px] h-1/2 justify-between">
                 {navLinks.map(link => (
                   <li key={link.to}>
                     <NavLink to={link.to}>{link.text}</NavLink>
