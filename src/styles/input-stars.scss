@@ -1,21 +1,16 @@
 
 @function multiple-box-shadow ($n) {
-  $value: '#{random(2000)}px #{random(20000)}px #FFF';
+  $value: '#{random(5000)}px #{random(20000)}px #FFF';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+    $value: '#{$value} , #{random(8000)}px #{random(3000)}px #FFF';
   }
 
   @return unquote($value);
 }
-$shadows-small: multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
+$shadows-small: multiple-box-shadow(900);
+$shadows-medium: multiple-box-shadow(600);
 $shadows-big: multiple-box-shadow(100);
 
-// html {
-//   height: 100%;
-//   background: radial-gradient(ellipse at top, #1B2735 0%, #090A0F 100%);
-//   overflow: hidden;
-// }
 #stars {
   width: 1px;
   height: 1px;
@@ -55,7 +50,7 @@ $shadows-big: multiple-box-shadow(100);
   height: 3px;
   background: transparent;
   box-shadow: $shadows-big;
-  animation: animStar 450s linear infinite;
+  animation: animStar 400s linear infinite;
 
   &:after {
     content: " ";
@@ -69,9 +64,9 @@ $shadows-big: multiple-box-shadow(100);
 }
 @keyframes animStar {
   from {
-    transform: translateY(0px);
+    transform: translateY(-1700px);
   }
   to {
-    transform: translateY(-2000px);
+    transform: translateY(-3900px);
   }
 };

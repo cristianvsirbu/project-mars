@@ -29,7 +29,7 @@ const Navbar = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
-    <div className="z-10 bg-primary">
+    <div className="navbar">
       {/* Navbar */}
       <nav
         className="flex
@@ -43,11 +43,12 @@ const Navbar = () => {
 
         {/* Logo */}
         <img src="/src/assets/logo.png"
-          className="h-20 
+          className="h-20
+                     z-1 
                      md:h-24
                      mt-2
                      lg:ml-6
-                     xl:h-32
+                     xl:h-32â
                      xl:ml-12
                      xl:mt-4
                      2xl:h-40
@@ -64,8 +65,8 @@ const Navbar = () => {
                         `}>
           {navLinks.map(link => (
             <li className={` text-white
-                               hover:blink
-                               cursor-pointer     blink          
+                               blink 
+                               cursor-pointer     
                                font-semibold
                                text-[16px]
                                lg:text-[18px]

@@ -54,6 +54,10 @@
   z-index: 2;
 }
 
+.button__style:hover {
+  background: linear-gradient(35deg, #bd5c2f 0%, #bd3901 100%);
+}
+
 p {
   font-family: 'Lexend Giga', Helvetica, Arial, sans-serif;
   font-size: 1rem;
@@ -87,6 +91,7 @@ p {
 .blink:hover {
   animation: zoomup 25s ease-out infinite;
 }
+
 @keyframes zoomup {
 
   0%,
@@ -104,4 +109,11 @@ p {
     color: #fff;
     text-shadow: none;
   }
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  position: relative;
+  z-index: 999;
+  
 }

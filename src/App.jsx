@@ -14,7 +14,7 @@ function App() {
       <div>
         <Outlet />
       </div>
-      <div className='hidden md:block -z-1'>
+      <div className='hidden md:flex -z-10 w-full'>
         <div id='stars' />
         <div id='stars2' />
         <div id='stars3' />
