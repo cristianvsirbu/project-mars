@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import menu from "../assets/menu.webp";
 import close from "../assets/close.webp";
-
+import '../index.css';
 
 
 
@@ -29,7 +29,7 @@ const Navbar = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
-    <>
+    <div className="z-10 bg-primary">
       {/* Navbar */}
       <nav
         className="flex
@@ -38,7 +38,8 @@ const Navbar = () => {
                    mx-6
                    md:mx-10
                    xl:h-32
-                   2xl:h-36">
+                   2xl:h-36
+                    ">
 
         {/* Logo */}
         <img src="/src/assets/logo.png"
@@ -62,10 +63,9 @@ const Navbar = () => {
                         2xl:justify-around
                         `}>
           {navLinks.map(link => (
-            <li className={`   text-slate-100
-                               hover:text-slate-500 
-                               ease-out
-                               duration-200                 
+            <li className={` text-white
+                               hover:blink
+                               cursor-pointer     blink          
                                font-semibold
                                text-[16px]
                                lg:text-[18px]
@@ -113,7 +113,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   )
 }
 

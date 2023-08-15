@@ -1,4 +1,4 @@
-
+import './styles/output-stars.css'
 import { Outlet } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
@@ -13,6 +13,11 @@ function App() {
       <img className="hidden md:block 2xl:flex mx-auto my-0 py-0 w-full" src="src/assets/line.svg" />
       <div>
         <Outlet />
+      </div>
+      <div className='hidden md:block -z-1'>
+        <div id='stars' />
+        <div id='stars2' />
+        <div id='stars3' />
       </div>
     </div>
   )

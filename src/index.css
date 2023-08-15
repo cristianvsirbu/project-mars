@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family:'Lexend Giga', Helvetica, Arial, sans-serif;
+  font-family: 'Lexend Giga', Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -50,10 +50,58 @@
   font-family: 'Lexend Giga', Martian Mono, sans-serif;
   font-size: 1.7rem;
   font-weight: 900;
-  color:white;
+  color: white;
+  z-index: 2;
 }
 
 p {
   font-family: 'Lexend Giga', Helvetica, Arial, sans-serif;
   font-size: 1rem;
+}
+
+
+.mars-word {
+  animation: zoom-slow 8s ease-out infinite;
+}
+
+@keyframes zoom-slow {
+
+  0%,
+  100% {
+    color: #e5ebea;
+    filter: blur(1px);
+    text-shadow: 0 0 5px #ffffff, 0 0 100px #00c2bc, 0 0 55px #00c2bce0,
+      0 0 120px #e0e9e9, 0 0 30px #d3e9e8, 0 0 50px #abe9e7, 0 0 60px #7b79cf,
+      0 0 80px #1d00c2;
+  }
+
+  45%,
+  100% {
+    filter: blur(0);
+    color: #fff;
+    text-shadow: none;
+  }
+}
+
+
+.blink:hover {
+  animation: zoomup 25s ease-out infinite;
+}
+@keyframes zoomup {
+
+  0%,
+  100% {
+    color: #e5ebea;
+    filter: blur(1px);
+    text-shadow: 0 0 10px #d8e4e3, 0 0 20px #00c2ba, 0 0 30px #00c2ba,
+      0 0 40px #e0e9e9, 0 0 60px #d3e9e8, 0 0 80px #abe9e7, 0 0 100px #7b79cf,
+      0 0 120px #1d00c2;
+  }
+
+  5%,
+  95% {
+    filter: blur(0);
+    color: #fff;
+    text-shadow: none;
+  }
 }
