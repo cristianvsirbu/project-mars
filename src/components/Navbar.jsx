@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { routes } from "../routes";
 import menu from "../assets/menu.webp";
 import close from "../assets/close.webp";
 import '../index.css';
@@ -8,28 +9,22 @@ import '../index.css';
 
 
 const Navbar = () => {
-  const navLinks = [
-    {
-      to: '/home',
-      text: 'HOME'
-    },
-    {
-      to: '/about',
-      text: 'ABOUT'
-    },
-    {
-      to: '/imagery',
-      text: 'IMAGERY'
-    },
-    {
-      to: '/weather',
-      text: 'WEATHER'
-    },
-    {
-      to: '/partners',
-      text: 'PARTNERS'
-    }
-  ]
+  const navLinks = routes.map((route) => (
+    <li className={`text-white
+                      blink 
+                      cursor-pointer     
+                      font-semibold
+                      py-2
+                      md:py-0
+                      text-[22px]
+                      md:text-[16px]
+                      lg:text-[18px]
+                      xl:text-[24px]
+                      2xl:text-[30px]`}
+      key={route.path}>
+      <NavLink to={route.path}>{route.text}</NavLink>
+    </li>
+  ))
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
@@ -67,20 +62,8 @@ const Navbar = () => {
                         justify-between
                         2xl:justify-around
                         `}>
-          {navLinks.map(link => (
-            <li className={` text-white
-                               blink 
-                               cursor-pointer     
-                               font-semibold
-                               text-[16px]
-                               lg:text-[18px]
-                               xl:text-[24px]
-                               2xl:text-[30px]`}
-              key={link.to}
-            >
-              <NavLink to={link.to}>{link.text}</NavLink>
-            </li>
-          ))}
+
+          {navLinks}
         </ul>
 
         {/* Hamburger Menu */}
@@ -108,11 +91,7 @@ const Navbar = () => {
                            sidebar`}>
             {menuIsOpen && (
               <ul className="flex flex-col items-center text-white text-[26px] h-1/2 justify-between">
-                {navLinks.map(link => (
-                  <li key={link.to}>
-                    <NavLink to={link.to}>{link.text}</NavLink>
-                  </li>
-                ))}
+                {navLinks}
               </ul>
             )}
           </div>

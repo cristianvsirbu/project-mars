@@ -8,11 +8,8 @@ import {
 } from 'react-router-dom';
 
 import App from './App';
-import About from './components/About';
-import Imagery from './components/Imagery';
-import Weather from './components/Weather';
-import Home from './components/Home';
-import Partners from './components/Partners';
+import {routes} from './routes';
+
 
 
 const router = createBrowserRouter([
@@ -20,28 +17,11 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: '/home',
-        element: <Home />,
-      },
-      {
-        path: '/about',
-        element: <About />,
-      },
-      {
-        path: '/imagery',
-        element: <Imagery />
-      },
-      {
-        path: '/weather',
-        element: <Weather />
-      },
-      {
-        path: '/partners',
-        element: <Partners />
-      }
-    ]
+    children: routes.map((route) => ({
+      path: route.path,
+      text: route.text,
+      element: route.element
+    }))
   }
 ])
 
