@@ -12,12 +12,12 @@ const Home = () => {
                       flex-col
                       w-full
                       xl:w-1/2
-                      4k:justify-center">
+                      lg:justify-center">
         {/* Title */}
         <div className="flex 
                         flex-col
                         items-center
-                        py-12">
+                        pb-12">
           <h2 className="text-white 
                           font-bold
                           text-3xl
@@ -49,8 +49,8 @@ const Home = () => {
           <button className="py-4 my-6 button__style w-full lg:w-1/2">About Mars</button>
         </Link>
       </div>
-      <div className="xl:w-1/2 h-auto z-50">
-        <img src="src/assets/M4.png" className="p-6" />
+      <div className="z-50">
+        <img src="src/assets/M4.png" className="p-12 max-h-[100vh]" />
       </div>
     </div>
   )

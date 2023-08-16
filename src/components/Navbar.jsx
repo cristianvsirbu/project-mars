@@ -24,6 +24,10 @@ const Navbar = () => {
     {
       to: '/weather',
       text: 'WEATHER'
+    },
+    {
+      to: '/partners',
+      text: 'PARTNERS'
     }
   ]
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -48,7 +52,7 @@ const Navbar = () => {
                      md:h-24
                      mt-2
                      lg:ml-6
-                     xl:h-32â
+                     xl:h-32
                      xl:ml-12
                      xl:mt-4
                      2xl:h-40
@@ -59,7 +63,7 @@ const Navbar = () => {
                         md:flex
                         items-center
                         md:w-3/4
-                        lg:w-1/2
+                        lg:w-3/5
                         justify-between
                         2xl:justify-around
                         `}>

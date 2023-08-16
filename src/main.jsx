@@ -12,6 +12,7 @@ import About from './components/About';
 import Imagery from './components/Imagery';
 import Weather from './components/Weather';
 import Home from './components/Home';
+import Partners from './components/Partners';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/weather',
         element: <Weather />
+      },
+      {
+        path: '/partners',
+        element: <Partners />
       }
     ]
   }
