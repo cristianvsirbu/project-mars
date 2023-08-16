@@ -63,7 +63,7 @@ const Navbar = () => {
                         md:flex
                         items-center
                         md:w-3/4
-                        lg:w-3/5
+                        lg:w-7/10
                         justify-between
                         2xl:justify-around
                         `}>
