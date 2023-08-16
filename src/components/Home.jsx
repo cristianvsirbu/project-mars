@@ -34,7 +34,7 @@ const Home = () => {
           </h1>
         </div>
         {/* Description */}
-        <p className="text-white 
+        <p className="text-slate-500 
                         text-center
                         lg:pb-6
                         xl:w-4/5
@@ -46,7 +46,7 @@ const Home = () => {
           Welcome to Project Mars, your ultimate destination for delving into the captivating world of the Red Planet. Embark on an extraordinary journey as we bring you the latest and most intriguing information about Mars, all in one place. Whether you are an avid space enthusiast or just someone curious about the cosmos, Project Mars is here to satisfy your thirst for knowledge and wonder.
         </p>
         <Link to="/about" className="flex justify-center">
-          <button className="py-4 my-6 button__style w-full lg:w-1/2">About Mars</button>
+          <button className="py-4 my-6 button__style w-full lg:w-1/2">ABOUT MARS</button>
         </Link>
       </div>
       <div className="z-50">

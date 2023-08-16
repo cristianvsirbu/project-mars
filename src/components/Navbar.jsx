@@ -28,7 +28,7 @@ const Navbar = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
-    <div className="navbar">
+    <div className="navbar select-none">
       {/* Navbar */}
       <nav
         className="flex

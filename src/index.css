@@ -55,11 +55,11 @@
 }
 
 .button__style:hover {
-  background: linear-gradient(35deg, #bd5c2f 0%, #bd3901 100%);
+  background: linear-gradient(135deg, #8f3b15 0%, #ff4d01 100%);
 }
 
 p {
-  font-family: 'Lexend Giga', Helvetica, Arial, sans-serif;
+  font-family: 'Martian Mono', Helvetica, Arial, sans-serif;
   font-size: 1rem;
 }
 
