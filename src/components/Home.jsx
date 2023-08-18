@@ -6,12 +6,15 @@ const Home = () => {
     <div className="flex
                     flex-col-reverse
                     xl:flex-row
-                    xl:justify-center">
+                    xl:h-[80vh]
+                    xl:items-center
+                    xl:justify-center
+">
       <div className="p-4
                       flex
                       flex-col
                       w-full
-                      xl:w-1/2
+                    
                       lg:justify-center">
         {/* Title */}
         <div className="flex 
@@ -21,14 +24,14 @@ const Home = () => {
           <h2 className="text-white 
                           font-bold
                           text-3xl
-                          4k:text-[3rem]">
+                          4k:text-[48px]">
             PROJECT
           </h2>
           <img src="src/assets/line2.svg" className="4k:w-1/2 4k:pt-4 animate-pulse" />
           <h1 className="text-white 
                           font-extrabold
                           text-6xl
-                          4k:text-[6rem]
+                          4k:text-[96px]
                           mars-word">
             MARS
           </h1>
@@ -49,8 +52,8 @@ const Home = () => {
           <button className="py-4 my-6 button__style w-full lg:w-1/2">ABOUT MARS</button>
         </Link>
       </div>
-      <div className="z-50">
-        <img src="src/assets/M4.png" className="p-12 max-h-[100vh]" />
+      <div className="z-50 flex items-center justify-center xl:justify-end">
+        <img src="src/assets/M2.png" className="w-full" />
       </div>
     </div>
   )

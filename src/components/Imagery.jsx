@@ -9,10 +9,12 @@ const Imagery = () => {
   const [datesWithPhotos, setDatesWithPhotos] = useState([]);
   const [selectedDate, setSelectedDate] = useState('');
   const [combinedPhotos, setCombinedPhotos] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchAvailableDates = async () => {
       try {
+        setLoading(true);
         const datesPromises = rovers.map((rover) =>
           axios.get(
             `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}/?api_key=${API_KEY}`
@@ -28,6 +30,7 @@ const Imagery = () => {
 
         // Filtered out duplicates and set the available dates
         setDatesWithPhotos(Array.from(new Set(availableDates)));
+        setLoading(false);
       } catch (error) {
         console.error(error);
       }
@@ -67,20 +70,24 @@ const Imagery = () => {
 
   return (
     <div>
-      <h1>Mars Rover Imagery</h1>
-      <select value={selectedDate} onChange={handleDateSelection}>
-        <option value="">Select a date</option>
-        {datesWithPhotos.map((date, index) => (
-          <option key={index} value={date}>
-            {date}
-          </option>
-        ))}
-      </select>
-      <div className="photo-gallery">
-        {combinedPhotos.map((photo, index) => (
-          <PhotoCard key={index} photo={photo} />
-        ))}
-      </div>
+      {loading ? (<div className='h-[80vh] flex justify-center items-center'><img src='src/assets/astronaut.gif' className='w-[450px]'/></div>) : (
+      <div className='flex flex-col'>
+        <h1 className='text-white font-bold text-3xl text-center'>Rovers Imagery</h1>
+        <select className='py-4 my-4 mx-2' value={selectedDate} onChange={handleDateSelection}>
+          <option value="">Select a date</option>
+          {datesWithPhotos.map((date, index) => (
+            <option key={index} value={date}>
+              {date}
+            </option>
+          ))}
+        </select>
+        <div className="p-6">
+          {combinedPhotos.map((photo, index) => (
+            <PhotoCard key={index} photo={photo} />
+          ))}
+        </div>
+    </div>
+      )}
     </div>
   );
 };

@@ -77,11 +77,11 @@ const Weather = () => {
   return (
     <div className='flex flex-col h-[80vh] justify-center items-center text-center'>
       {loading ? (
-        <h1 className='text-white text-5xl '>Loading...</h1>
+        <img src='src/assets/astronaut.gif' className='w-[450px] z-10' />
       ) : error ? (
         <div className='flex flex-col justify-center items-center'>
-          <img src='src/assets/broken-rover.svg' className='w-1/2 z-10 pb-4' />
-          <h1 className='text-white text-lg md:text-[24px] lg:text-[30px] 4k:text-[40px]'>Data unavailable. Please check again after some time.</h1>
+          <img src='src/assets/rover.png' className='w-[450px] z-10 pb-20' />
+          <p className='text-slate-600 text-lg md:text-[24px] lg:text-[30px] 4k:text-[40px] font-bold'>Data unavailable for today. Please check again in a few days.</p>
         </div>
       ) : (
         <h1 className='text-white text-5xl'>Data</h1>
