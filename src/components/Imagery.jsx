@@ -70,7 +70,7 @@ const Imagery = () => {
 
   return (
     <div>
-      {loading ? (<div className='h-[80vh] flex justify-center items-center'><img src='src/assets/astronaut.gif' className='w-[450px]'/></div>) : (
+      {loading ? (<div className='h-[80vh] flex justify-center items-center'><img src='src/assets/astronaut.gif' className='w-[450px] z-50'/></div>) : (
       <div className='flex flex-col'>
         <h1 className='text-white font-bold text-3xl text-center'>Rovers Imagery</h1>
         <select className='py-4 my-4 mx-2' value={selectedDate} onChange={handleDateSelection}>

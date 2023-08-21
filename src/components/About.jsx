@@ -1,10 +1,9 @@
-
-
-
+import Model  from './Model';
 const About = () => {
   return (
     <div>
-      <div>About</div>
+      <Model modelPath={'/models/perseverance.glb'}/>
+
     </div>
   )
 }
