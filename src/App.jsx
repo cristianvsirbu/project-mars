@@ -14,11 +14,11 @@ function App() {
       <div>
         <Outlet />
       </div>
-      {/* <div className='hidden md:flex -z-999 w-full'>
+      <div className='hidden md:flex w-full all-stars'>
         <div id='stars' />
         <div id='stars2' />
         <div id='stars3' />
-      </div> */}
+      </div>
     </div>
   )
 }

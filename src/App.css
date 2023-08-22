@@ -1,4 +1,21 @@
 :root {
+  font-family: 'Lexend Giga', Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-width: 280px;
+  --primary-color: #000213;
   background-color: var(--primary-color);
 }
 
+#stars {
+  z-index: -1;
+}
+
+#stars2 {
+  z-index: -2;
+}
+
+#stars3 {
+  z-index: -3;
+}
