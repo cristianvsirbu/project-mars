@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 
+
 function App() {
 
 
@@ -14,7 +15,7 @@ function App() {
       <div>
         <Outlet />
       </div>
-      <div className='hidden md:flex w-full all-stars'>
+      <div className='hidden md:flex w-full'>
         <div id='stars' />
         <div id='stars2' />
         <div id='stars3' />

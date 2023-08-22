@@ -5,13 +5,6 @@ import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
 
 
-
-/**
- * Renders a 3D model using the Three.js library.
- * @param {Object} props - The component props.
- * @param {string} props.modelPath - The path to the 3D model file.
- * @returns {JSX.Element} - The rendered component.
- */
 const Model = ({ modelPath }) => {
   const containerRef = useRef(null);
 
@@ -20,25 +13,29 @@ const Model = ({ modelPath }) => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth, window.innerHeight);
     containerRef.current.appendChild(renderer.domElement);
     camera.position.set(0, 0, 8);
 
     // Added lights to the scene
-    const leftLights = new THREE.DirectionalLight(0xffffff, 4);
-    const rightLights = new THREE.DirectionalLight(0xffffff, 4);
-    const backLights = new THREE.DirectionalLight(0xffffff, 4);
-    const bottomLights = new THREE.DirectionalLight(0xffffff, 4);
-    leftLights.position.set(-10, 10, 10);
-    rightLights.position.set(10, 10, 10);
-    backLights.position.set(0, 0, -10);
-    bottomLights.position.set(0, -10, 10);
-    scene.add(leftLights, rightLights, backLights, bottomLights);
+    const createDirectionalLight = (color, intensity, position) => {
+      const light = new THREE.DirectionalLight(color, intensity);
+      light.position.set(...position);
+      return light;
+    };
+    const lights = [
+      createDirectionalLight(0xffffff, 4, [-10, 10, 10]),
+      createDirectionalLight(0xffffff, 4, [10, 10, 10]),
+      createDirectionalLight(0xffffff, 4, [0, 0, -10]),
+      createDirectionalLight(0xffffff, 4, [0, -10, 10]),
+    ];
+    scene.add(...lights);
 
     // Loaded the 3D model
     const loader = new GLTFLoader();
     loader.load(modelPath, (gltf) => {
       scene.add(gltf.scene);
+      window.innerWidth < 600 ? gltf.scene.scale.set(0.75, 0.75, 0.75) : gltf.scene.scale.set(1, 1, 1);
     }, undefined, (error) => {
       console.log(error);
     });
@@ -74,8 +71,11 @@ const Model = ({ modelPath }) => {
   }, [modelPath]);
 
   return (
-    <div className=''>
-      <div ref={containerRef} className=''></div>
+    <div>
+      <div className=''>
+        <div ref={containerRef} className=''></div>
+      </div>
+      <div></div>
     </div>
   );
 };
