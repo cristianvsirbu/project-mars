@@ -1,60 +1,79 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { useEffect, useRef } from 'react';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import PropTypes from 'prop-types';
+import { useEffect, useRef } from 'react';
+
 
 
 const Model = ({ modelPath }) => {
-
   const containerRef = useRef(null);
-  const scene = useRef(new THREE.Scene()).current;
-  const camera = useRef(new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000)).current;
-  const renderer = useRef(new THREE.WebGLRenderer({ antialias: true, alpha: true })).current;
-  const object = useRef(null);
+
 
   useEffect(() => {
-    const loader = new GLTFLoader();
-
-    loader.load(
-      modelPath,
-      function (gltf) {
-          object.current = gltf.scene;
-          object.current.position.set(0, 0, -10);
-        scene.add(object.current);
-      },
-      function (xhr) {
-        console.log(`${(xhr.loaded / xhr.total) * 100}% loaded`);
-      },
-      function (error) {
-        console.error('An error happened');
-        console.error(error);
-      }
-    );
-
-    const topLights = new THREE.DirectionalLight(0xffffff, 15);
-    topLights.position.set(0, 30, 20);
-    scene.add(topLights);
-
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
     containerRef.current.appendChild(renderer.domElement);
+    camera.position.set(0, 0, 10);
 
+    const leftLights = new THREE.DirectionalLight(0xffffff, 4);
+    const rightLights = new THREE.DirectionalLight(0xffffff, 4);
+    const backLights = new THREE.DirectionalLight(0xffffff, 4);
+    const bottomLights = new THREE.DirectionalLight(0xffffff, 4);
+    leftLights.position.set(-10, 10, 10);
+    rightLights.position.set(10, 10, 10);
+    backLights.position.set(0, 0, -10);
+    bottomLights.position.set(0, -10, 10);
+    scene.add(leftLights);
+    scene.add(rightLights);
+    scene.add(backLights);
+    scene.add(bottomLights);
+
+
+    const loader = new GLTFLoader();
+    loader.load(modelPath, (gltf) => {
+      scene.add(gltf.scene);
+
+    }, undefined, (error) => {
+      console.log(error);
+    });
+    
+    const controls = new OrbitControls(camera, renderer.domElement);
     const animate = () => {
       requestAnimationFrame(animate);
-      if (object.current) {
-        object.current.rotation.y += 0.001;
-      }
       renderer.render(scene, camera);
-    };
+      scene.rotation.y += 0.001;
+
+      
+      controls.enableDamping = true;
+      controls.rotateSpeed = 0.4;
+
+    }
 
     animate();
-  }, []);
+
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      renderer.domElement.remove();
+      renderer.dispose();
+      cancelAnimationFrame(animate);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [modelPath]);
 
 
-  return (
-    <div ref={containerRef} className=''></div>
-  );
+  return <div ref={containerRef}></div>;
 };
+
 
 Model.propTypes = {
   modelPath: PropTypes.string.isRequired

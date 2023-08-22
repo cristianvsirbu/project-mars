@@ -3,7 +3,7 @@ const About = () => {
   return (
     <div>
       <Model modelPath={'/models/perseverance.glb'}/>
-
+      
     </div>
   )
 }
