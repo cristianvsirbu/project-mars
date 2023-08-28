@@ -8,7 +8,7 @@ const port = 3000;
 
 // Enable CORS for all routes
 app.use(cors());
-// app.use('/weather', createProxyMiddleware({ target: 'http://localhost:3000/daily-weather', changeOrigin: true }));
+
 
 app.use(express.json());
 

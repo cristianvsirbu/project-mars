@@ -25,11 +25,6 @@ export const routes = [
         text: 'WEATHER',
         element: <Weather />,
     },
-    // {
-    //     path: '/daily-weather',
-    //     text: 'WEATHER',
-    //     element: <Weather />,
-    // },
     {
         path: '/partners',
         text: 'PARTNERS',

@@ -5,17 +5,20 @@ import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
 
 
-const Model = ({ modelPath }) => {
+const Model = ({ modelPath, initialScale, cameraPosition }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(45, containerRef.current.clientWidth / containerRef.current.clientHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    const container = containerRef.current;
+
+    renderer.setSize(container.clientWidth, container.clientHeight);
     containerRef.current.appendChild(renderer.domElement);
-    camera.position.set(0, 0, 8);
+    camera.position.set(...cameraPosition);
+    
 
     // Added lights to the scene
     const createDirectionalLight = (color, intensity, position) => {
@@ -35,7 +38,7 @@ const Model = ({ modelPath }) => {
     const loader = new GLTFLoader();
     loader.load(modelPath, (gltf) => {
       scene.add(gltf.scene);
-      window.innerWidth < 600 ? gltf.scene.scale.set(0.75, 0.75, 0.75) : gltf.scene.scale.set(1, 1, 1);
+      gltf.scene.scale.set(initialScale, initialScale, initialScale);
     }, undefined, (error) => {
       console.log(error);
     });
@@ -54,26 +57,26 @@ const Model = ({ modelPath }) => {
     animate();
 
     // Handled window resize
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    }
-    window.addEventListener('resize', handleResize);
+    // const handleResize = () => {
+    //   camera.aspect = window.innerWidth / window.innerHeight;
+    //   camera.updateProjectionMatrix();
+    //   renderer.setSize(container.clientWidth, container.clientHeight);
+    // }
+    // window.addEventListener('resize', handleResize);
 
     // Cleaned up resources
     return () => {
       renderer.domElement.remove();
       renderer.dispose();
       cancelAnimationFrame(animate);
-      window.removeEventListener('resize', handleResize);
+      // window.removeEventListener('resize', handleResize);
     };
-  }, [modelPath]);
+  }, [modelPath, initialScale, cameraPosition]);
 
   return (
     <div>
-      <div className=''>
-        <div ref={containerRef} className=''></div>
+      <div className='flex'>
+        <div ref={containerRef} className='container w-[1000px] h-[1000px]'></div>
       </div>
       <div></div>
     </div>
@@ -81,7 +84,9 @@ const Model = ({ modelPath }) => {
 };
 
 Model.propTypes = {
-  modelPath: PropTypes.string.isRequired
+  modelPath: PropTypes.string.isRequired,
+  initialScale: PropTypes.number.isRequired,
+  cameraPosition: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default Model;
