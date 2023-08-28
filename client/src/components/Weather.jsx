@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const WeatherCard = ({ weather, index }) => {
   const cardNumber = index + 1;
+  
 
   return (
     <div key={index} className='px-4'>
@@ -33,6 +34,9 @@ WeatherCard.propTypes = {
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
   useEffect(() => {
     fetch(`/daily-weather`)
       .then(res => {
@@ -44,24 +48,38 @@ const Weather = () => {
       })
       .then(data => {
         setWeatherData(data);
+        setLoading(false);
+        setError(false);
         console.log(data);
       })
       .catch(error => {
         console.error(error);
+        setLoading(false);
+        setError(true);
       });
   }, []);
 
-
+  if (error) {
+    setTimeout(() => {
+      window.location.reload();
+    }, 5000);
+  }
 
 
   return (
     <div className='text-white'>
       <h1>Weather Data</h1>
+      {loading ? (
+        <div className='h-[80vh] flex justify-center items-center'><img src='src/assets/astronaut.gif' className='w-[450px] z-50' /></div>
+      ) : (
+        
+      
       <div className='flex'>
         {weatherData.map((item, index) => (
           <WeatherCard key={index} weather={item} index={index} className='' />
         ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

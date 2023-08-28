@@ -1,7 +1,7 @@
 const express = require('express');
 const scraper = require('./scraper.js');
 const cors = require('cors');
-const { createProxyMiddleware } = require('http-proxy-middleware');
+
 
 const app = express();
 const port = 3000;
