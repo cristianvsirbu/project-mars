@@ -11,7 +11,7 @@ function App() {
     <div>
       <Navbar />
       {/* Line */}
-      <img className="hidden md:block 2xl:flex mx-auto my-0 py-0 w-full animate-pulse" src="src/assets/line.svg" />
+      <img className="hidden md:block 2xl:flex mx-auto my-0 py-0 w-full" src="src/assets/line.svg" />
       <div>
         <Outlet />
       </div>

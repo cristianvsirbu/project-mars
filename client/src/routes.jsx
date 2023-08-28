@@ -14,24 +14,25 @@ export const routes = [
         element: <Home />,
     },
     {
-        path: "about",
+        path: "/about",
+        text: 'ABOUT',
         element: <About />,
         children: [
             {
                 path: "mars",
-                element: <Mars/>,
+                element: <Model />,
             },
             {
                 path: "moons",
-                element: <Moons/>,
+                element: <ModelListPage type="moon" />,
                 children: [
                     {
                         path: "phobos",
-                        element: <Phobos />,
+                        element: <Model />,
                     },
                     {
                         path: "deimos",
-                        element: <Deimos />,
+                        element: <Model />,
                     },
                 ],
             },
