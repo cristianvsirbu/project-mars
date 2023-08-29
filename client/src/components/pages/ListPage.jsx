@@ -1,35 +1,63 @@
 import ModelCard from '../models/ModelCard';
-import PropTypes from 'prop-types';
+import modelsConfig from '../models/modelsConfig';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
-function ListPage({ type, categories, modelsConfig }) {
-  let filteredModels = [];
+const ListPage = () => {
+  const [currentCategory, setCurrentCategory] = useState('');
+  const location = useLocation();
 
-  if (type === 'all') {
-    // Display all categories for the provided type
-    filteredModels = modelsConfig.filter(model => categories.includes(model.type));
-  } else {
-    // Display specific category for the provided type
-    filteredModels = modelsConfig.filter(model => model.type === type && categories.includes(model.category));
-  }
+  const handleCategoryClick = (category) => {
+    setCurrentCategory(category);
+  };
+
+  const renderModelCards = () => {
+    const categories = ['moons', 'moons/phobos', 'moons/deimos', 'rovers', 'satellites', 'mars', 'missions'];
+
+    return (
+      <>
+        {categories.map((category) => {
+          const categoryModel = modelsConfig.find((model) => model.category === category);
+
+          return (
+            categoryModel && (
+              <Link
+                to={`/about/${category}`}
+                key={category}
+                onClick={() => handleCategoryClick(category)}
+              >
+                <ModelCard
+                  name={categoryModel.name}
+                  image={categoryModel.image}
+                />
+              </Link>
+            )
+          );
+        })}
+      </>
+    );
+  };
+
+
+  const renderAllButton = () => {
+    if (currentCategory !== '' && location.pathname !== '/about') {
+      return (
+        <button onClick={() => handleCategoryClick('')}>All</button>
+      );
+    }
+    return null;
+  };
 
   return (
     <div>
-      <h2>{type === 'rover' ? 'Rovers' : 'Satellites'}</h2>
-      <div className="">
-        {filteredModels.map((model) => (
-          <ModelCard key={model.id} model={model} />
-        ))}
+      <div>
+        {renderAllButton()}
       </div>
+      <div>{renderModelCards()}</div>
     </div>
   );
-}
-
-ListPage.propTypes = {
-  type: PropTypes.string.isRequired,
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-  modelsConfig: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
+
+
 export default ListPage;
-
-

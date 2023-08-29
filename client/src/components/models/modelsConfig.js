@@ -5,8 +5,9 @@ const modelsConfig = [
         id: 'mars',
         name: 'Mars',
         type: 'planet',
-        category: 'mars', 
-        isCategory: false, 
+        category: 'mars',
+        image: 'assets/M.png',
+        isCategory: false,
     },
 
     // Moons
@@ -35,97 +36,112 @@ const modelsConfig = [
 
     // Rovers
     {
-        name: 'Active Rovers',
+        name: 'Rovers',
         type: 'rovers',
-        category: 'active', 
-        isCategory: true, 
+        category: 'rovers',
+        isCategory: true,
         children: [
             {
-                id: 'curiosity',
-                name: 'Curiosity',
+                name: 'Active Rovers',
                 type: 'rovers',
-                category: 'active', 
-                isCategory: false,
-            }
-        ]
-    },
-    {
-        name: 'Inactive Rovers',
-        type: 'rovers',
-        category: 'inactive', 
-        isCategory: true, 
-        children: [
+                category: 'active',
+                isCategory: true,
+                children: [
+                    {
+                        id: 'curiosity',
+                        name: 'Curiosity',
+                        type: 'rovers',
+                        category: 'active',
+                        isCategory: false,
+                    },
+                ],
+            },
             {
-                id: 'curiosity',
-                name: 'Curiosity',
+                name: 'Inactive Rovers',
                 type: 'rovers',
-                category: 'inactive', 
-                isCategory: false,
-            }
-        ]
-    },
-    {
-        name: 'Failed Rovers',
-        type: 'rovers',
-        category: 'failed', 
-        isCategory: true, 
-        children: [
+                category: 'inactive',
+                isCategory: true,
+                children: [
+                    {
+                        id: 'curiosity',
+                        name: 'Curiosity',
+                        type: 'rovers',
+                        category: 'inactive',
+                        isCategory: false,
+                    },
+                ],
+            },
             {
-                id: 'curiosity',
-                name: 'Curiosity',
+                name: 'Failed Rovers',
                 type: 'rovers',
-                category: 'failed', 
-                isCategory: false,
-            }
-        ]
-    },
-    {
-        name: 'Planned Rovers',
-        type: 'rovers',
-        category: 'planned', 
-        isCategory: true, 
-        children: [
+                category: 'failed',
+                isCategory: true,
+                children: [
+                    {
+                        id: 'curiosity',
+                        name: 'Curiosity',
+                        type: 'rovers',
+                        category: 'failed',
+                        isCategory: false,
+                    },
+                ],
+            },
             {
-                id: 'curiosity',
-                name: 'Curiosity',
+                name: 'Planned Rovers',
                 type: 'rovers',
-                category: 'planned', 
-                isCategory: false,
-            }
-        ]
+                category: 'planned',
+                isCategory: true,
+                children: [
+                    {
+                        id: 'curiosity',
+                        name: 'Curiosity',
+                        type: 'rovers',
+                        category: 'planned',
+                        isCategory: false,
+                    },
+                ],
+            },
+        ],
     },
-
 
     // Satellites
     {
-        name: 'Functional Satellites',
+        name: 'Satellites',
         type: 'satellites',
-        category: 'satellites', 
+        category: 'satellites',
         isCategory: true,
         children: [
             {
-                id: 'maven',
-                name: 'Maven',
+                name: 'Functional Satellites',
                 type: 'satellites',
-                category: 'functional', 
-                isCategory: false,
-            }
-        ]
-    },
-    {
-        name: 'Non-Functional Satellites',
-        type: 'satellites',
-        category: 'non-functional', 
-        isCategory: true,
-        children: [
+                category: 'functional',
+                isCategory: true,
+                children: [
+                    {
+                        id: 'maven',
+                        name: 'Maven',
+                        type: 'satellites',
+                        category: 'functional',
+                        isCategory: false,
+                    },
+                ],
+            },
             {
-                id: 'maven',
-                name: 'Maven',
+                name: 'Non-Functional Satellites',
                 type: 'satellites',
-                category: 'functional', 
-                isCategory: false,
-            }
-        ]
+                category: 'non-functional',
+                isCategory: true,
+                children: [
+                    {
+                        id: 'maven',
+                        name: 'Maven',
+                        type: 'satellites',
+                        category: 'functional',
+                        isCategory: false,
+                    },
+                ],
+            },
+        ],
     },
 
 
@@ -134,7 +150,7 @@ const modelsConfig = [
         id: 'missions',
         name: 'Missions',
         type: 'missions',
-        category: 'missions', 
+        category: 'missions',
         isCategory: false,
     },
     // ... Other missions

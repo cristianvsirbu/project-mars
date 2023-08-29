@@ -1,11 +1,12 @@
-import modelsData from "./models/modelsData"
-import MarsPage from "./pages/MarsPage"
+
+import ListPage from "./pages/ListPage"
+
 
 
 const About = () => {
   return (
-    <div>
-      <MarsPage marsData={modelsData[0]} />
+    <div className="text-white">
+      <ListPage />
     </div>
   )
 }

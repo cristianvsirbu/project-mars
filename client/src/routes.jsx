@@ -36,11 +36,11 @@ export const routes = [
             {
                 path: "moons",
                 element: (
-                    <ListPage
-                        modelsConfig={modelsConfig}
-                        type="moons"
-                        categories={['phobos', 'deimos']}
-                    />
+                        <ListPage
+                            modelsConfig={modelsConfig}
+                            type="moons"
+                            categories={['phobos', 'deimos']}
+                        />
                 ),
                 children: [
                     {
