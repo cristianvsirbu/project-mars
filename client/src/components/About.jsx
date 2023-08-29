@@ -1,4 +1,4 @@
-import Model from './Model';
+import Model from './Model3D';
 const About = () => {
   return (
     <div>

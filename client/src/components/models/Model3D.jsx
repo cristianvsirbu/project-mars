@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useRef } from 'react';
 
 
-const Model = ({ modelPath, initialScale, cameraPosition }) => {
+const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -83,13 +83,13 @@ const Model = ({ modelPath, initialScale, cameraPosition }) => {
   );
 };
 
-Model.propTypes = {
+Model3D.propTypes = {
   modelPath: PropTypes.string.isRequired,
   initialScale: PropTypes.number.isRequired,
   cameraPosition: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
-export default Model;
+export default Model3D;
 
 
 
