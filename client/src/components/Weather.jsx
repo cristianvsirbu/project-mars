@@ -70,10 +70,8 @@ const Weather = () => {
     <div className='text-white'>
       <h1>Weather Data</h1>
       {loading ? (
-        <div className='h-[80vh] flex justify-center items-center'><img src='src/assets/astronaut.gif' className='w-[450px] z-50' /></div>
+        <div className='h-[80vh] flex justify-center items-center'><img src='/assets/astronaut.gif' className='w-[450px] z-50' /></div>
       ) : (
-        
-      
       <div className='flex'>
         {weatherData.map((item, index) => (
           <WeatherCard key={index} weather={item} index={index} className='' />

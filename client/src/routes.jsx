@@ -3,9 +3,17 @@ import About from "./components/About";
 import Imagery from "./components/Imagery";
 import Partners from "./components/Partners";
 import Weather from "./components/Weather";
-import ListPage from "./components/models/ListPage";
-import Missions from "./components/Missions";
-import ModelPage from "./components/ModelPage";
+import ListPage from "./components/pages/ListPage";
+import MissionsPage from "./components/pages/MissionsPage";
+import MarsPage from "./components/pages/MarsPage";
+import MoonPage from "./components/pages/MoonPage";
+import RoverPage from "./components/pages/RoverPage";
+import SatellitePage from "./components/pages/SatellitePage";
+import modelsData from "./components/models/modelsData";
+import modelsConfig from "./components/models/modelsConfig";
+
+
+
 
 export const routes = [
     {
@@ -19,18 +27,17 @@ export const routes = [
         element: <About />,
         children: [
             {
-                path: "",
+                path: "mars",
+                text: 'MARS',
                 element: (
-                    <ListPage
-                        type="all"
-                        categories={['mars', 'moons', 'rovers', 'satellites', 'missions']}
-                    />
+                    <MarsPage modelsData={modelsData} modelsConfig={modelsConfig} />
                 ),
             },
             {
                 path: "moons",
                 element: (
                     <ListPage
+                        modelsConfig={modelsConfig}
                         type="moons"
                         categories={['phobos', 'deimos']}
                     />
@@ -38,7 +45,7 @@ export const routes = [
                 children: [
                     {
                         path: ":modelName",
-                        element: <ModelPage />,
+                        element: <MoonPage />,
                     },
                 ],
             },
@@ -46,6 +53,7 @@ export const routes = [
                 path: "rovers",
                 element: (
                     <ListPage
+                        modelsConfig={modelsConfig}
                         type="rovers"
                         categories={['active', 'inactive', 'planned', 'failed']}
                     />
@@ -53,7 +61,7 @@ export const routes = [
                 children: [
                     {
                         path: ":modelName",
-                        element: <ModelPage />,
+                        element: <RoverPage />,
                     },
                 ],
             },
@@ -61,6 +69,7 @@ export const routes = [
                 path: "satellites",
                 element: (
                     <ListPage
+                        modelsConfig={modelsConfig}
                         type="satellites"
                         categories={['functional', 'non-functional']}
                     />
@@ -68,14 +77,14 @@ export const routes = [
                 children: [
                     {
                         path: ":modelName",
-                        element: <ModelPage />,
+                        element: <SatellitePage />,
                     },
                 ],
             },
             {
                 path: "missions",
                 type: "missions",
-                element: <Missions />,
+                element: <MissionsPage />,
             },
         ],
     },

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { routes } from "../routes";
-import menu from "../assets/menu.webp";
-import close from "../assets/close.webp";
 import '../index.css';
+
 
 
 
@@ -41,7 +40,7 @@ const Navbar = () => {
                     ">
 
         {/* Logo */}
-        <img src="/src/assets/logo.png"
+        <img src="/assets/logo.png"
           className="h-20
                      z-1 
                      md:h-24
@@ -74,7 +73,7 @@ const Navbar = () => {
                         items-center
                         ">
           <button className='h-12 w-12' onClick={() => setMenuIsOpen(!menuIsOpen)}>
-            {menuIsOpen ? (<img src={close} alt="Close Menu" />) : (<img src={menu} alt="Open Menu" />)}
+            {menuIsOpen ? (<img src={"assets/close.webp"} alt="Close Menu" />) : (<img src={"assets/menu.webp"} alt="Open Menu" />)}
           </button>
 
           {/* Dropdown Menu */}

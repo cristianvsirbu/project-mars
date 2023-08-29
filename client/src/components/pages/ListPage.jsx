@@ -1,4 +1,4 @@
-import ModelCard from './ModelCard';
+import ModelCard from '../models/ModelCard';
 import PropTypes from 'prop-types';
 
 function ListPage({ type, categories, modelsConfig }) {

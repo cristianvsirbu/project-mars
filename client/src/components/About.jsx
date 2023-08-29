@@ -1,8 +1,11 @@
-import Model from './Model3D';
+import modelsData from "./models/modelsData"
+import MarsPage from "./pages/MarsPage"
+
+
 const About = () => {
   return (
     <div>
-      <Model modelPath={'/models/mars.glb'} initialScale={1} cameraPosition={[0, 0, 1300]} />
+      <MarsPage marsData={modelsData[0]} />
     </div>
   )
 }

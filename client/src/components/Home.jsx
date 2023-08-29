@@ -27,7 +27,7 @@ const Home = () => {
                           4k:text-[48px]">
             PROJECT
           </h2>
-          <img src="src/assets/line2.svg" className="4k:w-1/2 4k:pt-4 animate-pulse" />
+          <img src="assets/line2.svg" className="4k:w-1/2 4k:pt-4" />
           <h1 className="text-white 
                           font-extrabold
                           text-6xl
@@ -48,12 +48,12 @@ const Home = () => {
                         4k:text-xl">
           Welcome to Project Mars, your ultimate destination for delving into the captivating world of the Red Planet. Embark on an extraordinary journey as we bring you the latest and most intriguing information about Mars, all in one place. Whether you are an avid space enthusiast or just someone curious about the cosmos, Project Mars is here to satisfy your thirst for knowledge and wonder.
         </p>
-        <Link to="/about" className="flex justify-center">
+        <Link to="/about/mars" className="flex justify-center">
           <button className="py-4 my-6 button__style w-full lg:w-1/2">ABOUT MARS</button>
         </Link>
       </div>
       <div className="z-50 flex items-center justify-center xl:justify-end">
-        <img src="src/assets/M2.png" className="w-full" />
+        <img src="/assets/M2.png" className="w-full" />
       </div>
     </div>
   )

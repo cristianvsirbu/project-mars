@@ -9,6 +9,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, containerRef.current.clientWidth / containerRef.current.clientHeight, 0.1, 1000);
