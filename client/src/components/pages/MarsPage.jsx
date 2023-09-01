@@ -1,9 +1,9 @@
 
 
-const MarsPage = ({ marsData }) => {
+const MarsPage = () => {
   return (
     <div className="text-white">
-      <h1>{marsData.name}</h1>
+      <h1>Mars Page</h1>
     </div>
 
   )

@@ -1,7 +1,7 @@
 
 const MissionsPage = () => {
   return (
-    <div>MissionsPage</div>
+    <h1>MissionsPage</h1>
   )
 }
 

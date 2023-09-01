@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../styles/output-stars.css'
+import '../../styles/output-stars.css';
 
 const Home = () => {
   return (

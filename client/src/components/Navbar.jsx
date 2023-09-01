@@ -1,29 +1,37 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { routes } from "../routes";
 import '../index.css';
+import routes from "./routes/routes";
 
 
 
 
 
 const Navbar = () => {
-  const navLinks = routes.map((route) => (
-    <li className={`text-white
-                      blink 
-                      cursor-pointer     
-                      font-semibold
-                      py-2
-                      md:py-0
-                      text-[22px]
-                      md:text-[16px]
-                      lg:text-[18px]
-                      xl:text-[24px]
-                      2xl:text-[30px]`}
-      key={route.path}>
-      <NavLink to={route.path}>{route.text}</NavLink>
-    </li>
-  ))
+
+  const navLinks = routes.flatMap((route) => {
+    if (route.children) {
+      return route.children.map((childRoute) => (
+        <li
+          className={`text-white
+            blink 
+            cursor-pointer     
+            font-semibold
+            py-2
+            md:py-0
+            text-[22px]
+            md:text-[16px]
+            lg:text-[18px]
+            xl:text-[24px]
+            2xl:text-[30px]`}
+          key={childRoute.path}
+        >
+          <NavLink to={childRoute.path}>{childRoute.text}</NavLink>
+        </li>
+      ));
+    }
+    return null;
+  });
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (

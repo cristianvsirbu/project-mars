@@ -1,9 +1,8 @@
 
-const modelsData = [
+export const modelsData = [
     {
         id: "mars",
         name: "Mars",
-        type: "planet",
         category: "mars",
         characteristics: [
             {
@@ -151,34 +150,132 @@ const modelsData = [
             }
 
         ]
+
     },
+    //Moons
     {
-        id: "mars2",
-        name: "Mars 2",
-        type: "planet",
-        category: "mars",
-        characteristics: [
+        name: 'Moons',
+        category: 'moons',
+        children: [
             {
-                orbitalCharacteristics: {
-                    name: "Orbital Characteristics",
-                    aphelion: "249261000 km (154884000 mi; 1.66621 AU)",
-                    perihelion: "206650000 km (128410000 mi; 1.3814 AU)",
-                    semiMajorAxis: "227939366 km (141634956 mi; 1.52368055 AU)",
-                    eccentricity: 0.0934,
-                    orbitalPeriodSidereal: "686.980 d (1.88085 yr; 668.5991 sols)",
-                    orbitalPeriodSynodic: "779.94 d (2.1354 yr)",
-                    averageOrbitalSpeed: "24.07 km/s (86700 km/h; 53800 mph)",
-                    meanAnomaly: "19.412°",
-                    inclination: {
-                        toEcliptic: "1.850°",
-                        toSunEquator: "5.65°",
-                        toInvariablePlane: "1.63°"
-                    }
-                }
+                id: 'phobos',
+                category: 'moons',
+                name: 'Phobos',
+                description: 'Phobos is a moon of Mars',
+            },
+            {
+                id: 'deimos',
+                category: 'moons',
+                name: 'Deimos',
+                description: `Deimos is a moon of Mars`,
             }
-        ]
-    }
+        ],
+    },
+    // Rovers
+    {
+        name: 'Rovers',
+        category: 'rovers',
+        children: [
+            {
+                name: 'Active Rovers',
+                category: 'rovers',
+                subcategory: 'active',
+                children: [
+                    {
+                        id: 'curiosity',
+                        category: 'rovers',
+                        subcategory: 'active',
+                        name: 'Curiosity',
+                    },
+                    {
+                        id: 'perseverance',
+                        category: 'rovers',
+                        subcategory: 'active',
+                        name: 'Perseverance',
+                    },
+                ],
+            },
+            {
+                name: 'Inactive Rovers',
+                category: 'rovers',
+                subcategory: 'inactive',
+                children: [
+                    {
+                        id: 'sojourner',
+                        category: 'rovers',
+                        subcategory: 'inactive',
+                        name: 'Sojourner',
+                    },
+                ],
+            },
+            {
+                name: 'Failed Rovers',
+                category: 'rovers',
+                subcategory: 'failed',
+                children: [
+                    {
+                        id: 'mars2',
+                        category: 'rovers',
+                        subcategory: 'failed',
+                        name: 'Mars 2',
+                    },
+                ],
+            },
+            {
+                name: 'Planned Rovers',
+                category: 'rovers',
+                subcategory: 'planned',
+                children: [
+                    {
+                        id: 'exomars',
+                        category: 'rovers',
+                        subcategory: 'planned',
+                        name: 'ExoMars',
+                    },
+                ],
+            },
+        ],
+    },
+    // Satellites
+    {
+        name: 'Satellites',
+        category: 'satellites',
+        children: [
+            {
+                name: 'Functional Satellites',
+                category: 'satellites',
+                subcategory: 'functional',
+                children: [
+                    {
+                        id: 'maven',
+                        category: 'satellites',
+                        subcategory: 'functional',
+                        name: 'Maven',
+                    },
+                ],
+            },
+            {
+                name: 'Non-Functional Satellites',
+                category: 'satellites',
+                subcategory: 'non-functional',
+                children: [
+                    {
+                        id: 'maven2',
+                        category: 'satellites',
+                        subcategory: 'non-functional',
+                        name: 'Maven 2',
+                    },
+                ],
+            },
+        ],
+    },
+    // Missions
+    {
+        id: 'missions',
+        category: 'missions',
+        name: 'Missions',
+    },
+
 ]
 
 
-export default modelsData;

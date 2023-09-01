@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
-import PhotoCard from './PhotoCard';
+import PhotoCard from '../PhotoCard';
 
 const Imagery = () => {
   const API_KEY = '3gdaS7EfzvN0wGfCVqKhm8atgymXVO7BSi2s0Hnq';
