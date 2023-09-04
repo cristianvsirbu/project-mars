@@ -63,33 +63,44 @@ $shadows-big: multiple-box-shadow(150);
 	}
 }
 
-
 #sun {
-  width: 10px;
-  height: 10px;
-  background: transparent;
-  border-radius: 50%;
-  z-index: 10;
-  position: relative;
+	width: 10px;
+	height: 10px;
+	background: transparent;
+	border-radius: 50%;
+	z-index: 10;
+	position: relative;
+  animation: slow-pulse 10s infinite;
+  animation-direction: alternate;
 }
 
 #sun::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  position: absolute;
-  background: #ffffffe1;
-  box-shadow: 0 0 20px 10px #fff, 0 0 50px 30px #e78045, 0 0 170px 40px #0ff;
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	background: #ffffff;
+	box-shadow: 0 0 5px 5px #fff, 0 0 160px 40px #ffaf80, 0 0 170px 40px #0ff;
 }
 
 @keyframes animStar {
 	from {
 		transform: translateY(0px);
-
 	}
 	to {
 		transform: translateY(-2000px);
+	}
+}
 
+@keyframes slow-pulse {
+	0% {
+		box-shadow:0  0 40px 10px #fff, 0  0 100px 20px #e78045, 0  0 100px 20px #0ff;
+	}
+	50% {
+		box-shadow:0  0 50px 15px #fff, 0  0 200px 30px #e78045, 0  0 200px 30px #0ff;
+	}
+	100% {
+		box-shadow:0  0 40px 10px #fff, 0  0 300px 40px #e78045, 0  0 300px 40px #0ff;
 	}
 }
