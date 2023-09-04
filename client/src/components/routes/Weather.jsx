@@ -2,16 +2,13 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const WeatherCard = ({ weather, index }) => {
-  const cardNumber = index + 1;
-  
 
   return (
     <div key={index} className='px-4'>
-      <h3>Day {cardNumber}</h3>
       <p>{weather.dateSol}</p>
       <p>Date: {weather.UTC}</p>
-      <p>T.max:{weather.highCelsius}</p>
-      <p>T.min:{weather.lowCelsius}</p>
+      <p>T.max: {weather.highCelsius}</p>
+      <p>T.min: {weather.lowCelsius}</p>
       <p>Pressure: {weather.pressure} Pa</p>
       <p>Sunrise: {weather.sunrise}</p>
       <p>Sunset: {weather.sunset}</p>

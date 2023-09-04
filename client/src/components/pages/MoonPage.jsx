@@ -14,8 +14,8 @@ import { useParams } from "react-router-dom";
     }
 
     return (
-      <div className="text-white text-2xl">
-        <h1>{moon.description}</h1>
+      <div className="text-xl text-slate-500">
+        <p>{moon.description}</p>
       </div>
     );
   };

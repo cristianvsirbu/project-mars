@@ -9,12 +9,13 @@ const About = () => {
   const categories = modelsData.map(model => model.category);
   return (
     <>
-      <div className="text-white text-5xl">
-        <h1>Categories</h1>
+      <div className="text-white text-5xl flex">
         <ul className="text-2xl">
           {categories.map(category => (
             <li key={category}>
-              <Link to={`/about/${category}`}>{category}</Link>
+              <Link to={`/about/${category}`}>
+                {category.toUpperCase()}
+              </Link>
             </li>
           ))}
         </ul>

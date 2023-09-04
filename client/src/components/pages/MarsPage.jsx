@@ -1,12 +1,12 @@
-import { useContext } from "react";
-import { ModelsDataContext } from "../models/modelsContext";
+import Characteristics from "../Characteristics";
+
+
 
 const MarsPage = () => {
-  const modelData = useContext(ModelsDataContext);
-  console.log(modelData);
+
   return (
-    <div className="text-white">
-      <h1>Mars Page</h1>
+    <div className="text-slate-500 text-xl">
+      <Characteristics modelId={"mars"} />
     </div>
 
   )

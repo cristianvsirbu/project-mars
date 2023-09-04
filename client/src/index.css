@@ -50,11 +50,6 @@
   background: linear-gradient(135deg, #8f3b15 0%, #ff4d01 100%);
 }
 
-p {
-  font-family: 'Martian Mono', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-}
-
 
 .mars-word {
   animation: zoom-slow 8s ease-out infinite;
