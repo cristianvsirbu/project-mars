@@ -7,7 +7,6 @@ const Moons = () => {
   const moonsCategory = modelsData.find(model => model.category === 'moons');
   return (
     <div className="text-white text-2xl">
-      <h2>{moonsCategory.name}</h2>
       <ul>
         {moonsCategory.children.map(moon => (
           <li key={moon.id}>

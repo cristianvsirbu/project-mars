@@ -10,7 +10,6 @@ const RoversSubcategory = () => {
 
     return (
         <div className="text-white text-2xl">
-            <h2>{subcategoryData.name}</h2>
             <ul>
                 {subcategoryData.children.map(rover => (
                     <li key={rover.id}>

@@ -7,12 +7,11 @@ import { useContext } from "react";
 const About = () => {
   const modelsData = useContext(ModelsDataContext);
   const categories = modelsData.map(model => model.category);
-  console.log(categories);
   return (
     <>
       <div className="text-white text-5xl">
         <h1>Categories</h1>
-        <ul>
+        <ul className="text-2xl">
           {categories.map(category => (
             <li key={category}>
               <Link to={`/about/${category}`}>{category}</Link>

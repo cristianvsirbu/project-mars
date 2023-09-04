@@ -7,7 +7,6 @@ const Satellites = () => {
   const satelliteCategory = modelsData.find(model => model.category === 'satellites');
   return (
     <div className="text-white text-2xl">
-      <h2>{satelliteCategory.name}</h2>
       <ul>
         {satelliteCategory.children.map(subcategory => (
           <li key={subcategory.subcategory}>

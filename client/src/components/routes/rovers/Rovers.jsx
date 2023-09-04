@@ -7,7 +7,6 @@ const Rovers = () => {
     const roverCategory = modelsData.find(model => model.category === 'rovers');
     return (
         <div className="text-white text-2xl">
-            <h2>{roverCategory.name}</h2>
             <ul>
                 {roverCategory.children.map(subcategory => (
                     <li key={subcategory.subcategory}>
