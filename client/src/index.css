@@ -50,7 +50,6 @@
   background: linear-gradient(135deg, #8f3b15 0%, #ff4d01 100%);
 }
 
-
 .mars-word {
   animation: zoom-slow 8s ease-out infinite;
 }
@@ -105,3 +104,6 @@
   
 }
 
+.font {
+  font-family: 'Rajdhani', 'Orbitron', sans-serif;
+}

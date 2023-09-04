@@ -15,21 +15,29 @@ function Characteristics({ modelId }) {
     function renderCharacteristics(data, parentKey = "") {
         const result = Object.keys(data).map((key) => {
             if (typeof data[key] === "object") {
-                if (!isNaN(key)) { // Check if the key is numeric
-                    return renderCharacteristics(data[key], parentKey); // Skip the numeric key
+                if (!isNaN(key)) {
+                    return renderCharacteristics(data[key], parentKey);
                 }
+
+                const hasChildObjects = Object.keys(data[key]).some(
+                    (subKey) => typeof data[key][subKey] === "object"
+                );
+
                 return (
-                    <div key={key} className='paragraph__style'>
-                        <span className='text-xl text-white'>{parentKey ? `${key}` : key}</span>
-                        <div className="ml-10 mb-4">
+                    <div key={key} className={hasChildObjects ? 'mb-10' : 'mb-6'}>
+                        <span className={hasChildObjects ? 'font-bold text-orange-500' : 'font-medium text-white'}>{parentKey ? `${key}` : key}</span>
+                        <div className={hasChildObjects ? '' : 'ml-10'}>
                             {renderCharacteristics(data[key], "")}
                         </div>
                     </div>
                 );
             } else {
                 return (
-                    <div key={key} className=''>
-                        {parentKey ? `${key}: ${data[key]}` : `${key}: ${data[key]}`}
+                    <div key={key} className='mb-2'>
+                        <div className="flex">
+                            <span className="text-white">{key}:</span>
+                            <span className="text-slate-500 ml-2">{data[key]}</span>
+                        </div>
                     </div>
                 );
             }
@@ -37,6 +45,7 @@ function Characteristics({ modelId }) {
 
         return result;
     }
+
 
 
 

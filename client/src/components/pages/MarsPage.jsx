@@ -5,7 +5,7 @@ import Characteristics from "../Characteristics";
 const MarsPage = () => {
 
   return (
-    <div className="text-slate-500 text-xl">
+    <div className="font">
       <Characteristics modelId={"mars"} />
     </div>
 
