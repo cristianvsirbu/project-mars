@@ -50,7 +50,8 @@ const Home = () => {
                         tracking-wide
                         leading-8
                         md:text-3xl
-                        4k:text-5xl">
+                        4k:text-5xl
+                        rajdhani">
           Welcome to Project Mars, your  destination for delving into the captivating world of the Red Planet. Embark on an extraordinary journey with the latest and most intriguing information about Mars, all in one place. Whether you are an avid space enthusiast or just someone curious about the cosmos, Project Mars is here to satisfy your thirst for knowledge and wonder.
         </p>
         <Link to="/about/mars" className="flex justify-center">
