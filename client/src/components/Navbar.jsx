@@ -84,7 +84,7 @@ const Navbar = () => {
                         items-center
                         ">
           <button className='h-12 w-12' onClick={() => setMenuIsOpen(!menuIsOpen)}>
-            {menuIsOpen ? (<img src={"../../assets/close.webp"} alt="Close Menu" />) : (<img src={"../../assets/menu.webp"} alt="Open Menu" />)}
+            {menuIsOpen ? (<img src={"/assets/close.webp"} alt="Close Menu" />) : (<img src={"/assets/menu.webp"} alt="Open Menu" />)}
           </button>
 
           {/* Dropdown Menu */}
