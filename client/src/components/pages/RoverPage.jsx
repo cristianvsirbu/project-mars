@@ -80,11 +80,11 @@ function hasChildProperties(data) {
 }
 
   return (
-    <div className="text-white rajdhani">
+    <div className="text-white">
       <p>{rover.description}</p>
-      <p>
+      <div>
         {renderCharacteristics(chars)}
-      </p>
+      </div>
     </div>
   );
 }

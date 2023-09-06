@@ -16,14 +16,14 @@ const Navbar = () => {
           className={`text-white
             blink 
             cursor-pointer     
-            font-semibold
+            font-bold
             py-2
             md:py-0
-            text-[22px]
-            md:text-[16px]
-            lg:text-[18px]
-            xl:text-[24px]
-            2xl:text-[30px]`}
+            text-[32px]
+            md:text-[20px]
+            lg:text-[24px]
+            xl:text-[32px]
+            2xl:text-[46px]`}
           key={childRoute.path}
         >
           <NavLink to={childRoute.path}>{childRoute.text}</NavLink>
@@ -43,7 +43,9 @@ const Navbar = () => {
                    h-24
                    mx-6
                    md:mx-10
-                   xl:h-32
+                   md:h-14
+                   lg:h-16
+                   xl:h-28
                    2xl:h-36
                     ">
 
@@ -51,10 +53,11 @@ const Navbar = () => {
         <img src="/assets/logo.png"
           className="h-20
                      z-1 
-                     md:h-24
+                     md:h-14
                      mt-2
                      lg:ml-6
-                     xl:h-32
+                     lg:h-16
+                     xl:h-28
                      xl:ml-12
                      xl:mt-4
                      2xl:h-40

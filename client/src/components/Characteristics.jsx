@@ -1,7 +1,7 @@
 
 
 function Characteristics({ data }) {
-    
+
     // Recursive function to render characteristics
     function renderCharacteristics(data, parentKey = "") {
         const result = Object.keys(data).map((key) => {
@@ -25,27 +25,32 @@ function Characteristics({ data }) {
         return result;
     }
 
-function generateList(key, items) {
-  return (
-    <div key={key} className="mb-10">
-      <span className="font-bold">{key}:</span>
-      <ol className="ml-10">
-        {items.map((item, index) => (
-          <li key={index}>
-            {typeof item === "object"
-              ? Object.entries(item).map(([subKey, subValue], subIndex) => (
-                  <div key={subIndex}>
-                    <span className="font-medium">{subKey}:</span>{" "}
-                    {subValue}
-                  </div>
-                ))
-              : item}
-          </li>
-        ))}
-      </ol>
-    </div>
-  );
-}
+    function generateList(key, items) {
+        return (
+            <div key={key} className="">
+                <span className="font-bold">{key}:</span>
+                <ol className="ml-10">
+                    {items.map((item, index) => (
+                        <li
+                            key={index}
+                            className={``}
+                        >
+                            {typeof item === "object" ? (
+                                Object.entries(item).map(([subKey, subValue], subIndex) => (
+                                    <div key={subIndex}>
+                                        <span className="font-medium text-orange-500">{subKey}:</span>
+                                        <span className="text-slate-400 ml-2">{subValue}</span>
+                                    </div>
+                                ))
+                            ) : (
+                                item
+                            )}
+                        </li>
+                    ))}
+                </ol>
+            </div>
+        );
+    }
 
 
     function generateDiv(key, parentKey, hasChildObjects, childData) {

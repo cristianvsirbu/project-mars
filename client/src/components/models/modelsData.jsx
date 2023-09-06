@@ -977,41 +977,45 @@ export const modelsData = [
                             {
                                 "Components": [
                                     {
-                                        "Flyby of Mars": {
-                                            "Spacecraft component": "Tianwen-1 Deployable Camera 1 (TDC-1)",
+                                         
+                                            "Name":"Flyby of Mars",
+                                            "Spacecraft component": "Tianwen-1,Deployable Camera 1 (TDC-1)",
                                             "Closest approach": "~10 February 2021 (deployed from Tianwen-1 Orbiter in September 2020)"
-                                        }
+                                        
                                     },
                                     {
-                                        "Mars lander": {
+                                 
+                                            "Name": "Mars lander",
                                             "Spacecraft component": "Tianwen-1 Lander",
                                             "Landing date": "14 May 2021, 23:18 UTC",
                                             "Landing site": "Utopia Planitia",
                                             "Coordinates": "25.066°N 109.925°E"
-                                        }
+                                        
                                     },
                                     {
-                                        "Mars rover": {
+                                    
+                                            "Name": "Mars rover",
                                             "Spacecraft component": "Zhurong Rover",
                                             "Landing date": "14 May 2021, 23:18 UTC (deployed from Tianwen-1 lander on 22 May 2021, 02:40 UTC)",
                                             "Landing site": "Utopia Planitia",
                                             "Coordinates": "25.066°N 109.925°E",
                                             "Distance driven": "1.921 km (1.194 mi) as of 5 May 2022"
-                                        }
+                                    
                                     },
                                     {
-                                        "Mars lander": {
+
+                                            "Name": "Mars lander",
                                             "Spacecraft component": "Tianwen-1 Remote Camera (TRC)",
                                             "Landing date": "14 May 2021, 23:18 UTC (deployed from Zhurong rover on 1 June 2021 which itself was deployed from Tianwen-1 lander on 22 May 2021, 02:40 UTC)",
                                             "Landing site": "Utopia Planitia",
                                             "Coordinates": "25.066°N 109.925°E"
-                                        }
                                     },
                                     {
-                                        "Mars orbiter": {
+
+                                            "Name": "Mars orbiter",
                                             "Spacecraft component": "Tianwen-1 Deployable Camera 2 (TDC-2)",
                                             "Orbital insertion": "10 February 2021, 11:52 UTC (entered orbit with the orbiter but was released from Tianwen-1 Orbiter on 31 December 2021)"
-                                        }
+
                                     }
                                 ]
                             },

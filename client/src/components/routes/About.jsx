@@ -9,8 +9,7 @@ const About = () => {
   const categories = modelsData.map(model => model.category);
   return (
     <>
-      <div className="text-white">
-        <ul className="text-2xl flex justify-evenly">
+        <ul className="text-white text-4xl text-center font-semibold flex flex-col w-[100vw] h-[50vh] justify-evenly">
           {categories.map(category => (
             <li key={category}>
               <Link to={`/about/${category}`}>
@@ -20,7 +19,6 @@ const About = () => {
           ))}
         </ul>
         <Outlet />
-      </div>
     </>
   );
 };

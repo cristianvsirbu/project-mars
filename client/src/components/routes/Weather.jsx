@@ -19,9 +19,9 @@ WeatherCard.propTypes = {
   weather: PropTypes.shape({
     dateSol: PropTypes.string.isRequired,
     UTC: PropTypes.string.isRequired,
-    highCelsius: PropTypes.number.isRequired,
-    lowCelsius: PropTypes.number.isRequired,
-    pressure: PropTypes.number.isRequired,
+    highCelsius: PropTypes.string.isRequired,
+    lowCelsius: PropTypes.string.isRequired,
+    pressure: PropTypes.string.isRequired,
     sunrise: PropTypes.string.isRequired,
     sunset: PropTypes.string.isRequired,
   }).isRequired,
@@ -47,7 +47,6 @@ const Weather = () => {
         setWeatherData(data);
         setLoading(false);
         setError(false);
-        console.log(data);
       })
       .catch(error => {
         console.error(error);

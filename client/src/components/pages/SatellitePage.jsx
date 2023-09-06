@@ -2,7 +2,7 @@
 // import { ModelsDataContext } from "../models/modelsContext";
 import { useParams } from "react-router-dom";
 import Characteristics from "../Characteristics";
-import { useFetchData } from "../useFetchData";
+import { useFetchData } from "../hooks/useFetchData";
 
 const SatellitePage = () => {
 
@@ -25,4 +25,4 @@ const SatellitePage = () => {
   );
 };
 
-export default SatellitePage
+export default SatellitePage;
