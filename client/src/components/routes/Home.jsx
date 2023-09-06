@@ -61,7 +61,7 @@ const Home = () => {
         </Link>
       </div>
       <div className="z-999 flex justify-center items-center xl:justify-end">
-        <img src="/assets/M2.png" className="w-[92%]" />
+        <img src="/assets/mars/M2.png" className="w-[92%]" />
       </div>
 
     </div>
