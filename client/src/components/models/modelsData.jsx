@@ -4,6 +4,7 @@ export const modelsData = [
         id: "mars",
         name: "Mars",
         category: "mars",
+        cover: "",
         characteristics: [
             {
                 "Orbital Characteristics": {

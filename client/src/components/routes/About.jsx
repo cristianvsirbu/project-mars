@@ -15,7 +15,9 @@ const About = () => {
       >
         {categories.map((category) => (
           <li key={category}>
+            <div>
             <Link to={`/about/${category}`}>{category.toUpperCase()}</Link>
+            </div>
           </li>
         ))}
       </ul>
