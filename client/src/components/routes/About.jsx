@@ -1,24 +1,25 @@
-import { Outlet, Link } from "react-router-dom"
+import { Outlet, Link, useLocation } from "react-router-dom"
 import { ModelsDataContext } from "../models/modelsContext";
 import { useContext } from "react";
 
-
-
 const About = () => {
   const modelsData = useContext(ModelsDataContext);
-  const categories = modelsData.map(model => model.category);
+  const categories = modelsData.map((model) => model.category);
+  const location = useLocation();
+
   return (
     <>
-        <ul className="text-white text-4xl text-center font-semibold flex flex-col w-[100vw] h-[50vh] justify-evenly">
-          {categories.map(category => (
-            <li key={category}>
-              <Link to={`/about/${category}`}>
-                {category.toUpperCase()}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Outlet />
+      <ul
+        className={`text-white text-4xl text-center font-semibold flex flex-col w-[100vw] h-[50vh] justify-evenly ${location.pathname.includes("/about/") ? "hidden" : ""
+          }`}
+      >
+        {categories.map((category) => (
+          <li key={category}>
+            <Link to={`/about/${category}`}>{category.toUpperCase()}</Link>
+          </li>
+        ))}
+      </ul>
+      <Outlet />
     </>
   );
 };

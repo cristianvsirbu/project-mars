@@ -50,7 +50,7 @@ const Navbar = () => {
                     ">
 
         {/* Logo */}
-        <img src="/assets/logo.png"
+        <img src="/assets/logos/logo.png"
           className="h-20
                      z-1 
                      md:h-14

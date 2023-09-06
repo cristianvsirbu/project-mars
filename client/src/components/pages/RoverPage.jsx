@@ -5,12 +5,13 @@ import { ModelsDataContext } from '../models/modelsContext';
 function RoverPage() {
   const { subcategory, roverId } = useParams();
   const modelsData = useContext(ModelsDataContext);
-
   const roverCategory = modelsData.find(model => model.category === 'rovers');
   const subcategoryData = roverCategory.children.find(sub => sub.subcategory === subcategory);
   const rover = subcategoryData.children.find(r => r.id === roverId);
   const chars = rover.characteristics;
-  console.log(chars);
+
+
+
 
   if (!rover) {
     return <div>Rover not found</div>;
@@ -81,10 +82,8 @@ function hasChildProperties(data) {
 
   return (
     <div className="text-white">
-      <p>{rover.description}</p>
-      <div>
-        {renderCharacteristics(chars)}
-      </div>
+          <p>{rover.description}</p>
+      {renderCharacteristics(chars)}
     </div>
   );
 }
