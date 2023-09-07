@@ -4,7 +4,7 @@ export const modelsData = [
         id: "mars",
         name: "Mars",
         category: "mars",
-        cover: "",
+        cover: "/assets/covers/mars.png",
         characteristics: [
             {
                 "Orbital Characteristics": {
@@ -152,11 +152,13 @@ export const modelsData = [
     {
         name: 'Moons',
         category: 'moons',
+        cover: '/assets/covers/moons.png',
         children: [
             {
                 id: 'phobos',
                 category: 'moons',
                 name: 'Phobos',
+                cover: '/assets/covers/phobos.png',
                 description: 'Phobos is the innermost and larger of the two natural satellites of Mars.It is named after Phobos, the Greek god of fear and panic, who is the son of Ares (Mars) and twin brother of Deimos.',
                 characteristics: [
                     {
@@ -202,6 +204,7 @@ export const modelsData = [
                 id: 'deimos',
                 category: 'moons',
                 name: 'Deimos',
+                cover: '/assets/covers/deimos.png',
                 description: `Deimos is the smaller and outermost of the two natural satellites of Mars. The moon is named after Deimos, a figure representing dread in Greek mythology. The name was suggested by academic Henry Madan, who drew from Book XV of the Iliad, where Ares (the Roman god Mars) summons Dread (Deimos) and Fear (Phobos).`,
                 characteristics: [
                     {
@@ -251,11 +254,13 @@ export const modelsData = [
     {
         name: 'Rovers',
         category: 'rovers',
+        cover: '/assets/covers/rovers.png',
         children: [
             {
                 name: 'Active Rovers',
                 category: 'rovers',
                 subcategory: 'active',
+                cover: '/assets/covers/active-rovers.png',
                 children: [
                     {
                         id: 'curiosity',
@@ -376,6 +381,7 @@ export const modelsData = [
                 name: 'Inactive Rovers',
                 category: 'rovers',
                 subcategory: 'inactive',
+                cover: '/assets/covers/inactive-rovers.png',
                 children: [
                     {
                         id: 'sojourner',
@@ -589,11 +595,13 @@ export const modelsData = [
     {
         name: 'Satellites',
         category: 'satellites',
+        cover: '/assets/covers/satellites.png',
         children: [
             {
                 name: 'Functional Satellites',
                 category: 'satellites',
                 subcategory: 'functional',
+                cover: '/assets/covers/functional-satellites.png',
                 children: [
                     {
                         id: 'mars-odyssey',
@@ -1028,6 +1036,7 @@ export const modelsData = [
                 name: 'Non-Functional Satellites',
                 category: 'satellites',
                 subcategory: 'non-functional',
+                cover: '/assets/covers/non-functional-satellites.png',
                 children: [
                     {
                         id: 'viking-1',
@@ -1582,6 +1591,7 @@ export const modelsData = [
         id: 'missions',
         name: 'Missions',
         category: 'missions',
+        cover:'/assets/covers/missions.png',
         description: 'This is a list of the 50 spacecraft missions (including unsuccessful ones) relating to the planet Mars, such as orbiters and rovers.',
         launches_by_decade: {
             "1960s": 12,

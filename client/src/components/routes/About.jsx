@@ -8,21 +8,27 @@ const About = () => {
   const location = useLocation();
 
   return (
-    <>
+    <div className="w-full h-full">
       <ul
-        className={`text-white text-4xl text-center font-semibold flex flex-col w-[100vw] h-[50vh] justify-evenly ${location.pathname.includes("/about/") ? "hidden" : ""
+        className={`text-white text-5xl text-center font-semibold h-[80vh] flex justify-evenly items-center ${location.pathname.includes("/about/") ? "hidden" : ""
           }`}
       >
-        {categories.map((category) => (
-          <li key={category}>
-            <div>
-            <Link to={`/about/${category}`}>{category.toUpperCase()}</Link>
-            </div>
-          </li>
-        ))}
+        {categories.map((category) => {
+          const currentCategory = modelsData.find((model) => model.category === category);
+          return (
+            <li key={category}>
+              <div className="w-[25rem] h-[35rem] blur__card parallax">
+                  <Link to={`/about/${category}`} className="flex flex-col h-full justify-between py-12">
+                    <img src={currentCategory.cover} className="w-[20rem]  self-center" />
+                  <span className="blink"> {category.toUpperCase()} </span>
+                  </Link>
+              </div>
+            </li>
+          );
+        })}
       </ul>
       <Outlet />
-    </>
+    </div>
   );
 };
 

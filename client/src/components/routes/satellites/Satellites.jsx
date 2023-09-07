@@ -13,13 +13,16 @@ const Satellites = () => {
 
 
   return (
-    <div className="text-white text-2xl">
-      <ul className={`${location.pathname.includes("/about/satellites/") ? "hidden" : ""}`}>
+    <div className="text-center">
+      <ul className={`text-white text-5xl  font-semibold h-[80vh] w-[50vw] mx-auto flex justify-evenly items-center ${location.pathname.includes("/about/satellites/") ? "hidden" : ""}`}>
         {satelliteCategory.children.map(subcategory => (
           <li key={subcategory.subcategory}>
-            <Link to={`/about/satellites/${subcategory.subcategory}`}>
-              {subcategory.name}
-            </Link>
+            <div className="w-[25rem] h-[35rem] blur__card parallax">
+            <Link to={`/about/satellites/${subcategory.subcategory}`} className="flex flex-col h-full justify-around py-12">
+              <img src={subcategory.cover} className="w-[15rem]  self-center" />
+                <span className="blink">{subcategory.name}</span>
+              </Link>
+            </div>
           </li>
         ))}
       </ul>

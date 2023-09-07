@@ -8,11 +8,16 @@ const Moons = () => {
   const location = useLocation();
 
   return (
-    <div className="text-white text-2xl">
-      <ul className={`${location.pathname.includes("/about/moons/") ? "hidden" : ""}`}>
+    <div className=" text-center">
+      <ul className={`text-white font-semibold text-5xl h-[80vh] w-[50vw] mx-auto flex  justify-evenly items-center ${location.pathname.includes("/about/moons/") ? "hidden" : ""}`}>
         {moonsCategory.children.map(moon => (
           <li key={moon.id}>
-            <Link to={`/about/moons/${moon.id}`}>{moon.name}</Link>
+            <div className="w-[25rem] h-[35rem] blur__card parallax">
+            <Link to={`/about/moons/${moon.id}`} className="flex flex-col h-full justify-around py-12">
+              <img src={moon.cover} className="w-[12rem]  self-center" />
+                <span className="blink">{moon.name}</span>
+            </Link>
+            </div>
           </li>
         ))}
       </ul>
