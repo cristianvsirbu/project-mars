@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className=''>
       <Navbar />
       {/* Line */}
       <img className="hidden md:flex mx-auto my-0 py-0 w-full" src='/assets/line.svg' />

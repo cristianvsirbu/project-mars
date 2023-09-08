@@ -11,8 +11,7 @@ const SatellitesSubcategory = () => {
 
     const isLastLevel = subcategory === "";
     return (
-        <div className="text-white text-2xl">
-            <h2>{subcategoryData.name}</h2>
+        <div className="text-white text-3xl">
             <ul className={`${location.pathname.includes(`/about/satellites/${subcategory}/`) && !isLastLevel ? "hidden" : ""}`}>
                 {subcategoryData.children.map(satellite => (
                     <li key={satellite.id}>

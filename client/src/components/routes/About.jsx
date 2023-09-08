@@ -8,20 +8,20 @@ const About = () => {
   const location = useLocation();
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full">
       <ul
-        className={`text-white text-5xl text-center font-semibold h-[80vh] flex justify-evenly items-center ${location.pathname.includes("/about/") ? "hidden" : ""
+        className={`text-white text-3xl md:text-4xl lg:text-5xl text-center font-semibold lg:h-[80vh] flex md:justify-evenly flex-col my-12 md:flex-row flex-wrap  items-center ${location.pathname.includes("/about/") ? "hidden" : ""
           }`}
       >
         {categories.map((category) => {
           const currentCategory = modelsData.find((model) => model.category === category);
           return (
             <li key={category}>
-              <div className="w-[25rem] h-[35rem] blur__card parallax">
-                  <Link to={`/about/${category}`} className="flex flex-col h-full justify-between py-12">
-                    <img src={currentCategory.cover} className="w-[20rem]  self-center" />
+              <div className="w-[15rem] md:w-[18rem] h-[23rem] my-6 lg:w-[25rem] lg:h-[35rem] blur__card parallax">
+                <Link to={`/about/${category}`} className="flex flex-col h-full justify-between py-12">
+                  <img src={currentCategory.cover} className="w-[12rem] lg:w-[20rem] self-center" />
                   <span className="blink"> {category.toUpperCase()} </span>
-                  </Link>
+                </Link>
               </div>
             </li>
           );

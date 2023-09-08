@@ -19,7 +19,7 @@ const SatellitePage = () => {
   }
 
   return (
-    <div className="text-white text-2xl">
+    <div className="text-white text-xl">
       <Characteristics data={chars} />
     </div>
   );

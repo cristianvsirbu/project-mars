@@ -27,9 +27,9 @@ function Characteristics({ data }) {
 
     function generateList(key, items) {
         return (
-            <div key={key} className="">
+            <div key={key} className="px-6">
                 <span className="font-bold">{key}:</span>
-                <ol className="ml-10">
+                <ol className="text-left">
                     {items.map((item, index) => (
                         <li
                             key={index}
@@ -39,7 +39,7 @@ function Characteristics({ data }) {
                                 Object.entries(item).map(([subKey, subValue], subIndex) => (
                                     <div key={subIndex}>
                                         <span className="font-medium text-orange-500">{subKey}:</span>
-                                        <span className="text-slate-400 ml-2">{subValue}</span>
+                                        <span className="text-slate-400">{subValue}</span>
                                     </div>
                                 ))
                             ) : (
@@ -55,11 +55,11 @@ function Characteristics({ data }) {
 
     function generateDiv(key, parentKey, hasChildObjects, childData) {
         return (
-            <div key={key} className={`mb-10 ${hasChildObjects ? "" : "ml-10"}`}>
+            <div key={key} className="py-6">
                 <span className="font-bold">
                     {parentKey ? `${key}` : key}
                 </span>
-                <div className={hasChildObjects ? "" : "ml-10"}>
+                <div className={hasChildObjects ? "" : "ml-2"}>
                     {renderCharacteristics(childData, "")}
                 </div>
             </div>
@@ -68,10 +68,10 @@ function Characteristics({ data }) {
 
     function generateSimpleDiv(key, value) {
         return (
-            <div key={key} className="mb-2">
-                <div className="flex">
+            <div key={key} className="px-6 py-2">
+                <div className="flex flex-col text-left">
                     <span className={`text-orange-500 font-medium`}>{key}:</span>
-                    <span className="text-slate-400 ml-2">{value}</span>
+                    <span className="text-slate-400 mb-2">{value}</span>
                 </div>
             </div>
         );

@@ -10,7 +10,7 @@ const Home = () => {
                     xl:items-center
                     xl:justify-center
 ">
-      <div id='sun' className="hidden md:block md:left-[42rem] md:top-[-45rem] lg:left-[55rem] xl:left-[85rem] xl:top-[-20rem]" /> 
+      <div className="sun hidden md:block md:left-[42rem] md:top-[-45rem] lg:left-[55rem] xl:left-[85rem] xl:top-[-20rem]" /> 
       <div className="p-4
                       flex
                       flex-col

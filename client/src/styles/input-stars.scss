@@ -63,7 +63,7 @@ $shadows-big: multiple-box-shadow(150);
 	}
 }
 
-#sun {
+.sun {
 	width: 10px;
 	height: 10px;
 	background: transparent;
@@ -74,7 +74,7 @@ $shadows-big: multiple-box-shadow(150);
   animation-direction: alternate;
 }
 
-#sun::after {
+.sun::after {
 	content: "";
 	width: 10px;
 	height: 10px;

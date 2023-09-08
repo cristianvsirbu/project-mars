@@ -6,6 +6,11 @@
 .sidebar {
   -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  border-radius: 22px;
+  border: 1px solid rgba(92, 92, 92, 0.596);
+  background: linear-gradient(103deg, rgba(212, 212, 212, 0.329) -98.71%, rgba(0, 0, 0, 0.445) 103.17%);
+  box-shadow: -2px 9px 5px 0px rgba(22, 22, 22, 0.25);
+  backdrop-filter: blur(25px);
 }
 
 @-webkit-keyframes slide-top {
@@ -116,21 +121,24 @@
   backdrop-filter: blur(2px);
 }
 
-.parallax {
-      --f: .01;
-      /* the parallax factor (the smaller the better) */
-      --r: 22px;
-      /* radius */
-  
-      --_f: calc(100%*var(--f)/(1 + var(--f)));
-      --_a: calc(90deg*var(--f));
-      clip-path: inset(0 var(--_f) 0 0 round var(--r));
-      transform: perspective(600px) var(--_t, rotateY(var(--_a)));
-      transition: .3s;
-      cursor: pointer;
-}
+@media (min-width: 1024px) {
+  .parallax {
+    --f: .01;
+    /* the parallax factor (the smaller the better) */
+    --r: 22px;
+    /* radius */
 
-.parallax:hover { 
-  clip-path: inset(0 0 0 var(--_f) round var(--r));
---_t: translateX(calc(-2*var(--_f))) rotateY(calc(-1*var(--_a)));
+    --_f: calc(100%*var(--f)/(1 + var(--f)));
+    --_a: calc(90deg*var(--f));
+    clip-path: inset(0 var(--_f) 0 0 round var(--r));
+    transform: perspective(600px) var(--_t, rotateY(var(--_a)));
+    transition: .3s;
+    cursor: pointer;
+  }
+
+
+  .parallax:hover {
+    clip-path: inset(0 0 0 var(--_f) round var(--r));
+    --_t: translateX(calc(-2*var(--_f))) rotateY(calc(-1*var(--_a)));
+  }
 }

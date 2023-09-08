@@ -92,15 +92,16 @@ const Navbar = () => {
                            flex-col
                            rounded-xl
                            absolute
-                           top-32
-                           right-8
+                           top-40
+                           right-10
                            px-8
-                           py-12
-                           min-w-[260px]
+                           py-8
+                           min-w-[15rem]
                          bg-slate-900
-                           sidebar`}>
+                           sidebar
+                           `}>
             {menuIsOpen && (
-              <ul className="flex flex-col items-center text-white text-[26px] h-1/2 justify-between">
+              <ul className="flex flex-col  items-center">
                 {navLinks}
               </ul>
             )}
