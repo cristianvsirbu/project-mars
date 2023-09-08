@@ -27,9 +27,9 @@ function Characteristics({ data }) {
 
     function generateList(key, items) {
         return (
-            <div key={key} className="px-6">
-                <span className="font-bold">{key}:</span>
-                <ol className="text-left">
+            <div key={key} className="px-2">
+                <span className="font-semibold text-orange-500">{key}:</span>
+                <ol className="text-left text-slate-400">
                     {items.map((item, index) => (
                         <li
                             key={index}
@@ -37,13 +37,18 @@ function Characteristics({ data }) {
                         >
                             {typeof item === "object" ? (
                                 Object.entries(item).map(([subKey, subValue], subIndex) => (
-                                    <div key={subIndex}>
+                                    <div key={subIndex} className={`${subKey === "Name" ? "mt-4" : ""} `}>
                                         <span className="font-medium text-orange-500">{subKey}:</span>
-                                        <span className="text-slate-400">{subValue}</span>
+                                        <span className={`${subKey === "Name" ? "text-white font-medium" : "text-slate-400"} ml-2`}>
+                                            {subValue}
+                                        </span>
                                     </div>
                                 ))
                             ) : (
-                                item
+                                <div className="flex items-center pb-2">
+                                    <img src="/assets/star.png" className="w-[3rem] self-baseline" />
+                                    {item}
+                                </div>
                             )}
                         </li>
                     ))}
@@ -56,10 +61,10 @@ function Characteristics({ data }) {
     function generateDiv(key, parentKey, hasChildObjects, childData) {
         return (
             <div key={key} className="py-6">
-                <span className="font-bold">
+                <span className="font-bold text-2xl">
                     {parentKey ? `${key}` : key}
                 </span>
-                <div className={hasChildObjects ? "" : "ml-2"}>
+                <div>
                     {renderCharacteristics(childData, "")}
                 </div>
             </div>
@@ -71,7 +76,7 @@ function Characteristics({ data }) {
             <div key={key} className="px-6 py-2">
                 <div className="flex flex-col text-left">
                     <span className={`text-orange-500 font-medium`}>{key}:</span>
-                    <span className="text-slate-400 mb-2">{value}</span>
+                    <span className="text-slate-400">{value}</span>
                 </div>
             </div>
         );
