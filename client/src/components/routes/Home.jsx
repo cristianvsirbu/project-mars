@@ -22,7 +22,7 @@ const Home = () => {
         <div className="flex 
                         flex-col
                         items-center
-                        pb-12">
+                        pb-4">
 
           <h2 className="text-white 
                           font-bold
@@ -50,7 +50,7 @@ const Home = () => {
                         lg:pb-6
                         xl:w-4/5
                         self-center
-                        md:text-xl
+                        text-xl
                         xl:text-2xl
                         4k:text-5xl
                         ">

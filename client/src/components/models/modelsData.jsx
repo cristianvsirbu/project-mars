@@ -1,152 +1,158 @@
 
 export const modelsData = [
     {
-        id: "mars",
         name: "Mars",
         category: "mars",
         cover: "/assets/covers/mars.png",
-        characteristics: [
+        children: [
             {
-                "Orbital Characteristics": {
-                    "Aphelion": {
-                        "km": "249261000 km",
-                        "mi": "154884000 mi",
-                        "AU": "1.66621 AU"
-                    },
-                    "Perihelion": {
-                        "km": "206650000 km",
-                        "mi": "128410000",
-                        "AU": "1.3814 AU"
-                    },
-                    "Semi-major Axis": {
-                        "km": "227939366 km",
-                        "mi": "141634956 mi",
-                        "AU": "1.52368055 AU"
-                    },
-                    "Eccentricity": 0.0934,
-                    "Orbital Period (Sidereal)": {
-                        "Days": "686.980 days",
-                        "Years": "1.88085 years",
-                        "Sols": "668.5991 sols"
-                    },
-                    "Orbital Period (Synodic)": {
-                        "Days": "779.94 days",
-                        "Years": "2.1354 years"
-                    },
-                    "Average Orbital Speed": {
-                        "kmPerSec": "24.07 km/s",
-                        "kmPerHour": "86700 km/h",
-                        "mph": "53800 mph"
-                    },
-                    "Mean Anomaly": "19.412°",
-                    "Inclination": {
-                        "To Ecliptic": "1.850°",
-                        "To Sun Equator": "5.65°",
-                        "To Invariable Plane": "1.63°"
-                    },
-                    "Longitude of Ascending Node": "49.57854°",
-                    "Time of Perihelion": "2022-Jun-21",
-                    "Argument of Perihelion": "286.5°",
-                    "Satellites": 2
-                },
-                "Physical Characteristics": {
-                    "Mean Radius": {
-                        "km": "3389.5 ± 0.2 km",
-                        "mi": "2106.1 ± 0.1 mi"
-                    },
-                    "Equatorial Radius": {
-                        "km": "3396.2 ± 0.1 km",
-                        "mi": "2110.3 ± 0.1 mi",
-                        "Earths": "0.533 Earths"
-                    },
-                    "Polar Radius": {
-                        "km": "3376.2 ± 0.1 km",
-                        "mi": "2097.9 ± 0.1 mi",
-                        "Earths": "0.531 Earths"
-                    },
-                    "Flattening": 0.00589,
-                    "Surface Area": {
-                        "km2": "144.37×106 km2",
-                        "sqMi": "5.574×107 sq mi",
-                        "Earths": "0.284 Earths"
-                    },
-                    "Volume": {
-                        "km3": "1.63118×1011 km3",
-                        "Earths": "0.151 Earths"
-                    },
-                    "Mass": {
-                        "kg": "6.4171×1023 kg",
-                        "Earths": "0.107 Earths"
-                    },
-                    "Mean Density": {
-                        "gPerCm3": "3.9335 g/cm3",
-                        "lbPerCuIn": "0.1421 lb/cu in"
-                    },
-                    "Surface Gravity": {
-                        "mPerS2": "3.72076 m/s2",
-                        "ftPerS2": "12.2072 ft/s2",
-                        "g": "0.3794 g"
-                    },
-                    "Moment of Inertia Factor": 0.3644,
-                    "Escape Velocity": {
-                        "kmPerS": "5.027 km/s",
-                        "kmPerH": "18100 km/h",
-                        "mph": "11250 mph"
-                    },
-                    "Synodic Rotation Period": {
-                        "Days": "1.02749125 d",
-                        "Time": "24h 39m 36s"
-                    },
-                    "Sidereal Rotation Period": {
-                        "Days": "1.025957 d",
-                        "Time": "24h 37m 22.7s"
-                    },
-                    "Equatorial Rotation Velocity": {
-                        "mPerS": "241 m/s",
-                        "kmPerH": "870 km/h",
-                        "mph": "540 mph"
-                    },
-                    "Axial Tilt": "25.19° to its orbital plane",
-                    "North Pole Right Ascension": {
-                        "Degrees": "317.68143°",
-                        "Time": "21h 10m 44s"
-                    },
-                    "North Pole Declination": "52.88650°",
-                    "Albedo": {
-                        "Geometric": 0.170,
-                        "Bond": 0.25
-                    },
-                    "Temperature": {
-                        "Blackbody": "−64°C",
-                        "Surface": {
-                            "Min": "−110°C",
-                            "Mean": "−60°C",
-                            "Max": "35°C"
+                id: "mars",
+                name: "Mars",
+                category: "mars",
+                model3d: "/assets/models/mars.glb",
+                characteristics: [
+                    {
+                        "Orbital Characteristics": {
+                            "Aphelion": {
+                                "km": "249261000 km",
+                                "mi": "154884000 mi",
+                                "AU": "1.66621 AU"
+                            },
+                            "Perihelion": {
+                                "km": "206650000 km",
+                                "mi": "128410000",
+                                "AU": "1.3814 AU"
+                            },
+                            "Semi-major Axis": {
+                                "km": "227939366 km",
+                                "mi": "141634956 mi",
+                                "AU": "1.52368055 AU"
+                            },
+                            "Eccentricity": 0.0934,
+                            "Orbital Period (Sidereal)": {
+                                "Days": "686.980 days",
+                                "Years": "1.88085 years",
+                                "Sols": "668.5991 sols"
+                            },
+                            "Orbital Period (Synodic)": {
+                                "Days": "779.94 days",
+                                "Years": "2.1354 years"
+                            },
+                            "Average Orbital Speed": {
+                                "kmPerSec": "24.07 km/s",
+                                "kmPerHour": "86700 km/h",
+                                "mph": "53800 mph"
+                            },
+                            "Mean Anomaly": "19.412°",
+                            "Inclination": {
+                                "To Ecliptic": "1.850°",
+                                "To Sun Equator": "5.65°",
+                                "To Invariable Plane": "1.63°"
+                            },
+                            "Longitude of Ascending Node": "49.57854°",
+                            "Time of Perihelion": "2022-Jun-21",
+                            "Argument of Perihelion": "286.5°",
+                            "Satellites": 2
+                        },
+                        "Physical Characteristics": {
+                            "Mean Radius": {
+                                "km": "3389.5 ± 0.2 km",
+                                "mi": "2106.1 ± 0.1 mi"
+                            },
+                            "Equatorial Radius": {
+                                "km": "3396.2 ± 0.1 km",
+                                "mi": "2110.3 ± 0.1 mi",
+                                "Earths": "0.533 Earths"
+                            },
+                            "Polar Radius": {
+                                "km": "3376.2 ± 0.1 km",
+                                "mi": "2097.9 ± 0.1 mi",
+                                "Earths": "0.531 Earths"
+                            },
+                            "Flattening": 0.00589,
+                            "Surface Area": {
+                                "km2": "144.37×106 km2",
+                                "sqMi": "5.574×107 sq mi",
+                                "Earths": "0.284 Earths"
+                            },
+                            "Volume": {
+                                "km3": "1.63118×1011 km3",
+                                "Earths": "0.151 Earths"
+                            },
+                            "Mass": {
+                                "kg": "6.4171×1023 kg",
+                                "Earths": "0.107 Earths"
+                            },
+                            "Mean Density": {
+                                "gPerCm3": "3.9335 g/cm3",
+                                "lbPerCuIn": "0.1421 lb/cu in"
+                            },
+                            "Surface Gravity": {
+                                "mPerS2": "3.72076 m/s2",
+                                "ftPerS2": "12.2072 ft/s2",
+                                "g": "0.3794 g"
+                            },
+                            "Moment of Inertia Factor": 0.3644,
+                            "Escape Velocity": {
+                                "kmPerS": "5.027 km/s",
+                                "kmPerH": "18100 km/h",
+                                "mph": "11250 mph"
+                            },
+                            "Synodic Rotation Period": {
+                                "Days": "1.02749125 d",
+                                "Time": "24h 39m 36s"
+                            },
+                            "Sidereal Rotation Period": {
+                                "Days": "1.025957 d",
+                                "Time": "24h 37m 22.7s"
+                            },
+                            "Equatorial Rotation Velocity": {
+                                "mPerS": "241 m/s",
+                                "kmPerH": "870 km/h",
+                                "mph": "540 mph"
+                            },
+                            "Axial Tilt": "25.19° to its orbital plane",
+                            "North Pole Right Ascension": {
+                                "Degrees": "317.68143°",
+                                "Time": "21h 10m 44s"
+                            },
+                            "North Pole Declination": "52.88650°",
+                            "Albedo": {
+                                "Geometric": 0.170,
+                                "Bond": 0.25
+                            },
+                            "Temperature": {
+                                "Blackbody": "−64°C",
+                                "Surface": {
+                                    "Min": "−110°C",
+                                    "Mean": "−60°C",
+                                    "Max": "35°C"
+                                }
+                            },
+                            "Surface Absorbed Dose Rate": "8.8 μGy/h",
+                            "Surface Equivalent Dose Rate": "27 μSv/h",
+                            "Apparent Magnitude": "−2.94 to +1.86",
+                            "Absolute Magnitude": "−1.5",
+                            "Angular Diameter": "3.5–25.1″"
+                        },
+                        "Atmosphere": {
+                            "Surface Pressure": {
+                                "kPa": "0.636 kPa",
+                                "atm": "0.00628 atm"
+                            },
+                            "Composition by Volume": {
+                                "Carbon Dioxide": "95.97%",
+                                "Argon": "1.93%",
+                                "Nitrogen": "1.89%",
+                                "Oxygen": "0.146%",
+                                "Carbon Monoxide": "0.0557%",
+                                "Water Vapor": "0.0210%"
+                            }
                         }
-                    },
-                    "Surface Absorbed Dose Rate": "8.8 μGy/h",
-                    "Surface Equivalent Dose Rate": "27 μSv/h",
-                    "Apparent Magnitude": "−2.94 to +1.86",
-                    "Absolute Magnitude": "−1.5",
-                    "Angular Diameter": "3.5–25.1″"
-                },
-                "Atmosphere": {
-                    "Surface Pressure": {
-                        "kPa": "0.636 kPa",
-                        "atm": "0.00628 atm"
-                    },
-                    "Composition by Volume": {
-                        "Carbon Dioxide": "95.97%",
-                        "Argon": "1.93%",
-                        "Nitrogen": "1.89%",
-                        "Oxygen": "0.146%",
-                        "Carbon Monoxide": "0.0557%",
-                        "Water Vapor": "0.0210%"
                     }
-                }
+                ]
             }
         ]
-
     },
     //Moons
     {
@@ -159,6 +165,7 @@ export const modelsData = [
                 category: 'moons',
                 name: 'Phobos',
                 cover: '/assets/covers/phobos.png',
+                model3d: "/assets/models/phobos.glb",
                 description: 'Phobos is the innermost and larger of the two natural satellites of Mars.It is named after Phobos, the Greek god of fear and panic, who is the son of Ares (Mars) and twin brother of Deimos.',
                 characteristics: [
                     {
@@ -205,6 +212,7 @@ export const modelsData = [
                 category: 'moons',
                 name: 'Deimos',
                 cover: '/assets/covers/deimos.png',
+                model3d: "/assets/models/deimos.glb",
                 description: `Deimos is the smaller and outermost of the two natural satellites of Mars. The moon is named after Deimos, a figure representing dread in Greek mythology. The name was suggested by academic Henry Madan, who drew from Book XV of the Iliad, where Ares (the Roman god Mars) summons Dread (Deimos) and Fear (Phobos).`,
                 characteristics: [
                     {
@@ -267,6 +275,8 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'active',
                         name: 'Curiosity',
+                        cover: '/assets/covers/curiosity.png',
+                        model3d: "/assets/models/curiosity.glb",
                         description: 'Curiosity is a car-sized Mars rover exploring Gale crater and Mount Sharp on Mars as part of NASA\'s Mars Science Laboratory (MSL) mission. Curiosity was launched from Cape Canaveral (CCAFS) on November 26, 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on August 6, 2012, 05:17:57 UTC. The Bradbury Landing site was less than 2.4 km (1.5 mi) from the center of the rover\'s touchdown target after a 560 million km (350 million mi) journey.Adjusted for inflation, Curiosity has a life-cycle cost of US$3.2 billion in 2020 dollars.',
                         characteristics: [
                             {
@@ -330,6 +340,8 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'active',
                         name: 'Perseverance',
+                        cover: '/assets/covers/perseverance.png',
+                        model3d: "/assets/models/perseverance.glb",
                         description: 'Perseverance, nicknamed Percy, is a car-sized Mars rover designed to explore the Jezero crater on Mars as part of NASA\'s Mars 2020 mission. It was manufactured by the Jet Propulsion Laboratory and launched on July 30, 2020, at 11:50 UTC.Confirmation that the rover successfully landed on Mars was received on February 18, 2021, at 20:55 UTC. As of 2 September 2023, Perseverance has been active on Mars for 901 sols (926 Earth days, or 2 years, 6 months and 15 days) since its landing. Following the rover\'s arrival, NASA named the landing site Octavia E. Butler Landing.Perseverance has a similar design to its predecessor rover, Curiosity, although it was moderately upgraded. It carries seven primary payload instruments, nineteen cameras, and two microphones.The rover also carried the mini-helicopter Ingenuity to Mars, an experimental aircraft and technology testbed that made the first powered flight on another planet on April 19, 2021. As of May 26, 2023, it has made 52 successful flights and continues to break its own records for speed, distance and altitude.',
                         characteristics: [
                             {
@@ -340,10 +352,18 @@ export const modelsData = [
                                     "Dry mass": "1,025 kilograms (2,260 lb)"
                                 },
                                 "Objectives": {
-                                    "Looking for habitability": "Identify past environments that were capable of supporting microbial life.",
-                                    "Seeking biosignatures": "Seek signs of possible past microbial life in those habitable environments, particularly in specific rock types known to preserve signs over time.",
-                                    "Caching samples": "Collect core rock and regolith ('soil') samples and store them within the rover and on the Martian surface (as a backup) for delivery to a future sample return rocket.",
-                                    "Preparing for humans": "Test oxygen production from the Martian atmosphere."
+                                    "Looking for habitability": [
+                                        "Identify past environments that were capable of supporting microbial life."
+                                    ],
+                                    "Seeking biosignatures": [
+                                        "Seek signs of possible past microbial life in those habitable environments, particularly in specific rock types known to preserve signs over time."
+                                    ],
+                                    "Caching samples": [
+                                        "Collect core rock and regolith ('soil') samples and store them within the rover and on the Martian surface (as a backup) for delivery to a future sample return rocket."
+                                    ],
+                                    "Preparing for humans": [
+                                        "Test oxygen production from the Martian atmosphere."
+                                    ]
                                 },
                                 "Communication": {
                                     "UHF": "~400 MHz, 2 Mbit/s",
@@ -388,6 +408,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Sojourner',
+                        cover: '/assets/covers/sojourner.png',
                         description: 'Sojourner is a robotic Mars rover that landed in the Ares Vallis channel in the Chryse Planitia region of the Oxia Palus quadrangle on July 4, 1997. Sojourner was operational on Mars for 92 sols (95 Earth days). It was the first wheeled vehicle to rove on a planet other than Earth and formed part of the Mars Pathfinder mission.',
                         characteristics: [
                             {
@@ -433,6 +454,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Spirit',
+                        cover: '/assets/covers/spirit.png',
                         description: 'Spirit, also known as MER-A (Mars Exploration Rover – A) or MER-2, is a Mars robotic rover, active from 2004 to 2010. Spirit was operational on Mars for 2208 sols or 3.3 Martian years (6 years, 77 days). It was one of two rovers of NASA\'s Mars Exploration Rover Mission managed by the Jet Propulsion Laboratory (JPL). Spirit landed successfully within the impact crater Gusev on Mars at 04:35 Ground UTC on January 4, 2004, three weeks before its twin, Opportunity (MER-B), which landed on the other side of the planet. Its name was chosen through a NASA-sponsored student essay competition. The rover got stuck in a "sand trap" in late 2009 at an angle that hampered recharging of its batteries; its last communication with Earth was on March 22, 2010.',
                         characteristics: [
                             {
@@ -502,6 +524,8 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Opportunity',
+                        cover: '/assets/covers/opportunity.png',
+                        model3d: '/assets/models/opportunity.glb',
                         description: 'Opportunity, also known as MER-B (Mars Exploration Rover – B) or MER-1, is a robotic rover that was active on Mars from 2004 until 2018. Opportunity was operational on Mars for 5111 sols (14 years, 138 days on Earth). Launched on July 7, 2003, as part of NASA\'s Mars Exploration Rover program, it landed in Meridiani Planum on January 25, 2004, three weeks after its twin, Spirit (MER-A), touched down on the other side of the planet.With a planned 90-sol duration of activity (slightly less than 92.5 Earth days), Spirit functioned until it got stuck in 2009 and ceased communications in 2010, while Opportunity was able to stay operational for 5111 sols after landing, maintaining its power and key systems through continual recharging of its batteries using solar power, and hibernating during events such as dust storms to save power. This careful operation allowed Opportunity to operate for 57 times its designed lifespan, exceeding the initial plan by 14 years, 47 days (in Earth time). By June 10, 2018, when it last contacted NASA, the rover had traveled a distance of 45.16 kilometers (28.06 miles).',
                         characteristics: [
                             {
@@ -559,6 +583,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Zhurong',
+                        cover: '/assets/covers/zhurong.png',
                         description: 'Zhurong is a Chinese rover on Mars, the country\'s first to land on another planet after it previously landed two rovers on the Moon. The rover is part of the Tianwen-1 mission to Mars conducted by the China National Space Administration (CNSA).Designed for a lifespan of 90 sols (93 Earth days), Zhurong was active for 347 sols (356.5 days) after its deployment on Mars\'s surface. The rover became inactive on 20 May 2022 due to approaching sandstorms and Martian winter, pending its self-awakening with appropriate temperature and sunlight conditions. Zhurong never woke up from its hibernation. The rover was expected to wake in December 2022 as winter in the Martian northern hemisphere drew to a close and sunlight increased, but did not. NASA images showed the rover in the same position where it had entered its hibernation period, almost a year earlier. Zhurong is named after a Chinese mytho-historical figure usually associated with fire and light, as Mars is called "the Planet of Fire" in China and some other countries in East Asia. It was selected by a public online vote held between 20 January 2021 and 28 February 2021, with Zhurong ranking first with 504,466 votes. The name was chosen with the meanings of "igniting the fire of interstellar exploration in China" and "to symbolize the Chinese people\'s determination to explore the stars and to uncover unknowns in the universe".',
                         characteristics: [
                             {
@@ -608,6 +633,8 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: '2001 Mars Odyssey',
+                        cover: '/assets/covers/mars-odyssey.png',
+                        model3d: '/assets/models/odyssey.glb',
                         description: '2001 Mars Odyssey is a robotic spacecraft orbiting the planet Mars. The project was developed by NASA, and contracted out to Lockheed Martin, with an expected cost for the entire mission of US$297 million. Its mission is to use spectrometers and a thermal imager to detect evidence of past or present water and ice, as well as study the planet\'s geology and radiation environment. It also acts as a relay for communications between the Curiosity rover, and previously the Mars Exploration Rovers and Phoenix lander, to Earth. The mission was named as a tribute to Arthur C. Clarke, evoking the name of his and Stanley Kubrick\'s 1968 film 2001: A Space Odyssey.',
                         characteristics: [
                             {
@@ -676,6 +703,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'Mars Express',
+                        cover: '/assets/covers/mars-express.png',
                         description: 'Mars Express is a space exploration mission being conducted by the European Space Agency (ESA). The Mars Express mission is exploring the planet Mars, and is the first planetary mission attempted by the agency."Express" originally referred to the speed and efficiency with which the spacecraft was designed and built. However, "Express" also describes the spacecraft\'s relatively short interplanetary voyage, a result of being launched when the orbits of Earth and Mars brought them closer than they had been in about 60,000 years.',
                         characteristics: [
                             {
@@ -721,6 +749,8 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'MRO (The Mars Reconnaissance Orbiter)',
+                        cover: '/assets/covers/mro.png',
+                        model3d: '/assets/models/mro.glb',
                         description: 'The Mars Reconnaissance Orbiter (MRO) is a spacecraft designed to search for the existence of water on Mars and provide support for missions to Mars, as part of NASA\'s Mars Exploration Program. It was launched from Cape Canaveral on August 12, 2005, at 11:43 UTC and reached Mars on March 10, 2006, at 21:24 UTC. In November 2006, after six months of aerobraking, it entered its final science orbit and began its primary science phase. MRO played a key role in choosing safe landing sites for the Phoenix lander in 2008, Mars Science Laboratory / Curiosity rover in 2012, InSight lander in 2018, and the Mars 2020 / Perseverance rover in 2021.',
                         characteristics: [
                             {
@@ -773,6 +803,8 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: "MAVEN (Mars Atmosphere and Volatile Evolution)",
+                        cover: '/assets/covers/maven.png',
+                        model3d: '/assets/models/maven.glb',
                         description: 'MAVEN is a NASA spacecraft orbiting Mars to study the loss of that planet\'s atmospheric gases to space, providing insight into the history of the planet\'s climate and water.The name is an acronym for "Mars Atmosphere and Volatile Evolution" while the word maven also denotes "a person who has special knowledge or experience, an expert".',
                         characteristics: [
                             {
@@ -789,7 +821,7 @@ export const modelsData = [
                             },
                             {
                                 "Mission objectives": [
-                                    "Measure the composition and structure of the upper atmosphere and ionosphere today, and determine the processes responsible for controlling them",
+                                    "Measure the composition and structure of the upper atmosphere and ionosphere and determine the processes responsible for controlling them",
                                     "Measure the rate of loss of gas from the top of the atmosphere to space, and determine the processes responsible for controlling them",
                                     "Determine properties and characteristics that will allow us to extrapolate backwards in time to determine the integrated loss to space over the four-billion-year history recorded in the geological record"
                                 ]
@@ -830,6 +862,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'ExoMars (The ExoMars Trace Gas Orbiter)',
+                        cover: '/assets/covers/exomars.png',
                         description: 'The ExoMars Trace Gas Orbiter (TGO or ExoMars Orbiter) is a collaborative project between the European Space Agency (ESA) and the Russian Roscosmos agency that sent an atmospheric research orbiter and the Schiaparelli demonstration lander to Mars in 2016 as part of the European-led ExoMars programme.',
                         characteristics: [
                             {

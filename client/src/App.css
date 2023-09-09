@@ -8,15 +8,3 @@
   --primary-color: #000213;
   background-color: var(--primary-color);
 }
-
-#stars {
-  z-index: -1;
-}
-
-#stars2 {
-  z-index: -2;
-}
-
-#stars3 {
-  z-index: -3;
-}

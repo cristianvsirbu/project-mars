@@ -12,7 +12,7 @@ import { useFetchData } from "../hooks/useFetchData";
     }
 
     return (
-      <div className="text-3xl text-white w-full">
+      <div className="text-xl text-white w-full">
         <Characteristics data={chars} />
       </div>
     );

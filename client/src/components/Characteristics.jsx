@@ -60,7 +60,7 @@ function Characteristics({ data }) {
 
     function generateDiv(key, parentKey, hasChildObjects, childData) {
         return (
-            <div key={key} className="py-6">
+            <div key={key} className="py-6 px-2 text-center">
                 <span className="font-bold text-2xl">
                     {parentKey ? `${key}` : key}
                 </span>
@@ -74,7 +74,7 @@ function Characteristics({ data }) {
     function generateSimpleDiv(key, value) {
         return (
             <div key={key} className="px-6 py-2">
-                <div className="flex flex-col text-left">
+                <div className="flex flex-col">
                     <span className={`text-orange-500 font-medium`}>{key}:</span>
                     <span className="text-slate-400">{value}</span>
                 </div>
