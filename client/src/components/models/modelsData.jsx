@@ -1655,7 +1655,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
-                "Carrier rocket": "Molniya"
+                "Carrier rocket": "Molniya",
+                logo: '/assets/logos/okb1-logo.png'
             },
             {
                 "Mission": "1M No.2",
@@ -1665,7 +1666,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
-                "Carrier rocket": "Molniya"
+                "Carrier rocket": "Molniya",
+                logo: '/assets/logos/okb1-logo.png'
             },
             {
                 "Mission": "2MV-4 No.1",
@@ -1675,7 +1677,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Launch failure",
                 "Remarks": "Booster stage (\"Block L\") disintegrated in LEO",
-                "Carrier rocket": "Molniya"
+                "Carrier rocket": "Molniya",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mars 1",
@@ -1696,7 +1699,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Launch failure",
                 "Remarks": "Never left LEO",
-                "Carrier rocket": "Molniya"
+                "Carrier rocket": "Molniya",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mariner 3",
@@ -1706,7 +1710,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Launch failure",
                 "Remarks": "Payload fairing failed to separate",
-                "Carrier rocket": "Atlas LV-3 Agena-D"
+                "Carrier rocket": "Atlas LV-3 Agena-D",
+                logo: '/assets/logos/nasa-logo.svg'
             },
             {
                 "Mission": "Mariner 4",
@@ -1716,7 +1721,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
                 "Remarks": "First successful flyby of Mars on 15 July 1965",
-                "Carrier rocket": "Atlas LV-3 Agena-D"
+                "Carrier rocket": "Atlas LV-3 Agena-D",
+                logo: '/assets/logos/nasa-logo.svg'
             },
             {
                 "Mission": "Zond 2",
@@ -1726,7 +1732,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Communications lost before flyby",
-                "Carrier rocket": "Molniya"
+                "Carrier rocket": "Molniya",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mariner 6",
@@ -1735,7 +1742,8 @@ export const modelsData = [
                 "Operator": "NASA United States",
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
-                "Carrier rocket": "Atlas SLV-3C Centaur-D"
+                "Carrier rocket": "Atlas SLV-3C Centaur-D",
+                logo: '/assets/logos/nasa-logo.svg'
             },
             {
                 "Mission": "2M No.521 (1969A)",
@@ -1745,7 +1753,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mariner 7",
@@ -1754,7 +1763,8 @@ export const modelsData = [
                 "Operator": "NASA United States",
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
-                "Carrier rocket": "Atlas SLV-3C Centaur-D"
+                "Carrier rocket": "Atlas SLV-3C Centaur-D",
+                logo: '/assets/logos/nasa-logo.svg'
             },
             {
                 "Mission": "2M No.522 (1969B)",
@@ -1764,7 +1774,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mariner 8",
@@ -1774,7 +1785,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
-                "Carrier rocket": "Atlas SLV-3C Centaur-D"
+                "Carrier rocket": "Atlas SLV-3C Centaur-D",
+                logo: '/assets/logos/nasa-logo.svg'
             },
             {
                 "Mission": "Kosmos 419 (3MS No.170)",
@@ -1784,7 +1796,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Launch failure",
                 "Remarks": "Never left LEO; booster stage burn timer set incorrectly",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mars 2 (4M No.171)",
@@ -1815,7 +1828,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Partial success",
                 "Remarks": "Failed to perform orbital insertion burn. Returned photographs of Mars during flyby.",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mars 5 (3MS No.53S)",
@@ -1825,7 +1839,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Successful",
                 "Remarks": "Contact lost after 9 days in Mars orbit. Returned 180 frames",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mars 6 (3MP No.50P)",
@@ -1835,7 +1850,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
                 "Remarks": "Flyby bus collected data.",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mars 6 lander",
@@ -1845,7 +1861,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Contact lost upon landing, atmospheric data mostly unusable.",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mars 7 (3MP No.51P)",
@@ -1855,7 +1872,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
                 "Remarks": "Flyby bus collected data.",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mars 7 lander",
@@ -1865,7 +1883,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Separated from coast stage prematurely, failed to enter Martian atmosphere.",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Viking 1 orbiter",
@@ -1875,7 +1894,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Successful",
                 "Remarks": "Operated for 1385 orbits. Entered Mars orbit on 19 June 1976.",
-                "Carrier rocket": "Titan IIIE Centaur-D1T"
+                "Carrier rocket": "Titan IIIE Centaur-D1T",
+                logo: '/assets/logos/nasa-worm-logo.svg'
             },
             {
                 "Mission": "Viking 1 lander",
@@ -1885,7 +1905,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Successful",
                 "Remarks": "First successful Mars lander. Deployed from Viking 1 orbiter. Landed on Mars on 20 July 1976. Operated for 2245 sols.",
-                "Carrier rocket": "Titan IIIE Centaur-D1T"
+                "Carrier rocket": "Titan IIIE Centaur-D1T",
+                logo: '/assets/logos/nasa-worm-logo.svg'
             },
             {
                 "Mission": "Viking 2 orbiter",
@@ -1895,7 +1916,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Successful",
                 "Remarks": "Operated for 700 orbits. Entered Mars orbit on 7 August 1976.",
-                "Carrier rocket": "Titan IIIE Centaur-D1T"
+                "Carrier rocket": "Titan IIIE Centaur-D1T",
+                logo: '/assets/logos/nasa-worm-logo.svg'
             },
             {
                 "Mission": "Viking 2 lander",
@@ -1905,7 +1927,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Successful",
                 "Remarks": "Deployed from Viking 2 orbiter. Landed on Mars on September 1976. Operated for 1281 sols (11 April 1980).",
-                "Carrier rocket": "Titan IIIE Centaur-D1T"
+                "Carrier rocket": "Titan IIIE Centaur-D1T",
+                logo: '/assets/logos/nasa-worm-logo.svg'
             },
             {
                 "Mission": "Phobos 1 (1F No.101)",
@@ -1915,7 +1938,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Communications lost before reaching Mars; failed to enter orbit",
-                "Carrier rocket": "Proton-K/D-2"
+                "Carrier rocket": "Proton-K/D-2",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Phobos 1 DAS",
@@ -1925,7 +1949,8 @@ export const modelsData = [
                 "Mission Type": "Phobos lander",
                 "Outcome": "Failure",
                 "Remarks": "Lost with Phobos 1. To have been deployed by Phobos 1",
-                "Carrier rocket": "Proton-K/D-2"
+                "Carrier rocket": "Proton-K/D-2",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Phobos 2 (1F No.102)",
@@ -1935,7 +1960,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Mostly successful",
                 "Remarks": "Orbital observations successful, communications lost before lander deployment.",
-                "Carrier rocket": "Proton-K/D-2"
+                "Carrier rocket": "Proton-K/D-2",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Phobos 2 Prop-F",
@@ -1945,7 +1971,8 @@ export const modelsData = [
                 "Mission Type": "Phobos rover",
                 "Outcome": "Failure",
                 "Remarks": "Lost with Phobos 2. To have been deployed by Phobos 2",
-                "Carrier rocket": "Proton-K/D-2"
+                "Carrier rocket": "Proton-K/D-2",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Phobos 2",
@@ -1955,7 +1982,8 @@ export const modelsData = [
                 "Mission Type": "Phobos lander",
                 "Outcome": "Failure",
                 "Remarks": "Lost with Phobos 2",
-                "Carrier rocket": "Proton-K/D-2"
+                "Carrier rocket": "Proton-K/D-2",
+                logo: '/assets/logos/ussr-logo.svg'
             },
             {
                 "Mission": "Mars Observer",
@@ -1965,7 +1993,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Lost communications before orbital insertion",
-                "Carrier rocket": "Commercial Titan III"
+                "Carrier rocket": "Commercial Titan III",
+                logo: '/assets/logos/nasa-logo.svg'
             },
             {
                 "Mission": "Mars Global Surveyor",
@@ -1986,7 +2015,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter Penetrators",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Never left LEO",
-                "Carrier rocket": "Proton-K/D-2"
+                "Carrier rocket": "Proton-K/D-2",
+                logo: '/assets/logos/rosaviacosmos-logo.png'
             },
             {
                 "Mission": "Mars 96",
@@ -1996,7 +2026,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Failure",
                 "Remarks": "Lost with Mars 96. Two Mars landers to have been deployed by Mars 96.",
-                "Carrier rocket": "Proton-K/D-2"
+                "Carrier rocket": "Proton-K/D-2",
+                logo: '/assets/logos/rosaviacosmos-logo.png'
             },
             {
                 "Mission": "Mars 96",
@@ -2006,7 +2037,8 @@ export const modelsData = [
                 "Mission Type": "Penetrator",
                 "Outcome": "Failure",
                 "Remarks": "Lost with Mars 96. Two Mars Penetrators to have been deployed by Mars 96.",
-                "Carrier rocket": "Proton-K/D-2"
+                "Carrier rocket": "Proton-K/D-2",
+                logo: '/assets/logos/rosaviacosmos-logo.png'
             },
             {
                 "Mission": "Mars Pathfinder",
@@ -2038,7 +2070,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Performed a Mars flyby. Later contact lost due to loss of fuel.",
-                "Carrier rocket": "M-V"
+                "Carrier rocket": "M-V",
+                logo: '/assets/logos/isas-logo.png'
             },
             {
                 "Mission": "Mars Climate Orbiter",
@@ -2048,7 +2081,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Approached Mars too closely during orbit insertion attempt due to a software interface bug involving different units for impulse and either burned up in the atmosphere or entered solar orbit.",
-                "Carrier rocket": "Delta II 7425"
+                "Carrier rocket": "Delta II 7425",
+                logo: '/assets/logos/nasa-logo.svg'
             },
             {
                 "Mission": "Mars Polar Lander / Deep Space 2",
@@ -2058,17 +2092,6 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Failed to function after landing.",
-                "Carrier rocket": "Delta II 7425",
-                logo: '/assets/logos/m98-logo.png'
-            },
-            {
-                "Mission": "Mars Polar Lander / Deep Space 2",
-                "Spacecraft": "Deep Space 2",
-                "Launch Date": "3 January 1999",
-                "Operator": "NASA United States",
-                "Mission Type": "Penetrator",
-                "Outcome": "Spacecraft failure",
-                "Remarks": "No data transmitted after deployment from MPL.",
                 "Carrier rocket": "Delta II 7425",
                 logo: '/assets/logos/m98-logo.png'
             },
@@ -2201,7 +2224,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter Phobos sample return",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Never left LEO (intended to depart under own power)",
-                "Carrier rocket": "Zenit-2M"
+                "Carrier rocket": "Zenit-2M",
+                logo: '/assets/logos/roscosmos-logo.svg'
             },
             {
                 "Mission": "Fobos-Grunt / Yinghuo-1 Yinghuo-1",
@@ -2211,7 +2235,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Failure",
                 "Remarks": "Lost with Fobos-Grunt. To have been deployed by Fobos-Grunt",
-                "Carrier rocket": "Zenit-2M"
+                "Carrier rocket": "Zenit-2M",
+                logo: '/assets/logos/cnsa-logo.svg'
             },
             {
                 "Mission": "Mars Science Laboratory Curiosity (Mars Science Laboratory)",

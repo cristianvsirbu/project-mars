@@ -142,7 +142,7 @@ const MissionsPage = () => {
                   <li key={key} className={`flex flex-col text-slate-400 font-medium`}>
                     <strong className='text-orange-500'>{key}: </strong>
                     <span className={`
-                ${key === 'Mission' ? 'font-bold italic text-[1.8rem] text-white' : ''}
+                ${key === 'Mission' ? 'font-bold italic text-[1.8rem] xl:text-center text-white' : ''}
                 ${key === 'Outcome' ? getColorClass(value) : ''}`}>
                       {value}
                     </span>
