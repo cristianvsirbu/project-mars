@@ -1,8 +1,7 @@
 
 
 function Characteristics({ data }) {
-
-    // Recursive function to render characteristics
+  // Recursive function to render characteristics
     function renderCharacteristics(data, parentKey = "") {
         const result = Object.keys(data).map((key) => {
             if (Array.isArray(data[key])) {

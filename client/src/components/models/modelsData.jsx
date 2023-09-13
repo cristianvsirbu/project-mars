@@ -275,7 +275,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'active',
                         name: 'Curiosity',
-                        cover: '/assets/covers/curiosity.png',
+                        cover: '/assets/rovers/curiosity.png',
                         model3d: "/assets/models/curiosity.glb",
                         description: 'Curiosity is a car-sized Mars rover exploring Gale crater and Mount Sharp on Mars as part of NASA\'s Mars Science Laboratory (MSL) mission. Curiosity was launched from Cape Canaveral (CCAFS) on November 26, 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on August 6, 2012, 05:17:57 UTC. The Bradbury Landing site was less than 2.4 km (1.5 mi) from the center of the rover\'s touchdown target after a 560 million km (350 million mi) journey.Adjusted for inflation, Curiosity has a life-cycle cost of US$3.2 billion in 2020 dollars.',
                         characteristics: [
@@ -340,7 +340,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'active',
                         name: 'Perseverance',
-                        cover: '/assets/covers/perseverance.png',
+                        cover: '/assets/rovers/perseverance.png',
                         model3d: "/assets/models/perseverance.glb",
                         description: 'Perseverance, nicknamed Percy, is a car-sized Mars rover designed to explore the Jezero crater on Mars as part of NASA\'s Mars 2020 mission. It was manufactured by the Jet Propulsion Laboratory and launched on July 30, 2020, at 11:50 UTC.Confirmation that the rover successfully landed on Mars was received on February 18, 2021, at 20:55 UTC. As of 2 September 2023, Perseverance has been active on Mars for 901 sols (926 Earth days, or 2 years, 6 months and 15 days) since its landing. Following the rover\'s arrival, NASA named the landing site Octavia E. Butler Landing.Perseverance has a similar design to its predecessor rover, Curiosity, although it was moderately upgraded. It carries seven primary payload instruments, nineteen cameras, and two microphones.The rover also carried the mini-helicopter Ingenuity to Mars, an experimental aircraft and technology testbed that made the first powered flight on another planet on April 19, 2021. As of May 26, 2023, it has made 52 successful flights and continues to break its own records for speed, distance and altitude.',
                         characteristics: [
@@ -408,7 +408,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Sojourner',
-                        cover: '/assets/covers/sojourner.png',
+                        cover: '/assets/rovers/sojourner.png',
                         description: 'Sojourner is a robotic Mars rover that landed in the Ares Vallis channel in the Chryse Planitia region of the Oxia Palus quadrangle on July 4, 1997. Sojourner was operational on Mars for 92 sols (95 Earth days). It was the first wheeled vehicle to rove on a planet other than Earth and formed part of the Mars Pathfinder mission.',
                         characteristics: [
                             {
@@ -454,7 +454,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Spirit',
-                        cover: '/assets/covers/spirit.png',
+                        cover: '/assets/rovers/spirit.png',
                         description: 'Spirit, also known as MER-A (Mars Exploration Rover – A) or MER-2, is a Mars robotic rover, active from 2004 to 2010. Spirit was operational on Mars for 2208 sols or 3.3 Martian years (6 years, 77 days). It was one of two rovers of NASA\'s Mars Exploration Rover Mission managed by the Jet Propulsion Laboratory (JPL). Spirit landed successfully within the impact crater Gusev on Mars at 04:35 Ground UTC on January 4, 2004, three weeks before its twin, Opportunity (MER-B), which landed on the other side of the planet. Its name was chosen through a NASA-sponsored student essay competition. The rover got stuck in a "sand trap" in late 2009 at an angle that hampered recharging of its batteries; its last communication with Earth was on March 22, 2010.',
                         characteristics: [
                             {
@@ -524,7 +524,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Opportunity',
-                        cover: '/assets/covers/opportunity.png',
+                        cover: '/assets/rovers/opportunity.png',
                         model3d: '/assets/models/opportunity.glb',
                         description: 'Opportunity, also known as MER-B (Mars Exploration Rover – B) or MER-1, is a robotic rover that was active on Mars from 2004 until 2018. Opportunity was operational on Mars for 5111 sols (14 years, 138 days on Earth). Launched on July 7, 2003, as part of NASA\'s Mars Exploration Rover program, it landed in Meridiani Planum on January 25, 2004, three weeks after its twin, Spirit (MER-A), touched down on the other side of the planet.With a planned 90-sol duration of activity (slightly less than 92.5 Earth days), Spirit functioned until it got stuck in 2009 and ceased communications in 2010, while Opportunity was able to stay operational for 5111 sols after landing, maintaining its power and key systems through continual recharging of its batteries using solar power, and hibernating during events such as dust storms to save power. This careful operation allowed Opportunity to operate for 57 times its designed lifespan, exceeding the initial plan by 14 years, 47 days (in Earth time). By June 10, 2018, when it last contacted NASA, the rover had traveled a distance of 45.16 kilometers (28.06 miles).',
                         characteristics: [
@@ -583,7 +583,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Zhurong',
-                        cover: '/assets/covers/zhurong.png',
+                        cover: '/assets/rovers/zhurong2.png',
                         description: 'Zhurong is a Chinese rover on Mars, the country\'s first to land on another planet after it previously landed two rovers on the Moon. The rover is part of the Tianwen-1 mission to Mars conducted by the China National Space Administration (CNSA).Designed for a lifespan of 90 sols (93 Earth days), Zhurong was active for 347 sols (356.5 days) after its deployment on Mars\'s surface. The rover became inactive on 20 May 2022 due to approaching sandstorms and Martian winter, pending its self-awakening with appropriate temperature and sunlight conditions. Zhurong never woke up from its hibernation. The rover was expected to wake in December 2022 as winter in the Martian northern hemisphere drew to a close and sunlight increased, but did not. NASA images showed the rover in the same position where it had entered its hibernation period, almost a year earlier. Zhurong is named after a Chinese mytho-historical figure usually associated with fire and light, as Mars is called "the Planet of Fire" in China and some other countries in East Asia. It was selected by a public online vote held between 20 January 2021 and 28 February 2021, with Zhurong ranking first with 504,466 votes. The name was chosen with the meanings of "igniting the fire of interstellar exploration in China" and "to symbolize the Chinese people\'s determination to explore the stars and to uncover unknowns in the universe".',
                         characteristics: [
                             {
@@ -633,7 +633,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: '2001 Mars Odyssey',
-                        cover: '/assets/covers/mars-odyssey.png',
+                        cover: '/assets/satellites/mars-odyssey.png',
                         model3d: '/assets/models/odyssey.glb',
                         description: '2001 Mars Odyssey is a robotic spacecraft orbiting the planet Mars. The project was developed by NASA, and contracted out to Lockheed Martin, with an expected cost for the entire mission of US$297 million. Its mission is to use spectrometers and a thermal imager to detect evidence of past or present water and ice, as well as study the planet\'s geology and radiation environment. It also acts as a relay for communications between the Curiosity rover, and previously the Mars Exploration Rovers and Phoenix lander, to Earth. The mission was named as a tribute to Arthur C. Clarke, evoking the name of his and Stanley Kubrick\'s 1968 film 2001: A Space Odyssey.',
                         characteristics: [
@@ -703,7 +703,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'Mars Express',
-                        cover: '/assets/covers/mars-express.png',
+                        cover: '/assets/satellites/mars-express.png',
                         description: 'Mars Express is a space exploration mission being conducted by the European Space Agency (ESA). The Mars Express mission is exploring the planet Mars, and is the first planetary mission attempted by the agency."Express" originally referred to the speed and efficiency with which the spacecraft was designed and built. However, "Express" also describes the spacecraft\'s relatively short interplanetary voyage, a result of being launched when the orbits of Earth and Mars brought them closer than they had been in about 60,000 years.',
                         characteristics: [
                             {
@@ -748,8 +748,8 @@ export const modelsData = [
                         id: 'mro',
                         category: 'satellites',
                         subcategory: 'functional',
-                        name: 'MRO (The Mars Reconnaissance Orbiter)',
-                        cover: '/assets/covers/mro.png',
+                        name: 'Mars Reconnaissance Orbiter',
+                        cover: '/assets/satellites/mro.png',
                         model3d: '/assets/models/mro.glb',
                         description: 'The Mars Reconnaissance Orbiter (MRO) is a spacecraft designed to search for the existence of water on Mars and provide support for missions to Mars, as part of NASA\'s Mars Exploration Program. It was launched from Cape Canaveral on August 12, 2005, at 11:43 UTC and reached Mars on March 10, 2006, at 21:24 UTC. In November 2006, after six months of aerobraking, it entered its final science orbit and began its primary science phase. MRO played a key role in choosing safe landing sites for the Phoenix lander in 2008, Mars Science Laboratory / Curiosity rover in 2012, InSight lander in 2018, and the Mars 2020 / Perseverance rover in 2021.',
                         characteristics: [
@@ -802,10 +802,10 @@ export const modelsData = [
                         id: 'maven',
                         category: 'satellites',
                         subcategory: 'functional',
-                        name: "MAVEN (Mars Atmosphere and Volatile Evolution)",
-                        cover: '/assets/covers/maven.png',
+                        name: "MAVEN",
+                        cover: '/assets/satellites/maven.png',
                         model3d: '/assets/models/maven.glb',
-                        description: 'MAVEN is a NASA spacecraft orbiting Mars to study the loss of that planet\'s atmospheric gases to space, providing insight into the history of the planet\'s climate and water.The name is an acronym for "Mars Atmosphere and Volatile Evolution" while the word maven also denotes "a person who has special knowledge or experience, an expert".',
+                        description: 'MAVEN (Mars Atmosphere and Volatile Evolution) is a NASA spacecraft orbiting Mars to study the loss of that planet\'s atmospheric gases to space, providing insight into the history of the planet\'s climate and water.The name is an acronym for "Mars Atmosphere and Volatile Evolution" while the word maven also denotes "a person who has special knowledge or experience, an expert".',
                         characteristics: [
                             {
                                 "Mission type": "Mars atmospheric research",
@@ -861,8 +861,8 @@ export const modelsData = [
                         id: 'exomars',
                         category: 'satellites',
                         subcategory: 'functional',
-                        name: 'ExoMars (The ExoMars Trace Gas Orbiter)',
-                        cover: '/assets/covers/exomars.png',
+                        name: 'ExoMars',
+                        cover: '/assets/satellites/exo-mars.png',
                         description: 'The ExoMars Trace Gas Orbiter (TGO or ExoMars Orbiter) is a collaborative project between the European Space Agency (ESA) and the Russian Roscosmos agency that sent an atmospheric research orbiter and the Schiaparelli demonstration lander to Mars in 2016 as part of the European-led ExoMars programme.',
                         characteristics: [
                             {
@@ -922,8 +922,9 @@ export const modelsData = [
                         id: 'hope-probe',
                         category: 'satellites',
                         subcategory: 'functional',
-                        name: 'Emirates Mars Mission (Hope Probe)',
-                        description: 'The Emirates Mars Mission is a United Arab Emirates Space Agency uncrewed space exploration mission to Mars.The mission design, development, and operations are led by the Mohammed bin Rashid Space Centre(MBRSC).The spacecraft was assembled in the United States at the University of Colorado Boulder\'s Laboratory for Atmospheric and Space Physics (LASP) by the Emirati engineers, assisted by their American counterparts, with support from Arizona State University (ASU) and the University of California, Berkeley. The project was led by MBRSC at every stage.',
+                        name: 'Emirates Mars Mission',
+                        cover: '/assets/satellites/hope-probe.png',
+                        description: 'The Emirates Mars Mission (Hope Probe) is a United Arab Emirates Space Agency uncrewed space exploration mission to Mars.The mission design, development, and operations are led by the Mohammed bin Rashid Space Centre(MBRSC).The spacecraft was assembled in the United States at the University of Colorado Boulder\'s Laboratory for Atmospheric and Space Physics (LASP) by the Emirati engineers, assisted by their American counterparts, with support from Arizona State University (ASU) and the University of California, Berkeley. The project was led by MBRSC at every stage.',
                         characteristics: [
                             {
                                 "Operator": "Mohammed bin Rashid Space Centre",
@@ -974,6 +975,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'Tianwen-1',
+                        cover: '/assets/satellites/tianwen-1.png',
                         description: 'Tianwen-1 is an interplanetary mission by the China National Space Administration (CNSA) which sent a robotic spacecraft to Mars, consisting of 6 spacecraft: an orbiter, two deployable cameras, lander, remote camera, and the Zhurong rover. The spacecraft, with a total mass of nearly five tons, is one of the heaviest probes launched to Mars and carries 14 scientific instruments. It is the first in a series of planned missions undertaken by CNSA as part of its Planetary Exploration of China program.',
                         characteristics: [
                             {
@@ -1076,6 +1078,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Viking 1',
+                        cover: '/assets/satellites/viking.png',
                         description: 'Viking 1 was the first of two spacecraft, along with Viking 2, each consisting of an orbiter and a lander, sent to Mars as part of NASA\'s Viking program. The lander touched down on Mars on July 20, 1976, the first successful Mars lander in history. Viking 1 operated on Mars for 2,307 days or 2245 Martian solar days, the longest Mars surface mission until the record was broken by the Opportunity rover on May 19, 2010.',
                         characteristics: [
                             {
@@ -1149,6 +1152,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Viking 2',
+                        cover: '/assets/satellites/viking.png',
                         description: 'The Viking 2 mission was part of the American Viking program to Mars, and consisted of an orbiter and a lander essentially identical to that of the Viking 1 mission. Viking 2 was operational on Mars for 1281 sols (3 years, 221 days). The Viking 2 lander operated on the surface for 1,316 days, or 1281 sols, and was turned off on April 12, 1980, when its batteries failed. The orbiter worked until July 25, 1978, returning almost 16,000 images in 706 orbits around Mars.',
                         characteristics: [
                             {
@@ -1222,6 +1226,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mariner 9',
+                        cover: '/assets/satellites/mariner-9.png',
                         description: 'Mariner 9 was a robotic spacecraft that contributed greatly to the exploration of Mars and was part of the NASA Mariner program. Mariner 9 was launched toward Mars on May 30, 1971, from LC-36B at Cape Canaveral Air Force Station, Florida, and reached the planet on November 14 of the same year, becoming the first spacecraft to orbit another planet – only narrowly beating the Soviet probes Mars 2 (launched May 19) and Mars 3 (launched May 28), which both arrived at Mars only weeks later. After the occurrence of dust storms on the planet for several months following its arrival, the orbiter managed to send back clear pictures of the surface.Mariner 9 successfully returned 7, 329 images over the course of its mission, which concluded in October 1972.',
                         characteristics: [
                             {
@@ -1283,6 +1288,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mars Global Surveyor',
+                        cover: '/assets/satellites/mgs.png',
                         description: 'MGS (Mars Global Surveyor) was an American robotic space probe developed by NASA\'s Jet Propulsion Laboratory and launched November 1996. MGS was a global mapping mission that examined the entire planet, from the ionosphere down through the atmosphere to the surface. As part of the larger Mars Exploration Program, Mars Global Surveyor performed atmospheric monitoring for sister orbiters during aerobraking, and helped Mars rovers and lander missions by identifying potential landing sites and relaying surface telemetry.',
                         characteristics: [
                             {
@@ -1353,6 +1359,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mars 2',
+                        cover: '/assets/satellites/mars235.png',
                         description: 'The Mars 2 was an uncrewed space probe of the Mars program, a series of uncrewed Mars landers and orbiters launched by the Soviet Union beginning 19 May 1971. The Mars 2 and Mars 3 missions consisted of identical spacecraft, each with an orbiter and an attached lander. The orbiter is identical to the Venera 9 bus. The type of bus/orbiter is the 4MV. They were launched by a Proton-K heavy launch vehicle with a Blok D upper stage. The lander of Mars 2 became the first human-made object to reach the surface of Mars, although the landing system failed and the lander was lost.',
                         characteristics: [
                             {
@@ -1417,6 +1424,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mars 3',
+                        cover: '/assets/satellites/mars235.png',
                         description: 'Mars 3 was a robotic space probe of the Soviet Mars program, launched May 28, 1971, nine days after its twin spacecraft Mars 2. The probes were identical robotic spacecraft launched by Proton-K rockets with a Blok D upper stage, each consisting of an orbiter and an attached lander. After the Mars 2 lander crashed on the Martian surface, the Mars 3 lander became the first spacecraft to attain a soft landing on Mars, on December 2, 1971. It failed 110 seconds after landing, having transmitted only a gray image with no details. The Mars 2 orbiter and Mars 3 orbiter continued to circle Mars and transmit images back to Earth for another eight months.',
                         characteristics: [
                             {
@@ -1484,6 +1492,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mars 5',
+                        cover: '/assets/satellites/mars235.png',
                         description: 'Mars 5 also known as 3MS No.53S was a Soviet spacecraft launched to explore Mars.A 3MS spacecraft launched as part of the Mars programme, it successfully entered orbit around Mars in 1974. However, it failed a few weeks later.',
                         characteristics: [
                             {
@@ -1530,6 +1539,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Phobos 2',
+                        cover: '/assets/satellites/phobos-2.png',
                         description: 'Phobos 2 was the last space probe designed by the Soviet Union. It was designed to explore the moons of Mars, Phobos and Deimos. It was launched on 12 July 1988, and entered orbit on 29 January 1989. Phobos 2 operated nominally throughout its cruise and Mars orbital insertion phase on 29 January 1989, gathering data on the Sun, interplanetary medium, Mars, and Phobos. Phobos 2 investigated the Mars surface and atmosphere and returned 37 images of Phobos with a resolution of up to 40 meters.',
                         characteristics: [
                             {
@@ -1570,6 +1580,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'The Mars Orbiter Mission',
+                        cover: '/assets/logos/mom-logo.png',
                         description: 'The Mars Orbiter Mission, unofficially known as Mangalyaan, was a space probe orbiting Mars since 24 September 2014. It was launched on 5 November 2013 by the Indian Space Research Organisation (ISRO).  It was India\'s first interplanetary mission and it made ISRO the fourth space agency to achieve Mars orbit, after Roscosmos, NASA, and the European Space Agency.It made India the first Asian nation to reach the Martian orbit and the first nation in the world to do so on its maiden attempt.',
                         characteristics: [
                             {
@@ -1626,15 +1637,15 @@ export const modelsData = [
         category: 'missions',
         cover:'/assets/covers/missions.png',
         description: 'This is a list of the 50 spacecraft missions (including unsuccessful ones) relating to the planet Mars, such as orbiters and rovers.',
-        launches_by_decade: {
-            "1960s": 12,
-            "1970s": 11,
-            "1980s": 2,
-            "1990s": 6,
-            "2000s": 8,
-            "2010s": 6,
-            "2020s": 3
-        },
+        launches_by_decade: [
+            { decade: "1960s", launches: 12 },
+            { decade: "1970s", launches: 11 },
+            { decade: "1980s", launches: 2 },
+            { decade: "1990s", launches: 6 },
+            { decade: "2000s", launches: 8 },
+            { decade: "2010s", launches: 6 },
+            { decade: "2020s", launches: 3 }
+        ],
         missions: [
             {
                 "Mission": "1M No.1",

@@ -37,7 +37,7 @@ const Home = () => {
                           text-7xl
                           lg:text-8xl
                           4k:text-[10rem]
-                          mars-word">
+                          blink__word">
             MARS
           </h1>
         </div>

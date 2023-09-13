@@ -7,8 +7,8 @@
   -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   border-radius: 22px;
-  border: 1px solid rgba(92, 92, 92, 0.596);
-  background: linear-gradient(103deg, rgba(212, 212, 212, 0.329) -98.71%, rgba(0, 0, 0, 0.445) 103.17%);
+  border: 1px solid #5c5c5c98;
+  background: linear-gradient(103deg, #d4d4d454 -98.71%, rgba(0, 0, 0, 0.445) 103.17%);
   box-shadow: -2px 9px 5px 0px rgba(22, 22, 22, 0.25);
   backdrop-filter: blur(25px);
 }
@@ -48,14 +48,10 @@
   font-weight: 600;
   color: white;
   z-index: 2;
+  border-radius: 22px;
 }
 
-.button__style:hover {
-  background: linear-gradient(135deg, #8f3b15 0%, #ff4d01 100%);
-  font-weight: 900;
-}
-
-.mars-word {
+.blink__word {
   animation: zoom-slow 8s ease-out infinite;
 }
 
@@ -140,5 +136,17 @@
   .parallax:hover {
     clip-path: inset(0 0 0 var(--_f) round var(--r));
     --_t: translateX(calc(-2*var(--_f))) rotateY(calc(-1*var(--_a)));
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
