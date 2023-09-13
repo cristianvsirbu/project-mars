@@ -22,7 +22,7 @@ const MissionsPage = () => {
 
 
   const renderLineChart = (
-    <div className='w-[90vw] h-[40vh] mt-10'>
+    <div className='w-full h-[40vh] mt-10'>
       <ResponsiveContainer>
         <LineChart
           layout="vertical"
@@ -56,11 +56,11 @@ const MissionsPage = () => {
 
 
   const renderAreaChart = (
-    <div className='md:w-[90vw] md:h-[40vh] xl:w-[60vw] xl:h-[60vh] mr-10 mt-10 select-none'>
+    <div className='md:w-full md:p-[2rem] md:h-[40vh] xl:h-[85vh] mt-10 xl:p-[3rem] select-none'>
       <ResponsiveContainer>
         <AreaChart
           data={launchesByDecade}
-          margin={{ top: 10, right: 10, bottom: 50, left: 10 }}
+          margin={{ top: 10, right: 30, bottom: 10, left: -30 }}
           className={`backdrop-blur-sm`}
         >
           <svg >
@@ -157,17 +157,14 @@ const MissionsPage = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col self-center">
         {windowWidth > 767 ? renderAreaChart : renderLineChart}
         <p className='font-bold text-[4rem] text-white text-center blink__word select-none mb-10'>
           Missions
         </p>
-      </div>
       <Missions />
-    </div>
-  )
-
+      </div>
+  );
 }
 
 export default MissionsPage
