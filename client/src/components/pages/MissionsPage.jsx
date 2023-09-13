@@ -125,20 +125,30 @@ const MissionsPage = () => {
     };
 
     return (
-      <div className='text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 gap-8 mx-8'>
+      <div className='text-white grid grid-cols-1 auto-cols-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 gap-8 mx-8'>
         {missions.map((mission, index) => (
           <div key={index} className='blur__card p-10 parallax'>
+              {mission.logo && (
+                <div className='w-full h-[20rem]'>
+                  <img src={mission.logo} className='w-full h-full object-contain' alt={mission.Mission} />
+                </div>
+              )}
             <ul key={index} className='text-[1.1rem] lg:text-[1.3rem] 4k:text-[1.4rem]'>
-              {Object.entries(mission).map(([key, value]) => (
-                <li key={key} className={`flex flex-col text-slate-400`}>
-                  <strong className='text-orange-500'>{key}: </strong>
-                  <span className={`
+              {Object.entries(mission).map(([key, value]) => {
+                if (key === 'logo') {
+                  return null;
+                }
+                return (
+                  <li key={key} className={`flex flex-col text-slate-400 font-medium`}>
+                    <strong className='text-orange-500'>{key}: </strong>
+                    <span className={`
                 ${key === 'Mission' ? 'font-bold italic text-[1.8rem] text-white' : ''}
                 ${key === 'Outcome' ? getColorClass(value) : ''}`}>
-                    {value}
-                  </span>
-                </li>
-              ))}
+                      {value}
+                    </span>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         ))}

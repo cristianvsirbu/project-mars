@@ -1685,7 +1685,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Communications lost before first flyby",
-                "Carrier rocket": "Molniya"
+                "Carrier rocket": "Molniya",
+                logo: '/assets/logos/mars1-logo.jpg'
             },
             {
                 "Mission": "2MV-3 No.1",
@@ -1793,7 +1794,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Successful",
                 "Remarks": "Operated for 362 orbits",
-                "Carrier rocket": "Proton-K/D"
+                "Carrier rocket": "Proton-K/D",
+                logo: '/assets/logos/mars2-3-logo.png'
             },
             {
                 "Mission": "Mars 2 lander (SA 4M No.171)",
@@ -1803,6 +1805,7 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "First lander to impact Mars. Deployed from Mars 2, failed to land during attempt",
+                logo: '/assets/logos/mars2-3-logo.png'
             },
             {
                 "Mission": "Mars 4 (3MS No.52S)",
@@ -1972,7 +1975,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Successful",
                 "Remarks": "Operated for ten years",
-                "Carrier rocket": "Delta II 7925"
+                "Carrier rocket": "Delta II 7925",
+                logo: '/assets/logos/mgs-logo.png'
             },
             {
                 "Mission": "Mars 96",
@@ -2012,7 +2016,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Successful",
                 "Remarks": "Landed at 19.13°N 33.22°W on 4 July 1997. Last contact on 27 September 1997.",
-                "Carrier rocket": "Delta II 7925"
+                "Carrier rocket": "Delta II 7925",
+                logo: '/assets/logos/mp-logo.png'
             },
             {
                 "Mission": "Mars Pathfinder",
@@ -2022,7 +2027,8 @@ export const modelsData = [
                 "Mission Type": "Rover",
                 "Outcome": "Successful",
                 "Remarks": "First rover to operate on another planet. Operated for 84 days.",
-                "Carrier rocket": "Delta II 7925"
+                "Carrier rocket": "Delta II 7925",
+                logo: '/assets/logos/mp-logo.png'
             },
             {
                 "Mission": "Nozomi",
@@ -2052,7 +2058,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Failed to function after landing.",
-                "Carrier rocket": "Delta II 7425"
+                "Carrier rocket": "Delta II 7425",
+                logo: '/assets/logos/m98-logo.png'
             },
             {
                 "Mission": "Mars Polar Lander / Deep Space 2",
@@ -2062,7 +2069,8 @@ export const modelsData = [
                 "Mission Type": "Penetrator",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "No data transmitted after deployment from MPL.",
-                "Carrier rocket": "Delta II 7425"
+                "Carrier rocket": "Delta II 7425",
+                logo: '/assets/logos/m98-logo.png'
             },
             {
                 "Mission": "Mars Polar Lander / Deep Space 2",
@@ -2072,7 +2080,8 @@ export const modelsData = [
                 "Mission Type": "Penetrator",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "No data transmitted after deployment from MPL.",
-                "Carrier rocket": "Delta II 7425"
+                "Carrier rocket": "Delta II 7425",
+                logo: '/assets/logos/m98-logo.png'
             },
             {
                 "Mission": "Mars Odyssey",
@@ -2082,7 +2091,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Operational",
                 "Remarks": "Expected to remain operational until 2025.",
-                "Carrier rocket": "Delta II 7925"
+                "Carrier rocket": "Delta II 7925",
+                logo: '/assets/logos/2001-mars-odyssey-logo.png'
             },
             {
                 "Mission": "Mars Express",
@@ -2092,7 +2102,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Operational",
                 "Remarks": "Enough fuel to remain operational until 2035.",
-                "Carrier rocket": "Soyuz-FG / Fregat"
+                "Carrier rocket": "Soyuz-FG / Fregat",
+                logo: '/assets/logos/mars-express-logo.png'
             },
             {
                 "Mission": "Mars Express",
@@ -2102,7 +2113,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Lander failure",
                 "Remarks": "No communications received after release from Mars Express. Orbital images of landing site suggest a successful landing, but two solar panels failed to deploy, obstructing its communications.",
-                "Carrier rocket": "Soyuz-FG / Fregat"
+                "Carrier rocket": "Soyuz-FG / Fregat",
+                logo: '/assets/logos/mars-express-logo.png'
             },
             {
                 "Mission": "Spirit (MER-A)",
@@ -2112,7 +2124,8 @@ export const modelsData = [
                 "Mission Type": "Rover",
                 "Outcome": "Successful",
                 "Remarks": "Landed on 4 January 2004. Operated for 2208 sols",
-                "Carrier rocket": "Delta II 7925"
+                "Carrier rocket": "Delta II 7925",
+                logo: '/assets/logos/mer-a-logo.png'
             },
             {
                 "Mission": "Opportunity (MER-B)",
@@ -2122,7 +2135,8 @@ export const modelsData = [
                 "Mission Type": "Rover",
                 "Outcome": "Successful",
                 "Remarks": "Landed on 25 January 2004. Operated for 5351 sols",
-                "Carrier rocket": "Delta II 7925H"
+                "Carrier rocket": "Delta II 7925H",
+                logo: '/assets/logos/mer-b-logo.png'
             },
             {
                 "Mission": "Rosetta",
@@ -2132,7 +2146,8 @@ export const modelsData = [
                 "Mission Type": "Flyby (Gravity assist)",
                 "Outcome": "Successful",
                 "Remarks": "Flyby in February 2007 en route to 67P/Churyumov–Gerasimenko",
-                "Carrier rocket": "Ariane 5G+"
+                "Carrier rocket": "Ariane 5G+",
+                logo: '/assets/logos/rosetta-logo.png'
             },
             {
                 "Mission": "Rosetta Philae",
@@ -2142,7 +2157,8 @@ export const modelsData = [
                 "Mission Type": "Flyby (Gravity assist)",
                 "Outcome": "Successful",
                 "Remarks": "Flyby in February 2007 en route to 67P/Churyumov–Gerasimenko",
-                "Carrier rocket": "Ariane 5G+"
+                "Carrier rocket": "Ariane 5G+",
+                logo: '/assets/logos/rosetta-logo.png'
             },
             {
                 "Mission": "Mars Reconnaissance Orbiter",
@@ -2152,7 +2168,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Operational",
                 "Remarks": "Entered orbit on 10 March 2006",
-                "Carrier rocket": "Atlas V 401"
+                "Carrier rocket": "Atlas V 401",
+                logo: '/assets/logos/mro-logo.png'
             },
             {
                 "Mission": "Phoenix",
@@ -2162,7 +2179,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Successful",
                 "Remarks": "Landed on 25 May 2008. End of mission 2 November 2008",
-                "Carrier rocket": "Delta II 7925"
+                "Carrier rocket": "Delta II 7925",
+                logo: '/assets/logos/phoenix-logo.png'
             },
             {
                 "Mission": "Dawn",
@@ -2172,7 +2190,8 @@ export const modelsData = [
                 "Mission Type": "Flyby (Gravity assist)",
                 "Outcome": "Successful",
                 "Remarks": "Flyby in February 2009 en route to 4 Vesta and Ceres",
-                "Carrier rocket": "Delta II 7925H"
+                "Carrier rocket": "Delta II 7925H",
+                logo: '/assets/logos/dawn-logo.png'
             },
             {
                 "Mission": "Fobos-Grunt / Yinghuo-1 Fobos-Grunt",
@@ -2202,7 +2221,8 @@ export const modelsData = [
                 "Mission Type": "Rover",
                 "Outcome": "Operational",
                 "Remarks": "Landed on 6 August 2012",
-                "Carrier rocket": "Atlas V 541"
+                "Carrier rocket": "Atlas V 541",
+                logo: '/assets/logos/msl-logo.png'
             },
             {
                 "Mission": "Mars Orbiter Mission",
@@ -2212,7 +2232,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Successful",
                 "Remarks": "Entered orbit on 24 September 2014. Mission extended to 2022, where the mission concluded on September 27, 2022 after contact was lost.[20]",
-                "Carrier rocket": "PSLV-XL"
+                "Carrier rocket": "PSLV-XL",
+                logo: '/assets/logos/mom-logo.png'
             },
             {
                 "Mission": "MAVEN",
@@ -2222,7 +2243,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Operational",
                 "Remarks": "Orbit insertion on 22 September 2014",
-                "Carrier rocket": "Atlas V 401"
+                "Carrier rocket": "Atlas V 401",
+                logo: '/assets/logos/maven-logo.png'
             },
             {
                 "Mission": "ExoMars 2016 ExoMars Trace Gas Orbiter",
@@ -2232,7 +2254,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Operational",
                 "Remarks": "Entered orbit on 19 October 2016",
-                "Carrier rocket": "Proton-M / Briz-M"
+                "Carrier rocket": "Proton-M / Briz-M",
+                logo: '/assets/logos/exomars-logo.png'
             },
             {
                 "Mission": "ExoMars 2016 Schiaparelli EDM lander",
@@ -2242,7 +2265,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Carried by the ExoMars Trace Gas Orbiter. Although the lander crashed, engineering data on the first five minutes of entry was successfully retrieved.",
-                "Carrier rocket": "Proton-M / Briz-M"
+                "Carrier rocket": "Proton-M / Briz-M",
+                logo: '/assets/logos/exomars-logo.png'
             },
             {
                 "Mission": "InSight",
@@ -2252,7 +2276,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Successful",
                 "Remarks": "Landed on 26 November 2018. Last contact 15 December 2022.",
-                "Carrier rocket": "Atlas V 401"
+                "Carrier rocket": "Atlas V 401",
+                logo: '/assets/logos/insight-logo.png'
             },
             {
                 "Mission": "InSight MarCO A",
@@ -2262,7 +2287,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
                 "Remarks": "Flyby 26 November 2018. Last contact 29 December 2018.",
-                "Carrier rocket": "Atlas V 401"
+                "Carrier rocket": "Atlas V 401",
+                logo: '/assets/logos/insight-logo.png'
             },
             {
                 "Mission": "InSight MarCO B",
@@ -2272,7 +2298,8 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
                 "Remarks": "Flyby 26 November 2018. Last contact 4 January 2019.",
-                "Carrier rocket": "Atlas V 401"
+                "Carrier rocket": "Atlas V 401",
+                logo: '/assets/logos/insight-logo.png'
             },
             {
                 "Mission": "Emirates Mars Mission Hope",
@@ -2282,7 +2309,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Operational",
                 "Remarks": "Entered orbit on 9 February 2021.",
-                "Carrier rocket": "H-IIA"
+                "Carrier rocket": "H-IIA",
+                logo: '/assets/logos/hope-logo.png'
             },
             {
                 "Mission": "Tianwen-1 Tianwen-1 orbiter",
@@ -2292,7 +2320,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Operational",
                 "Remarks": "Entered orbit on 10 February 2021",
-                "Carrier rocket": "Long March 5"
+                "Carrier rocket": "Long March 5",
+                logo: '/assets/logos/tianwen1-logo.png'
             },
             {
                 "Mission": "Tianwen-1 Tianwen-1 lander",
@@ -2302,7 +2331,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Successful",
                 "Remarks": "Landed on 14 May 2021",
-                "Carrier rocket": "Long March 5"
+                "Carrier rocket": "Long March 5",
+                logo: '/assets/logos/tianwen1-logo.png'
             },
             {
                 "Mission": "Tianwen-1 Zhurong rover",
@@ -2312,7 +2342,8 @@ export const modelsData = [
                 "Mission Type": "Rover",
                 "Outcome": "Operational",
                 "Remarks": "Landed on 14 May 2021. Deployed by the Tianwen-1 lander on 22 May 2021.",
-                "Carrier rocket": "Long March 5"
+                "Carrier rocket": "Long March 5",
+                logo: '/assets/logos/tianwen1-logo.png'
             },
             {
                 "Mission": "Tianwen-1 Tianwen-1 Remote Camera",
@@ -2322,7 +2353,8 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Successful",
                 "Remarks": "Landed on 14 May 2021. Deployed by the Zhurong rover on 1 June 2021.",
-                "Carrier rocket": "Long March 5"
+                "Carrier rocket": "Long March 5",
+                logo: '/assets/logos/tianwen1-logo.png'
             },
             {
                 "Mission": "Tianwen-1 Tianwen-1 Deployable Camera 2",
@@ -2332,7 +2364,8 @@ export const modelsData = [
                 "Mission Type": "Orbiter",
                 "Outcome": "Successful",
                 "Remarks": "Entered orbit on 10 February 2021, deployed 31 December 2021",
-                "Carrier rocket": "Long March 5"
+                "Carrier rocket": "Long March 5",
+                logo: '/assets/logos/tianwen1-logo.png'
             },
             {
                 "Mission": "Mars 2020 Perseverance",
@@ -2342,7 +2375,8 @@ export const modelsData = [
                 "Mission Type": "Rover",
                 "Outcome": "Operational",
                 "Remarks": "Landed on 18 February 2021",
-                "Carrier rocket": "Atlas V 541"
+                "Carrier rocket": "Atlas V 541",
+                logo: '/assets/logos/mars2020-logo.svg'
             },
             {
                 "Mission": "Mars 2020 Ingenuity",
@@ -2352,7 +2386,8 @@ export const modelsData = [
                 "Mission Type": "Helicopter",
                 "Outcome": "Operational",
                 "Remarks": "First aerodynamic flight on another planet. Landed with Perseverance rover on 18 February 2021. Deployed from rover on 3 April 2021. First flight achieved on April 19, 2021.",
-                "Carrier rocket": "Atlas V 541"
+                "Carrier rocket": "Atlas V 541",
+                logo: '/assets/logos/mars2020-jpl-logo.svg'
             }
         ]
     }
