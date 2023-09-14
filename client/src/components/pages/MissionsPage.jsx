@@ -56,7 +56,7 @@ const MissionsPage = () => {
 
 
   const renderAreaChart = (
-    <div className='md:w-full md:p-[2rem] md:h-[40vh] xl:h-[85vh] mt-10 xl:p-[3rem] select-none'>
+    <div className='md:w-full md:p-[2rem] md:h-[40vh] xl:h-[80vh] mt-10 xl:p-[3rem] select-none'>
       <ResponsiveContainer>
         <AreaChart
           data={launchesByDecade}
@@ -125,7 +125,7 @@ const MissionsPage = () => {
     };
 
     return (
-      <div className='text-white grid grid-cols-1 auto-cols-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 gap-8 mx-8'>
+      <div className='text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 gap-8 mx-8'>
         {missions.map((mission, index) => (
           <div key={index} className='blur__card p-10 parallax'>
               {mission.logo && (
@@ -159,7 +159,7 @@ const MissionsPage = () => {
   return (
       <div className="flex flex-col self-center">
         {windowWidth > 767 ? renderAreaChart : renderLineChart}
-        <p className='font-bold text-[4rem] text-white text-center blink__word select-none mb-10'>
+        <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
           Missions
         </p>
       <Missions />

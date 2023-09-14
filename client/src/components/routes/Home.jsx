@@ -52,7 +52,7 @@ const Home = () => {
                         self-center
                         text-xl
                         xl:text-2xl
-                        4k:text-5xl
+                        4k:text-3xl
                         ">
           Welcome to Project Mars, your  destination for delving into the captivating world of the Red Planet. Embark on an extraordinary journey with the latest and most intriguing information about Mars, all in one place. Whether you are an avid space enthusiast or just someone curious about the cosmos, Project Mars is here to satisfy your thirst for knowledge and wonder.
         </p>

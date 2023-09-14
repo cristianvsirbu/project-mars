@@ -22,7 +22,7 @@ const routes = [{
     errorElement: <ErrorPage />,
     children: [
         {
-            path: 'home',
+            path: '/',
             text: 'HOME',
             element: <Home />,
         },
