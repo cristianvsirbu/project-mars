@@ -1,5 +1,6 @@
 import Characteristics from "../Characteristics";
 import { useFetchData } from "../hooks/useFetchData";
+import Model3D from "../models/Model3D";
 
 
 const MarsPage = () => {
@@ -11,8 +12,8 @@ const MarsPage = () => {
   }
 
   return (
-    <div className="text-xl text-white w-full">
-
+    <div className="text-white text-xl xl:flex xl:justify-center">
+      <Model3D key={mars.model3d} modelPath={mars.model3d} initialScale={0.1} cameraPosition={[0, 0, 140]} /> 
       <Characteristics data={chars} />
     </div>
 

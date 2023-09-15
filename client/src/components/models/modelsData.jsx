@@ -4,6 +4,7 @@ export const modelsData = [
         name: "Mars",
         category: "mars",
         cover: "/assets/covers/mars.png",
+        model3d: "/assets/models/mars.glb",
         children: [
             {
                 id: "mars",

@@ -2,24 +2,23 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import PropTypes from 'prop-types';
-import { useEffect, useRef } from 'react';
+import { useEffect} from 'react';
 
 
 const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
-  const containerRef = useRef(null);
 
   useEffect(() => {
-    
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, containerRef.current.clientWidth / containerRef.current.clientHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    const container = containerRef.current;
+    const container = document.querySelector('.container');
+    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.5, 1000);
+    let renderer = new THREE.WebGLRenderer();
 
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    containerRef.current.appendChild(renderer.domElement);
     camera.position.set(...cameraPosition);
-    
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
 
     // Added lights to the scene
     const createDirectionalLight = (color, intensity, position) => {
@@ -40,6 +39,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
     loader.load(modelPath, (gltf) => {
       scene.add(gltf.scene);
       gltf.scene.scale.set(initialScale, initialScale, initialScale);
+      gltf.scene.position.set(0, -1, 0);
     }, undefined, (error) => {
       console.log(error);
     });
@@ -47,7 +47,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
     // Added orbit controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.rotateSpeed = 0.4;
+    controls.rotateSpeed = 0.5;
 
     // Added animation loop
     const animate = () => {
@@ -57,30 +57,36 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
     }
     animate();
 
-    // Handled window resize
-    // const handleResize = () => {
-    //   camera.aspect = window.innerWidth / window.innerHeight;
-    //   camera.updateProjectionMatrix();
-    //   renderer.setSize(container.clientWidth, container.clientHeight);
-    // }
-    // window.addEventListener('resize', handleResize);
+    // Added resize listener
+    function resize() {
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener("resize", resize);
+
+    // Checked if the model path is valid/present
+    if (!modelPath) {
+      // Remove the canvas and clean up resources
+      const container = document.querySelector('.container');
+      container.innerHTML = ''; // Remove the content of the container
+      return; // Exit early
+    }
 
     // Cleaned up resources
     return () => {
       renderer.domElement.remove();
       renderer.dispose();
       cancelAnimationFrame(animate);
-      // window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', resize);
     };
   }, [modelPath, initialScale, cameraPosition]);
 
+
   return (
-    <div>
-      <div className='flex'>
-        <div ref={containerRef} className='container w-[1000px] h-[1000px]'></div>
+    <div className='flex justify-center w-full h-[18vh] md:h-[45vh] lg:h-[55vh] 2xl:w-[60vw] 2xl:h-[80vh]'>
+        <div className='container'></div>
       </div>
-      <div></div>
-    </div>
   );
 };
 

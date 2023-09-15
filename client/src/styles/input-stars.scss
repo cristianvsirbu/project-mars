@@ -10,10 +10,20 @@ $shadows-small: multiple-box-shadow(600);
 $shadows-medium: multiple-box-shadow(500);
 $shadows-big: multiple-box-shadow(150);
 
+#stars,
+#stars2,
+#stars3 {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 #stars {
 	width: 1px;
 	height: 1px;
-	max-height: 100vh;
 	background: transparent;
 	box-shadow: $shadows-small;
 	animation: animStar 500s linear infinite;
@@ -89,7 +99,7 @@ $shadows-big: multiple-box-shadow(150);
 		transform: translateY(0px);
 	}
 	to {
-		transform: translateY(-2000px);
+		transform: translateY(-2500px);
 	}
 }
 

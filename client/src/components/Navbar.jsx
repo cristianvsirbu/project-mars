@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import '../index.css';
 import routes from "./routes/routes";
 
@@ -50,6 +50,7 @@ const Navbar = () => {
                     ">
 
         {/* Logo */}
+        <Link to="/">
         <img src="/assets/logos/logo.png"
           className="h-20
                      z-1 
@@ -62,7 +63,7 @@ const Navbar = () => {
                      xl:mt-4
                      2xl:h-40
                      2xl:ml-32"/>
-
+        </Link>
         {/* Menu */}
         <ul className={`hidden
                         md:flex

@@ -24,6 +24,7 @@ export default {
 
         '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
+        
         '4k': '2560px',
         // => @media (min-width: 2560px) { ... }
       },

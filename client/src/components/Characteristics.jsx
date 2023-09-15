@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 
 function Characteristics({ data }) {
@@ -26,27 +27,31 @@ function Characteristics({ data }) {
 
     function generateList(key, items) {
         return (
-            <div key={key} className="px-2">
-                <span className="font-semibold text-orange-500">{key}:</span>
-                <ol className="text-left text-slate-400">
+            <div key={key} className="py-2 flex md:text-2xl flex-col items-center xl:items-start">
+                <span className="flex font-bold text-orange-600 italic lg:text-2xl mt-8">
+                    {key}:
+                </span>
+                <ol className="text-slate-500 font-medium w-full">
                     {items.map((item, index) => (
                         <li
                             key={index}
-                            className={``}
+                            className={`md:max-xl:px-4 xl:px-0`}
                         >
                             {typeof item === "object" ? (
                                 Object.entries(item).map(([subKey, subValue], subIndex) => (
-                                    <div key={subIndex} className={`${subKey === "Name" ? "mt-4" : ""} `}>
-                                        <span className="font-medium text-orange-500">{subKey}:</span>
-                                        <span className={`${subKey === "Name" ? "text-white font-medium" : "text-slate-400"} ml-2`}>
+                                    <div key={subIndex} className={`${subKey === "Name" ? "mt-8" : ""} flex flex-col lg:items-start px-4`}>
+                                        <span className="font-semibold text-orange-600">{subKey}:</span>
+                                        <span className={`${subKey === "Name" ? "text-white font-semibold" : "text-slate-400 lg:text-start"}`}>
                                             {subValue}
                                         </span>
                                     </div>
                                 ))
                             ) : (
-                                <div className="flex items-center pb-2">
-                                    <img src="/assets/star.png" className="w-[3rem] self-baseline" />
-                                    {item}
+                                <div className="flex flex-col items-center xl:flex-row">
+                                        <img src="/assets/star.png" className="w-[3rem] lg:w-[4rem]" />
+                                        <div className="md:text-start">
+                                            {item}
+                                        </div>
                                 </div>
                             )}
                         </li>
@@ -59,11 +64,11 @@ function Characteristics({ data }) {
 
     function generateDiv(key, parentKey, hasChildObjects, childData) {
         return (
-            <div key={key} className="py-6 px-2 text-center">
-                <span className="font-bold text-2xl">
+            <div key={key} className="flex flex-col mt-4">
+                <span className="flex justify-center xl:justify-start font-bold text-3xl">
                     {parentKey ? `${key}` : key}
                 </span>
-                <div>
+                <div className="">
                     {renderCharacteristics(childData, "")}
                 </div>
             </div>
@@ -72,10 +77,10 @@ function Characteristics({ data }) {
 
     function generateSimpleDiv(key, value) {
         return (
-            <div key={key} className="px-6 py-2">
-                <div className="flex flex-col">
-                    <span className={`text-orange-500 font-medium`}>{key}:</span>
-                    <span className="text-slate-400">{value}</span>
+            <div key={key} className="md:text-2xl">
+                <div className="flex flex-col items-center xl:items-start xl:flex-row xl:text-start">
+                    <span className={`text-orange-600 font-medium`}>{key}:</span>
+                    <span className="text-slate-400 font-medium ml-2">{value}</span>
                 </div>
             </div>
         );
@@ -85,8 +90,9 @@ function Characteristics({ data }) {
         return Object.keys(data).some((subKey) => typeof data[subKey] === "object");
     }
 
+
     return (
-        <div>
+        <div className="lg:p-16 ">
             {renderCharacteristics(data)}
         </div>
     );
