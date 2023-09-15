@@ -268,7 +268,7 @@ export const modelsData = [
                 name: 'Active Rovers',
                 category: 'rovers',
                 subcategory: 'active',
-                cover: '/assets/covers/active-rovers.png',
+                cover: '/assets/covers/active_rovers.png',
                 children: [
                     {
                         id: 'curiosity',
@@ -401,7 +401,7 @@ export const modelsData = [
                 name: 'Inactive Rovers',
                 category: 'rovers',
                 subcategory: 'inactive',
-                cover: '/assets/covers/inactive-rovers.png',
+                cover: '/assets/covers/inactive_rovers.png',
                 children: [
                     {
                         id: 'sojourner',
@@ -583,7 +583,7 @@ export const modelsData = [
                         category: 'rovers',
                         subcategory: 'inactive',
                         name: 'Zhurong',
-                        cover: '/assets/rovers/zhurong2.png',
+                        cover: '/assets/rovers/zhurong_2.png',
                         description: 'Zhurong is a Chinese rover on Mars, the country\'s first to land on another planet after it previously landed two rovers on the Moon. The rover is part of the Tianwen-1 mission to Mars conducted by the China National Space Administration (CNSA).Designed for a lifespan of 90 sols (93 Earth days), Zhurong was active for 347 sols (356.5 days) after its deployment on Mars\'s surface. The rover became inactive on 20 May 2022 due to approaching sandstorms and Martian winter, pending its self-awakening with appropriate temperature and sunlight conditions. Zhurong never woke up from its hibernation. The rover was expected to wake in December 2022 as winter in the Martian northern hemisphere drew to a close and sunlight increased, but did not. NASA images showed the rover in the same position where it had entered its hibernation period, almost a year earlier. Zhurong is named after a Chinese mytho-historical figure usually associated with fire and light, as Mars is called "the Planet of Fire" in China and some other countries in East Asia. It was selected by a public online vote held between 20 January 2021 and 28 February 2021, with Zhurong ranking first with 504,466 votes. The name was chosen with the meanings of "igniting the fire of interstellar exploration in China" and "to symbolize the Chinese people\'s determination to explore the stars and to uncover unknowns in the universe".',
                         characteristics: [
                             {
@@ -626,14 +626,14 @@ export const modelsData = [
                 name: 'Functional Satellites',
                 category: 'satellites',
                 subcategory: 'functional',
-                cover: '/assets/covers/functional-satellites.png',
+                cover: '/assets/covers/functional_satellites.png',
                 children: [
                     {
                         id: 'mars-odyssey',
                         category: 'satellites',
                         subcategory: 'functional',
                         name: '2001 Mars Odyssey',
-                        cover: '/assets/satellites/mars-odyssey.png',
+                        cover: '/assets/satellites/mars_odyssey.png',
                         model3d: '/assets/models/odyssey.glb',
                         description: '2001 Mars Odyssey is a robotic spacecraft orbiting the planet Mars. The project was developed by NASA, and contracted out to Lockheed Martin, with an expected cost for the entire mission of US$297 million. Its mission is to use spectrometers and a thermal imager to detect evidence of past or present water and ice, as well as study the planet\'s geology and radiation environment. It also acts as a relay for communications between the Curiosity rover, and previously the Mars Exploration Rovers and Phoenix lander, to Earth. The mission was named as a tribute to Arthur C. Clarke, evoking the name of his and Stanley Kubrick\'s 1968 film 2001: A Space Odyssey.',
                         characteristics: [
@@ -703,7 +703,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'Mars Express',
-                        cover: '/assets/satellites/mars-express.png',
+                        cover: '/assets/satellites/mars_express.png',
                         description: 'Mars Express is a space exploration mission being conducted by the European Space Agency (ESA). The Mars Express mission is exploring the planet Mars, and is the first planetary mission attempted by the agency."Express" originally referred to the speed and efficiency with which the spacecraft was designed and built. However, "Express" also describes the spacecraft\'s relatively short interplanetary voyage, a result of being launched when the orbits of Earth and Mars brought them closer than they had been in about 60,000 years.',
                         characteristics: [
                             {
@@ -862,7 +862,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'ExoMars',
-                        cover: '/assets/satellites/exo-mars.png',
+                        cover: '/assets/satellites/exo_mars.png',
                         description: 'The ExoMars Trace Gas Orbiter (TGO or ExoMars Orbiter) is a collaborative project between the European Space Agency (ESA) and the Russian Roscosmos agency that sent an atmospheric research orbiter and the Schiaparelli demonstration lander to Mars in 2016 as part of the European-led ExoMars programme.',
                         characteristics: [
                             {
@@ -919,11 +919,11 @@ export const modelsData = [
                         ]
                     },
                     {
-                        id: 'hope-probe',
+                        id: 'hope',
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'Emirates Mars Mission',
-                        cover: '/assets/satellites/hope-probe.png',
+                        cover: '/assets/satellites/hope.png',
                         description: 'The Emirates Mars Mission (Hope Probe) is a United Arab Emirates Space Agency uncrewed space exploration mission to Mars.The mission design, development, and operations are led by the Mohammed bin Rashid Space Centre(MBRSC).The spacecraft was assembled in the United States at the University of Colorado Boulder\'s Laboratory for Atmospheric and Space Physics (LASP) by the Emirati engineers, assisted by their American counterparts, with support from Arizona State University (ASU) and the University of California, Berkeley. The project was led by MBRSC at every stage.',
                         characteristics: [
                             {
@@ -975,7 +975,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'functional',
                         name: 'Tianwen-1',
-                        cover: '/assets/satellites/tianwen-1.png',
+                        cover: '/assets/satellites/tianwen_1.png',
                         description: 'Tianwen-1 is an interplanetary mission by the China National Space Administration (CNSA) which sent a robotic spacecraft to Mars, consisting of 6 spacecraft: an orbiter, two deployable cameras, lander, remote camera, and the Zhurong rover. The spacecraft, with a total mass of nearly five tons, is one of the heaviest probes launched to Mars and carries 14 scientific instruments. It is the first in a series of planned missions undertaken by CNSA as part of its Planetary Exploration of China program.',
                         characteristics: [
                             {
@@ -1071,7 +1071,7 @@ export const modelsData = [
                 name: 'Non-Functional Satellites',
                 category: 'satellites',
                 subcategory: 'non-functional',
-                cover: '/assets/covers/non-functional-satellites.png',
+                cover: '/assets/covers/non_functional_satellites.png',
                 children: [
                     {
                         id: 'viking-1',
@@ -1226,7 +1226,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mariner 9',
-                        cover: '/assets/satellites/mariner-9.png',
+                        cover: '/assets/satellites/mariner_9.png',
                         description: 'Mariner 9 was a robotic spacecraft that contributed greatly to the exploration of Mars and was part of the NASA Mariner program. Mariner 9 was launched toward Mars on May 30, 1971, from LC-36B at Cape Canaveral Air Force Station, Florida, and reached the planet on November 14 of the same year, becoming the first spacecraft to orbit another planet – only narrowly beating the Soviet probes Mars 2 (launched May 19) and Mars 3 (launched May 28), which both arrived at Mars only weeks later. After the occurrence of dust storms on the planet for several months following its arrival, the orbiter managed to send back clear pictures of the surface.Mariner 9 successfully returned 7, 329 images over the course of its mission, which concluded in October 1972.',
                         characteristics: [
                             {
@@ -1359,7 +1359,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mars 2',
-                        cover: '/assets/satellites/mars235.png',
+                        cover: '/assets/satellites/mars_235.png',
                         description: 'The Mars 2 was an uncrewed space probe of the Mars program, a series of uncrewed Mars landers and orbiters launched by the Soviet Union beginning 19 May 1971. The Mars 2 and Mars 3 missions consisted of identical spacecraft, each with an orbiter and an attached lander. The orbiter is identical to the Venera 9 bus. The type of bus/orbiter is the 4MV. They were launched by a Proton-K heavy launch vehicle with a Blok D upper stage. The lander of Mars 2 became the first human-made object to reach the surface of Mars, although the landing system failed and the lander was lost.',
                         characteristics: [
                             {
@@ -1424,7 +1424,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mars 3',
-                        cover: '/assets/satellites/mars235.png',
+                        cover: '/assets/satellites/mars_235.png',
                         description: 'Mars 3 was a robotic space probe of the Soviet Mars program, launched May 28, 1971, nine days after its twin spacecraft Mars 2. The probes were identical robotic spacecraft launched by Proton-K rockets with a Blok D upper stage, each consisting of an orbiter and an attached lander. After the Mars 2 lander crashed on the Martian surface, the Mars 3 lander became the first spacecraft to attain a soft landing on Mars, on December 2, 1971. It failed 110 seconds after landing, having transmitted only a gray image with no details. The Mars 2 orbiter and Mars 3 orbiter continued to circle Mars and transmit images back to Earth for another eight months.',
                         characteristics: [
                             {
@@ -1492,7 +1492,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Mars 5',
-                        cover: '/assets/satellites/mars235.png',
+                        cover: '/assets/satellites/mars_235.png',
                         description: 'Mars 5 also known as 3MS No.53S was a Soviet spacecraft launched to explore Mars.A 3MS spacecraft launched as part of the Mars programme, it successfully entered orbit around Mars in 1974. However, it failed a few weeks later.',
                         characteristics: [
                             {
@@ -1539,7 +1539,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'Phobos 2',
-                        cover: '/assets/satellites/phobos-2.png',
+                        cover: '/assets/satellites/phobos_2.png',
                         description: 'Phobos 2 was the last space probe designed by the Soviet Union. It was designed to explore the moons of Mars, Phobos and Deimos. It was launched on 12 July 1988, and entered orbit on 29 January 1989. Phobos 2 operated nominally throughout its cruise and Mars orbital insertion phase on 29 January 1989, gathering data on the Sun, interplanetary medium, Mars, and Phobos. Phobos 2 investigated the Mars surface and atmosphere and returned 37 images of Phobos with a resolution of up to 40 meters.',
                         characteristics: [
                             {
@@ -1580,7 +1580,7 @@ export const modelsData = [
                         category: 'satellites',
                         subcategory: 'non-functional',
                         name: 'The Mars Orbiter Mission',
-                        cover: '/assets/logos/mom-logo.png',
+                        cover: '/assets/logos/mom_logo.png',
                         description: 'The Mars Orbiter Mission, unofficially known as Mangalyaan, was a space probe orbiting Mars since 24 September 2014. It was launched on 5 November 2013 by the Indian Space Research Organisation (ISRO).  It was India\'s first interplanetary mission and it made ISRO the fourth space agency to achieve Mars orbit, after Roscosmos, NASA, and the European Space Agency.It made India the first Asian nation to reach the Martian orbit and the first nation in the world to do so on its maiden attempt.',
                         characteristics: [
                             {
@@ -1656,7 +1656,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
                 "Carrier rocket": "Molniya",
-                logo: '/assets/logos/okb1-logo.png'
+                logo: '/assets/logos/okb_1_logo.png'
             },
             {
                 "Mission": "1M No.2",
@@ -1667,7 +1667,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
                 "Carrier rocket": "Molniya",
-                logo: '/assets/logos/okb1-logo.png'
+                logo: '/assets/logos/okb_1_logo.png'
             },
             {
                 "Mission": "2MV-4 No.1",
@@ -1678,7 +1678,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Booster stage (\"Block L\") disintegrated in LEO",
                 "Carrier rocket": "Molniya",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mars 1",
@@ -1689,7 +1689,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Communications lost before first flyby",
                 "Carrier rocket": "Molniya",
-                logo: '/assets/logos/mars1-logo.jpg'
+                logo: '/assets/logos/mars_1_logo.jpg'
             },
             {
                 "Mission": "2MV-3 No.1",
@@ -1700,7 +1700,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Never left LEO",
                 "Carrier rocket": "Molniya",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mariner 3",
@@ -1711,7 +1711,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Payload fairing failed to separate",
                 "Carrier rocket": "Atlas LV-3 Agena-D",
-                logo: '/assets/logos/nasa-logo.svg'
+                logo: '/assets/logos/nasa_logo.svg'
             },
             {
                 "Mission": "Mariner 4",
@@ -1722,7 +1722,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "First successful flyby of Mars on 15 July 1965",
                 "Carrier rocket": "Atlas LV-3 Agena-D",
-                logo: '/assets/logos/nasa-logo.svg'
+                logo: '/assets/logos/nasa_logo.svg'
             },
             {
                 "Mission": "Zond 2",
@@ -1733,7 +1733,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Communications lost before flyby",
                 "Carrier rocket": "Molniya",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mariner 6",
@@ -1743,7 +1743,7 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
                 "Carrier rocket": "Atlas SLV-3C Centaur-D",
-                logo: '/assets/logos/nasa-logo.svg'
+                logo: '/assets/logos/nasa_logo.svg'
             },
             {
                 "Mission": "2M No.521 (1969A)",
@@ -1754,7 +1754,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mariner 7",
@@ -1764,7 +1764,7 @@ export const modelsData = [
                 "Mission Type": "Flyby",
                 "Outcome": "Successful",
                 "Carrier rocket": "Atlas SLV-3C Centaur-D",
-                logo: '/assets/logos/nasa-logo.svg'
+                logo: '/assets/logos/nasa_logo.svg'
             },
             {
                 "Mission": "2M No.522 (1969B)",
@@ -1775,7 +1775,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mariner 8",
@@ -1786,7 +1786,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Failed to achieve Earth orbit",
                 "Carrier rocket": "Atlas SLV-3C Centaur-D",
-                logo: '/assets/logos/nasa-logo.svg'
+                logo: '/assets/logos/nasa_logo.svg'
             },
             {
                 "Mission": "Kosmos 419 (3MS No.170)",
@@ -1797,7 +1797,7 @@ export const modelsData = [
                 "Outcome": "Launch failure",
                 "Remarks": "Never left LEO; booster stage burn timer set incorrectly",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mars 2 (4M No.171)",
@@ -1808,7 +1808,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Operated for 362 orbits",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/mars2-3-logo.png'
+                logo: '/assets/logos/mars2_3_logo.png'
             },
             {
                 "Mission": "Mars 2 lander (SA 4M No.171)",
@@ -1818,7 +1818,7 @@ export const modelsData = [
                 "Mission Type": "Lander",
                 "Outcome": "Spacecraft failure",
                 "Remarks": "First lander to impact Mars. Deployed from Mars 2, failed to land during attempt",
-                logo: '/assets/logos/mars2-3-logo.png'
+                logo: '/assets/logos/mars2_3_logo.png'
             },
             {
                 "Mission": "Mars 4 (3MS No.52S)",
@@ -1829,7 +1829,7 @@ export const modelsData = [
                 "Outcome": "Partial success",
                 "Remarks": "Failed to perform orbital insertion burn. Returned photographs of Mars during flyby.",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mars 5 (3MS No.53S)",
@@ -1840,7 +1840,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Contact lost after 9 days in Mars orbit. Returned 180 frames",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mars 6 (3MP No.50P)",
@@ -1851,7 +1851,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Flyby bus collected data.",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mars 6 lander",
@@ -1862,7 +1862,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Contact lost upon landing, atmospheric data mostly unusable.",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mars 7 (3MP No.51P)",
@@ -1873,7 +1873,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Flyby bus collected data.",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mars 7 lander",
@@ -1884,7 +1884,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Separated from coast stage prematurely, failed to enter Martian atmosphere.",
                 "Carrier rocket": "Proton-K/D",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Viking 1 orbiter",
@@ -1895,7 +1895,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Operated for 1385 orbits. Entered Mars orbit on 19 June 1976.",
                 "Carrier rocket": "Titan IIIE Centaur-D1T",
-                logo: '/assets/logos/nasa-worm-logo.svg'
+                logo: '/assets/logos/nasa_worm_logo.svg'
             },
             {
                 "Mission": "Viking 1 lander",
@@ -1906,7 +1906,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "First successful Mars lander. Deployed from Viking 1 orbiter. Landed on Mars on 20 July 1976. Operated for 2245 sols.",
                 "Carrier rocket": "Titan IIIE Centaur-D1T",
-                logo: '/assets/logos/nasa-worm-logo.svg'
+                logo: '/assets/logos/nasa_worm_logo.svg'
             },
             {
                 "Mission": "Viking 2 orbiter",
@@ -1917,7 +1917,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Operated for 700 orbits. Entered Mars orbit on 7 August 1976.",
                 "Carrier rocket": "Titan IIIE Centaur-D1T",
-                logo: '/assets/logos/nasa-worm-logo.svg'
+                logo: '/assets/logos/nasa_worm_logo.svg'
             },
             {
                 "Mission": "Viking 2 lander",
@@ -1928,7 +1928,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Deployed from Viking 2 orbiter. Landed on Mars on September 1976. Operated for 1281 sols (11 April 1980).",
                 "Carrier rocket": "Titan IIIE Centaur-D1T",
-                logo: '/assets/logos/nasa-worm-logo.svg'
+                logo: '/assets/logos/nasa_worm_logo.svg'
             },
             {
                 "Mission": "Phobos 1 (1F No.101)",
@@ -1939,7 +1939,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Communications lost before reaching Mars; failed to enter orbit",
                 "Carrier rocket": "Proton-K/D-2",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Phobos 1 DAS",
@@ -1950,7 +1950,7 @@ export const modelsData = [
                 "Outcome": "Failure",
                 "Remarks": "Lost with Phobos 1. To have been deployed by Phobos 1",
                 "Carrier rocket": "Proton-K/D-2",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Phobos 2 (1F No.102)",
@@ -1961,7 +1961,7 @@ export const modelsData = [
                 "Outcome": "Mostly successful",
                 "Remarks": "Orbital observations successful, communications lost before lander deployment.",
                 "Carrier rocket": "Proton-K/D-2",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Phobos 2 Prop-F",
@@ -1972,7 +1972,7 @@ export const modelsData = [
                 "Outcome": "Failure",
                 "Remarks": "Lost with Phobos 2. To have been deployed by Phobos 2",
                 "Carrier rocket": "Proton-K/D-2",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Phobos 2",
@@ -1983,7 +1983,7 @@ export const modelsData = [
                 "Outcome": "Failure",
                 "Remarks": "Lost with Phobos 2",
                 "Carrier rocket": "Proton-K/D-2",
-                logo: '/assets/logos/ussr-logo.svg'
+                logo: '/assets/logos/ussr_logo.svg'
             },
             {
                 "Mission": "Mars Observer",
@@ -1994,7 +1994,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Lost communications before orbital insertion",
                 "Carrier rocket": "Commercial Titan III",
-                logo: '/assets/logos/nasa-logo.svg'
+                logo: '/assets/logos/nasa_logo.svg'
             },
             {
                 "Mission": "Mars Global Surveyor",
@@ -2005,7 +2005,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Operated for ten years",
                 "Carrier rocket": "Delta II 7925",
-                logo: '/assets/logos/mgs-logo.png'
+                logo: '/assets/logos/mgs_logo.png'
             },
             {
                 "Mission": "Mars 96",
@@ -2016,7 +2016,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Never left LEO",
                 "Carrier rocket": "Proton-K/D-2",
-                logo: '/assets/logos/rosaviacosmos-logo.png'
+                logo: '/assets/logos/rosaviacosmos_logo.png'
             },
             {
                 "Mission": "Mars 96",
@@ -2027,7 +2027,7 @@ export const modelsData = [
                 "Outcome": "Failure",
                 "Remarks": "Lost with Mars 96. Two Mars landers to have been deployed by Mars 96.",
                 "Carrier rocket": "Proton-K/D-2",
-                logo: '/assets/logos/rosaviacosmos-logo.png'
+                logo: '/assets/logos/rosaviacosmos_logo.png'
             },
             {
                 "Mission": "Mars 96",
@@ -2038,7 +2038,7 @@ export const modelsData = [
                 "Outcome": "Failure",
                 "Remarks": "Lost with Mars 96. Two Mars Penetrators to have been deployed by Mars 96.",
                 "Carrier rocket": "Proton-K/D-2",
-                logo: '/assets/logos/rosaviacosmos-logo.png'
+                logo: '/assets/logos/rosaviacosmos_logo.png'
             },
             {
                 "Mission": "Mars Pathfinder",
@@ -2049,7 +2049,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Landed at 19.13°N 33.22°W on 4 July 1997. Last contact on 27 September 1997.",
                 "Carrier rocket": "Delta II 7925",
-                logo: '/assets/logos/mp-logo.png'
+                logo: '/assets/logos/mp_logo.png'
             },
             {
                 "Mission": "Mars Pathfinder",
@@ -2060,7 +2060,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "First rover to operate on another planet. Operated for 84 days.",
                 "Carrier rocket": "Delta II 7925",
-                logo: '/assets/logos/mp-logo.png'
+                logo: '/assets/logos/mp_logo.png'
             },
             {
                 "Mission": "Nozomi",
@@ -2071,7 +2071,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Performed a Mars flyby. Later contact lost due to loss of fuel.",
                 "Carrier rocket": "M-V",
-                logo: '/assets/logos/isas-logo.png'
+                logo: '/assets/logos/isas_logo.png'
             },
             {
                 "Mission": "Mars Climate Orbiter",
@@ -2082,7 +2082,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Approached Mars too closely during orbit insertion attempt due to a software interface bug involving different units for impulse and either burned up in the atmosphere or entered solar orbit.",
                 "Carrier rocket": "Delta II 7425",
-                logo: '/assets/logos/nasa-logo.svg'
+                logo: '/assets/logos/nasa_logo.svg'
             },
             {
                 "Mission": "Mars Polar Lander / Deep Space 2",
@@ -2093,7 +2093,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Failed to function after landing.",
                 "Carrier rocket": "Delta II 7425",
-                logo: '/assets/logos/m98-logo.png'
+                logo: '/assets/logos/m98_logo.png'
             },
             {
                 "Mission": "Mars Polar Lander / Deep Space 2",
@@ -2104,7 +2104,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "No data transmitted after deployment from MPL.",
                 "Carrier rocket": "Delta II 7425",
-                logo: '/assets/logos/m98-logo.png'
+                logo: '/assets/logos/m98_logo.png'
             },
             {
                 "Mission": "Mars Odyssey",
@@ -2115,7 +2115,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Expected to remain operational until 2025.",
                 "Carrier rocket": "Delta II 7925",
-                logo: '/assets/logos/2001-mars-odyssey-logo.png'
+                logo: '/assets/logos/2001_mars_odyssey_logo.png'
             },
             {
                 "Mission": "Mars Express",
@@ -2126,7 +2126,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Enough fuel to remain operational until 2035.",
                 "Carrier rocket": "Soyuz-FG / Fregat",
-                logo: '/assets/logos/mars-express-logo.png'
+                logo: '/assets/logos/mars_express_logo.png'
             },
             {
                 "Mission": "Mars Express",
@@ -2137,7 +2137,7 @@ export const modelsData = [
                 "Outcome": "Lander failure",
                 "Remarks": "No communications received after release from Mars Express. Orbital images of landing site suggest a successful landing, but two solar panels failed to deploy, obstructing its communications.",
                 "Carrier rocket": "Soyuz-FG / Fregat",
-                logo: '/assets/logos/mars-express-logo.png'
+                logo: '/assets/logos/mars_express_logo.png'
             },
             {
                 "Mission": "Spirit (MER-A)",
@@ -2148,7 +2148,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Landed on 4 January 2004. Operated for 2208 sols",
                 "Carrier rocket": "Delta II 7925",
-                logo: '/assets/logos/mer-a-logo.png'
+                logo: '/assets/logos/mer_a_logo.png'
             },
             {
                 "Mission": "Opportunity (MER-B)",
@@ -2159,7 +2159,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Landed on 25 January 2004. Operated for 5351 sols",
                 "Carrier rocket": "Delta II 7925H",
-                logo: '/assets/logos/mer-b-logo.png'
+                logo: '/assets/logos/mer_b_logo.png'
             },
             {
                 "Mission": "Rosetta",
@@ -2170,7 +2170,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Flyby in February 2007 en route to 67P/Churyumov–Gerasimenko",
                 "Carrier rocket": "Ariane 5G+",
-                logo: '/assets/logos/rosetta-logo.png'
+                logo: '/assets/logos/rosetta_logo.png'
             },
             {
                 "Mission": "Rosetta Philae",
@@ -2181,7 +2181,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Flyby in February 2007 en route to 67P/Churyumov–Gerasimenko",
                 "Carrier rocket": "Ariane 5G+",
-                logo: '/assets/logos/rosetta-logo.png'
+                logo: '/assets/logos/rosetta_logo.png'
             },
             {
                 "Mission": "Mars Reconnaissance Orbiter",
@@ -2192,7 +2192,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Entered orbit on 10 March 2006",
                 "Carrier rocket": "Atlas V 401",
-                logo: '/assets/logos/mro-logo.png'
+                logo: '/assets/logos/mro_logo.png'
             },
             {
                 "Mission": "Phoenix",
@@ -2203,7 +2203,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Landed on 25 May 2008. End of mission 2 November 2008",
                 "Carrier rocket": "Delta II 7925",
-                logo: '/assets/logos/phoenix-logo.png'
+                logo: '/assets/logos/phoenix_logo.png'
             },
             {
                 "Mission": "Dawn",
@@ -2214,7 +2214,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Flyby in February 2009 en route to 4 Vesta and Ceres",
                 "Carrier rocket": "Delta II 7925H",
-                logo: '/assets/logos/dawn-logo.png'
+                logo: '/assets/logos/dawn_logo.png'
             },
             {
                 "Mission": "Fobos-Grunt / Yinghuo-1 Fobos-Grunt",
@@ -2225,7 +2225,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Never left LEO (intended to depart under own power)",
                 "Carrier rocket": "Zenit-2M",
-                logo: '/assets/logos/roscosmos-logo.svg'
+                logo: '/assets/logos/roscosmos_logo.svg'
             },
             {
                 "Mission": "Fobos-Grunt / Yinghuo-1 Yinghuo-1",
@@ -2236,7 +2236,7 @@ export const modelsData = [
                 "Outcome": "Failure",
                 "Remarks": "Lost with Fobos-Grunt. To have been deployed by Fobos-Grunt",
                 "Carrier rocket": "Zenit-2M",
-                logo: '/assets/logos/cnsa-logo.svg'
+                logo: '/assets/logos/cnsa_logo.svg'
             },
             {
                 "Mission": "Mars Science Laboratory Curiosity (Mars Science Laboratory)",
@@ -2247,7 +2247,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Landed on 6 August 2012",
                 "Carrier rocket": "Atlas V 541",
-                logo: '/assets/logos/msl-logo.png'
+                logo: '/assets/logos/msl_logo.png'
             },
             {
                 "Mission": "Mars Orbiter Mission",
@@ -2258,7 +2258,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Entered orbit on 24 September 2014. Mission extended to 2022, where the mission concluded on September 27, 2022 after contact was lost.[20]",
                 "Carrier rocket": "PSLV-XL",
-                logo: '/assets/logos/mom-logo.png'
+                logo: '/assets/logos/mom_logo.png'
             },
             {
                 "Mission": "MAVEN",
@@ -2269,7 +2269,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Orbit insertion on 22 September 2014",
                 "Carrier rocket": "Atlas V 401",
-                logo: '/assets/logos/maven-logo.png'
+                logo: '/assets/logos/maven_logo.png'
             },
             {
                 "Mission": "ExoMars 2016 ExoMars Trace Gas Orbiter",
@@ -2280,7 +2280,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Entered orbit on 19 October 2016",
                 "Carrier rocket": "Proton-M / Briz-M",
-                logo: '/assets/logos/exomars-logo.png'
+                logo: '/assets/logos/exomars_logo.png'
             },
             {
                 "Mission": "ExoMars 2016 Schiaparelli EDM lander",
@@ -2291,7 +2291,7 @@ export const modelsData = [
                 "Outcome": "Spacecraft failure",
                 "Remarks": "Carried by the ExoMars Trace Gas Orbiter. Although the lander crashed, engineering data on the first five minutes of entry was successfully retrieved.",
                 "Carrier rocket": "Proton-M / Briz-M",
-                logo: '/assets/logos/exomars-logo.png'
+                logo: '/assets/logos/exomars_logo.png'
             },
             {
                 "Mission": "InSight",
@@ -2302,7 +2302,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Landed on 26 November 2018. Last contact 15 December 2022.",
                 "Carrier rocket": "Atlas V 401",
-                logo: '/assets/logos/insight-logo.png'
+                logo: '/assets/logos/insight_logo.png'
             },
             {
                 "Mission": "InSight MarCO A",
@@ -2313,7 +2313,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Flyby 26 November 2018. Last contact 29 December 2018.",
                 "Carrier rocket": "Atlas V 401",
-                logo: '/assets/logos/insight-logo.png'
+                logo: '/assets/logos/insight_logo.png'
             },
             {
                 "Mission": "InSight MarCO B",
@@ -2324,7 +2324,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Flyby 26 November 2018. Last contact 4 January 2019.",
                 "Carrier rocket": "Atlas V 401",
-                logo: '/assets/logos/insight-logo.png'
+                logo: '/assets/logos/insight_logo.png'
             },
             {
                 "Mission": "Emirates Mars Mission Hope",
@@ -2335,7 +2335,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Entered orbit on 9 February 2021.",
                 "Carrier rocket": "H-IIA",
-                logo: '/assets/logos/hope-logo.png'
+                logo: '/assets/logos/hope_logo.png'
             },
             {
                 "Mission": "Tianwen-1 Tianwen-1 orbiter",
@@ -2346,7 +2346,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Entered orbit on 10 February 2021",
                 "Carrier rocket": "Long March 5",
-                logo: '/assets/logos/tianwen1-logo.png'
+                logo: '/assets/logos/tianwen_1_logo.png'
             },
             {
                 "Mission": "Tianwen-1 Tianwen-1 lander",
@@ -2357,7 +2357,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Landed on 14 May 2021",
                 "Carrier rocket": "Long March 5",
-                logo: '/assets/logos/tianwen1-logo.png'
+                logo: '/assets/logos/tianwen_1_logo.png'
             },
             {
                 "Mission": "Tianwen-1 Zhurong rover",
@@ -2368,7 +2368,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Landed on 14 May 2021. Deployed by the Tianwen-1 lander on 22 May 2021.",
                 "Carrier rocket": "Long March 5",
-                logo: '/assets/logos/tianwen1-logo.png'
+                logo: '/assets/logos/tianwen_1_logo.png'
             },
             {
                 "Mission": "Tianwen-1 Tianwen-1 Remote Camera",
@@ -2379,7 +2379,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Landed on 14 May 2021. Deployed by the Zhurong rover on 1 June 2021.",
                 "Carrier rocket": "Long March 5",
-                logo: '/assets/logos/tianwen1-logo.png'
+                logo: '/assets/logos/tianwen_1_logo.png'
             },
             {
                 "Mission": "Tianwen-1 Tianwen-1 Deployable Camera 2",
@@ -2390,7 +2390,7 @@ export const modelsData = [
                 "Outcome": "Successful",
                 "Remarks": "Entered orbit on 10 February 2021, deployed 31 December 2021",
                 "Carrier rocket": "Long March 5",
-                logo: '/assets/logos/tianwen1-logo.png'
+                logo: '/assets/logos/tianwen_1_logo.png'
             },
             {
                 "Mission": "Mars 2020 Perseverance",
@@ -2401,7 +2401,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "Landed on 18 February 2021",
                 "Carrier rocket": "Atlas V 541",
-                logo: '/assets/logos/mars2020-logo.svg'
+                logo: '/assets/logos/mars_2020_logo.svg'
             },
             {
                 "Mission": "Mars 2020 Ingenuity",
@@ -2412,7 +2412,7 @@ export const modelsData = [
                 "Outcome": "Operational",
                 "Remarks": "First aerodynamic flight on another planet. Landed with Perseverance rover on 18 February 2021. Deployed from rover on 3 April 2021. First flight achieved on April 19, 2021.",
                 "Carrier rocket": "Atlas V 541",
-                logo: '/assets/logos/mars2020-jpl-logo.svg'
+                logo: '/assets/logos/mars_2020_jpl_logo.svg'
             }
         ]
     }

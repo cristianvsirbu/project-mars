@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import barometer from '/assets/weather/barometer.svg';
-import clear_day from '/assets/weather/clear-day.svg';
+import clear_day from '/assets/weather/clear_day.svg';
 import sunrise from '/assets/weather/sunrise.svg';
 import sunset from '/assets/weather/sunset.svg';
-import thermometer_colder from '/assets/weather/thermometer-colder.svg';
-import thermometer_warmer from '/assets/weather/thermometer-warmer.svg';
+import thermometer_colder from '/assets/weather/thermometer_colder.svg';
+import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
 const WeatherCard = ({ weather, index }) => {
   const weatherItems = [
     {
