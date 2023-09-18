@@ -23,7 +23,7 @@ const Navbar = () => {
             md:text-[20px]
             lg:text-[24px]
             xl:text-[32px]
-            2xl:text-[46px]`}
+            4k:text-[46px]`}
           key={childRoute.path}
         >
           <NavLink to={childRoute.path}>{childRoute.text}</NavLink>
@@ -42,34 +42,34 @@ const Navbar = () => {
                    justify-between
                    h-24
                    mx-6
-                   md:mx-10
+                   md:mx-16
                    md:h-14
                    lg:h-16
-                   xl:h-28
-                   2xl:h-36
+                   xl:h-20
+                   2xl:h-24
                     ">
 
         {/* Logo */}
         <Link to="/">
         <img src="/assets/logos/logo.png"
-          className="h-20
-                     z-1 
-                     md:h-14
-                     mt-2
-                     lg:ml-6
-                     lg:h-16
-                     xl:h-28
-                     xl:ml-12
-                     xl:mt-4
-                     2xl:h-40
-                     2xl:ml-32"/>
+            className="h-[70%]
+                     md:h-full
+                     mt-[1rem]
+                     md:mt-[0.8rem]
+                     lg:ml-[1.5rem]
+                     lg:h-[4rem]
+                     xl:h-[5rem]
+                     xl:ml-[3rem]
+                     xl:mt-[1rem]
+                     2xl:ml-[9rem]
+                     2xl:h-[7rem]"/>
         </Link>
         {/* Menu */}
         <ul className={`hidden
                         md:flex
                         items-center
-                        md:w-3/4
-                        lg:w-7/10
+                        md:w-[75%]
+                        lg:w-[70%]
                         justify-between
                         2xl:justify-around
                         `}>

@@ -39,9 +39,9 @@ function Characteristics({ data }) {
                         >
                             {typeof item === "object" ? (
                                 Object.entries(item).map(([subKey, subValue], subIndex) => (
-                                    <div key={subIndex} className={`${subKey === "Name" ? "mt-8" : ""} flex flex-col lg:items-start px-4`}>
+                                    <div key={subIndex} className={`${subKey === "Name" ? "mt-8" : ""} flex flex-col xl:items-start px-4`}>
                                         <span className="font-semibold text-orange-600">{subKey}:</span>
-                                        <span className={`${subKey === "Name" ? "text-white font-semibold" : "text-slate-400 lg:text-start"}`}>
+                                        <span className={`${subKey === "Name" ? "text-white font-semibold" : "text-slate-400 xl:text-start"}`}>
                                             {subValue}
                                         </span>
                                     </div>
@@ -64,7 +64,7 @@ function Characteristics({ data }) {
 
     function generateDiv(key, parentKey, hasChildObjects, childData) {
         return (
-            <div key={key} className="flex flex-col mt-4">
+            <div key={key} className="mt-4">
                 <span className="flex justify-center xl:justify-start font-bold text-3xl">
                     {parentKey ? `${key}` : key}
                 </span>
@@ -78,7 +78,7 @@ function Characteristics({ data }) {
     function generateSimpleDiv(key, value) {
         return (
             <div key={key} className="md:text-2xl">
-                <div className="flex flex-col items-center xl:items-start xl:flex-row xl:text-start">
+                <div className="flex flex-col items-center xl:items-start xl:text-start">
                     <span className={`text-orange-600 font-medium`}>{key}:</span>
                     <span className="text-slate-400 font-medium ml-2">{value}</span>
                 </div>
@@ -92,7 +92,7 @@ function Characteristics({ data }) {
 
 
     return (
-        <div className="lg:p-16 ">
+        <div className="lg:p-16">
             {renderCharacteristics(data)}
         </div>
     );

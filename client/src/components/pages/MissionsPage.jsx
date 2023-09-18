@@ -37,8 +37,8 @@ const MissionsPage = () => {
           <XAxis type="number" style={{ fontSize: '1.2rem', fontWeight: 'bold', fill: '#fff', fontStyle: 'italic' }} >
             <Label
               value="Mission launches by decade"
-              position="top"
-              offset={400}
+              position="insideTop"
+              offset={-350}
               height={30}
               width={280}
               style={{ fontSize: '1rem', fill: '#d4d4d474', fontWeight: 'bold', fontStyle: 'italic' }}
@@ -125,7 +125,18 @@ const MissionsPage = () => {
     };
 
     return (
-      <div className='text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 gap-8 mx-8'>
+      <div
+        className='
+        text-white
+        grid
+        grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-3
+        xl:grid-cols-4
+        4k:grid-cols-6
+        gap-8
+        mx-8
+        '>
         {missions.map((mission, index) => (
           <div key={index} className='blur__card p-10 parallax'>
               {mission.logo && (

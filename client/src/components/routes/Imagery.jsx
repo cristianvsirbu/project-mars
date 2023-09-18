@@ -72,9 +72,9 @@ const Imagery = () => {
     <div>
       {loading ? (<div className='h-[80vh] flex justify-center items-center'><img src='assets/astronaut.gif' className='w-[450px] z-50' /></div>) : (
         <div className='flex flex-col'>
-          <h1 className='text-white font-bold text-3xl text-center'>
-            Rovers Imagery
-          </h1>
+          <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
+           Imagery
+          </p>
           <div className='flex flex-col self-center w-full lg:w-1/2'>
             <select className='p-2 m-4 blur__card text-orange-500 text-center text-[2rem] lg:text-[3rem] font-bold' value={selectedDate} onChange={handleDateSelection}>
               <option value="">Select a date</option>

@@ -26,11 +26,19 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
       light.position.set(...position);
       return light;
     };
+
+    const createAmbientLight = (color, intensity, position) => {
+      const light = new THREE.AmbientLight(color, intensity);
+      return light;
+    }
+
     const lights = [
-      createDirectionalLight(0xffffff, 4, [-10, 10, 10]),
-      createDirectionalLight(0xffffff, 4, [10, 10, 10]),
-      createDirectionalLight(0xffffff, 4, [0, 0, -10]),
-      createDirectionalLight(0xffffff, 4, [0, -10, 10]),
+      createDirectionalLight(0xffffff, 1.5, [-10, 0, 0]),
+      createDirectionalLight(0xffffff, 1.5, [0, 10, 0]),
+      createDirectionalLight(0xffffff, 1.5, [10, 0, 0]),
+      createDirectionalLight(0xffffff, 1.5, [0, -10, 0]),
+      createDirectionalLight(0xffffff, 1.5, [0, 0, 10]),
+      createAmbientLight(0xffffff, 2, [0, 0, 0]),
     ];
     scene.add(...lights);
 
@@ -84,7 +92,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
 
 
   return (
-    <div className='flex justify-center w-full h-[18vh] md:h-[45vh] lg:h-[55vh] 2xl:w-[60vw] 2xl:h-[80vh]'>
+    <div className='flex justify-center w-full h-[30vh] md:h-[45vh] lg:h-[55vh] 2xl:w-[60vw] 2xl:h-[80vh]'>
         <div className='container'></div>
       </div>
   );

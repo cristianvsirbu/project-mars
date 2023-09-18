@@ -15,6 +15,12 @@ const WeatherCard = ({ weather, index }) => {
       alt: 'Sol',
     },
     {
+      label: 'Pressure',
+      value: `${weather.pressure} Pa`,
+      icon: barometer,
+      alt: 'Pressure',
+    },
+    {
       label: 'Max Temperature',
       value: `${weather.highCelsius}`,
       icon: thermometer_warmer,
@@ -25,12 +31,6 @@ const WeatherCard = ({ weather, index }) => {
       value: `${weather.lowCelsius}`,
       icon: thermometer_colder,
       alt: 'Minimum Temperature',
-    },
-    {
-      label: 'Pressure',
-      value: `${weather.pressure} Pa`,
-      icon: barometer,
-      alt: 'Pressure',
     },
     {
       label: 'Sunrise',
@@ -58,7 +58,7 @@ const WeatherCard = ({ weather, index }) => {
   })
 
   return (
-    <div key={index} className='grid md:grid-cols-2 parallax blur__card items-center justify-center py-[2rem] mt-8 mx-8'>
+    <div key={index} className='grid md:grid-cols-2 parallax blur__card items-center justify-around py-[2rem] mt-8 mx-8'>
       <div className='text-[2rem] col-span-2 text-center font-bold italic'>{weather.UTC}
       </div>
       {weatherItems.map((item, i) => (
@@ -67,7 +67,7 @@ const WeatherCard = ({ weather, index }) => {
             <img src={item.icon} alt={item.alt} className='w-[100%] object-contain' />
           </div>
           {windowWidth > 767 && (
-            <div className='text-[1.5rem] text-orange-500'>{item.label}</div>
+            <div className='text-[1.5rem] text-center text-orange-500'>{item.label}</div>
           )}	
           <div className='text-[1.3rem] md:text-[2rem] text-center font-medium'>
             {item.value}

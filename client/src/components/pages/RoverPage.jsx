@@ -14,11 +14,11 @@ function RoverPage() {
     return <div>Rover not found</div>;
   }
   return (
-    <div className="text-white text-xl xl:flex xl:justify-center xl:items-center">
+    <div className="text-white text-xl flex flex-col xl:flex-row-reverse justify-center">
       {rover.model3d ?
-        (<Model3D modelPath={rover.model3d} initialScale={1} cameraPosition={roverId === "opportunity" ? [0, 1, 3.5] : [0, 1, 6]} />
+        (<Model3D modelPath={rover.model3d} initialScale={1} cameraPosition={[0, 0, 6]}/>
         ) : (
-          <div className='h-[30%] md:max-h-[30%] lg:max-h-[40%] xl:max-w-[50%] mx-auto xl:mx-0'>
+          <div className='h-[25%] md:max-h-[30%] lg:max-h-[40%] xl:max-w-[45%] mx-auto xl:mx-0'>
             <img src={rover.cover} alt="Rover Cover" className='w-full h-full object-contain p-8' />
           </div>
         )

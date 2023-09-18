@@ -4,7 +4,7 @@ const puppeteer = require("puppeteer-core");
 async function scraper() {
     let browser;
     try {
-        const path = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
+        const path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
         browser = await puppeteer.launch({ executablePath: path });
         const page = await browser.newPage();
         page.setDefaultNavigationTimeout(2 * 60 * 1000);

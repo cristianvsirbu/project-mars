@@ -13,7 +13,7 @@ const MarsPage = () => {
 
   return (
     <div className="text-white text-xl xl:flex xl:justify-center">
-      <Model3D key={mars.model3d} modelPath={mars.model3d} initialScale={0.1} cameraPosition={[0, 0, 140]} /> 
+      <Model3D key={mars.model3d} modelPath={mars.model3d} initialScale={0.1} cameraPosition={[0, 0, 150]} /> 
       <Characteristics data={chars} />
     </div>
 
