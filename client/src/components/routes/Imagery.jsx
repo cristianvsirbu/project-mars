@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import PhotoCard from '../PhotoCard';
+import BackToTop from '../BackToTop';
 
 const Imagery = () => {
   const API_KEY = '3gdaS7EfzvN0wGfCVqKhm8atgymXVO7BSi2s0Hnq';
@@ -69,7 +70,7 @@ const Imagery = () => {
   };
 
   return (
-    <div>
+    <div className='flex flex-col w-full'>
       {loading ? (<div className='h-[80vh] flex justify-center items-center'><img src='assets/astronaut.gif' className='w-[450px] z-50' /></div>) : (
         <div className='flex flex-col'>
           <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
@@ -92,6 +93,7 @@ const Imagery = () => {
           </div>
         </div>
       )}
+      <BackToTop />
     </div>
   );
 };
