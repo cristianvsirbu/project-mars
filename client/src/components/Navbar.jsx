@@ -59,9 +59,9 @@ const Navbar = () => {
                      lg:ml-[1.5rem]
                      lg:h-[4rem]
                      xl:h-[5rem]
-                     xl:ml-[3rem]
+                     xl:ml-[2rem]
                      xl:mt-[1rem]
-                     2xl:ml-[9rem]
+                     2xl:ml-[5rem]
                      2xl:h-[7rem]"/>
         </Link>
         {/* Menu */}

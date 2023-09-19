@@ -13,7 +13,7 @@ import Model3D from "../../models/Model3D";
     }
 
     return (
-      <div className="text-white text-xl xl:flex">
+      <div className="text-white text-xl xl:flex xl:flex-row-reverse justify-center">
         <Model3D modelPath={moon.model3d} initialScale={1} cameraPosition={moonId === "phobos" ? [0, 0, 40] : [0, 0, 25]} />
         <Characteristics data={chars} />
       </div>

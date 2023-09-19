@@ -35,7 +35,7 @@ function Characteristics({ data }) {
                     {items.map((item, index) => (
                         <li
                             key={index}
-                            className={`md:max-xl:px-4 xl:px-0`}
+                            className={`md:max-xl:px-4 xl:px-0 mx-4 xl:mx-0 mt-4`}
                         >
                             {typeof item === "object" ? (
                                 Object.entries(item).map(([subKey, subValue], subIndex) => (
@@ -48,8 +48,8 @@ function Characteristics({ data }) {
                                 ))
                             ) : (
                                 <div className="flex flex-col items-center xl:flex-row">
-                                        <img src="/assets/star.png" className="w-[3rem] lg:w-[4rem]" />
-                                        <div className="md:text-start">
+                                        <img src="/assets/star.png" className="w-[3rem] xl:w-[4rem]" />
+                                        <div className="xl:text-start">
                                             {item}
                                         </div>
                                 </div>

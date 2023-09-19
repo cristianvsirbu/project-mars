@@ -17,7 +17,7 @@ const About = () => {
           const currentCategory = modelsData.find((model) => model.category === category);
           return (
             <li key={category}>
-              <div className="w-[15rem] md:w-[18rem] h-[23rem] my-6 lg:w-[25rem] lg:h-[35rem] blur__card parallax">
+              <div className="w-[15rem] md:w-[18rem] h-[23rem] md:h-[28rem] my-6 lg:w-[25rem] lg:h-[35rem] blur__card parallax">
                 <Link to={`/about/${category}`} className="flex flex-col h-full justify-between py-12">
                   <img src={currentCategory.cover} className="w-[12rem] lg:w-[20rem] self-center" />
                   <span className="blink"> {category.toUpperCase()} </span>
