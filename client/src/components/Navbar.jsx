@@ -50,20 +50,24 @@ const Navbar = () => {
                     ">
 
         {/* Logo */}
-        <Link to="/">
-        <img src="/assets/logos/logo.png"
-            className="h-[70%]
-                     md:h-full
-                     mt-[1rem]
-                     md:mt-[0.8rem]
-                     lg:ml-[1.5rem]
-                     lg:h-[4rem]
-                     xl:h-[5rem]
-                     xl:ml-[2rem]
-                     xl:mt-[1rem]
-                     2xl:ml-[5rem]
-                     2xl:h-[7rem]"/>
-        </Link>
+        <div className="mt-3 
+                        lg:mt-2
+                        2xl:mt-4
+                        xl:ml-[4rem]
+                        2xl:ml-[8rem]
+                        4k:ml-[12rem]
+                        max-w-[6rem]
+                        md:max-w-[4.5rem]
+                        lg:max-w-[6rem]
+                        xl:max-w-[8rem]
+                        2xl:max-w-[10rem]
+                        h-auto">
+        <Link to="/" aria-label="Go to home">
+          <img src="/assets/logos/logo.webp"
+               alt="Logo"
+               className=""/>
+          </Link>
+        </div>
         {/* Menu */}
         <ul className={`hidden
                         md:flex

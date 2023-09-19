@@ -2,6 +2,7 @@ import { Area, AreaChart, Label, CartesianGrid, XAxis, YAxis, Tooltip, Responsiv
 import { useContext, useState, useEffect } from "react";
 import { ModelsDataContext } from "../models/modelsContext";
 import BackToTop from '../BackToTop';
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -9,6 +10,8 @@ const MissionsPage = () => {
   const data = useContext(ModelsDataContext);
   const launchesByDecade = data.find((model) => model.category === 'missions').launches_by_decade;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const location = useLocation();
+  const shouldRenderChart = location.pathname === '/about/missions';
 
   useEffect(() => {
     const handleResize = () => {
@@ -170,7 +173,7 @@ const MissionsPage = () => {
 
   return (
       <div className="flex flex-col self-center">
-        {windowWidth > 767 ? renderAreaChart : renderLineChart}
+      {shouldRenderChart && (windowWidth > 767 ? renderAreaChart : renderLineChart)}
         <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
           Missions
         </p>

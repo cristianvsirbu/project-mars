@@ -127,7 +127,7 @@ const Weather = () => {
   return (
     <div className='text-white'>
       {loading ? (
-        <div className='h-[80vh] flex justify-center items-center'><img src='/assets/astronaut.gif' className='w-[450px] z-50' /></div>
+        <div className='h-[80vh] flex justify-center items-center'><video autoPlay loop src="/assets/astronaut.webm" className="mx-auto w-[50%] h-[50%]" /></div>
       ) : (
           <div>
             <div className='flex flex-col items-center px-5 text-center'>

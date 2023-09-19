@@ -4,7 +4,7 @@
 const Partners = () => {
   return (
     <div className="">
-
+      
     </div>
   )
 }

@@ -71,7 +71,7 @@ const Imagery = () => {
 
   return (
     <div className='flex flex-col w-full'>
-      {loading ? (<div className='h-[80vh] flex justify-center items-center'><img src='assets/astronaut.gif' className='w-[450px] z-50' /></div>) : (
+      {loading ? (<div className='h-[80vh] flex justify-center items-center'><video autoPlay loop src="/assets/astronaut.webm" className="mx-auto w-[50%] h-[50%]" /></div>) : (
         <div className='flex flex-col'>
           <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
            Imagery
