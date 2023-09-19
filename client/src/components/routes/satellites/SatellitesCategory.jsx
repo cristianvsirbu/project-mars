@@ -4,7 +4,7 @@ import { ModelsDataContext } from "../../models/modelsContext";
 
 
 
-const Satellites = () => {
+const SatellitesCategory = () => {
   const modelsData = useContext(ModelsDataContext);
   const satelliteCategory = modelsData.find(model => model.category === 'satellites');
   const location = useLocation();
@@ -32,4 +32,4 @@ const Satellites = () => {
 };
 
 
-export default Satellites
+export default SatellitesCategory

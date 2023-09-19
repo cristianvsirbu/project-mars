@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { ModelsDataContext } from "../../models/modelsContext";
 
-const Moons = () => {
+const MoonsCategory = () => {
   const modelsData = useContext(ModelsDataContext);
   const moonsCategory = modelsData.find(model => model.category === 'moons');
   const location = useLocation();
@@ -25,5 +25,5 @@ const Moons = () => {
     </div>
   );
 };
-export default Moons;
+export default MoonsCategory;
 

@@ -167,7 +167,8 @@
   z-index: 2;
   border-radius: 22px;
   font-size: 1.8rem;
-  padding: 0.6rem 5rem;
+  padding: 0rem 4rem;
+  margin-top: 2rem;
 }
 
 @media screen and (min-width: 1024px) {

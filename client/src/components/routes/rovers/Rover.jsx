@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
-import { useFetchData } from '../hooks/useFetchData';
-import Characteristics from '../Characteristics';
-import Model3D from '../models/Model3D';
+import { useFetchData } from '../../hooks/useFetchData';
+import Characteristics from '../../Characteristics';
+import Model3D from '../../models/Model3D';
 
-function RoverPage() {
+function Rover() {
 
   const { subcategory, roverId } = useParams();
 
@@ -28,4 +28,4 @@ function RoverPage() {
   )
 }
 
-export default RoverPage;
+export default Rover;

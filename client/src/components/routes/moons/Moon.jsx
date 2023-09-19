@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import Characteristics from "../Characteristics";
-import { useFetchData } from "../hooks/useFetchData";
-import Model3D from "../models/Model3D";
+import Characteristics from "../../Characteristics";
+import { useFetchData } from "../../hooks/useFetchData";
+import Model3D from "../../models/Model3D";
 
-  const MoonPage = () => {
+  const Moon = () => {
     const { moonId } = useParams();
     const moon = useFetchData("moons", "", moonId);
     const chars = moon.characteristics;
@@ -13,14 +13,14 @@ import Model3D from "../models/Model3D";
     }
 
     return (
-      <div className="text-white text-xl xl:flex xl:items-center">
+      <div className="text-white text-xl xl:flex">
         <Model3D modelPath={moon.model3d} initialScale={1} cameraPosition={moonId === "phobos" ? [0, 0, 40] : [0, 0, 25]} />
         <Characteristics data={chars} />
       </div>
     );
   };
 
-export default MoonPage;
+export default Moon;
 
 
 

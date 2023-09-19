@@ -1,19 +1,19 @@
 import Home from "./Home";
 import About from "./About";
-import ErrorPage from "../pages/ErrorPage";
+import ErrorPage from "./ErrorPage";
 import App from "../../App";
 import Imagery from "./Imagery";
 import Partners from "./Partners";
 import Weather from "./Weather";
-import SatellitePage from "../pages/SatellitePage";
-import MarsPage from "../pages/MarsPage";
-import MoonPage from "../pages/MoonPage";
-import Moons from "./moons/Moons";
-import Rovers from "./rovers/Rovers";
-import Satellites from "./satellites/Satellites";
-import MissionsPage from "../pages/MissionsPage";
-import RoverPage from "../pages/RoverPage";
+import Missions from "../routes/Missions";
+import Mars from "../routes/Mars";
+import Moon from "../routes/moons/Moon";
+import MoonsCategory from "./moons/MoonsCategory";
+import Rover from "../routes/rovers/Rover";
+import RoversCategory from "./rovers/RoversCategory";
 import RoversSubcategory from "./rovers/RoversSubCategory";
+import Satellite from "../routes/satellites/Satellite";
+import SatellitesCategory from "./satellites/SatellitesCategory";
 import SatellitesSubcategory from "./satellites/SatelliteSubcategory";
 
 const routes = [{
@@ -33,21 +33,21 @@ const routes = [{
             children: [
                 {
                     path: 'mars',
-                    element: <MarsPage />
+                    element: <Mars />
                 },
                 {
                     path: 'moons',
-                    element: <Moons />,
+                    element: <MoonsCategory />,
                     children: [
                         {
                             path: ':moonId',
-                            element: <MoonPage />,
+                            element: <Moon />,
                         }
                     ]
                 },
                 {
                     path: 'rovers',
-                    element: <Rovers />,
+                    element: <RoversCategory />,
                     children: [
                         {
                             path: ':subcategory',
@@ -55,14 +55,14 @@ const routes = [{
                             children: [
                                 {
                                     path: ':roverId',
-                                    element: <RoverPage />,
+                                    element: <Rover />,
                                 },
                             ]
                         }]
                 },
                 {
                     path: 'satellites',
-                    element: <Satellites />,
+                    element: <SatellitesCategory />,
                     children: [
                         {
                             path: ':subcategory',
@@ -70,7 +70,7 @@ const routes = [{
                             children: [
                                 {
                                     path: ':satelliteId',
-                                    element: <SatellitePage />,
+                                    element: <Satellite />,
                                 }
                             ],
                         },
@@ -78,7 +78,7 @@ const routes = [{
                 },
                 {
                     path: 'missions',
-                    element: <MissionsPage />,
+                    element: <Missions />,
                 }
             ]
         },

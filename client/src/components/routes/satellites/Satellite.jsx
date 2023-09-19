@@ -1,11 +1,11 @@
 // import { useContext } from "react";
 // import { ModelsDataContext } from "../models/modelsContext";
 import { useParams } from "react-router-dom";
-import Characteristics from "../Characteristics";
-import { useFetchData } from "../hooks/useFetchData";
-import Model3D from "../models/Model3D";
+import Characteristics from "../../Characteristics";
+import { useFetchData } from "../../hooks/useFetchData";
+import Model3D from "../../models/Model3D";
 
-const SatellitePage = () => {
+const Satellite = () => {
 
 
   const { subcategory, satelliteId } = useParams();
@@ -34,4 +34,4 @@ const SatellitePage = () => {
   );
 };
 
-export default SatellitePage;
+export default Satellite;
