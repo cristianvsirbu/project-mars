@@ -173,12 +173,12 @@
 
 @media screen and (min-width: 1024px) {
 .button__style {
-    position: relative;
-    display: inline-block;
+    /* position: relative; */
+    /* display: inline-block; */
     border: none;
     border-radius: 22px;
     background: none;
-    padding: 30px 200px;
+    padding: 2rem 10rem;
     margin: 20px;
   }
 

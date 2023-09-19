@@ -20,7 +20,7 @@ export default function ErrorPage() {
                     <img src="/assets/black_hole.svg" className="w-[8rem] lg:w-[12rem] xl:w-[20rem]" />
                     <p className="text-slate-800 text-[10rem] lg:text-[15rem] xl:text-[24rem] 4k:text-[30rem] font-bold">4</p>
                 </div>
-                <button className="button__style mt-2 lg:mt-0">
+                <button className="button__style inline-block relative mt-2 lg:mt-0">
                     <a href="/">HOME</a>
                 </button>
                 <div className="md:mt-[-5rem] md:mr-[-27rem] lg:mt-[-8rem] lg:mr-[-38rem] xl:mt-[-10rem] xl:mr-[-44rem] 4k:mt-[-12rem] 4k:mr-[-50rem]">

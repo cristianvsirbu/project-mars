@@ -112,7 +112,10 @@ export const modelsData = [
                                 "kmPerH": "870 km/h",
                                 "mph": "540 mph"
                             },
-                            "Axial Tilt": "25.19° to its orbital plane",
+                            
+                            "Axial Tilt": {
+                                "Degrees": "25.19° to its orbital plane"
+                            },
                             "North Pole Right Ascension": {
                                 "Degrees": "317.68143°",
                                 "Time": "21h 10m 44s"

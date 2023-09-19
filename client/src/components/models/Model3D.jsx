@@ -92,7 +92,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
 
 
   return (
-    <div className='flex justify-center w-full h-[30vh] md:h-[45vh] lg:h-[55vh] 2xl:w-[60vw] 2xl:h-[80vh]'>
+    <div className='flex w-full h-[30vh] md:h-[45vh] lg:h-[55vh] 2xl:w-[70vw] 2xl:h-[80vh]'>
         <div className='container'></div>
       </div>
   );

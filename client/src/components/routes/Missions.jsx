@@ -1,6 +1,7 @@
 import { Area, AreaChart, Label, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { useContext, useState, useEffect } from "react";
 import { ModelsDataContext } from "../models/modelsContext";
+import BackToTop from '../BackToTop';
 
 
 
@@ -174,6 +175,7 @@ const MissionsPage = () => {
           Missions
         </p>
       <Missions />
+      <BackToTop />
       </div>
   );
 }

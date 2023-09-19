@@ -65,7 +65,7 @@ function Characteristics({ data }) {
     function generateDiv(key, parentKey, hasChildObjects, childData) {
         return (
             <div key={key} className="mt-4">
-                <span className="flex justify-center xl:justify-start font-bold text-3xl">
+                <span className="flex justify-center xl:justify-start font-bold text-2xl md:text-3xl">
                     {parentKey ? `${key}` : key}
                 </span>
                 <div className="">
