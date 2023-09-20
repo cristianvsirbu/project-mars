@@ -17,8 +17,7 @@ async function scraper() {
             const observationRows = Array.from(document.querySelectorAll('#weather_observation tbody tr'));
 
             const data = forecastRows.map((forecastRow, index) => {
-                const dateSol = forecastRow.querySelector('.dateSol')?.textContent.trim();
-
+                const dateSol = forecastRow.querySelector('.dateSol')?.textContent.trim().replace(/^Sol\s+/i, '');
                 const UTC = observationRows[observationRows.length - 1 - index]?.querySelector('.sol')?.textContent.trim();
                 const highCelsius = observationRows[observationRows.length - 1 - index]?.querySelector('.temperature.max .celsius')?.textContent.trim();
                 const lowCelsius = observationRows[observationRows.length - 1 - index]?.querySelector('.temperature.min .celsius')?.textContent.trim();

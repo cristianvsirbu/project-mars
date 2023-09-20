@@ -10,6 +10,7 @@ import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
 const WeatherCard = ({ weather, index }) => {
   const weatherItems = [
     {
+      label: 'Sol',
       value: weather.dateSol,
       icon: clear_day,
       alt: 'Sol',
@@ -127,16 +128,21 @@ const Weather = () => {
   return (
     <div className='text-white'>
       {loading ? (
-        <div className='h-[80vh] flex justify-center items-center'><video autoPlay loop src="/assets/astronaut.webm" className="mx-auto w-[50%] h-[50%]" /></div>
+        <div className='h-[80vh] flex justify-center items-center'>
+          <video autoPlay loop src="/assets/astronaut.webm" className="mx-auto w-[50%] h-[50%]" />
+        </div>
       ) : (
           <div>
             <div className='flex flex-col items-center px-5 text-center'>
               <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
                 Weather
               </p>
-              <p className='text-[1.3rem] md:text-[1.5rem] xl:text-[1.8rem] font-medium'><Link to="/about/rovers/active/curiosity" className='text-orange-500 font-bold blink'>Curiosity</Link> is taking daily weather measurements at Gale Crater in the southern hemisphere of Mars, near the equator.</p>
+              <p className='text-[1.3rem] md:text-[1.5rem] xl:text-[1.8rem] font-medium'>
+                <Link to="/about/rovers/active/curiosity" className='text-orange-500 font-bold blink'>Curiosity </Link>
+                is taking daily weather measurements at Gale Crater in the southern hemisphere of Mars, near the equator.
+              </p>
             </div>
-        <div className='flex flex-col self-center lg:grid lg:grid-cols-2 xl:grid-cols-4 4k:grid-cols-7'>
+        <div className='flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-4 4k:grid-cols-7'>
           {weatherData.map((item, index) => (
             <WeatherCard key={index} weather={item} index={index} />
           ))}

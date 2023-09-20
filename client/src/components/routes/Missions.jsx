@@ -145,7 +145,7 @@ const MissionsPage = () => {
           <div key={index} className='blur__card p-10 parallax'>
               {mission.logo && (
                 <div className='w-full h-[20rem]'>
-                  <img src={mission.logo} className='w-full h-full object-contain' alt={mission.Mission} />
+                <img src={mission.logo} className='w-full h-full object-contain' alt={mission.Mission} loading="lazy" />
                 </div>
               )}
             <ul key={index} className='text-[1.1rem] lg:text-[1.3rem] 4k:text-[1.4rem]'>

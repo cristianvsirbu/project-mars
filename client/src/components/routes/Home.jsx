@@ -84,7 +84,7 @@ const Home = () => {
         </div>
       </div>
       <div className="z-1 flex justify-center items-center w-full max-h-[80vh]">
-        <img src="/assets/mars/M2.webp" className="" />
+        <img src="/assets/mars/M2.webp" loading="lazy" />
       </div>
 
     </div>

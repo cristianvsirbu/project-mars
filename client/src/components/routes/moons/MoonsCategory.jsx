@@ -14,7 +14,7 @@ const MoonsCategory = () => {
           <li key={moon.id}>
             <div className="w-[15rem] md:w-[18rem] h-[23rem] md:h-[28rem] my-6 lg:w-[25rem] lg:h-[35rem] blur__card parallax">
               <Link to={`/about/moons/${moon.id}`} className="flex flex-col h-full justify-between py-12">
-                <img src={moon.cover} className={`${moon.id === "phobos" ? "lg:w-[13rem]" : "lg:w-[12.5rem] md:p-1 md:mb-0"} self-center w-[8rem] mb-2`}/>
+                <img src={moon.cover} className={`${moon.id === "phobos" ? "lg:w-[13rem]" : "lg:w-[12.5rem] md:p-1 md:mb-0"} self-center w-[8rem] mb-2`} loading="lazy" />
                 <span className="blink">{moon.name}</span>
             </Link>
             </div>

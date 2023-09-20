@@ -20,12 +20,12 @@ const RoversSubcategory = () => {
                         <div className="w-[15rem] md:w-[18rem] h-[23rem] my-6 lg:w-[23rem] md:h-[28rem] lg:h-[35rem] blur__card parallax">
                             <Link to={`/about/rovers/${subcategory}/${rover.id}`}>
                                 <div className="flex flex-col h-full py-12">
-                                <img
-                                    src={rover.cover}
+                                    <img
+                                        src={rover.cover}
                                         className={` ${rover.id === "sojourner" ? "w-[60%]" : "w-[80%]"} h-full w-[80%] object-contain self-center`}
-                                    alt={rover.name}
-                                    />
-                                <span className="blink"> {rover.name} </span>
+                                        alt={rover.name}
+                                        loading="lazy" />
+                                    <span className="blink"> {rover.name} </span>
                                 </div>
                             </Link>
                         </div>

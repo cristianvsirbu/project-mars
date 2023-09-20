@@ -18,7 +18,7 @@ const SatellitesSubcategory = () => {
                         <div className="w-[15rem] md:w-[18rem] md:h-[28rem] h-[25rem] my-6 lg:w-[20rem] lg:h-[35rem]  blur__card parallax">
                             <Link to={`/about/satellites/${subcategory}/${satellite.id}`}>
                                 <div className="flex flex-col h-full py-12">
-                                <img src={satellite.cover} className="h-full object-contain w-[90%] self-center" alt={satellite.name} />
+                                    <img src={satellite.cover} className="h-full object-contain w-[90%] self-center" alt={satellite.name} loading="lazy" />
                                 <span className="blink px-3">
                                     {satellite.name}
                                     </span>
