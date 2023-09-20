@@ -13,36 +13,40 @@ const SatellitesCategory = () => {
     <div className="text-center">
       <ul
         className={`
-        text-white
+        my-12
+        flex
+        flex-wrap
+        flex-col
+        items-center
         text-3xl
-        md:text-4xl
-        lg:text-5xl
+        text-white
         text-center
         font-semibold
-        lg:h-[80vh]
-        flex
+        md:text-4xl
         md:justify-evenly
-        flex-col
-        my-12
         md:flex-row
-        flex-wrap
-        items-center
+        lg:text-5xl
+        lg:h-[80vh]
         ${location.pathname.includes("/about/satellites/") ? "hidden" : ""}
         `}>
         {satelliteCategory.children.map(subcategory => (
           <li key={subcategory.subcategory}>
             <div
               className="
+              my-6 
               w-[15rem]
-              md:w-[18rem]
               h-[23rem]
+              md:w-[18rem]
               md:h-[28rem]
-              my-6 lg:w-[25rem]
+              lg:w-[25rem]
               lg:h-[35rem]
               blur__card
               parallax
               ">
-              <Link to={`/about/satellites/${subcategory.subcategory}`} className="flex flex-col h-full justify-between py-12">
+              <Link
+                to={`/about/satellites/${subcategory.subcategory}`}
+                className="flex flex-col h-full justify-between py-12"
+              >
                 <img
                   src={subcategory.cover}
                   className="

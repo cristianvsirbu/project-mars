@@ -16,12 +16,33 @@ function Rover() {
 
   return (
     <div className='flex flex-col w-full'>
-      <div className="text-white text-xl flex flex-col xl:flex-row-reverse justify-center">
+      <div
+        className="
+        flex
+        flex-col
+        justify-center
+        xl:flex-row-reverse
+        text-xl
+        text-white
+        ">
         {rover.model3d ?
-          (<Model3D modelPath={rover.model3d} initialScale={1} cameraPosition={[0, 0, 6]} />
+          (<Model3D
+            modelPath={rover.model3d}
+            initialScale={1}
+            cameraPosition={[0, 0, 6]} />
           ) : (
-            <div className='h-[25%] md:max-h-[30%] lg:max-h-[40%] xl:max-w-[45%] mx-auto xl:mx-0'>
-              <img src={rover.cover} alt={rover.name} className='w-full h-full object-contain p-8' />
+            <div className='
+            mx-auto
+            xl:mx-0
+            h-[25%]
+            md:max-h-[30%]
+            lg:max-h-[40%]
+            xl:max-w-[45%]
+            '>
+              <img
+                src={rover.cover}
+                alt={rover.name}
+                className='w-full h-full object-contain p-8' />
             </div>
           )
         }

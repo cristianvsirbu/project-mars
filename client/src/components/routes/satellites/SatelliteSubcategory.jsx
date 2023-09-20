@@ -14,29 +14,29 @@ const SatellitesSubcategory = () => {
         <div className="text-white text-2xl">
             <ul
                 className={`
-                text-white
-                md:text-3xl
-                lg:text-4xl
-                text-center
-                font-semibold
+                my-12
                 flex
                 flex-col
-                my-12
+                items-center
+                text-white
+                text-center
+                font-semibold
+                md:text-3xl
                 md:flex-row
                 md:justify-evenly
                 md:flex-wrap
-                items-center
+                lg:text-4xl
                 ${location.pathname.includes(`/about/satellites/${subcategory}/`) && !isLastLevel ? "hidden" : ""}
                 `}>
                 {subcategoryData.children.map(satellite => (
                     <li key={satellite.id}>
                         <div
                             className="
+                            my-6
                             w-[15rem]
+                            h-[25rem]
                             md:w-[18rem]
                             md:h-[28rem]
-                            h-[25rem]
-                            my-6
                             lg:w-[20rem]
                             lg:h-[35rem]
                             blur__card
@@ -48,8 +48,8 @@ const SatellitesSubcategory = () => {
                                         src={satellite.cover}
                                         className="
                                         h-full
-                                        object-contain
                                         w-[90%]
+                                        object-contain
                                         self-center"
                                         alt={satellite.name}
                                         loading="lazy" />
