@@ -3,10 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import '../index.css';
 import routes from "./routes/routes";
 
-
-
-
-
 const Navbar = () => {
 
   const navLinks = routes.flatMap((route) => {
@@ -65,7 +61,7 @@ const Navbar = () => {
         <Link to="/" aria-label="Go to home">
           <img src="/assets/logos/logo.webp"
                alt="Logo"
-               className=""/>
+               />
           </Link>
         </div>
         {/* Menu */}

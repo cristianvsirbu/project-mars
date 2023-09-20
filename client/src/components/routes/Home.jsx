@@ -52,7 +52,7 @@ const Home = () => {
                           4k:text-[3rem]">
               PROJECT
             </h2>
-            <img src="assets/line2.svg" className="4k:w-[35%] 4k:pt-2 animate-pulse" />
+            <img src="assets/line2.svg" className="4k:w-[35%] 4k:pt-2 animate-pulse" alt='Pulsing Line' />
             <h1 className="text-white 
                           font-extrabold
                           text-7xl
@@ -84,7 +84,7 @@ const Home = () => {
         </div>
       </div>
       <div className="z-1 flex justify-center items-center w-full max-h-[80vh]">
-        <img src="/assets/mars/M2.webp" loading="lazy" />
+        <img src="/assets/mars/M2.webp" alt='Mars' loading="lazy" />
       </div>
 
     </div>

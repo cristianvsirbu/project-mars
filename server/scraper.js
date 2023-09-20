@@ -1,15 +1,21 @@
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
+const chromium = require("chrome-aws-lambda")
 
 
 async function scraper() {
     let browser;
     try {
-        const path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
-        browser = await puppeteer.launch({ executablePath: path });
+        const executablePath = await chromium.executablePath;
+        browser = await puppeteer.launch({
+            args: chromium.args,
+            executablePath: executablePath,
+            headless: "new",
+        });
+
         const page = await browser.newPage();
         page.setDefaultNavigationTimeout(2 * 60 * 1000);
+        await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36');
         await page.goto("https://mars.nasa.gov/msl/weather/", { waitUntil: "domcontentloaded" });
-
         await page.waitForSelector('#weather_observation tbody tr');
 
         const weatherData = await page.evaluate(() => {
@@ -25,6 +31,9 @@ async function scraper() {
                 const sunrise = observationRows[observationRows.length - 1 - index]?.querySelector('.sun.rise')?.textContent.trim();
                 const sunset = observationRows[observationRows.length - 1 - index]?.querySelector('.sun.set')?.textContent.trim();
 
+                console.log("forecastRows length:", forecastRows.length);
+                console.log("observationRows length:", observationRows.length);
+
                 return { dateSol, pressure, sunrise, sunset, UTC, highCelsius, lowCelsius };
             });
 
@@ -34,6 +43,10 @@ async function scraper() {
         return weatherData;
     } catch (error) {
         console.error(error);
+    } finally {
+        if (browser) {
+            await browser.close();
+        }
     }
 }
 scraper();

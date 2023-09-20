@@ -10,7 +10,7 @@ function App() {
     <div className='w-full'>
       <Navbar />
       {/* Line */}
-      <img className="hidden md:flex mx-auto my-0 w-full" src='/assets/line.svg' />
+      <img className="hidden md:flex mx-auto my-0 w-full" src='/assets/line.svg' alt='Line under Navbar'/>
       <div className='hidden md:flex'>
         <div id='stars' />
         <div id='stars2' />

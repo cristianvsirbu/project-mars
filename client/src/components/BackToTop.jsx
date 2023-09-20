@@ -35,7 +35,7 @@ const BackToTop = () => {
                         ${isVisible ? '' : 'hidden'}
                         `}
                 onClick={scrollToTop}
-        ><a>Back to Top</a>
+        ><a href="#" aria-label="Scroll back to top">Back to Top</a>
             </button>
     );
 }

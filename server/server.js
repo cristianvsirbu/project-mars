@@ -2,17 +2,16 @@ const express = require('express');
 const scraper = require('./scraper.js');
 const cors = require('cors');
 
-
 const app = express();
 const port = 3000;
 
-// Enable CORS for all routes
+// Enabled CORS for all routes
 app.use(cors());
 
 
 app.use(express.json());
 
-// Define the route to fetch daily weather data
+// Defined the route to fetch daily weather data
 app.get('/daily-weather', async (req, res) => {
     try {
         const weatherData = await scraper();

@@ -78,6 +78,7 @@ const WeatherCard = ({ weather, index }) => {
     </div>
   );
 };
+
 WeatherCard.propTypes = {
   weather: PropTypes.shape({
     dateSol: PropTypes.string.isRequired,

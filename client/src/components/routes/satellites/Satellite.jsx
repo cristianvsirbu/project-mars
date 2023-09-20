@@ -1,5 +1,3 @@
-// import { useContext } from "react";
-// import { ModelsDataContext } from "../models/modelsContext";
 import { useParams } from "react-router-dom";
 import Characteristics from "../../Characteristics";
 import { useFetchData } from "../../hooks/useFetchData";
@@ -11,7 +9,7 @@ const Satellite = () => {
 
   const { subcategory, satelliteId } = useParams();
 
-  // Use the custom hook to fetch data
+  // Used the custom hook to fetch data
   const satellite = useFetchData("satellites", subcategory, satelliteId);
   const chars = satellite.characteristics;
 

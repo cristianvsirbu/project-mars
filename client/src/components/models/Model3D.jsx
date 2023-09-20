@@ -28,7 +28,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
     };
 
     const createAmbientLight = (color, intensity, position) => {
-      const light = new THREE.AmbientLight(color, intensity);
+      const light = new THREE.AmbientLight(color, intensity, position);
       return light;
     }
 
@@ -75,10 +75,9 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
 
     // Checked if the model path is valid/present
     if (!modelPath) {
-      // Remove the canvas and clean up resources
       const container = document.querySelector('.container');
-      container.innerHTML = ''; // Remove the content of the container
-      return; // Exit early
+      container.innerHTML = ''; 
+      return; 
     }
 
     // Cleaned up resources

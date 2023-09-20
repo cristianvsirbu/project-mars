@@ -1,8 +1,6 @@
-/* eslint-disable react/prop-types */
-
-
+// eslint-disable-next-line react/prop-types
 function Characteristics({ data }) {
-  // Recursive function to render characteristics
+    // Recursive function to render characteristics
     function renderCharacteristics(data, parentKey = "") {
         const result = Object.keys(data).map((key) => {
             if (Array.isArray(data[key])) {
@@ -24,6 +22,7 @@ function Characteristics({ data }) {
 
         return result;
     }
+
 
     function generateList(key, items) {
         return (
@@ -48,10 +47,10 @@ function Characteristics({ data }) {
                                 ))
                             ) : (
                                 <div className="flex flex-col items-center xl:flex-row">
-                                        <img src="/assets/star.png" className="w-[3rem] xl:w-[4rem]" />
-                                        <div className="xl:text-start">
-                                            {item}
-                                        </div>
+                                    <img src="/assets/star.png" className="w-[3rem] xl:w-[4rem]" alt="List Item" />
+                                    <div className="xl:text-start">
+                                        {item}
+                                    </div>
                                 </div>
                             )}
                         </li>
