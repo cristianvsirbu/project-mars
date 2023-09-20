@@ -15,8 +15,18 @@ import BackToTop from "../../BackToTop";
 
     return (
       <div className="flex flex-col w-full">
-      <div className="text-white text-xl xl:flex xl:flex-row-reverse justify-center">
-        <Model3D modelPath={moon.model3d} initialScale={1} cameraPosition={moonId === "phobos" ? [0, 0, 40] : [0, 0, 25]} />
+        <div
+          className="
+          text-xl
+          text-white
+          justify-center
+          xl:flex
+          xl:flex-row-reverse
+          ">
+          <Model3D
+            modelPath={moon.model3d}
+            initialScale={1}
+            cameraPosition={moonId === "phobos" ? [0, 0, 40] : [0, 0, 25]} />
         <Characteristics data={chars} />
         </div>
         <BackToTop />
