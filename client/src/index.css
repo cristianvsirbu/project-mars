@@ -173,8 +173,6 @@
 
 @media screen and (min-width: 1024px) {
 .button__style {
-    /* position: relative; */
-    /* display: inline-block; */
     border: none;
     border-radius: 22px;
     background: none;

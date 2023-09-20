@@ -60,7 +60,16 @@ const MissionsPage = () => {
 
 
   const renderAreaChart = (
-    <div className='md:w-full md:p-[2rem] md:h-[40vh] xl:h-[80vh] mt-10 xl:p-[3rem] select-none'>
+    <div
+      className='
+                 mt-10
+                 md:w-full
+                 md:p-[2rem]
+                 md:h-[40vh]
+                 xl:p-[3rem]
+                 xl:h-[80vh]
+                 select-none
+      '>
       <ResponsiveContainer>
         <AreaChart
           data={launchesByDecade}
@@ -131,23 +140,28 @@ const MissionsPage = () => {
     return (
       <div
         className='
-        text-white
+        mx-8
         grid
+        gap-8
         grid-cols-1
         md:grid-cols-2
         lg:grid-cols-3
         xl:grid-cols-4
         4k:grid-cols-6
-        gap-8
-        mx-8
+        text-white
         '>
         {missions.map((mission, index) => (
           <div key={index} className='blur__card p-10 parallax'>
-              {mission.logo && (
-                <div className='w-full h-[20rem]'>
-                <img src={mission.logo} className='w-full h-full object-contain' alt={mission.Mission} loading="lazy" />
-                </div>
-              )}
+            {mission.logo && (
+              <div className='w-full h-[20rem]'>
+                <img
+                  src={mission.logo}
+                  className='w-full h-full object-contain'
+                  alt={mission.Mission}
+                  loading="lazy"
+                />
+              </div>
+            )}
             <ul key={index} className='text-[1.1rem] lg:text-[1.3rem] 4k:text-[1.4rem]'>
               {Object.entries(mission).map(([key, value]) => {
                 if (key === 'logo') {
@@ -172,14 +186,14 @@ const MissionsPage = () => {
   };
 
   return (
-      <div className="flex flex-col self-center">
+    <div className="flex flex-col self-center">
       {shouldRenderChart && (windowWidth > 767 ? renderAreaChart : renderLineChart)}
-        <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
-          Missions
-        </p>
+      <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
+        Missions
+      </p>
       <Missions />
       <BackToTop />
-      </div>
+    </div>
   );
 }
 

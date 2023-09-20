@@ -26,7 +26,16 @@ function Characteristics({ data }) {
 
     function generateList(key, items) {
         return (
-            <div key={key} className="py-2 flex md:text-2xl flex-col items-center xl:items-start">
+            <div
+                key={key}
+                className="
+                          py-2
+                          flex
+                          flex-col
+                          items-center
+                          md:text-2xl
+                          xl:items-start
+             ">
                 <span className="flex font-bold text-orange-600 italic lg:text-2xl mt-8">
                     {key}:
                 </span>
@@ -38,8 +47,13 @@ function Characteristics({ data }) {
                         >
                             {typeof item === "object" ? (
                                 Object.entries(item).map(([subKey, subValue], subIndex) => (
-                                    <div key={subIndex} className={`${subKey === "Name" ? "mt-8" : ""} flex flex-col xl:items-start px-4`}>
-                                        <span className="font-semibold text-orange-600">{subKey}:</span>
+                                    <div
+                                        key={subIndex}
+                                        className={`${subKey === "Name" ? "mt-8" : ""} flex flex-col xl:items-start px-4`}
+                                    >
+                                        <span className="font-semibold text-orange-600">
+                                            {subKey}:
+                                        </span>
                                         <span className={`${subKey === "Name" ? "text-white font-semibold" : "text-slate-400 xl:text-start"}`}>
                                             {subValue}
                                         </span>
@@ -47,7 +61,12 @@ function Characteristics({ data }) {
                                 ))
                             ) : (
                                 <div className="flex flex-col items-center xl:flex-row">
-                                    <img src="/assets/star.png" className="w-[3rem] xl:w-[4rem]" alt="List Item" />
+                                        <img
+                                            src="/assets/star.png"
+                                            className="w-[3rem] xl:w-[4rem]"
+                                            alt="List Item" 
+                                            loading="lazy"
+                                            />
                                     <div className="xl:text-start">
                                         {item}
                                     </div>
@@ -64,7 +83,15 @@ function Characteristics({ data }) {
     function generateDiv(key, parentKey, hasChildObjects, childData) {
         return (
             <div key={key} className="mt-4">
-                <span className="flex justify-center xl:justify-start font-bold text-2xl md:text-3xl">
+                <span
+                    className="
+                              flex
+                              justify-center
+                              xl:justify-start
+                              font-bold
+                              text-2xl
+                              md:text-3xl
+                    ">
                     {parentKey ? `${key}` : key}
                 </span>
                 <div className="">

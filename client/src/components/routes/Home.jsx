@@ -4,8 +4,8 @@ const Home = () => {
   return (
     <div className="flex
                     flex-col-reverse
-                    xl:flex-row
                     xl:h-full
+                    xl:flex-row
                     xl:items-center
                     xl:justify-center
 ">
@@ -21,41 +21,46 @@ const Home = () => {
 
       <div className="p-4
                       flex
-                      flex-col
                       w-full
+                      flex-col
                       lg:justify-center
                       ">
 
-        <div className='blur__card
+        <div className='
+                        py-8
+                        px-4
                         z-10
+                        w-[95%]
+                        mx-auto
                         flex
                         flex-col
                         md:my-10
-                        py-8
-                        lg:py-16
-                        px-4
-                        xl:px-0
-                        w-[95%]
                         md:w-[90%]
+                        lg:py-16
+                        xl:px-0
                         xl:w-[80%]
-                        mx-auto
+                        blur__card
                         '>
           {/* Title */}
           <div className="flex 
-                        flex-col
-                        items-center
-                        pb-4">
+                          flex-col
+                          items-center
+                          pb-4">
 
             <h2 className="text-white 
-                          font-bold
-                          text-3xl
-                          4k:text-[3rem]">
+                             font-bold
+                             text-3xl
+                             4k:text-[3rem]">
               PROJECT
             </h2>
-            <img src="assets/line2.svg" className="4k:w-[35%] 4k:pt-2 animate-pulse" alt='Pulsing Line' />
-            <h1 className="text-white 
-                          font-extrabold
+            <img
+              src="assets/line2.svg"
+              className="4k:w-[35%] 4k:pt-2 animate-pulse"
+              alt='Pulsing Line'/>
+            <h1 className="
                           text-7xl
+                        text-white 
+                          font-extrabold
                           lg:text-7xl
                           4k:text-[8rem]
                           blink__word">
@@ -65,15 +70,16 @@ const Home = () => {
           {/* Description */}
 
 
-          <p className="text-slate-500 
+          <p className="
+                        text-xl
                         text-center
                         font-medium
+                      text-slate-500 
+                        self-center
                         lg:pb-6
                         xl:w-4/5
-                        self-center
-                        text-xl
                         4k:text-2xl
-                        ">
+            ">
             Welcome to Project Mars, your  destination for delving into the captivating world of the Red Planet. Embark on an extraordinary journey with the latest and most intriguing information about Mars, all in one place. Whether you are an avid space enthusiast or just someone curious about the cosmos, Project Mars is here to satisfy your thirst for knowledge and wonder.
           </p>
         <div className="flex justify-center">

@@ -10,16 +10,49 @@ const About = () => {
   return (
     <div className="w-full">
       <ul
-        className={`text-white text-3xl md:text-4xl lg:text-5xl text-center font-semibold lg:h-[80vh] flex md:justify-evenly flex-col my-12 md:flex-row flex-wrap  items-center ${location.pathname.includes("/about/") ? "hidden" : ""
+        className={`
+          my-12
+          flex
+          flex-col
+          flex-wrap
+          items-center
+          text-3xl
+          text-center
+          text-white 
+          font-semibold
+          md:justify-evenly
+          md:flex-row
+          md:text-4xl
+          lg:text-5xl
+          lg:h-[80vh]
+          ${location.pathname.includes("/about/") ? "hidden" : ""
           }`}
       >
         {categories.map((category) => {
           const currentCategory = modelsData.find((model) => model.category === category);
           return (
             <li key={category}>
-              <div className="w-[15rem] md:w-[18rem] h-[23rem] md:h-[28rem] my-6 lg:w-[25rem] lg:h-[35rem] blur__card parallax">
-                <Link to={`/about/${category}`} className="flex flex-col h-full justify-between py-12">
-                  <img src={currentCategory.cover} className="w-[12rem] lg:w-[20rem] self-center" alt={currentCategory.name} loading="lazy" />
+              <div
+                className="
+                my-6
+                w-[15rem]
+                h-[23rem]
+                md:w-[18rem]
+                md:h-[28rem]
+                lg:w-[25rem]
+                lg:h-[35rem]
+                blur__card
+                parallax
+                ">
+                <Link
+                  to={`/about/${category}`}
+                  className="flex flex-col h-full justify-between py-12">
+                  <img
+                    src={currentCategory.cover}
+                    className="w-[12rem] lg:w-[20rem] self-center"
+                    alt={currentCategory.name}
+                    loading="lazy"
+                  />
                   <span className="blink"> {category.toUpperCase()} </span>
                 </Link>
               </div>

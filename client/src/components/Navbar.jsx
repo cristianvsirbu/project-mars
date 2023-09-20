@@ -34,30 +34,33 @@ const Navbar = () => {
     <div className="navbar select-none">
       {/* Navbar */}
       <nav
-        className="flex
-                   justify-between
-                   h-24
+        className="
                    mx-6
+                   h-24
+                   flex
+                   justify-between
                    md:mx-16
                    md:h-14
                    lg:h-16
                    xl:h-20
                    2xl:h-24
-                    ">
+        ">
 
         {/* Logo */}
-        <div className="mt-3 
-                        lg:mt-2
-                        2xl:mt-4
-                        xl:ml-[4rem]
-                        2xl:ml-[8rem]
-                        4k:ml-[12rem]
+        <div className="
+                        mt-3 
+                        h-auto
                         max-w-[6rem]
                         md:max-w-[4.5rem]
                         lg:max-w-[6rem]
+                        lg:mt-2
+                        xl:ml-[4rem]
                         xl:max-w-[8rem]
+                        2xl:mt-4
+                        2xl:ml-[8rem]
                         2xl:max-w-[10rem]
-                        h-auto">
+                        4k:ml-[12rem]
+         ">
         <Link to="/" aria-label="Go to home">
           <img src="/assets/logos/logo.webp"
                alt="Logo"
@@ -65,12 +68,13 @@ const Navbar = () => {
           </Link>
         </div>
         {/* Menu */}
-        <ul className={`hidden
-                        md:flex
+        <ul className={`
+                        hidden
+                        justify-between
                         items-center
+                        md:flex
                         md:w-[75%]
                         lg:w-[70%]
-                        justify-between
                         2xl:justify-around
                         `}>
 
@@ -78,11 +82,12 @@ const Navbar = () => {
         </ul>
 
         {/* Hamburger Menu */}
-        <div className="md:hidden
+        <div className="
                         flex
                         flex-1
                         justify-end
                         items-center
+                        md:hidden
                         ">
           <button className='h-12 w-12' onClick={() => setMenuIsOpen(!menuIsOpen)}>
             {menuIsOpen ? (<img src={"/assets/close.webp"} alt="Close Menu" />) : (<img src={"/assets/menu.webp"} alt="Open Menu" />)}
@@ -90,13 +95,13 @@ const Navbar = () => {
 
           {/* Dropdown Menu */}
           <div className={`${menuIsOpen ? 'flex' : 'hidden'} 
-                           flex-col
-                           rounded-xl
-                           absolute
-                           top-40
-                           right-10
                            px-8
                            py-8
+                           top-40
+                           right-10
+                           flex-col
+                           absolute
+                           rounded-xl
                            min-w-[15rem]
                          bg-slate-900
                            sidebar

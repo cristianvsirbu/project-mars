@@ -10,20 +10,20 @@ const RoversCategory = () => {
         <div className="text-center">
             <ul
                 className={`
-                text-white
-                text-3xl
-                md:text-4xl
-                lg:text-5xl
-                text-center
-                font-semibold
-                lg:h-[80vh]
-                flex
-                md:justify-evenly
-                flex-col
                 my-12
-                md:flex-row
+                flex
+                flex-col
                 flex-wrap
                 items-center
+                text-3xl
+                text-center
+                text-white
+                font-semibold
+                md:flex-row
+                md:justify-evenly
+                md:text-4xl
+                lg:text-5xl
+                lg:h-[80vh]
                 ${location.pathname.includes("/about/rovers/") ? "hidden" : ""}
                 `}>
                 {roverCategory.children.map(subcategory => (
