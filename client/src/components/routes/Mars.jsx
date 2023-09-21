@@ -15,7 +15,7 @@ const MarsPage = () => {
   return (
     <div className="flex flex-col w-full">
     <div className="text-white text-xl flex flex-col xl:flex-row-reverse justify-end">
-      <Model3D key={mars.model3d} modelPath={mars.model3d} initialScale={0.1} cameraPosition={[0, 0, 150]} /> 
+      <Model3D key={mars.model3d} modelPath={mars.model3d} initialScale={0.1} cameraPosition={[0, 0, 180]} /> 
       <Characteristics data={chars} />
       </div>
       <BackToTop />
