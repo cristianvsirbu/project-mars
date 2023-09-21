@@ -13,79 +13,12 @@
   backdrop-filter: blur(25px);
 }
 
-@-webkit-keyframes slide-top {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes slide-top {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
 .blink__word {
   animation: zoom-slow 8s ease-out infinite;
 }
 
-@keyframes zoom-slow {
-
-  0%,
-  100% {
-    color: #e5ebea;
-    filter: blur(1px);
-    text-shadow: 0 0 5px #ffffff, 0 0 100px #00c2bc, 0 0 55px #00c2bce0,
-      0 0 120px #e0e9e9, 0 0 30px #d3e9e8, 0 0 50px #abe9e7, 0 0 60px #7b79cf,
-      0 0 80px #1d00c2;
-  }
-
-  45%,
-  100% {
-    filter: blur(0);
-    color: #fff;
-    text-shadow: none;
-  }
-}
-
-
 .blink:hover {
   animation: zoomup 25s ease-out infinite;
-}
-
-@keyframes zoomup {
-
-  0%,
-  100% {
-    color: #e5ebea;
-    filter: blur(1px);
-    text-shadow: 0 0 10px #d8e4e3, 0 0 20px #00c2ba, 0 0 30px #00c2ba,
-      0 0 40px #e0e9e9, 0 0 60px #d3e9e8, 0 0 80px #abe9e7, 0 0 100px #7b79cf,
-      0 0 120px #1d00c2;
-  }
-
-  5%,
-  95% {
-    filter: blur(0);
-    color: #fff;
-    text-shadow: none;
-  }
 }
 
 .navbar {
@@ -107,25 +40,86 @@
   backdrop-filter: blur(5px);
 }
 
-@media (min-width: 1024px) {
-  .parallax {
-    --f: .01;
-    /* the parallax factor (the smaller the better) */
-    --r: 22px;
-    /* radius */
+.animate-up-down {
+  animation: up-down 2s ease-in-out infinite;
+}
 
-    --_f: calc(100%*var(--f)/(1 + var(--f)));
-    --_a: calc(90deg*var(--f));
-    clip-path: inset(0 var(--_f) 0 0 round var(--r));
-    transform: perspective(600px) var(--_t, rotateY(var(--_a)));
-    transition: .3s;
-    cursor: pointer;
+.button__style {
+  background: linear-gradient(135deg, #e2723d 0%, #992e00 100%);
+  font-family: 'Rajdhani', Martian Mono, sans-serif;
+  font-weight: 900;
+  color: white;
+  z-index: 2;
+  border-radius: 22px;
+  font-size: 1.8rem;
+  padding: .2rem 4rem;
+  margin-top: 1rem;
+}
+
+
+@-webkit-keyframes slide-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
   }
 
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 
-  .parallax:hover {
-    clip-path: inset(0 0 0 var(--_f) round var(--r));
-    --_t: translateX(calc(-2*var(--_f))) rotateY(calc(-1*var(--_a)));
+@keyframes slide-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoom-slow {
+
+  0%,
+  100% {
+    color: #e5ebea;
+    filter: blur(1px);
+    text-shadow: 0 0 5px #ffffff, 0 0 100px #00c2bc, 0 0 55px #00c2bce0,
+      0 0 120px #e0e9e9, 0 0 30px #d3e9e8, 0 0 50px #abe9e7, 0 0 60px #7b79cf,
+      0 0 80px #1d00c2;
+  }
+
+  45%,
+  100% {
+    filter: blur(0);
+    color: #fff;
+    text-shadow: none;
+  }
+}
+
+@keyframes zoomup {
+
+  0%,
+  100% {
+    color: #e5ebea;
+    filter: blur(1px);
+    text-shadow: 0 0 10px #d8e4e3, 0 0 20px #00c2ba, 0 0 30px #00c2ba,
+      0 0 40px #e0e9e9, 0 0 60px #d3e9e8, 0 0 80px #abe9e7, 0 0 100px #7b79cf,
+      0 0 120px #1d00c2;
+  }
+
+  5%,
+  95% {
+    filter: blur(0);
+    color: #fff;
+    text-shadow: none;
   }
 }
 
@@ -155,22 +149,27 @@
   }
 }
 
-.animate-up-down {
-  animation: up-down 2s ease-in-out infinite;
+/* Parallax */
+@media (min-width: 1024px) {
+  .parallax {
+    /* the parallax factor */
+    --f: .01;
+    /* radius */
+    --r: 22px;
+    --_f: calc(100%*var(--f)/(1 + var(--f)));
+    --_a: calc(90deg*var(--f));
+    clip-path: inset(0 var(--_f) 0 0 round var(--r));
+    transform: perspective(600px) var(--_t, rotateY(var(--_a)));
+    transition: .3s;
+  }
+
+  .parallax:hover {
+    clip-path: inset(0 0 0 var(--_f) round var(--r));
+    --_t: translateX(calc(-2*var(--_f))) rotateY(calc(-1*var(--_a)));
+  }
 }
 
-.button__style {
-  background: linear-gradient(135deg, #e2723d 0%, #992e00 100%);
-  font-family: 'Rajdhani', Martian Mono, sans-serif;
-  font-weight: 900;
-  color: white;
-  z-index: 2;
-  border-radius: 22px;
-  font-size: 1.8rem;
-  padding: .2rem 4rem;
-  margin-top: 1rem;
-}
-
+/* Button */
 @media screen and (min-width: 1024px) {
 .button__style {
     border: none;

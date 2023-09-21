@@ -4,13 +4,13 @@ export const modelsData = [
         name: "Mars",
         category: "mars",
         cover: "/assets/covers/mars.webp",
-        model3d: "/assets/models/mars2.glb",
+        model3d: "/assets/models/mars_compressed.glb",
         children: [
             {
                 id: "mars",
                 name: "Mars",
                 category: "mars",
-                model3d: "/assets/models/mars.glb",
+                model3d: "/assets/models/mars_compressed.glb",
                 characteristics: [
                     {
                         "Orbital Characteristics": {
@@ -169,7 +169,7 @@ export const modelsData = [
                 category: 'moons',
                 name: 'Phobos',
                 cover: '/assets/covers/phobos.webp',
-                model3d: "/assets/models/phobos.glb",
+                model3d: "/assets/models/phobos_compressed.glb",
                 description: 'Phobos is the innermost and larger of the two natural satellites of Mars.It is named after Phobos, the Greek god of fear and panic, who is the son of Ares (Mars) and twin brother of Deimos.',
                 characteristics: [
                     {
@@ -216,7 +216,7 @@ export const modelsData = [
                 category: 'moons',
                 name: 'Deimos',
                 cover: '/assets/covers/deimos.webp',
-                model3d: "/assets/models/deimos.glb",
+                model3d: "/assets/models/deimos_compressed.glb",
                 description: `Deimos is the smaller and outermost of the two natural satellites of Mars. The moon is named after Deimos, a figure representing dread in Greek mythology. The name was suggested by academic Henry Madan, who drew from Book XV of the Iliad, where Ares (the Roman god Mars) summons Dread (Deimos) and Fear (Phobos).`,
                 characteristics: [
                     {
@@ -280,7 +280,7 @@ export const modelsData = [
                         subcategory: 'active',
                         name: 'Curiosity',
                         cover: '/assets/rovers/curiosity.webp',
-                        model3d: "/assets/models/curiosity.glb",
+                        model3d: "/assets/models/curiosity_compressed.glb",
                         description: 'Curiosity is a car-sized Mars rover exploring Gale crater and Mount Sharp on Mars as part of NASA\'s Mars Science Laboratory (MSL) mission. Curiosity was launched from Cape Canaveral (CCAFS) on November 26, 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on August 6, 2012, 05:17:57 UTC. The Bradbury Landing site was less than 2.4 km (1.5 mi) from the center of the rover\'s touchdown target after a 560 million km (350 million mi) journey.Adjusted for inflation, Curiosity has a life-cycle cost of US$3.2 billion in 2020 dollars.',
                         characteristics: [
                             {
@@ -345,7 +345,7 @@ export const modelsData = [
                         subcategory: 'active',
                         name: 'Perseverance',
                         cover: '/assets/rovers/perseverance.webp',
-                        model3d: "/assets/models/perseverance.glb",
+                        model3d: "/assets/models/perseverance_compressed.glb",
                         description: 'Perseverance, nicknamed Percy, is a car-sized Mars rover designed to explore the Jezero crater on Mars as part of NASA\'s Mars 2020 mission. It was manufactured by the Jet Propulsion Laboratory and launched on July 30, 2020, at 11:50 UTC.Confirmation that the rover successfully landed on Mars was received on February 18, 2021, at 20:55 UTC. As of 2 September 2023, Perseverance has been active on Mars for 901 sols (926 Earth days, or 2 years, 6 months and 15 days) since its landing. Following the rover\'s arrival, NASA named the landing site Octavia E. Butler Landing.Perseverance has a similar design to its predecessor rover, Curiosity, although it was moderately upgraded. It carries seven primary payload instruments, nineteen cameras, and two microphones.The rover also carried the mini-helicopter Ingenuity to Mars, an experimental aircraft and technology testbed that made the first powered flight on another planet on April 19, 2021. As of May 26, 2023, it has made 52 successful flights and continues to break its own records for speed, distance and altitude.',
                         characteristics: [
                             {
@@ -529,7 +529,7 @@ export const modelsData = [
                         subcategory: 'inactive',
                         name: 'Opportunity',
                         cover: '/assets/rovers/opportunity.webp',
-                        model3d: '/assets/models/opportunity.glb',
+                        model3d: '/assets/models/opportunity_compressed.glb',
                         description: 'Opportunity, also known as MER-B (Mars Exploration Rover – B) or MER-1, is a robotic rover that was active on Mars from 2004 until 2018. Opportunity was operational on Mars for 5111 sols (14 years, 138 days on Earth). Launched on July 7, 2003, as part of NASA\'s Mars Exploration Rover program, it landed in Meridiani Planum on January 25, 2004, three weeks after its twin, Spirit (MER-A), touched down on the other side of the planet.With a planned 90-sol duration of activity (slightly less than 92.5 Earth days), Spirit functioned until it got stuck in 2009 and ceased communications in 2010, while Opportunity was able to stay operational for 5111 sols after landing, maintaining its power and key systems through continual recharging of its batteries using solar power, and hibernating during events such as dust storms to save power. This careful operation allowed Opportunity to operate for 57 times its designed lifespan, exceeding the initial plan by 14 years, 47 days (in Earth time). By June 10, 2018, when it last contacted NASA, the rover had traveled a distance of 45.16 kilometers (28.06 miles).',
                         characteristics: [
                             {
@@ -638,7 +638,7 @@ export const modelsData = [
                         subcategory: 'functional',
                         name: '2001 Mars Odyssey',
                         cover: '/assets/satellites/mars_odyssey.webp',
-                        model3d: '/assets/models/odyssey.glb',
+                        model3d: '/assets/models/odyssey_compressed.glb',
                         description: '2001 Mars Odyssey is a robotic spacecraft orbiting the planet Mars. The project was developed by NASA, and contracted out to Lockheed Martin, with an expected cost for the entire mission of US$297 million. Its mission is to use spectrometers and a thermal imager to detect evidence of past or present water and ice, as well as study the planet\'s geology and radiation environment. It also acts as a relay for communications between the Curiosity rover, and previously the Mars Exploration Rovers and Phoenix lander, to Earth. The mission was named as a tribute to Arthur C. Clarke, evoking the name of his and Stanley Kubrick\'s 1968 film 2001: A Space Odyssey.',
                         characteristics: [
                             {
@@ -754,7 +754,7 @@ export const modelsData = [
                         subcategory: 'functional',
                         name: 'Mars Reconnaissance Orbiter',
                         cover: '/assets/satellites/mro.webp',
-                        model3d: '/assets/models/mro.glb',
+                        model3d: '/assets/models/mro_compressed.glb',
                         description: 'The Mars Reconnaissance Orbiter (MRO) is a spacecraft designed to search for the existence of water on Mars and provide support for missions to Mars, as part of NASA\'s Mars Exploration Program. It was launched from Cape Canaveral on August 12, 2005, at 11:43 UTC and reached Mars on March 10, 2006, at 21:24 UTC. In November 2006, after six months of aerobraking, it entered its final science orbit and began its primary science phase. MRO played a key role in choosing safe landing sites for the Phoenix lander in 2008, Mars Science Laboratory / Curiosity rover in 2012, InSight lander in 2018, and the Mars 2020 / Perseverance rover in 2021.',
                         characteristics: [
                             {
@@ -808,7 +808,7 @@ export const modelsData = [
                         subcategory: 'functional',
                         name: "MAVEN",
                         cover: '/assets/satellites/maven.webp',
-                        model3d: '/assets/models/maven.glb',
+                        model3d: '/assets/models/maven_compressed.glb',
                         description: 'MAVEN (Mars Atmosphere and Volatile Evolution) is a NASA spacecraft orbiting Mars to study the loss of that planet\'s atmospheric gases to space, providing insight into the history of the planet\'s climate and water.The name is an acronym for "Mars Atmosphere and Volatile Evolution" while the word maven also denotes "a person who has special knowledge or experience, an expert".',
                         characteristics: [
                             {

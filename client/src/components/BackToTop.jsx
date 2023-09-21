@@ -18,6 +18,11 @@ const BackToTop = () => {
         });
     };
 
+    const handleClick = (e) => {
+        e.preventDefault(); 
+        scrollToTop();
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -26,17 +31,20 @@ const BackToTop = () => {
     }, []);
 
     return (
-            <button
-                className={`
+        <button
+            className={`
                         fixed     
                         self-center
                         bottom-[2rem] 
                         button__style
                         ${isVisible ? '' : 'hidden'}
                         `}
-                onClick={scrollToTop}
-        ><a href="#" aria-label="Scroll back to top">Back to Top</a>
-            </button>
+            onClick={handleClick}
+        >
+            <a href="#" aria-label="Scroll back to top">
+                Back to Top
+            </a>
+        </button>
     );
 }
 

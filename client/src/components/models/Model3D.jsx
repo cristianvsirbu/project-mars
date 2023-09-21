@@ -2,7 +2,9 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import PropTypes from 'prop-types';
-import { useEffect} from 'react';
+import { useEffect } from 'react';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+
 
 
 const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
@@ -44,6 +46,10 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
 
     // Loaded the 3D model
     const loader = new GLTFLoader();
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath('/assets/draco/');
+    loader.setDRACOLoader(dracoLoader);
+
     loader.load(modelPath, (gltf) => {
       scene.add(gltf.scene);
       gltf.scene.scale.set(initialScale, initialScale, initialScale);
@@ -51,6 +57,8 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }) => {
     }, undefined, (error) => {
       console.log(error);
     });
+    
+
 
     // Added orbit controls
     const controls = new OrbitControls(camera, renderer.domElement);

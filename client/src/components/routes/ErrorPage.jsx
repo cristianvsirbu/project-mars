@@ -37,7 +37,7 @@ export default function ErrorPage() {
                             2xl:top-[24rem]
                             4k:top-[32rem]
                 ">
-                    404 - PAGE NOT FOUND!
+                    PAGE NOT FOUND!
                 </p>
                 <div className="flex items-center">
                     <p

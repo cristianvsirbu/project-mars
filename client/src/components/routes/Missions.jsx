@@ -23,8 +23,6 @@ const MissionsPage = () => {
     };
   }, []);
 
-
-
   const renderLineChart = (
     <div className='w-full h-[40vh] mt-10'>
       <ResponsiveContainer>
@@ -57,7 +55,6 @@ const MissionsPage = () => {
       </ResponsiveContainer>
     </div>
   )
-
 
   const renderAreaChart = (
     <div
