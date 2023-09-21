@@ -54,7 +54,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar select-none">
-      
+
       {/* Navbar */}
       <nav
         className="
@@ -85,10 +85,10 @@ const Navbar = () => {
                         2xl:max-w-[10rem]
                         4k:ml-[12rem]
          ">
-        <Link to="/" aria-label="Go to Home">
-          <img src="/assets/logos/logo.webp"
-               alt="Logo"
-               />
+          <Link to="/" aria-label="Go to Home">
+            <img src="/assets/logos/logo.webp"
+              alt="Logo"
+            />
           </Link>
         </div>
 
@@ -102,34 +102,42 @@ const Navbar = () => {
                         md:w-[75%]
                         lg:w-[70%]
                         2xl:justify-around
-                        `}>
+                    `}>
           {navLinks}
         </ul>
 
         {/* Hamburger Menu */}
         <div
           className="
-                        flex
-                        flex-1
-                        justify-end
-                        items-center
-                        md:hidden
-                        ">
-          <button
-            className='h-12 w-12'
-            onClick={() => setMenuIsOpen(!menuIsOpen)}
-            ref={dropdownRef}
-          >
-            {menuIsOpen ? (
+                     flex
+                     flex-1
+                     justify-end
+                     items-center
+                     md:hidden
+                     ">
+          
+          {/* Close Menu */}
+          {menuIsOpen && (
+            <button
+              className='h-12 w-12'
+              onClick={() => setMenuIsOpen(false)}>
+            <img
+              src="/assets/close.webp"
+              alt="Menu"
+              className="w-full h-full"
+            />
+          </button>)}
+
+          {/* Open Menu */}
+          {!menuIsOpen && (
+            <button
+              className='h-12 w-12'
+              onClick={() => setMenuIsOpen(true)}>
               <img
-              src={"/assets/close.webp"}
-              alt="Close Menu" />
-            ) : (
-              <img
-                src={"/assets/menu.webp"}
-                alt="Open Menu" />)
-            }
-          </button>
+                src="/assets/menu.webp"
+                alt="Open Menu"
+                className="w-full h-full" />
+            </button>)}
 
           {/* Dropdown Menu */}
           <div
