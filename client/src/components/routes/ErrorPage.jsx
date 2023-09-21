@@ -22,6 +22,7 @@ export default function ErrorPage() {
                 relative
                 w-full
                 max-h-[80vh]
+                select-none
                 ">
                 <p
                     className="
@@ -42,7 +43,7 @@ export default function ErrorPage() {
                 <div className="flex items-center">
                     <p
                         className="
-                        text-slate-800
+                        text-slate-900
                         text-[10rem]
                         lg:text-[15rem]
                         xl:text-[24rem]
@@ -56,7 +57,7 @@ export default function ErrorPage() {
                     />
                     <p
                         className="
-                        text-slate-800
+                        text-slate-900
                         text-[10rem]
                         lg:text-[15rem]
                         xl:text-[24rem]
