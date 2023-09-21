@@ -36,13 +36,13 @@ const Partners = () => {
     <div className="w-full h-full">
       <p
         className='
+                   my-10
                    font-bold
                    text-[4rem]
                  text-white
                    text-center
                    blink__word
                    select-none
-                   my-10
         '>
         Our Partners
       </p>
@@ -51,16 +51,16 @@ const Partners = () => {
           <div
             key={index}
             className="
-                       blur__card
-                       parallax
-                       mx-8
                        my-8
-                       h-[30rem]
-                       w-[22rem]
+                       mx-8
                        flex
                        flex-col
                        justify-center
                        items-center
+                       w-[22rem]
+                       h-[30rem]
+                       blur__card
+                       parallax
             ">
             <div className="max-w-[25rem] h-[15rem] flex justify-center mb-[2rem]">
               <img
@@ -84,18 +84,22 @@ const Partners = () => {
       <div className="flex flex-col justify-center items-center">
         <p
           className='
+                   my-10
                    font-bold
                    text-[4rem]
                  text-white
                    text-center
                    blink__word
                    select-none
-                   my-10
         '>
           Our Sponsor
         </p>
         <div className="w-full px-[3rem] h-full mb-8">
-          <a href="https://bluestar-bank.netlify.app/" target="_blank" rel="noreferrer">
+          <a
+            href="https://bluestar-bank.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <picture>
               <source
                 srcSet="/assets/sponsor.webp"
@@ -106,7 +110,7 @@ const Partners = () => {
                 media="(max-width: 768px)"
               />
               <img
-                src="/assets/sponsor.webp" // Provide a default image for browsers that don't support <picture>
+                src="/assets/sponsor.webp" 
                 alt="sponsor"
                 className="w-full md:h-[25rem] lg:h-[10rem] 2xl:h-full object-contain"
               />
