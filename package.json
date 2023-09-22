@@ -2,12 +2,11 @@
 	"name": "project-mars",
 	"private": true,
 	"version": "1.0.0",
-	"main": "server/functions/server.js",
 	"scripts": {
 		"dev": "vite",
 		"start": "node server.js",
 		"build": "npm run build-frontend && npm run build-backend",
-		"build-frontend": "cd client && npm install && npm run build",
+		"build-frontend": "cd client && npm install && npx vite build",
 		"build-backend": "cd server && npm install",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
