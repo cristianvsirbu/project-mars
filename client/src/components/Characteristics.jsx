@@ -62,7 +62,7 @@ function Characteristics({ data }) {
                             ) : (
                                 <div className="flex flex-col items-center xl:flex-row">
                                         <img
-                                            src="/assets/star.png"
+                                            src="/assets/star.webp"
                                             className="w-[3rem] xl:w-[4rem]"
                                             alt="List Item" 
                                             loading="lazy"

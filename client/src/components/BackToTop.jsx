@@ -19,7 +19,7 @@ const BackToTop = () => {
     };
 
     const handleClick = (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         scrollToTop();
     };
 
@@ -31,20 +31,21 @@ const BackToTop = () => {
     }, []);
 
     return (
-        <button
-            className={`
-                        fixed     
+            <button
+                className={`
+                        fixed
+                        navigation_button    
                         self-center
-                        bottom-[2rem] 
+                        bottom-[5rem] 
                         button__style
                         ${isVisible ? '' : 'hidden'}
                         `}
-            onClick={handleClick}
-        >
-            <a href="#" aria-label="Scroll back to top">
-                Back to Top
-            </a>
-        </button>
+                onClick={handleClick}
+            >
+                <img src='/assets/up.svg' alt='Back to Top' className='hidden lg:block right-[1.5rem] top-[1rem] arrow' />
+                <span>Back to Top</span>
+            <img src='/assets/up.svg' alt='Back to Top' className='hidden lg:block left-[1.5rem] top-[1rem] arrow' />
+            </button>
     );
 }
 

@@ -90,7 +90,7 @@ const Home = () => {
         </div>
       </div>
       <div className="z-1 flex justify-center items-center w-full max-h-[80vh]">
-        <img src="/assets/mars/M2.webp" alt='Mars' loading="lazy" />
+        <img src="/assets/mars/M2.webp" alt='Mars'/>
       </div>
 
     </div>

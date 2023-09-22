@@ -51,7 +51,6 @@ const About = () => {
                     src={currentCategory.cover}
                     className="w-[12rem] lg:w-[20rem] self-center"
                     alt={currentCategory.name}
-                    loading="lazy"
                   />
                   <span className="blink"> {category.toUpperCase()} </span>
                 </Link>
