@@ -11,7 +11,7 @@ import Moon from "../routes/moons/Moon";
 import MoonsCategory from "./moons/MoonsCategory";
 import Rover from "../routes/rovers/Rover";
 import RoversCategory from "./rovers/RoversCategory";
-import RoversSubcategory from "./rovers/RoversSubCategory";
+import RoversSubcategory from "./rovers/RoversSubcategory";
 import Satellite from "../routes/satellites/Satellite";
 import SatellitesCategory from "./satellites/SatellitesCategory";
 import SatellitesSubcategory from "./satellites/SatelliteSubcategory";
