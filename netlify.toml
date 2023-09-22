@@ -7,7 +7,7 @@
   node_bundler = "esbuild"
 
 [[redirects]]
-  from = "/weather"
+  from = "/daily-weather"
   to = "/server/functions/server.js"
   status = 200
 
