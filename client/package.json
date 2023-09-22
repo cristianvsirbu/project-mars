@@ -1,12 +1,15 @@
 {
-  "name": "mars-project",
+  "name": "project-mars",
   "private": true,
   "version": "0.0.0",
   "proxy": "http://localhost:3000",
   "type": "module",
+
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build-frontend && npm run build-backend",
+    "build-frontend": "cd client && npm install && npm run build",
+    "build-backend": "cd server && npm install",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
