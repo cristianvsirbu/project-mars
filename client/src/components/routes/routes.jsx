@@ -88,7 +88,7 @@ const routes = [{
             element: <Imagery />,
         },
         {
-            path: 'weather',
+            path: 'daily-weather',
             text: 'WEATHER',
             element: <Weather />,
         },

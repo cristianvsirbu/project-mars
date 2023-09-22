@@ -1,4 +1,5 @@
 import '../../styles/output-stars.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -83,8 +84,10 @@ const Home = () => {
             Welcome to Project Mars, your  destination for delving into the captivating world of the Red Planet. Embark on an extraordinary journey with the latest and most intriguing information about Mars, all in one place. Whether you are an avid space enthusiast or just someone curious about the cosmos, Project Mars is here to satisfy your thirst for knowledge and wonder.
           </p>
         <div className="flex justify-center">
-          <button className="button__style inline-block relative mt-4">
-            <a href="/about/mars">ABOUT MARS</a>
+          <button className="mt-4">
+              <Link to="/about/mars" className="button__style  inline-block relative">
+                <span className=''>ABOUT MARS</span>
+              </Link>
           </button>
         </div>
         </div>

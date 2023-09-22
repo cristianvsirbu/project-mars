@@ -2,7 +2,7 @@ const cron = require('node-cron');
 
 
 const cronExpression = '0 0 * * *'; // Run daily at midnight
-const updateUrl = `http://localhost:3000/daily-weather`; 
+const updateUrl = `http://localhost:3000/weather`; 
 
 cron.schedule(cronExpression, async () => {
     try {

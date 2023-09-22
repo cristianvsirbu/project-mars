@@ -36,7 +36,7 @@ async function scraper() {
 
                 return { dateSol, pressure, sunrise, sunset, UTC, highCelsius, lowCelsius };
             });
-
+            console.log("data:", data);
             return data;
         });
         await browser.close();
