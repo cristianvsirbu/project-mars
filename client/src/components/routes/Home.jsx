@@ -15,7 +15,7 @@ const Home = () => {
                       md:left-[40rem]
                       md:top-[-24rem]
                       lg:left-[58rem]
-                      xl:left-[45rem]
+                      xl:left-[50rem]
                       xl:top-[-20rem]
                       "/>
 

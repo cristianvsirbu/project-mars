@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 
 const PhotoCard = ({ photo }) => {
     const { camera, earth_date, img_src, rover } = photo;
-    console.log(photo)
 
     return (
         <div
@@ -36,7 +35,7 @@ const PhotoCard = ({ photo }) => {
                            4k:flex-row
                            4k:justify-around
                 ">
-                <p className="flex flex-col mt-2">
+                <p className="flex flex-col mt-2 xl:max-w-[50%]">
                     <span className="text-orange-500">Camera: </span>
                     <span className="font-bold">{camera.full_name}</span>
                 </p>
@@ -55,11 +54,11 @@ const PhotoCard = ({ photo }) => {
 
 PhotoCard.propTypes = {
     photo: PropTypes.shape({
-        camera: PropTypes.string.isRequired, // Assuming camera is an object
-        earth_date: PropTypes.string.isRequired, // Assuming earth_date is a string
-        img_src: PropTypes.string.isRequired, // Assuming img_src is a string
+        camera: PropTypes.object.isRequired, 
+        earth_date: PropTypes.string.isRequired, 
+        img_src: PropTypes.string.isRequired, 
         rover: PropTypes.shape({
-            name: PropTypes.string.isRequired, // Assuming rover.name is a string
+        name: PropTypes.string.isRequired, 
         }).isRequired,
     }).isRequired,
 
