@@ -1,6 +1,6 @@
 [build]
   command = "npm run build" 
-  functions = "functions"
+  functions = "/server/functions"
 
 [functions]
   external_node_modules = ["express"]
