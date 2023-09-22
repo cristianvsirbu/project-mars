@@ -6,4 +6,4 @@
   force = true
   from = "/weather/*"
   status = 200
-  to = "/.netlify/functions/:splat"
+  to = "/server/functions/:splat"
