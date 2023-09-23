@@ -7,4 +7,7 @@
   external_node_modules = ["express"]
   node_bundler = "esbuild"
 
-
+[[redirects]]
+  from = "/weather"
+  to = "/.netlify/functions/server.js"
+  status = 200
