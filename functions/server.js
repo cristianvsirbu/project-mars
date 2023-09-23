@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import scraper from './scraper.js';
 import serverless from 'serverless-http';
+import { Router } from 'express';
 
 const app = express();
 const port = 3000;
@@ -9,7 +10,7 @@ const port = 3000;
 // Enable CORS for all routes
 app.use(cors());
 
-const router = express.Router();
+const router = Router();
 
 // Define the route to fetch daily weather data
 router.get('/daily-weather', async (req, res) => {

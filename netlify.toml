@@ -8,6 +8,6 @@
   node_bundler = "esbuild"
 
 [[redirects]]
-  from = "/weather"
-  to = "/.netlify/functions/server.js"
+  from = "/daily-weather"
+  to = "/.netlify/functions/server"
   status = 200
