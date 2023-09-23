@@ -85,7 +85,9 @@ const Home = () => {
           </p>
         <div className="flex justify-center">
           <button className="mt-4">
-              <Link to="/about/mars" className="button__style  inline-block relative">
+              <Link
+                to="/about/mars"
+                className="button__style  inline-block relative">
                 <span className=''>ABOUT MARS</span>
               </Link>
           </button>

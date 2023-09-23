@@ -1,13 +1,11 @@
 [build]
   command = "npm run build" 
-  functions = "/server/functions"
+  functions = "functions"
+
 
 [functions]
   external_node_modules = ["express"]
   node_bundler = "esbuild"
 
-[[redirects]]
-  from = "/daily-weather"
-  to = "/server/functions/server.js"
-  status = 200
+
 
