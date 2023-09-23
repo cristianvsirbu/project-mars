@@ -24,13 +24,10 @@ router.get('/daily-weather', async (req, res) => {
 });
 
 app.use(express.json(), router);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
 
 // Export as a serverless function
 export const handler = serverless(app);
 
-// Start the server locally if not in production
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(port, () => {
-        console.log(`Server is running on port ${port}`);
-    });
-}
