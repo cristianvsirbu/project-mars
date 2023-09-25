@@ -1,5 +1,5 @@
-const puppeteer = require('puppeteer');
-const chromium = require('chrome-aws-lambda');
+import puppeteer from 'puppeteer';
+import chromium from 'chrome-aws-lambda';
 
 async function scraper() {
      let browser;
@@ -48,4 +48,4 @@ async function scraper() {
 }
 scraper();
 
-module.exports = scraper;
+export default scraper;

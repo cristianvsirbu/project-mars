@@ -1,8 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const serverless = require('serverless-http');
-const scraper = require('./scraper');
-const { Router } = require('express');
+import express from 'express';
+import serverless from 'serverless-http';
+import cors from 'cors';
+import scraper from './scraper.js';
+import { Router } from 'express';
 
 
 const app = express();
@@ -31,4 +31,4 @@ app.listen(port, () => {
 });
 
 // Export as a serverless function
-module.exports.handler = serverless(app);
+export const handler = serverless(app);
