@@ -3,8 +3,6 @@
 	"private": true,
 	"version": "1.0.0",
 	"type": "module",
-	"main": "server.js",
-	"proxy": "http://localhost:3000",
 	"scripts": {
 		"dev": "vite",
 		"build": "npx vite build",

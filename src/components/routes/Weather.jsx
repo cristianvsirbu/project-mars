@@ -115,9 +115,10 @@ const Weather = () => {
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
+  const apiUrl = "https://project-mars-api.onrender.com/"
 
   useEffect(() => {
-    fetch('/daily-weather')
+    fetch('https://project-mars-api.onrender.com/daily-weather')
       .then(res => {
         if (res.ok) {
           return res.json();
@@ -138,11 +139,11 @@ const Weather = () => {
       });
   }, []);
 
-  // if (error) {
-  //   setTimeout(() => {
-  //     window.location.reload();
-  //   }, 5000);
-  // }
+  if (error) {
+    setTimeout(() => {
+      window.location.reload();
+    }, 5000);
+  }
 
 
   return (

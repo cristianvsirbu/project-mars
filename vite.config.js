@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react(), compression({ algorithm: 'gzip' })],
   server: {
     proxy: {
-      '/daily-weather': 'http://localhost:3000',
+      '/daily-weather': 'https://project-mars-api.onrender.com/',
     },
   }
 })
