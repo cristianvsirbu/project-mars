@@ -7,7 +7,7 @@
 	"scripts": {
 		"dev": "vite",
 		"start": "node server.js",
-		"build": "npx vite build",
+		"build": "vite build",
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"
 	},
@@ -42,7 +42,7 @@
 		"postcss": "^8.4.27",
 		"tailwindcss": "^3.3.3",
 		"typescript": "^5.2.2",
-		"vite": "^4.4.5",
+		"vite": "^4.4.9",
 		"vite-plugin-compression2": "^0.10.4"
 	},
 	"keywords": [],
