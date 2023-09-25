@@ -1,8 +1,9 @@
 import express from 'express';
+import serverless from 'serverless-http';
 import cors from 'cors';
 import scraper from './scraper.js';
-import serverless from 'serverless-http';
 import { Router } from 'express';
+
 
 const app = express();
 const port = 3000;
@@ -31,4 +32,3 @@ app.listen(port, () => {
 
 // Export as a serverless function
 export const handler = serverless(app);
-

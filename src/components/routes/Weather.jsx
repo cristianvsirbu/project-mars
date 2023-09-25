@@ -113,10 +113,11 @@ WeatherCard.propTypes = {
 const Weather = () => {
   const [weatherData, setWeatherData] = useState([]);
   const [loading, setLoading] = useState(true);
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`/daily-weather`)
+    fetch('/daily-weather')
       .then(res => {
         if (res.ok) {
           return res.json();
@@ -137,11 +138,11 @@ const Weather = () => {
       });
   }, []);
 
-  if (error) {
-    setTimeout(() => {
-      window.location.reload();
-    }, 5000);
-  }
+  // if (error) {
+  //   setTimeout(() => {
+  //     window.location.reload();
+  //   }, 5000);
+  // }
 
 
   return (

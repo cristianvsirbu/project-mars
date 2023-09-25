@@ -1,23 +1,21 @@
-import puppeteer from "puppeteer";
-import chromium from "chrome-aws-lambda";
-
+import puppeteer from 'puppeteer';
+import chromium from 'chrome-aws-lambda';
 
 async function scraper() {
-    let browser;
-    try {
-        const executablePath = await chromium.executablePath;
-        browser = await puppeteer.launch({
+     let browser;
+     try {
+       browser = await puppeteer.launch({
             args: chromium.args,
-            executablePath: executablePath,
-            headless: "new",
+            executablePath: await chromium.executablePath,
+            headless: 'new',
+            ignoreHTTPSErrors: true,
         });
-        const page = await browser.newPage();
+        let page = await browser.newPage();
         page.setDefaultNavigationTimeout(2 * 60 * 1000);
-        await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36');
         await page.goto("https://mars.nasa.gov/msl/weather/", { waitUntil: "domcontentloaded" });
         await page.waitForSelector('#weather_observation tbody tr');
 
-        const weatherData = await page.evaluate(() => {
+        let weatherData = await page.evaluate(() => {
             const forecastRows = Array.from(document.querySelectorAll('#Forecast .item'));
             const observationRows = Array.from(document.querySelectorAll('#weather_observation tbody tr'));
 
