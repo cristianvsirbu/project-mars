@@ -4,7 +4,6 @@
 	"version": "1.0.0",
 	"type": "module",
 	"proxy": "http://localhost:3000",
-	"main": "server/server.js",
 	"scripts": {
 		"dev": "vite",
 		"start": "node server/server.js",
