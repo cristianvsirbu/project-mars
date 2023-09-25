@@ -8,5 +8,10 @@ export default defineConfig({
     proxy: {
       '/daily-weather': 'https://project-mars-api.onrender.com/',
     },
+  },
+  build: {
+    rollupOptions: {
+      input: 'client/index.html',
+    },
   }
 })
