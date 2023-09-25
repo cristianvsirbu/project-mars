@@ -7,6 +7,9 @@
 		"start": "babel-node server.js"
 	},
 	"dependencies": {
+		"@babel/node": "^7.22.19",
+		"@babel/core": "7.22.20",
+		"@babel/cli": "7.23.0",
 		"axios": "^1.4.0",
 		"chrome-aws-lambda": "^9.1.0",
 		"cors": "^2.8.5",
