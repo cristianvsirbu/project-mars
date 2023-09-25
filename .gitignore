@@ -1,5 +1,8 @@
-# Local Netlify folder
-.netlify
+# Directories
+node_modules
+dist
+dist-ssr
+*.local
 
 # Logs
 logs
@@ -9,11 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
 
 # Editor directories and files
 .vscode/*
