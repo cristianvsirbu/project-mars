@@ -1,7 +1,7 @@
 import express from 'express';
 import serverless from 'serverless-http';
 import cors from 'cors';
-import scraper from './scraper.js';
+import scraper from './scraper.mjs';
 import { Router } from 'express';
 
 
