@@ -9,9 +9,4 @@ export default defineConfig({
       '/daily-weather': 'https://project-mars-api.onrender.com/',
     },
   },
-  build: {
-    rollupOptions: {
-      input: 'client/index.html',
-    },
-  }
 })
