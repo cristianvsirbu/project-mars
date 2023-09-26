@@ -19,10 +19,10 @@ const cache = new NodeCache({ stdTTL: 86400 });
 app.use(cors());
 
 // Serve existing "public" directory for static assets.
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/public')));
 
 // Define the route to fetch daily weather data
-router.get('/daily-weather', async (req, res) => {
+router.get('/daily-weather', async (_req, res) => {
     try {
         // Check if data is in cache
         const cachedData = cache.get('/daily-weather');
@@ -40,13 +40,13 @@ router.get('/daily-weather', async (req, res) => {
     }
 });
 
+app.use(express.json(), router);
+
 // Middleware to handle routing.
-router.get('*', (req, res) => {
+app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
-
-app.use(express.json(), router);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
