@@ -7,16 +7,17 @@ import { ModelsDataContextProvider } from '../models/modelsContext';
 
 const router = createBrowserRouter(routes);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.hydrateRoot(document.getElementById('root'));
+
+root.render(
   <React.StrictMode>
     <ModelsDataContextProvider>
-      <RouterProvider router={router} basename="/" >
+      <RouterProvider router={router}>
         <App />
       </RouterProvider>
     </ModelsDataContextProvider>
   </React.StrictMode>
 );
-
 
 
 
