@@ -10,8 +10,6 @@ const NodeCache = require('node-cache');
 const path = require('path');
 
 
-
-
 // Create a new NodeCache instance with a TTL of one day
 const cache = new NodeCache({ stdTTL: 86400 });
 
@@ -44,23 +42,6 @@ app.get('*', (req, res) => {
     // Serve index.html for any other requests.
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
-// Implement cache cleanup function
-function clearCacheAtMidnight() {
-    const now = new Date();
-    const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
-    const timeUntilMidnight = midnight - now;
-
-    setTimeout(() => {
-        // Clear the entire cache
-        cache.flushAll();
-        console.log('Cache cleared at midnight.');
-    }, timeUntilMidnight);
-}
-
-// Schedule cache clearing function
-clearCacheAtMidnight();
-
 
 app.use(express.json(), router);
 app.listen(port, () => {
