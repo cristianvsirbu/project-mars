@@ -8,6 +8,10 @@ const port = process.env.PORT || 3000;
 const router = Router();
 const NodeCache = require('node-cache');
 
+const ReactDOMServer = require('react-dom/server');
+const StaticRouter = require('react-router-dom/StaticRouter');
+const App = require('../client/src/App');
+
 // const NodeCache = require('node-cache');
 const path = require('path');
 
@@ -44,14 +48,18 @@ router.get('/daily-weather', async (_req, res) => {
 
 app.use(express.json(), router);
 
+// Middleware to handle routing.
+app.get("*", (req, res) => {
+    let html = ReactDOMServer.renderToString(
+        <StaticRouter location={req.url}>
+            <App />
+        </StaticRouter>
+    );
+    res.send("<!DOCTYPE html>" + html);
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-});
-
-// Middleware to handle routing.
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
 // Export as a serverless function

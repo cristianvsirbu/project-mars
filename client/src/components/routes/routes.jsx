@@ -97,6 +97,10 @@ const routes = [{
             text: 'PARTNERS',
             element: <Partners />,
         },
+        // {
+        //     path: '*',
+        //     element: <ErrorPage />,
+        // }
     ]
 }];
 
