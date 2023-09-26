@@ -40,7 +40,7 @@ router.get('/daily-weather', async (req, res) => {
 
 app.get('*', (req, res) => {
     // Serve index.html for any other requests.
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
 app.use(express.json(), router);
