@@ -44,15 +44,15 @@ router.get('/daily-weather', async (_req, res) => {
 
 app.use(express.json(), router);
 
-// Middleware to handle routing.
-app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, '../client', 'index.html'));
-});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
+// Middleware to handle routing.
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(__dirname, '../client', 'index.html'));
+});
 
 // Export as a serverless function
 module.exports.handler = serverless(app);
