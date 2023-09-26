@@ -6,6 +6,13 @@ const { Router } = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const router = Router();
+const NodeCache = require('node-cache');
+
+
+
+
+// Create a new NodeCache instance with a TTL of one day
+const cache = new NodeCache({ stdTTL: 86400 });
 
 // Enable CORS for all routes
 app.use(cors());
@@ -16,7 +23,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Define the route to fetch daily weather data
 router.get('/daily-weather', async (req, res) => {
     try {
+        // Check if data is in cache
+        const cachedData = cache.get('daily-weather');
+        if (cachedData) {
+            console.log('Data retrieved from cache.');
+            return res.json(cachedData);
+        }
         const weatherData = await scraper();
+        cache.set('daily-weather', weatherData);
         res.json(weatherData);
         console.log(weatherData);
     } catch (error) {
@@ -29,6 +43,23 @@ app.get('*', (req, res) => {
     // Serve index.html for any other requests.
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+// Implement cache cleanup function
+function clearCacheAtMidnight() {
+    const now = new Date();
+    const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+    const timeUntilMidnight = midnight - now;
+
+    setTimeout(() => {
+        // Clear the entire cache
+        cache.flushAll();
+        console.log('Cache cleared at midnight.');
+    }, timeUntilMidnight);
+}
+
+// Schedule cache clearing function
+clearCacheAtMidnight();
+
 
 app.use(express.json(), router);
 app.listen(port, () => {
