@@ -144,7 +144,8 @@ const Weather = () => {
       window.location.reload();
     }, 5000);
   }
-
+  // Memoize the weather data
+  const memoizedWeatherData = useMemo(() => weatherData, [weatherData]);
 
   return (
     <div className='text-white'>
@@ -164,7 +165,7 @@ const Weather = () => {
             </p>
           </div>
           <div className='flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-4 4k:grid-cols-7'>
-            {weatherData.map((item, index) => (
+            {memoizedWeatherData.map((item, index) => (
               <WeatherCard key={index} weather={item} index={index} />
             ))}
           </div>
