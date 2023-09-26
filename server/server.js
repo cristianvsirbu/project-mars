@@ -16,7 +16,9 @@ const path = require('path');
 const cache = new NodeCache({ stdTTL: 86400 });
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+    origin: 'https://project-mars.onrender.com',
+}));
 
 // Serve existing "public" directory for static assets.
 app.use(express.static(path.join(__dirname, '../client/public')));
