@@ -37,9 +37,9 @@ app.get('/daily-weather', async (_req, res) => {
 });
 
 // Serve existing "dist" directory for static assets.
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join("../client/dist")));
 
-const indexPath = path.resolve(__dirname, "../client/dist/index.html");
+const indexPath = path.resolve("../client/dist/index.html");
 app.get("/about", (_req, res) => res.sendFile(indexPath));
 app.get("/about/mars", (_req, res) => res.sendFile(indexPath));
 app.get("/about/moons", (_req, res) => res.sendFile(indexPath));
@@ -57,7 +57,7 @@ app.get("/about/partners", (_req, res) => res.sendFile(indexPath));
 
 // Catch any requests that don't match the ones above
 app.get("*", (_req, res) => {
-    res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+    res.sendFile(path.join("../client/dist", "index.html"));
 });
 
 // Start the server
