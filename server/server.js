@@ -39,8 +39,24 @@ app.get('/daily-weather', async (_req, res) => {
 // Serve existing "dist" directory for static assets.
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
+const indexPath = path.resolve(__dirname, "../client/dist", "index.html");
+app.get("/about", (_req, res) => res.sendFile(indexPath));
+app.get("/about/mars", (_req, res) => res.sendFile(indexPath));
+app.get("/about/moons", (_req, res) => res.sendFile(indexPath));
+app.get("/about/moons/:moonId", (_req, res) => res.sendFile(indexPath));
+app.get("/about/rovers", (_req, res) => res.sendFile(indexPath));
+app.get("/about/rovers/:subcategory", (_req, res) => res.sendFile(indexPath));
+app.get("/about/rovers/:subcategory/:roverId", (_req, res) => res.sendFile(indexPath));
+app.get("/about/satellites", (_req, res) => res.sendFile(indexPath));
+app.get("/about/satellites/:subcategory", (_req, res) => res.sendFile(indexPath));
+app.get("/about/satellites/:subcategory/:satelliteId", (_req, res) => res.sendFile(indexPath));
+app.get("/about/missions", (_req, res) => res.sendFile(indexPath));
+app.get("/about/imagery", (_req, res) => res.sendFile(indexPath));
+app.get("/about/weather", (_req, res) => res.sendFile(indexPath));
+app.get("/about/partners", (_req, res) => res.sendFile(indexPath));
+
 // Middleware to handle routing.
-app.get("*", (req, res) => {
+app.get("*", (_req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
 
