@@ -10,35 +10,35 @@ const RoversCategory = () => {
         <div className="text-center">
             <ul
                 className={`
-                my-12
-                flex
-                flex-col
-                flex-wrap
-                items-center
-                text-3xl
-                text-center
-                text-white
-                font-semibold
-                md:flex-row
-                md:justify-evenly
-                md:text-4xl
-                lg:text-5xl
-                lg:h-[80vh]
-                ${location.pathname.includes("/about/rovers/") ? "hidden" : ""}
+                    my-12
+                    flex
+                    flex-col
+                    flex-wrap
+                    items-center
+                    text-3xl
+                    text-center
+                    text-white
+                    font-semibold
+                    md:flex-row
+                    md:justify-evenly
+                    md:text-4xl
+                    lg:text-5xl
+                    lg:h-[80vh]
+                    ${location.pathname.includes("/about/rovers/") ? "hidden" : ""}
                 `}>
                 {roverCategory.children.map(subcategory => (
                     <li key={subcategory.subcategory}>
                         <div
                             className="
-                            my-6
-                            w-[15rem]
-                            h-[23rem]
-                            md:w-[18rem]
-                            md:h-[28rem]
-                            lg:w-[25rem]
-                            lg:h-[35rem]
-                            blur__card
-                            parallax
+                                my-6
+                                w-[15rem]
+                                h-[23rem]
+                                md:w-[18rem]
+                                md:h-[28rem]
+                                lg:w-[25rem]
+                                lg:h-[35rem]
+                                blur__card
+                                parallax
                             ">
                             <Link
                                 to={`/about/rovers/${subcategory.subcategory}`}

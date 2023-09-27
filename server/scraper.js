@@ -28,12 +28,9 @@ async function scraper() {
                 const sunrise = observationRows[observationRows.length - 1 - index]?.querySelector('.sun.rise')?.textContent.trim();
                 const sunset = observationRows[observationRows.length - 1 - index]?.querySelector('.sun.set')?.textContent.trim();
 
-                console.log("forecastRows length:", forecastRows.length);
-                console.log("observationRows length:", observationRows.length);
-
                 return { dateSol, pressure, sunrise, sunset, UTC, highCelsius, lowCelsius };
             });
-            console.log("data:", data);
+
             return data;
         });
         await browser.close();

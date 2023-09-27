@@ -80,20 +80,29 @@ const Imagery = () => {
         </div>
       ) : (
         <div className='flex flex-col'>
-          <p className='font-bold text-[4rem] text-white text-center blink__word select-none my-10'>
+            <p
+              className='
+                my-10
+                font-bold
+                text-[4rem]
+                text-white
+                text-center
+                blink__word
+                select-none
+                '>
            Imagery
           </p>
           <div className='flex flex-col self-center w-full lg:w-1/2'>
               <select
                 className='
-                            p-2
-                            m-4
-                            blur__card
-                            text-orange-500
-                            text-center
-                            text-[2rem]
-                            lg:text-[3rem]
-                            font-bold'
+                  p-2
+                  m-4
+                  blur__card
+                  text-orange-500
+                  text-center
+                  text-[2rem]
+                  lg:text-[3rem]
+                  font-bold'
                 value={selectedDate}
                 onChange={handleDateSelection}
               >
@@ -117,9 +126,15 @@ const Imagery = () => {
           className="button__style navigation_button mb-4 relative inline-block mx-4 lg:w-[5rem] self-center"
           onClick={() => setLoadedImagesCount(loadedImagesCount + 50)}
         >
-          <img src='/assets/down.svg' alt='Load More' className='hidden lg:block right-[1.5rem] top-[1rem] arrow' />
+          <img
+            src='/assets/down.svg'
+            alt='Load More'
+            className='hidden lg:block right-[1.5rem] top-[1rem] arrow' />
           <span>Load More</span>
-          <img src='/assets/down.svg' alt='Load More' className='hidden lg:block left-[1.5rem] top-[1rem] arrow' />
+          <img
+            src='/assets/down.svg'
+            alt='Load More'
+            className='hidden lg:block left-[1.5rem] top-[1rem] arrow' />
         </button>
       )}
       <BackToTop />

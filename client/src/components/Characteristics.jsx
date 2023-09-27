@@ -29,12 +29,12 @@ function Characteristics({ data }) {
             <div
                 key={key}
                 className="
-                          py-2
-                          flex
-                          flex-col
-                          items-center
-                          md:text-2xl
-                          xl:items-start
+                    py-2
+                    flex
+                    flex-col
+                    items-center
+                    md:text-2xl
+                    xl:items-start
              ">
                 <span className="flex font-bold text-orange-600 italic lg:text-2xl mt-8">
                     {key}:

@@ -16,35 +16,35 @@ const RoversSubcategory = () => {
         <div className="text-white text-2xl">
             <ul
                 className={`
-                my-12
-                flex
-                flex-wrap
-                items-center
-                flex-col
-                text-3xl
-                text-white
-                font-semibold
-                text-center
-                md:flex-row
-                md:justify-evenly
-                md:text-4xl
-                lg:text-5xl
-                lg:h-[80vh]
-                ${location.pathname.includes(`/about/rovers/${subcategory}/`) && !isLastLevel ? "hidden" : ""}
+                    my-12
+                    flex
+                    flex-wrap
+                    items-center
+                    flex-col
+                    text-3xl
+                    text-white
+                    font-semibold
+                    text-center
+                    md:flex-row
+                    md:justify-evenly
+                    md:text-4xl
+                    lg:text-5xl
+                    lg:h-[80vh]
+                    ${location.pathname.includes(`/about/rovers/${subcategory}/`) && !isLastLevel ? "hidden" : ""}
                 `}>
                 {subcategoryData.children.map(rover => (
                     <li key={rover.id}>
                         <div
                             className="
-                            my-6
-                            w-[15rem]
-                            h-[23rem]
-                            md:w-[18rem]
-                            md:h-[28rem]
-                            lg:w-[23rem]
-                            lg:h-[35rem]
-                            blur__card
-                            parallax
+                                my-6
+                                w-[15rem]
+                                h-[23rem]
+                                md:w-[18rem]
+                                md:h-[28rem]
+                                lg:w-[23rem]
+                                lg:h-[35rem]
+                                blur__card
+                                parallax
                             ">
                             <Link to={`/about/rovers/${subcategory}/${rover.id}`}>
                                 <div className="flex flex-col h-full py-12">

@@ -142,16 +142,16 @@ const Navbar = () => {
           {/* Dropdown Menu */}
           <div
             className={`${menuIsOpen ? 'flex' : 'hidden'} 
-                           px-8
-                           py-8
-                           top-40
-                           right-10
-                           flex-col
-                           absolute
-                           rounded-xl
-                           min-w-[15rem]
-                         bg-slate-900
-                           sidebar
+                        px-8
+                        py-8
+                        top-40
+                        right-10
+                        flex-col
+                        absolute
+                        rounded-xl
+                        min-w-[15rem]
+                      bg-slate-900
+                        sidebar
                            `}
             ref={dropdownRef}>
             {menuIsOpen && (

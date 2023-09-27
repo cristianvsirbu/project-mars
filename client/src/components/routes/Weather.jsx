@@ -7,6 +7,7 @@ import sunrise from '/assets/weather/sunrise.svg';
 import sunset from '/assets/weather/sunset.svg';
 import thermometer_colder from '/assets/weather/thermometer_colder.svg';
 import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
+
 const WeatherCard = ({ weather, index }) => {
   const weatherItems = [
     {

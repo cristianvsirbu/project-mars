@@ -6,14 +6,14 @@ const PhotoCard = ({ photo }) => {
     return (
         <div
             className="
-                	   flex
-                       flex-col
-                       py-4
-                       mt-8
-                       w-full
-                       h-full
-                       parallax
-                       blur__card
+                flex
+                flex-col
+                py-4
+                mt-8
+                w-full
+                h-full
+                parallax
+                blur__card
             ">
             <div className="w-full h-full p-8">
                 <img
@@ -24,16 +24,16 @@ const PhotoCard = ({ photo }) => {
             </div>
             <div
                 className="
-                           flex
-                           flex-col
-                         text-white
-                           w-full
-                           h-full
-                           text-center
-                           text-[1.2rem]
-                           lg:text-[1.3rem]
-                           4k:flex-row
-                           4k:justify-around
+                    flex
+                    flex-col
+                  text-white
+                    w-full
+                    h-full
+                    text-center
+                    text-[1.2rem]
+                    lg:text-[1.3rem]
+                    4k:flex-row
+                    4k:justify-around
                 ">
                 <p className="flex flex-col mt-2 xl:max-w-[50%]">
                     <span className="text-orange-500">Camera: </span>

@@ -17,11 +17,11 @@ import BackToTop from "../../BackToTop";
       <div className="flex flex-col w-full">
         <div
           className="
-          text-xl
-          text-white
-          justify-center
-          xl:flex
-          xl:flex-row-reverse
+            text-xl
+            text-white
+            justify-center
+            xl:flex
+            xl:flex-row-reverse
           ">
           <Model3D
             modelPath={moon.model3d}
