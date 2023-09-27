@@ -13,6 +13,7 @@ const cache = new NodeCache({ stdTTL: 86400 });
 
 // Enable CORS for all routes
 app.use(cors());
+
 app.use(express.json(), router);
 
 // Define the route to fetch daily weather data
@@ -54,9 +55,9 @@ app.get("/about/weather", (_req, res) => res.sendFile(indexPath));
 app.get("/about/partners", (_req, res) => res.sendFile(indexPath));
 
 // Middleware to handle routing.
-// app.get("*", (_req, res) => {
-//     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-// });
+app.get("*", (_req, res) => {
+    res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
