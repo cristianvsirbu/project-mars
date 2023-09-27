@@ -37,7 +37,7 @@ app.get('/daily-weather', async (_req, res) => {
 });
 
 // Serve existing "dist" directory for static assets.
-router.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 const indexPath = path.resolve(__dirname, "../client/dist/index.html");
 router.get("/about", (_req, res) => res.sendFile(indexPath));
