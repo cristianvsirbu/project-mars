@@ -1,4 +1,15 @@
-import { Area, AreaChart, Label, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
+import {
+  Area,
+  AreaChart,
+  Label,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  LineChart,
+  Line
+} from 'recharts';
 import { useContext, useState, useEffect } from "react";
 import { ModelsDataContext } from "../models/modelsContext";
 import BackToTop from '../BackToTop';
@@ -36,7 +47,9 @@ const MissionsPage = () => {
           }}
         >
           <CartesianGrid strokeDasharray="5 5" stroke='#d4d4d444' />
-          <XAxis type="number" style={{ fontSize: '1.2rem', fontWeight: 'bold', fill: '#fff', fontStyle: 'italic' }} >
+          <XAxis
+            type="number"
+            style={{ fontSize: '1.2rem', fontWeight: 'bold', fill: '#fff', fontStyle: 'italic' }} >
             <Label
               value="Mission launches by decade"
               position="insideTop"
@@ -47,10 +60,23 @@ const MissionsPage = () => {
             />
           </XAxis>
 
-          <YAxis dataKey="decade" type="category" style={{ fontSize: '1rem', fontWeight: 'bold', fill: '#d4d4d464', fontStyle: 'italic' }} />
+          <YAxis
+            dataKey="decade"
+            type="category"
+            style={{ fontSize: '1rem', fontWeight: 'bold', fill: '#d4d4d464', fontStyle: 'italic' }} />
           <Tooltip />
-          <Label value="Launches" offset={10} position="inside" fill='#fff' style={{ fontSize: '1.2rem', fontWeight: 'bold', fontStyle: 'italic' }} />
-          <Line dataKey="launches" stroke="#e2723d" type={"monotone"} strokeWidth={3} activeDot={{ r: 6 }} />
+          <Label
+            value="Launches"
+            offset={10}
+            position="inside"
+            fill='#fff'
+            style={{ fontSize: '1.2rem', fontWeight: 'bold', fontStyle: 'italic' }} />
+          <Line
+            dataKey="launches"
+            stroke="#e2723d"
+            type={"monotone"}
+            strokeWidth={3}
+            activeDot={{ r: 6 }} />
         </LineChart>
       </ResponsiveContainer>
     </div>

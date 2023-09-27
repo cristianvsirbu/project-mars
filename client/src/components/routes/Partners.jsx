@@ -36,13 +36,13 @@ const Partners = () => {
     <div className="w-full h-full">
       <p
         className='
-                   my-10
-                   font-bold
-                   text-[4rem]
-                 text-white
-                   text-center
-                   blink__word
-                   select-none
+          my-10
+          font-bold
+          text-[4rem]
+        text-white
+          text-center
+          blink__word
+          select-none
         '>
         Our Partners
       </p>
@@ -51,16 +51,16 @@ const Partners = () => {
           <div
             key={index}
             className="
-                       my-8
-                       mx-8
-                       flex
-                       flex-col
-                       justify-center
-                       items-center
-                       w-[22rem]
-                       h-[30rem]
-                       blur__card
-                       parallax
+              my-8
+              mx-8
+              flex
+              flex-col
+              justify-center
+              items-center
+              w-[22rem]
+              h-[30rem]
+              blur__card
+              parallax
             ">
             <div className="max-w-[25rem] h-[15rem] flex justify-center mb-[2rem]">
               <img
@@ -84,13 +84,13 @@ const Partners = () => {
       <div className="flex flex-col justify-center items-center">
         <p
           className='
-                   my-10
-                   font-bold
-                   text-[4rem]
-                 text-white
-                   text-center
-                   blink__word
-                   select-none
+            my-10
+            font-bold
+            text-[4rem]
+          text-white
+            text-center
+            blink__word
+            select-none
         '>
           Our Sponsor
         </p>

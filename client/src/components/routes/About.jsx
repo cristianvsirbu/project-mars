@@ -34,15 +34,15 @@ const About = () => {
             <li key={category}>
               <div
                 className="
-                my-6
-                w-[15rem]
-                h-[23rem]
-                md:w-[18rem]
-                md:h-[28rem]
-                lg:w-[25rem]
-                lg:h-[35rem]
-                blur__card
-                parallax
+                  my-6
+                  w-[15rem]
+                  h-[23rem]
+                  md:w-[18rem]
+                  md:h-[28rem]
+                  lg:w-[25rem]
+                  lg:h-[35rem]
+                  blur__card
+                  parallax
                 ">
                 <Link
                   to={`/about/${category}`}

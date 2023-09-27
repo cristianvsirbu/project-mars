@@ -1,8 +1,9 @@
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
-const app = express();
 const scraper = require('./scraper');
+
+const path = require('path');
+const app = express();
 const port = process.env.PORT || 3000;
 const NodeCache = require('node-cache');
 

@@ -21,11 +21,11 @@ const Satellite = () => {
     <div className="flex flex-col w-full">
       <div
         className="
-        flex
-        flex-col
-        justify-end
-        xl:flex-row-reverse
-        text-xl
+          flex
+          flex-col
+          justify-end
+          xl:flex-row-reverse
+          text-xl
         text-white
         ">
         {satellite.model3d ? (
