@@ -115,10 +115,9 @@ const Weather = () => {
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
-  const apiUrl = "https://project-mars-api.onrender.com/daily-weather";
 
   useEffect(() => {
-    fetch(`${apiUrl}`)
+    fetch("https://project-mars-api.onrender.com/daily-weather")
       .then(res => {
         if (res.ok) {
           return res.json();
