@@ -37,25 +37,8 @@ app.get('/daily-weather', async (_req, res) => {
 // Serve existing "dist" directory for static assets.
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-// const indexPath = path.resolve(__dirname, "../client/dist/index.html");
 
-// app.get("/", (_req, res) => res.sendFile(indexPath));
-// app.get("/about", (_req, res) => res.sendFile(indexPath));
-// app.get("/about/mars", (_req, res) => res.sendFile(indexPath));
-// app.get("/about/moons", (_req, res) => res.sendFile(indexPath));
-// app.get("/about/moons/:moonId", (_req, res) => res.sendFile(indexPath));
-// app.get("/about/rovers", (_req, res) => res.sendFile(indexPath));
-// app.get("/about/rovers/:subcategory", (_req, res) => res.sendFile(appPath));
-// app.get("/about/rovers/:subcategory/:roverId", (_req, res) => res.sendFile(appPath));
-// app.get("/about/satellites", (_req, res) => res.sendFile(indexPath));
-// app.get("/about/satellites/:subcategory", (_req, res) => res.sendFile(appPath));
-// app.get("/about/satellites/:subcategory/:satelliteId", (_req, res) => res.sendFile(indexPath));
-// app.get("/missions", (_req, res) => res.sendFile(indexPath));
-// app.get("/imagery", (_req, res) => res.sendFile(indexPath));
-// app.get("/weather", (_req, res) => res.sendFile(indexPath));
-// app.get("/partners", (_req, res) => res.sendFile(indexPath));
-
-// Catch any requests that don't match the ones above
+// Catch any requests 
 app.get("*", (_req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });

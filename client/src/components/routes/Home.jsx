@@ -16,8 +16,9 @@ const Home = () => {
                       md:left-[40rem]
                       md:top-[-24rem]
                       lg:left-[58rem]
+                      lg:top-[-26rem]
                       xl:left-[50rem]
-                      xl:top-[-20rem]
+                      xl:top-[-22rem]
                       "/>
 
       <div className="p-4
@@ -28,19 +29,19 @@ const Home = () => {
                       ">
 
         <div className='
-                        py-8
-                        px-4
-                        z-10
-                        w-[95%]
-                        mx-auto
-                        flex
-                        flex-col
-                        md:my-10
-                        md:w-[90%]
-                        lg:py-16
-                        xl:px-0
-                        xl:w-[80%]
-                        blur__card
+                      py-8
+                      px-4
+                      z-10
+                      w-[95%]
+                      mx-auto
+                      flex
+                      flex-col
+                      md:my-10
+                      md:w-[90%]
+                      lg:py-16
+                      xl:px-0
+                      xl:w-[80%]
+                      blur__card
                         '>
           {/* Title */}
           <div className="flex 
