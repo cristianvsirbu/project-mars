@@ -14,7 +14,8 @@ const cache = new NodeCache({ stdTTL: 86400 });
 // Enable CORS for all routes
 app.use(cors());
 
-app.use(express.json(), router);
+// Parse incoming requests data
+app.use(express.json());
 
 // Define the route to fetch daily weather data
 app.get('/daily-weather', async (_req, res) => {
@@ -36,7 +37,7 @@ app.get('/daily-weather', async (_req, res) => {
 });
 
 // Serve existing "dist" directory for static assets.
-app.use(express.static(path.join(__dirname, "../client/dist",)));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 const indexPath = path.resolve(__dirname, "../client/dist/index.html");
 app.get("/about", (_req, res) => res.sendFile(indexPath));
@@ -54,11 +55,12 @@ app.get("/about/imagery", (_req, res) => res.sendFile(indexPath));
 app.get("/about/weather", (_req, res) => res.sendFile(indexPath));
 app.get("/about/partners", (_req, res) => res.sendFile(indexPath));
 
-// Middleware to handle routing.
+// Catch any requests that don't match the ones above
 app.get("*", (_req, res) => {
     res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
+// Start the server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
