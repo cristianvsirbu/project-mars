@@ -35,7 +35,7 @@ const PhotoCard = ({ photo }) => {
                     4k:flex-row
                     4k:justify-around
                 ">
-                <p className="flex flex-col mt-2 xl:max-w-[50%]">
+                <p className="flex flex-col mt-2 xl:max-w-[90%] 4k:max-w-[60%]">
                     <span className="text-orange-500">Camera: </span>
                     <span className="font-bold">{camera.full_name}</span>
                 </p>
