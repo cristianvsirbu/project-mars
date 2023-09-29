@@ -118,7 +118,7 @@ const Weather = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch("https://project-mars.onrender.com/daily-weather")
+    fetch("/daily-weather")
       .then(res => {
         if (res.ok) {
           return res.json();
