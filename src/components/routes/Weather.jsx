@@ -149,7 +149,7 @@ const Weather = () => {
   useEffect(() => {
     const fetchDataAndStore = async () => {
       try {
-        const response = await axios.get("/api/handler");
+        const response = await axios.get(".netlify/functions/handler");
         const data = response.data;
         setWeatherData(data);
         storeDataInLocalStorage(data); // Store the fresh data in localStorage
