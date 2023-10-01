@@ -8,12 +8,5 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:3000/api', 
     },
-  },
-  build: {
-    rollupOptions: {
-      input: {
-        main: './dist/index.html',
-      },
-    },
-  },
+  }
 })
