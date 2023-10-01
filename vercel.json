@@ -1,0 +1,12 @@
+{
+	"routes": [
+		{
+			"src": "/api/.*",
+			"dest": "/api/handler.js"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "dist/index.html"
+		}
+	]
+}

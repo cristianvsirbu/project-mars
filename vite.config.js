@@ -5,11 +5,15 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react(), compression({ algorithm: 'gzip' })],
   server: {
-    redirects: [
-      {
-        source: '/weather',
-        destination: '/api/handler.js',
-      }
-    ]
-  }
+    proxy: {
+      '/api': 'http://localhost:3000/api', 
+    },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: './dist/index.html',
+      },
+    },
+  },
 })
