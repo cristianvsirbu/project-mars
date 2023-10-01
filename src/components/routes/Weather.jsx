@@ -115,7 +115,7 @@ const Weather = () => {
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
-  const [weatherData, setWeatherData] = useState([]);
+  const [weatherData, setWeatherData] = useState();
 
 
   // Function to store data in localStorage with a timestamp
@@ -148,13 +148,18 @@ const Weather = () => {
 
   useEffect(() => {
     const fetchDataAndStore = async () => {
-        const response = await fetch("/api/scraper");
-        const data = response.data;
+      try {
+        const data = await fetch("api/handler").then(res => res.json());
+        console.log("FETCH:", data);
         setWeatherData(data);
         storeDataInLocalStorage(data); // Store the fresh data in localStorage
         setLoading(false);
-
+      } catch (error) {
+        console.error(error);
+        setError(true);
+      }
     };
+
 
     // First, try to get data from localStorage
     let weatherData = getAndCheckDataFromLocalStorage();
@@ -188,7 +193,7 @@ const Weather = () => {
             </p>
           </div>
           <div className='flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-4 4k:grid-cols-7'>
-            {weatherData.map((item, index) => (
+              {weatherData.map((item, index) => (
               <WeatherCard key={index} weather={item} index={index} />
             ))}
           </div>

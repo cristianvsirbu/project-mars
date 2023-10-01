@@ -1,11 +1,11 @@
 import puppeteer from "puppeteer";
 
-const handler = async () => {
-     let browser;
-     try {
-         browser = await puppeteer.connect({
-             browserWSEndpoint: "wss://chrome.browserless.io?token=1a79e431-4a5b-431e-8eb6-71e7dcaaf0c9"
-       });
+async function scraper() {
+    let browser;
+    try {
+        browser = await puppeteer.connect({
+            browserWSEndpoint: "wss://chrome.browserless.io?token=1a79e431-4a5b-431e-8eb6-71e7dcaaf0c9"
+        });
         let page = await browser.newPage();
         await page.goto("https://mars.nasa.gov/msl/weather/");
         await page.waitForSelector('#weather_observation tbody tr');
@@ -29,20 +29,15 @@ const handler = async () => {
 
             return data;
         });
-         await browser.close();
-         return {
-             statusCode: 200,
-             body: JSON.stringify({ data: weatherData }),
-             console: console.log(weatherData)
-        }
-    } catch (error) {
-        console.error(error);
-    } finally {
+        await browser.close();
+        console.log("SCRAPER:", weatherData);
         if (browser) {
             await browser.close();
         }
+        return weatherData;
+    } catch (error) {
+        console.error(error);
     }
 }
 
-// eslint-disable-next-line no-unused-vars
-export { handler }
+export default scraper;
