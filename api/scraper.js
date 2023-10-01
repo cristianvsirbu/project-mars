@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer/lib/cjs/puppeteer/puppeteer.js";
 
 export default async function scraper(request, response) {
     let browser;
