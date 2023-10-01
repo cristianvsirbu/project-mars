@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 
-async function scraper() {
+const handler = async () => {
      let browser;
      try {
          browser = await puppeteer.connect({
@@ -30,8 +30,11 @@ async function scraper() {
             return data;
         });
          await browser.close();
-         console.log(weatherData);
-        return weatherData;
+         return {
+             statusCode: 200,
+             body: JSON.stringify({ data: weatherData }),
+             console: console.log(weatherData)
+        }
     } catch (error) {
         console.error(error);
     } finally {
@@ -41,4 +44,5 @@ async function scraper() {
     }
 }
 
-export default scraper;
+// eslint-disable-next-line no-unused-vars
+export { handler }

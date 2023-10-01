@@ -7,7 +7,7 @@ import sunrise from '/assets/weather/sunrise.svg';
 import sunset from '/assets/weather/sunset.svg';
 import thermometer_colder from '/assets/weather/thermometer_colder.svg';
 import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
-import axios from 'axios';
+
 
 const WeatherCard = ({ weather, index }) => {
   const weatherItems = [
@@ -148,16 +148,12 @@ const Weather = () => {
 
   useEffect(() => {
     const fetchDataAndStore = async () => {
-      try {
-        const response = await axios.get(".netlify/functions/handler");
+        const response = await fetch("/api/scraper");
         const data = response.data;
         setWeatherData(data);
         storeDataInLocalStorage(data); // Store the fresh data in localStorage
         setLoading(false);
-      } catch (error) {
-        console.error(error);
-        setError(true);
-      }
+
     };
 
     // First, try to get data from localStorage
