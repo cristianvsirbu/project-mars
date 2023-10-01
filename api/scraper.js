@@ -1,6 +1,6 @@
 import puppeteer from "puppeteer";
 
-async function scraper() {
+export default async function scraper(request, response) {
     let browser;
     try {
         browser = await puppeteer.connect({
@@ -29,15 +29,13 @@ async function scraper() {
 
             return data;
         });
-        await browser.close();
-        console.log("SCRAPER:", weatherData);
         if (browser) {
             await browser.close();
         }
-        return weatherData;
+        return response.status(200).json(weatherData);
+        
     } catch (error) {
         console.error(error);
     }
 }
 
-export default scraper;

@@ -149,8 +149,7 @@ const Weather = () => {
   useEffect(() => {
     const fetchDataAndStore = async () => {
       try {
-        const data = await fetch("api/handler").then(res => res.json());
-        console.log("FETCH:", data);
+        const data = await fetch("api/scraper").then(res => res.json());
         setWeatherData(data);
         storeDataInLocalStorage(data); // Store the fresh data in localStorage
         setLoading(false);
