@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import barometer from '/assets/weather/barometer.svg';
@@ -7,6 +7,7 @@ import sunrise from '/assets/weather/sunrise.svg';
 import sunset from '/assets/weather/sunset.svg';
 import thermometer_colder from '/assets/weather/thermometer_colder.svg';
 import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
+import axios from 'axios';
 
 const WeatherCard = ({ weather, index }) => {
   const weatherItems = [
@@ -82,7 +83,7 @@ const WeatherCard = ({ weather, index }) => {
             <img
               src={item.icon}
               alt={item.alt}
-              className='w-[100%] object-contain' 
+              className='w-[100%] object-contain'
             />
           </div>
           {windowWidth > 767 && (
@@ -110,42 +111,68 @@ WeatherCard.propTypes = {
   index: PropTypes.number.isRequired,
 };
 
-
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState([]);
   const [loading, setLoading] = useState(true);
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
+  const [weatherData, setWeatherData] = useState([]);
+
+
+  // Function to store data in localStorage with a timestamp
+  function storeDataInLocalStorage(data) {
+    const currentTime = new Date().getTime();
+    const dataToStore = {
+      data: data,
+      timestamp: currentTime,
+    };
+    localStorage.setItem('weatherData', JSON.stringify(dataToStore));
+  }
+
+  // Function to retrieve and check data from localStorage
+  function getAndCheckDataFromLocalStorage() {
+    const storedData = localStorage.getItem('weatherData');
+    if (storedData) {
+      const parsedData = JSON.parse(storedData);
+      const { data, timestamp } = parsedData;
+      const currentTime = new Date().getTime();
+      const expirationTime = 24 * 60 * 60 * 1000; // 24 hours
+
+      if (currentTime - timestamp <= expirationTime) {
+        // The data is still valid (less than 24 hours)
+        return data;
+      }
+    }
+    // Data is either not in localStorage or has expired
+    return null;
+  }
 
   useEffect(() => {
-    fetch("/daily-weather")
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-
-        } else {
-          throw new Error('Failed to fetch weather data');
-        }
-      })
-      .then(data => {
+    const fetchDataAndStore = async () => {
+      try {
+        const response = await axios.get("/api/handler");
+        const data = response.data;
         setWeatherData(data);
+        storeDataInLocalStorage(data); // Store the fresh data in localStorage
         setLoading(false);
-        setError(false);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error(error);
-        setLoading(false);
         setError(true);
-      });
+      }
+    };
+
+    // First, try to get data from localStorage
+    let weatherData = getAndCheckDataFromLocalStorage();
+
+    if (!weatherData) {
+      // Data is not available or has expired, fetch it
+      fetchDataAndStore();
+    } else {
+      // Data is available in localStorage, use it
+      setWeatherData(weatherData);
+      setLoading(false);
+    }
   }, []);
 
-  if (error) {
-    setTimeout(() => {
-      window.location.reload();
-    }, 5000);
-  }
-  // Memoize the weather data
-  const memoizedWeatherData = useMemo(() => weatherData, [weatherData]);
 
   return (
     <div className='text-white'>
@@ -165,7 +192,7 @@ const Weather = () => {
             </p>
           </div>
           <div className='flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-4 4k:grid-cols-7'>
-            {memoizedWeatherData.map((item, index) => (
+            {weatherData.map((item, index) => (
               <WeatherCard key={index} weather={item} index={index} />
             ))}
           </div>
