@@ -4,7 +4,7 @@ export default async function scraper(request, response) {
     let browser;
     try {
         browser = await puppeteer.connect({
-            browserWSEndpoint: "wss://chrome.browserless.io?token=1a79e431-4a5b-431e-8eb6-71e7dcaaf0c9"
+            browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BROWSERLESS_API_KEY}`
         });
         let page = await browser.newPage();
         await page.goto("https://mars.nasa.gov/msl/weather/");
