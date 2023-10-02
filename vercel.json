@@ -1,18 +1,19 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/scraper.js"
-    },
-    {
-      "src": "^/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/index.html"
-    }
-  ]
+	"version": 2,
+	"routes": [
+		{
+			"src": "/api/(.*)",
+			"dest": "/api/scraper.js"
+		},
+		{
+			"src": "^/assets/(.*)",
+			"dest": "/assets/$1"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "/dist/index.html"
+		},
+		{ "handle": "filesystem" },
+		{ "src": "/.*", "dest": "/index.html" }
+	]
 }
-
