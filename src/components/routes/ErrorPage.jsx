@@ -33,10 +33,10 @@ export default function ErrorPage() {
                         top-[12rem]
                         lg:top-[17rem]
                         lg:text-[2.5rem]
-                        xl:top-[24rem]
+                        xl:top-[25rem]
                         xl:text-[4rem]
-                        2xl:top-[24rem]
-                        4k:top-[32rem]
+                        2xl:top-[26rem]
+                        4k:top-[24rem]
                 ">
                     PAGE NOT FOUND!
                 </p>
