@@ -2,11 +2,11 @@
 <img 
 src="./readme_assets/home_pc.webp" 
 alt="Project Mars"
-width="84%">
+width="85%">
 <img 
 src="./readme_assets/home_mobile.webp" 
 alt="Project Mars"
-width="14%">
+width="15%">
 
 
 <h1>Project Mars</h1>
