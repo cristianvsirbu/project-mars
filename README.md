@@ -39,7 +39,7 @@ alt="Project Mars">
 <img 
 src="./readme_assets/weather.gif" 
 alt="Project Mars" 
-width="30%"
+width="45%"
 align="right">
 
 <h3>Data Scraping</h3>
