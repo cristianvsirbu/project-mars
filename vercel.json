@@ -1,4 +1,4 @@
 {
 	"version": 2,
-	"rewrites": [{ "source": "/(.*)", "destination": "/dist/index.html" }]
+	"routes": [{ "source": "/(.*)", "destination": "/dist/index.html" }]
 }
