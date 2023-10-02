@@ -1,14 +1,8 @@
 
 <img 
 src="./readme_assets/home_pc.webp" 
-alt="Project Mars"
-width="80%"
-align="left">
-<img 
-src="./readme_assets/home_mobile.webp" 
-alt="Project Mars"
-width="20%"
-align="right">
+alt="Project Mars">
+
 
 <h1 align="center">Project Mars</h1>
 <p align="center">Project Mars is a frontend web application that provides a captivating journey through the Martian landscape. As a frontend developer, I've used various technologies and techniques to create an engaging and informative experience for users interested in the Red Planet.</p>
