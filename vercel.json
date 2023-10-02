@@ -1,4 +1,27 @@
 {
-	"version": 2,
-	"routes": [{ "src": "/(.*)", "dest": "/dist/index.html" }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/scraper.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/scraper.js"
+	},
+    {
+      "src": "/(.*)",
+      "dest": "/client/index.html"
+    }
+  ]
+}
 }
