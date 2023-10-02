@@ -8,14 +8,4 @@ export default defineConfig({
     react(),
     compression({ algorithm: 'gzip' }),
   ],
-  // server: {
-  //   proxy: {
-  //     '/api': 'http://localhost:3000/api',
-  //     headers: {
-  //       'Access-Control-Allow-Origin': '*',
-  //       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  //       'Access-Control-Allow-Headers': 'Content-Type',
-  //     },
-  //   },
-  // }
 })
