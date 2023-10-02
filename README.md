@@ -6,7 +6,7 @@ width="84%">
 <img 
 src="./readme_assets/home_mobile.webp" 
 alt="Project Mars"
-width="15%">
+width="14%">
 
 
 <h1>Project Mars</h1>
