@@ -16,7 +16,7 @@ width="14.35%">
 The project is structured to ensure clarity and maintainability. <b>It contains two branches for data scraping (the rest of the content remains the same):</b>
 
 - **`server`:**
- Features a traditional client-server architecture where the server serves the scraped data to the frontend.
+ Features a traditional client-server architecture where the server serves the scraped data to the frontend. The live demo of it you can find <a href="https://project-mars.onrender.com/">here</a>. Due to Render free tier limitations, the site is turning idle after 15 minutes so you'll need to wait 3-5 minutes until Render rebuilds the site. So if you want to see the demo without waiting, go to link in the **About** section which uses serverless function. 
 
 - **`serverless`:**
 Utilizes a serverless function on Vercel, making data retrieval more efficient.
