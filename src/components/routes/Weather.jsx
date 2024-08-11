@@ -19,7 +19,7 @@ const WeatherCard = ({ weather, index }) => {
     },
     {
       label: 'Pressure',
-      value: `${weather.pressure} Pa`,
+      value: `${weather.pressure} Pa || 'Missing data'`,
       icon: barometer,
       alt: 'Pressure',
     },
@@ -37,13 +37,13 @@ const WeatherCard = ({ weather, index }) => {
     },
     {
       label: 'Sunrise',
-      value: `${weather.sunrise}`,
+      value: `${weather.sunrise} || 'Missing data'`,
       icon: sunrise,
       alt: 'Sunrise',
     },
     {
       label: 'Sunset',
-      value: `${weather.sunset}`,
+      value: `${weather.sunset} || 'Missing data'`,
       icon: sunset,
       alt: 'Sunset',
     },
@@ -104,9 +104,9 @@ WeatherCard.propTypes = {
     UTC: PropTypes.string.isRequired,
     highCelsius: PropTypes.string.isRequired,
     lowCelsius: PropTypes.string.isRequired,
-    pressure: PropTypes.string.isRequired,
-    sunrise: PropTypes.string.isRequired,
-    sunset: PropTypes.string.isRequired,
+    pressure: PropTypes.string,
+    sunrise: PropTypes.string,
+    sunset: PropTypes.string,
   }).isRequired,
   index: PropTypes.number.isRequired,
 };
@@ -150,6 +150,7 @@ const Weather = () => {
     const fetchDataAndStore = async () => {
       try {
         const data = await fetch("api/scraper").then(res => res.json());
+        console.log(data);
         setWeatherData(data);
         storeDataInLocalStorage(data); // Store the fresh data in localStorage
         setLoading(false);

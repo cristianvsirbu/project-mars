@@ -26,6 +26,7 @@ lerna-debug.log*
 *.sln
 *.sw?
 .vercel
+.env
 
 # Local Netlify folder
 .netlify
