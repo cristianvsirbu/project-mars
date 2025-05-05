@@ -1,14 +1,14 @@
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { useEffect, useRef } from "react";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
-import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { useEffect, useRef } from 'react';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 interface Model3DProps {
   modelPath: string;
   initialScale: number;
-  cameraPosition: [number, number, number]; 
+  cameraPosition: [number, number, number];
 }
 
 const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
@@ -18,26 +18,26 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
     const container = containerRef.current;
-    
+
     if (!container) return;
-    
+
     const camera = new THREE.PerspectiveCamera(
       45,
       container.clientWidth / container.clientHeight,
       0.5,
       1000
     );
-    
+
     camera.position.set(cameraPosition[0], cameraPosition[1], cameraPosition[2]);
-    
+
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
     // Added lights to the scene
     const createDirectionalLight = (
-      color: THREE.ColorRepresentation, 
-      intensity: number, 
+      color: THREE.ColorRepresentation,
+      intensity: number,
       position: [number, number, number]
     ): THREE.DirectionalLight => {
       const light = new THREE.DirectionalLight(color, intensity);
@@ -46,7 +46,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     };
 
     const createAmbientLight = (
-      color: THREE.ColorRepresentation, 
+      color: THREE.ColorRepresentation,
       intensity: number
     ): THREE.AmbientLight => {
       const light = new THREE.AmbientLight(color, intensity);
@@ -69,25 +69,25 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     // Load the 3D model
     const loader = new GLTFLoader();
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath("/assets/draco/");
+    dracoLoader.setDecoderPath('/assets/draco/');
     loader.setDRACOLoader(dracoLoader);
 
     loader.load(
-        modelPath,
-        (gltf: GLTF) => {
-            scene.add(gltf.scene);
-            gltf.scene.scale.set(initialScale, initialScale, initialScale);
-            gltf.scene.position.set(0, -1, 0);
-        },
-        (progress: any) => {
-            // console.log(`Loading: ${(progress.loaded / progress.total * 100).toFixed(0)}%`);
-        },
-        (error: unknown) => {
-            console.error("Error loading model:", error);
-            if (error instanceof ErrorEvent) {
-                console.error("Error message:", error.message);
-            }
+      modelPath,
+      (gltf: GLTF) => {
+        scene.add(gltf.scene);
+        gltf.scene.scale.set(initialScale, initialScale, initialScale);
+        gltf.scene.position.set(0, -1, 0);
+      },
+      (progress: any) => {
+        // console.log(`Loading: ${(progress.loaded / progress.total * 100).toFixed(0)}%`);
+      },
+      (error: unknown) => {
+        console.error('Error loading model:', error);
+        if (error instanceof ErrorEvent) {
+          console.error('Error message:', error.message);
         }
+      }
     );
 
     // Add orbit controls
@@ -111,12 +111,12 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
     };
-    window.addEventListener("resize", resize);
+    window.addEventListener('resize', resize);
 
     // Cleanup
     return () => {
       if (animationId) cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener('resize', resize);
       renderer.dispose();
       container.removeChild(renderer.domElement);
     };

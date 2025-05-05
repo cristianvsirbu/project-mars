@@ -1,31 +1,31 @@
 {
-	"compilerOptions": {
-		/* Visit https://aka.ms/tsconfig to read more about this file */
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
 
-		/* Language and Environment */
-		"target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-		"lib": [
-			"dom",
-			"dom.iterable",
-			"esnext"
-		] /* Specify standard libraries needed for React development */,
-		"jsx": "react-jsx" /* Specify what JSX code is generated. */,
+    /* Language and Environment */
+    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ] /* Specify standard libraries needed for React development */,
+    "jsx": "react-jsx" /* Specify what JSX code is generated. */,
 
-		/* Modules */
-		"module": "ES2022" /* Specify what module code is generated. */,
-		"moduleResolution": "node" /* Use Node.js module resolution algorithm */,
-		"esModuleInterop": true /* Enable importing non-ES modules as default imports */,
-		"allowSyntheticDefaultImports": true /* Allow imports from modules with no default export */,
-		"resolveJsonModule": true /* Enable importing .json files */,
+    /* Modules */
+    "module": "ES2022" /* Specify what module code is generated. */,
+    "moduleResolution": "node" /* Use Node.js module resolution algorithm */,
+    "esModuleInterop": true /* Enable importing non-ES modules as default imports */,
+    "allowSyntheticDefaultImports": true /* Allow imports from modules with no default export */,
+    "resolveJsonModule": true /* Enable importing .json files */,
 
-		/* Type Checking */
-		"strict": true /* Enable all strict type-checking options */,
+    /* Type Checking */
+    "strict": true /* Enable all strict type-checking options */,
 
-		/* Emit */
-		"skipLibCheck": true /* Skip type checking of declaration files */,
-		"forceConsistentCasingInFileNames": true /* Ensure file names are handled consistently */
+    /* Emit */
+    "skipLibCheck": true /* Skip type checking of declaration files */,
+    "forceConsistentCasingInFileNames": true /* Ensure file names are handled consistently */
 
-		// Add other options as needed
-	},
-	"include": ["src/**/*"] /* Include all files in src directory */
+    // Add other options as needed
+  },
+  "include": ["src/**/*"] /* Include all files in src directory */
 }

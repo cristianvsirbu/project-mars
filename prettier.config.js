@@ -6,8 +6,8 @@
 
 // prettier.config.js
 module.exports = {
-	semi: false,
-	singleQuote: true,
-	tailwindAttributes: ["className", "classNames"],
-	plugins: ["prettier-plugin-tailwindcss"],
+  semi: false,
+  singleQuote: true,
+  tailwindAttributes: ['className', 'classNames'],
+  plugins: ['prettier-plugin-tailwindcss'],
 };

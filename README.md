@@ -1,4 +1,3 @@
-
 <img 
 src="./readme_assets/home_pc.webp" 
 alt="Project Mars"
@@ -8,7 +7,6 @@ src="./readme_assets/home_mobile.webp"
 alt="Project Mars"
 width="14.35%">
 
-
 <h1>Project Mars</h1>
 <p align="left">Project Mars is a frontend web application that provides a captivating journey through the Martian landscape. As a frontend developer, I've used various technologies and techniques to create an engaging and informative experience for users interested in the Red Planet.</p>
 
@@ -16,10 +14,10 @@ width="14.35%">
 The project is structured to ensure clarity and maintainability. <b>It contains two branches for data scraping (the rest of the content remains the same):</b>
 
 - **`server`:**
- Features a traditional client-server architecture where the server serves the scraped data to the frontend. The live demo of it you can find <a href="https://project-mars.onrender.com/">here</a>. Due to Render free tier limitations, the site is turning idle after 15 minutes so you'll need to wait 3-5 minutes until Render rebuilds the site. So if you want to see the demo without waiting, go to link in the **About** section which uses serverless function. 
+  Features a traditional client-server architecture where the server serves the scraped data to the frontend. The live demo of it you can find <a href="https://project-mars.onrender.com/">here</a>. Due to Render free tier limitations, the site is turning idle after 15 minutes so you'll need to wait 3-5 minutes until Render rebuilds the site. So if you want to see the demo without waiting, go to link in the **About** section which uses serverless function.
 
 - **`serverless`:**
-Utilizes a serverless function on Vercel, making data retrieval more efficient.
+  Utilizes a serverless function on Vercel, making data retrieval more efficient.
 
 <img 
 src="./readme_assets/about_pc.webp" 
@@ -34,7 +32,7 @@ alt="Project Mars">
 - **Recharts:** Utilized for creating interactive charts and visualizations.
 - **Three.js:** To incorporate 3D models and enhance the user experience.
 - **Vite:** As a fast build tool for the frontend development stack.
-  
+
 <img 
 src="./readme_assets/weather.gif" 
 alt="Project Mars" 
@@ -59,7 +57,7 @@ align="right">
 - **Asset Compression:** All assets, including 3D models, are compressed for optimal network efficiency.
 - **Text Compression (gzip):** Text-based content is compressed to reduce load times and improve performance.
 - **React Context:** Used for managing and sharing state data across component tree without having to pass props manually at every level of nesting (prop drilling).
-- **`node-cache`:**  Used for caching data for 24 hours in the  **`server`** branch to minimize redundant data fetching.
+- **`node-cache`:** Used for caching data for 24 hours in the **`server`** branch to minimize redundant data fetching.
 - **`localStorage`:** Utilized to store weather data for 24 hours in the **`serverless`** branch function to enhance network efficiency.
 
 <h3>Performance Metrics</h3>
