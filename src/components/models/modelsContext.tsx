@@ -1,9 +1,10 @@
 import { createContext } from "react";
 import { modelsData } from "./modelsData";
-import PropTypes from 'prop-types';
 
 export const ModelsDataContext = createContext(modelsData);
-export const ModelsDataContextProvider = ({ children }) => {
+import { ReactNode } from "react";
+
+export const ModelsDataContextProvider = ({ children }: { children: ReactNode }) => {
     return (
         <ModelsDataContext.Provider value={modelsData}>
             {children}
@@ -11,6 +12,4 @@ export const ModelsDataContextProvider = ({ children }) => {
     );
 }
 
-ModelsDataContextProvider.propTypes = {
-    children: PropTypes.any.isRequired,
-}
+

@@ -18,7 +18,7 @@ const BackToTop = () => {
         });
     };
 
-    const handleClick = (e) => {
+    const handleClick = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         scrollToTop();
     };
