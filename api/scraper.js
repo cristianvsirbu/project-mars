@@ -13,8 +13,6 @@ const envPath = path.resolve(__dirname, '../.env');
 console.log('Loading .env from:', envPath);
 dotenv.config({ path: envPath });
 
-console.log('BROWSERLESS_API_KEY:', process.env.BROWSERLESS_API_KEY);
-
 async function scraper() {
   let browser;
   try {
