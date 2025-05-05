@@ -30,7 +30,7 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
 		},
 		{
 			label: "Pressure",
-			value: `${weather.pressure} Pa || 'Missing data'`,
+			value: weather.pressure ? `${weather.pressure} Pa` : 'Missing data',
 			icon: barometer,
 			alt: "Pressure",
 		},
