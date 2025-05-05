@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .sidebar {
   -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -25,7 +24,6 @@
   background-color: var(--primary-color);
   position: relative;
   z-index: 999;
-
 }
 
 .rajdhani {
@@ -35,7 +33,7 @@
 .blur__card {
   border-radius: 22px;
   border: 1px solid #5c5c5c98;
-  background: linear-gradient(103deg, rgba(212, 212, 212, 0.192) -98.71%, rgba(0, 0, 0, 0.00) 103.17%);
+  background: linear-gradient(103deg, rgba(212, 212, 212, 0.192) -98.71%, rgba(0, 0, 0, 0) 103.17%);
   box-shadow: -2px 9px 5px 0px rgba(22, 22, 22, 0.25);
   backdrop-filter: blur(5px);
 }
@@ -46,16 +44,18 @@
 
 .button__style {
   background: linear-gradient(135deg, #e2723d 0%, #992e00 100%);
-  font-family: 'Rajdhani', Martian Mono, sans-serif;
+  font-family:
+    'Rajdhani',
+    Martian Mono,
+    sans-serif;
   font-weight: 900;
   color: white;
   z-index: 2;
   border-radius: 22px;
   font-size: 1.8rem;
-  padding: .2rem 4rem;
+  padding: 0.2rem 4rem;
   margin-top: 1rem;
 }
-
 
 @-webkit-keyframes slide-top {
   0% {
@@ -86,13 +86,18 @@
 }
 
 @keyframes zoom-slow {
-
   0%,
   100% {
     color: #e5ebea;
     filter: blur(1px);
-    text-shadow: 0 0 5px #ffffff, 0 0 100px #00c2bc, 0 0 55px #00c2bce0,
-      0 0 120px #e0e9e9, 0 0 30px #d3e9e8, 0 0 50px #abe9e7, 0 0 60px #7b79cf,
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 100px #00c2bc,
+      0 0 55px #00c2bce0,
+      0 0 120px #e0e9e9,
+      0 0 30px #d3e9e8,
+      0 0 50px #abe9e7,
+      0 0 60px #7b79cf,
       0 0 80px #1d00c2;
   }
 
@@ -105,13 +110,18 @@
 }
 
 @keyframes zoomup {
-
   0%,
   100% {
     color: #e5ebea;
     filter: blur(1px);
-    text-shadow: 0 0 10px #d8e4e3, 0 0 20px #00c2ba, 0 0 30px #00c2ba,
-      0 0 40px #e0e9e9, 0 0 60px #d3e9e8, 0 0 80px #abe9e7, 0 0 100px #7b79cf,
+    text-shadow:
+      0 0 10px #d8e4e3,
+      0 0 20px #00c2ba,
+      0 0 30px #00c2ba,
+      0 0 40px #e0e9e9,
+      0 0 60px #d3e9e8,
+      0 0 80px #abe9e7,
+      0 0 100px #7b79cf,
       0 0 120px #1d00c2;
   }
 
@@ -153,19 +163,19 @@
 @media (min-width: 1024px) {
   .parallax {
     /* the parallax factor */
-    --f: .01;
+    --f: 0.01;
     /* radius */
     --r: 22px;
-    --_f: calc(100%*var(--f)/(1 + var(--f)));
-    --_a: calc(90deg*var(--f));
+    --_f: calc(100% * var(--f) / (1 + var(--f)));
+    --_a: calc(90deg * var(--f));
     clip-path: inset(0 var(--_f) 0 0 round var(--r));
     transform: perspective(600px) var(--_t, rotateY(var(--_a)));
-    transition: .3s;
+    transition: 0.3s;
   }
 
   .parallax:hover {
     clip-path: inset(0 0 0 var(--_f) round var(--r));
-    --_t: translateX(calc(-2*var(--_f))) rotateY(calc(-1*var(--_a)));
+    --_t: translateX(calc(-2 * var(--_f))) rotateY(calc(-1 * var(--_a)));
   }
 }
 
@@ -189,10 +199,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, .05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 22px;
     color: #fff;
     z-index: 1;
@@ -202,16 +212,15 @@
     font-weight: 900;
     overflow: hidden;
     text-transform: uppercase;
-    transition: all .2s ease-in-out;
-    backdrop-filter: blur(10px)
+    transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(10px);
   }
-
 
   .button__style a:hover,
   .button__style span:hover {
     letter-spacing: 3px;
-    background: rgba(255, 255, 255, .1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
 
   .button__style a::before,
@@ -222,17 +231,15 @@
     top: 0;
     width: 50%;
     height: 100%;
-    background:
-      linear-gradient(to left, rgba(255, 255, 255, .15), transparent);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
     transform: skewX(30deg) translateX(0);
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
   }
 
   .button__style:hover a::before,
   .button__style:hover span::before {
     transform: skewX(40deg) translateX(200%);
   }
-
 
   .button__style::before,
   .button__style::after {
@@ -244,7 +251,7 @@
     height: 10px;
     border-radius: 10px;
     background: #d86123;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
     transition-delay: 0.1s;
   }
 
@@ -261,7 +268,7 @@
     height: 50%;
     width: 98%;
     border-radius: 30px;
-    transition-delay: .1s;
+    transition-delay: 0.1s;
   }
 
   .button__style:hover::before {
@@ -279,16 +286,15 @@
       0 0 5px #d86123,
       0 0 15px #d86123,
       0 0 30px #d86123,
-      0 0 60px #d86123
+      0 0 60px #d86123;
   }
-
 }
 
 .arrow {
   z-index: inherit;
   width: 1.6rem;
   height: 1.6rem;
-  position:absolute;
+  position: absolute;
   opacity: 30%;
 }
 
@@ -297,6 +303,5 @@
   width: 1.8rem;
   height: 1.8rem;
   animation: up-down 1s ease-in-out infinite;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-

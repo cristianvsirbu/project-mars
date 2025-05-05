@@ -1,0 +1,5 @@
+.eslintrc.cjs
+.prettierrc.js
+.gitignore
+.hintrc
+.prettierignore

@@ -10,15 +10,11 @@ const router = createBrowserRouter(routes);
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 root.render(
-    <ModelsDataContextProvider>
+  <ModelsDataContextProvider>
     <RouterProvider router={router}>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-      </RouterProvider>
-    </ModelsDataContextProvider>
+    </RouterProvider>
+  </ModelsDataContextProvider>
 );
-
-
-
-
