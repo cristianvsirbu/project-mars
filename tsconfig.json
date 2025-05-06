@@ -27,5 +27,5 @@
 
     // Add other options as needed
   },
-  "include": ["src/**/*"] /* Include all files in src directory */
+  "include": ["src/**/*", "src/main.tsx"] /* Include all files in src directory */
 }

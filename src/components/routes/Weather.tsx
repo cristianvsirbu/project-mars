@@ -54,7 +54,7 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
     },
     {
       label: 'Sunset',
-      value: `${weather.sunset} || 'Missing data'`,
+      value: weather.sunset ? weather.sunset : 'Missing data',
       icon: sunset,
       alt: 'Sunset',
     },
@@ -139,7 +139,7 @@ const Weather = () => {
   useEffect(() => {
     const fetchDataAndStore = async () => {
       try {
-        const data = await fetch('api/scraper').then((res) => res.json());
+        const data = await fetch('/api/scraper').then((res) => res.json());
         console.log(data);
         setWeatherData(data);
         storeDataInLocalStorage(data); // Store the fresh data in localStorage
@@ -147,6 +147,8 @@ const Weather = () => {
       } catch (error) {
         console.error(error);
         setError(true);
+        setLoading(false);
+        setWeatherData([]);
       }
     };
 
