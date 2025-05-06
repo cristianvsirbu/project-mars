@@ -48,7 +48,7 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
     },
     {
       label: 'Sunrise',
-      value: `${weather.sunrise} || 'Missing data'`,
+      value: weather.sunrise ? weather.sunrise : 'Missing data',
       icon: sunrise,
       alt: 'Sunrise',
     },
@@ -85,7 +85,15 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
           {windowWidth > 767 && (
             <div className="text-[1.5rem] text-center text-orange-500">{item.label}</div>
           )}
-          <div className="text-[1.3rem] md:text-[2rem] text-center font-medium">{item.value}</div>
+          <div
+            className={`text-center font-medium ${
+              item.value === 'Missing data'
+                ? 'text-[12px] md:text-[14px] text-gray-400 italic'
+                : 'text-[20px] md:text-[24px] text-white'
+            }`}
+          >
+            {item.value}
+          </div>
         </div>
       ))}
     </div>
