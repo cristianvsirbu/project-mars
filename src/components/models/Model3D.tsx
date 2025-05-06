@@ -1,9 +1,37 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+
+// Global renderer manager
+const rendererManager = (() => {
+  let sharedRenderer: THREE.WebGLRenderer | null = null;
+  let usageCount = 0;
+
+  return {
+    getRenderer: () => {
+      if (!sharedRenderer) {
+        sharedRenderer = new THREE.WebGLRenderer({
+          alpha: true,
+          antialias: true,
+          powerPreference: 'high-performance',
+        });
+        sharedRenderer.setPixelRatio(window.devicePixelRatio);
+      }
+      usageCount++;
+      return sharedRenderer;
+    },
+    releaseRenderer: () => {
+      usageCount--;
+      if (usageCount <= 0 && sharedRenderer) {
+        sharedRenderer.dispose();
+        sharedRenderer = null;
+      }
+    },
+  };
+})();
 
 interface Model3DProps {
   modelPath: string;
@@ -13,12 +41,18 @@ interface Model3DProps {
 
 const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const sceneRef = useRef<THREE.Scene | null>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const frameIdRef = useRef<number>(0);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    // Set up the scene, camera, and renderer
+    // Set up the scene and camera
     const scene = new THREE.Scene();
+    sceneRef.current = scene;
+    
     const container = containerRef.current;
-
     if (!container) return;
 
     const camera = new THREE.PerspectiveCamera(
@@ -27,12 +61,15 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
       0.5,
       1000
     );
-
+    cameraRef.current = camera;
     camera.position.set(cameraPosition[0], cameraPosition[1], cameraPosition[2]);
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    // Get the shared renderer from the manager
+    rendererRef.current = rendererManager.getRenderer();
+    const renderer = rendererRef.current;
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
+    setIsActive(true);
 
     // Added lights to the scene
     const createDirectionalLight = (
@@ -79,13 +116,12 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
         gltf.scene.scale.set(initialScale, initialScale, initialScale);
         gltf.scene.position.set(0, -1, 0);
       },
-      (progress: any) => {
-        // console.log(`Loading: ${(progress.loaded / progress.total * 100).toFixed(0)}%`);
-      },
+      undefined,
       (error: unknown) => {
-        console.error('Error loading model:', error);
-        if (error instanceof ErrorEvent) {
-          console.error('Error message:', error.message);
+        if (error instanceof Error) {
+          console.error('Error loading model:', error.message, '\nStack:', error.stack);
+        } else {
+          console.error('Error loading model:', error);
         }
       }
     );
@@ -94,15 +130,6 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
-
-    // Animation loop
-    let animationId: number;
-    const animate = () => {
-      animationId = requestAnimationFrame(animate);
-      renderer.render(scene, camera);
-      scene.rotation.y += 0.001;
-    };
-    animate();
 
     // Handle resize
     const resize = () => {
@@ -115,12 +142,61 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
 
     // Cleanup
     return () => {
-      if (animationId) cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
-      renderer.dispose();
-      container.removeChild(renderer.domElement);
+      
+      // Dispose controls
+      controls.dispose();
+
+      // Remove DOM element but don't dispose the shared renderer
+      const renderer = rendererRef.current;
+      if (renderer && container && container.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
+      }
+      rendererManager.releaseRenderer();
+      
+      // Dispose scene objects
+      scene.traverse((object) => {
+        if (object instanceof THREE.Mesh) {
+          if (object.geometry) object.geometry.dispose();
+          if (object.material) {
+            if (Array.isArray(object.material)) {
+              object.material.forEach(material => material.dispose());
+            } else {
+              object.material.dispose();
+            }
+          }
+        }
+      });
+      
+      // Clear the scene
+      while(scene.children.length > 0) {
+        scene.remove(scene.children[0]);
+      }
+      
+      setIsActive(false);
     };
   }, [modelPath, initialScale, cameraPosition]);
+
+  // Animation loop is now in a separate useEffect to avoid creating multiple animation loops
+  useEffect(() => {
+    if (!isActive || !sceneRef.current || !cameraRef.current) return;
+    
+    const scene = sceneRef.current;
+    const camera = cameraRef.current;
+    
+    const animate = () => {
+      frameIdRef.current = requestAnimationFrame(animate);
+      if (scene) scene.rotation.y += 0.001;
+      const renderer = rendererRef.current;
+      if (renderer) renderer.render(scene, camera);
+    };
+    
+    animate();
+    
+    return () => {
+      cancelAnimationFrame(frameIdRef.current);
+    };
+  }, [isActive]);
 
   return (
     <div className="flex w-full h-[30vh] md:h-[45vh] lg:h-[55vh] 2xl:w-[70vw] 2xl:h-[80vh]">
