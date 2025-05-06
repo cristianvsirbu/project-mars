@@ -5,7 +5,7 @@ import Model3D from '../models/Model3D';
 
 const MarsPage = () => {
   const mars = useFetchData('mars', '', 'mars');
-  const chars = mars?.characteristics;
+  const chars = mars?.characteristics?.[0] || {};
 
   if (!mars) {
     return <div>Mars not found</div>;

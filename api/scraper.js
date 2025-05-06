@@ -4,39 +4,27 @@ import path from 'path';
 import process from 'process';
 import { fileURLToPath } from 'url';
 
-// Correctly determine __filename and __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load environment variables from .env file
 const envPath = path.resolve(__dirname, '../.env');
-console.log('Loading .env from:', envPath);
 dotenv.config({ path: envPath });
 
-async function scraper() {
+async function getWeatherData() {
   let browser;
   try {
-    console.log('Connecting to browserless...');
     browser = await puppeteer.connect({
       browserWSEndpoint: `wss://chrome.browserless.io?token=${process.env.BROWSERLESS_API_KEY}`,
     });
-    console.log('Connected to browserless.');
-
     let page = await browser.newPage();
     page.setDefaultNavigationTimeout(2 * 60 * 1000);
-    console.log('Navigating to Mars weather page...');
     await page.goto('https://mars.nasa.gov/layout/embed/image/mslweather/', {
       waitUntil: 'domcontentloaded',
     });
-    console.log('Page loaded.');
-
-    console.log('Waiting for weather data...');
     await page.waitForSelector('#Forecast');
-
     let weatherData = await page.evaluate(() => {
       const forecastRows = Array.from(document.querySelectorAll('#Forecast .item'));
-
-      const data = forecastRows.map((forecastRow) => {
+      return forecastRows.map((forecastRow) => {
         const dateSol = forecastRow
           .querySelector('.dateSol')
           ?.textContent.trim()
@@ -50,27 +38,22 @@ async function scraper() {
           .querySelector('.celsius .low')
           ?.textContent.trim()
           .replace('Low: ', '');
-
         return { dateSol, dateUTC, highCelsius, lowCelsius };
       });
-
-      return data;
     });
-    console.log('Weather data retrieved:', weatherData);
-
     await browser.close();
     return weatherData;
   } catch (error) {
-    console.error('Error in scraper function:', error);
-  } finally {
-    if (browser) {
-      await browser.close();
-    }
+    if (browser) await browser.close();
+    throw error;
   }
 }
 
-scraper()
-  .then((data) => console.log('Scraper completed with data:', data))
-  .catch((err) => console.error('Scraper failed with error:', err));
-
-export default scraper;
+export default async function handler(req, res) {
+  try {
+    const data = await getWeatherData();
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}

@@ -7,15 +7,17 @@ import BackToTop from '../../BackToTop';
 function Rover() {
   const { subcategory, roverId } = useParams();
   const rover = useFetchData('rovers', subcategory, roverId);
-  const chars = rover?.characteristics;
-
+  const chars = Array.isArray(rover?.characteristics)
+    ? rover?.characteristics[0]
+    : rover?.characteristics;
+  
   if (!rover) {
     return <div>Rover not found</div>;
   }
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex flex-col justify-center xl:flex-row-reverse text-xl xt-white">
+      <div className="flex flex-col justify-center xl:flex-row-reverse text-xl text-white">
         {rover.model3d ? (
           <Model3D modelPath={rover.model3d} initialScale={1} cameraPosition={[0, 0, 6]} />
         ) : (
