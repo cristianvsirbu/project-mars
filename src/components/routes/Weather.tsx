@@ -10,7 +10,7 @@ import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
 interface WeatherCardProps {
   weather: {
     dateSol: string;
-    UTC: string;
+    dateUTC: string;
     highCelsius: string;
     lowCelsius: string;
     pressure?: string;
@@ -76,7 +76,7 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
       key={index}
       className="grid md:grid-cols-2 parallax blur__card items-center justify-around py-[2rem] mt-8 mx-8"
     >
-      <div className="text-[2rem] col-span-2 text-center font-bold italic">{weather.UTC}</div>
+      <div className="text-[2rem] col-span-2 text-center font-bold italic">{weather.dateUTC}</div>
       {weatherItems.map((item, i) => (
         <div key={i} className="md:flex md:flex-col md:items-center">
           <div key={i} className="w-[6rem] md:w-[8rem]">
@@ -86,10 +86,10 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
             <div className="text-[1.5rem] text-center text-orange-500">{item.label}</div>
           )}
           <div
-            className={`text-center font-medium ${
+            className={`text-center font-medium text-white ${
               item.value === 'Missing data'
-                ? 'text-[12px] md:text-[14px] text-red-400'
-                : 'text-[20px] md:text-[24px] text-white'
+                ? 'text-[14px] md:text-[16px]'
+                : 'text-[20px] md:text-[24px]'
             }`}
           >
             {item.value}
@@ -107,7 +107,7 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState<
     {
       dateSol: string;
-      UTC: string;
+      dateUTC: string;
       highCelsius: string;
       lowCelsius: string;
       pressure?: string;
@@ -150,7 +150,7 @@ const Weather = () => {
         const data = await fetch('/api/scraper').then((res) => res.json());
         console.log(data);
         setWeatherData(data);
-        storeDataInLocalStorage(data); // Store the fresh data in localStorage
+        storeDataInLocalStorage(data);
         setLoading(false);
       } catch (error) {
         console.error(error);
