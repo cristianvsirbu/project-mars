@@ -24,10 +24,14 @@ const rendererManager = (() => {
       return sharedRenderer;
     },
     releaseRenderer: () => {
-      usageCount--;
-      if (usageCount <= 0 && sharedRenderer) {
-        sharedRenderer.dispose();
-        sharedRenderer = null;
+      if (usageCount > 0) {
+        usageCount--;
+        if (usageCount === 0 && sharedRenderer) {
+          sharedRenderer.dispose();
+          sharedRenderer = null;
+        }
+      } else {
+        console.warn("releaseRenderer called more times than getRenderer. usageCount is already zero.");
       }
     },
   };
