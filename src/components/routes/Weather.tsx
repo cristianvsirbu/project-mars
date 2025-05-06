@@ -88,7 +88,7 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
           <div
             className={`text-center font-medium ${
               item.value === 'Missing data'
-                ? 'text-[12px] md:text-[14px] text-gray-400 italic'
+                ? 'text-[12px] md:text-[14px] text-red-400'
                 : 'text-[20px] md:text-[24px] text-white'
             }`}
           >
