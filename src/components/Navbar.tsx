@@ -24,7 +24,7 @@ const Navbar = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  });
+  }, [menuIsOpen]);
 
   const navLinks = routes.flatMap((route) => {
     if (route.children) {
