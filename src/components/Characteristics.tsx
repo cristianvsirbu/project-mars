@@ -2,25 +2,36 @@ import type { Characteristic } from './models/modelsData';
 
 function Characteristics({ data }: any) {
   // Recursive function to render characteristics
-  function renderCharacteristics(data: Characteristic, parentKey = ''): React.ReactNode {
+    function renderCharacteristics(data: Characteristic, parentKey = ''): React.ReactNode {
     const result = Object.keys(data).map((key) => {
+      // Special case for objects with just a 'value' property
+      if (
+        typeof data[key] === 'object' && 
+        data[key] !== null && 
+        'value' in data[key] && 
+        Object.keys(data[key]).length === 1
+      ) {
+        // Pass the inner value directly to generateSimpleDiv, ensuring it's a primitive
+        return generateSimpleDiv(key, String(data[key].value));
+      }
+      
       if (Array.isArray(data[key])) {
         return generateList(key, data[key]);
       }
-
+  
       if (typeof data[key] === 'object') {
         if (!isNaN(Number(key))) {
           return renderCharacteristics(data[key] as Characteristic, parentKey);
         }
-
+  
         const hasChildObjects = hasChildProperties(data[key]);
-
+  
         return generateDiv(key, parentKey, hasChildObjects, data[key] as Characteristic);
       } else {
         return generateSimpleDiv(key, data[key]);
       }
     });
-
+  
     return result;
   }
 
@@ -88,9 +99,9 @@ function Characteristics({ data }: any) {
   function generateSimpleDiv(key: string, value: string | number | boolean) {
     return (
       <div key={key} className="md:text-2xl">
-        <div className="flex flex-col items-center xl:items-start xl:text-start">
-          <span className={`text-orange-600 font-medium`}>{key}:</span>
-          <span className="text-slate-400 font-medium ml-2">{value}</span>
+        <div className="flex justify-center items-center xl:justify-start xl:text-start">
+          <span className={`text-orange-600 font-medium md:whitespace-nowrap`}>{key}:</span>
+          <span className="text-slate-400 font-medium ml-2 md:whitespace-nowrap">{value}</span>
         </div>
       </div>
     );

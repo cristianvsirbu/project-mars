@@ -17,7 +17,7 @@ const Satellite = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex flex-col justify-end xl:flex-row-reverse text-xl text-white">
+      <div className="flex flex-col items-center xl:items-start xl:justify-end text-xl text-white xl:flex-row-reverse">
         {satellite.model3d ? (
           <Model3D modelPath={satellite.model3d} initialScale={1} cameraPosition={[0, 0, 17]} />
         ) : (

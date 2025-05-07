@@ -15,7 +15,7 @@ const Moon = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="text-xl text-white justify-center xl:flex xl:flex-row-reverse">
+      <div className="flex flex-col items-center xl:items-start xl:justify-end text-xl text-white xl:flex-row-reverse">
         <Model3D
           modelPath={moon.model3d ?? ''}
           initialScale={1}

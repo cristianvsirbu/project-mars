@@ -13,7 +13,7 @@ const MarsPage = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex flex-col justify-end text-xl text-white xl:flex-row-reverse">
+      <div className="flex flex-col items-center xl:items-start xl:justify-end text-xl text-white xl:flex-row-reverse">
         {mars.model3d && (
           <Model3D
             key={mars.model3d}

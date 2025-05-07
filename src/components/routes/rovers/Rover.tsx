@@ -17,7 +17,7 @@ function Rover() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex flex-col justify-center xl:flex-row-reverse text-xl text-white">
+      <div className="flex flex-col items-center xl:items-start xl:justify-end text-xl text-white xl:flex-row-reverse">
         {rover.model3d ? (
           <Model3D modelPath={rover.model3d} initialScale={1} cameraPosition={[0, 0, 6]} />
         ) : (
