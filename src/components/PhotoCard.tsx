@@ -29,7 +29,7 @@ const PhotoCard = ({ photo }: PhotoCardProps) => {
           className="mx-auto object-none rounded-lg"
         />
       </div>
-      <div className="flex flex-col text-white w-full h-full text-center text-[1.2rem] lg:text-[1.3rem] 4k:flex-row 4k:justify-around">
+      <div className="flex flex-col items-center text-white w-full h-full text-center text-[1.2rem] lg:text-[1.3rem] 4k:flex-row 4k:justify-around">
         <p className="flex flex-col mt-2 xl:max-w-[90%] 4k:max-w-[60%]">
           <span className="text-orange-500">Camera: </span>
           <span className="font-bold">{camera.full_name}</span>
