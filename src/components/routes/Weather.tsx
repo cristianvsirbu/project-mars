@@ -102,7 +102,6 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
 
 const Weather = () => {
   const [loading, setLoading] = useState(true);
-  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false);
   const [weatherData, setWeatherData] = useState<
     {
