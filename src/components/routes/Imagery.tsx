@@ -4,8 +4,15 @@ import PhotoCard from '../PhotoCard';
 import BackToTop from '../BackToTop';
 
 const Imagery = () => {
-  // @ts-ignore
   const API_KEY = import.meta.env.VITE_NASA_API_KEY;
+
+  if (!API_KEY) {
+    return (
+      <div className="flex justify-center items-center h-[80vh]">
+        <p className="text-red-500 text-xl">NASA API key is not configured</p>
+      </div>
+    );
+  }
   const rovers = useMemo(() => ['curiosity', 'opportunity', 'spirit'], []);
 
   const [datesWithPhotos, setDatesWithPhotos] = useState<string[]>([]);
@@ -47,7 +54,7 @@ const Imagery = () => {
       try {
         const photoPromises = rovers.map((rover) =>
           axios.get(
-            `https://mars-photos.herokuapp.com/api/v1/rovers/${rover}/photos?api_key=${API_KEY}&earth_date=${selectedDate}`
+            `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?api_key=${API_KEY}&earth_date=${selectedDate}`
           )
         );
 
