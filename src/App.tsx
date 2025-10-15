@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       {/* Line */}
       <img
-        className="hidden md:flex mx-auto my-0 w-full"
+        className="hidden md:flex mx-auto my-0 w-full lg:w-[80%]"
         src="/assets/line.svg"
         alt="Line under Navbar"
       />
