@@ -30,7 +30,7 @@ const Navbar = () => {
     if (route.children) {
       return route.children.map((childRoute) => (
         <li
-          className={`text-white blink  cursor-pointer font-bold py-2 md:py-0 text-[32px] md:text-[20px] lg:text-[24px] xl:text-[32px] 4k:text-[46px]`}
+          className={`text-white blink cursor-pointer font-bold py-2 md:py-0 text-[32px] md:text-[20px] lg:text-[24px] xl:text-[1.5rem]`}
           key={childRoute.path}
           onClick={handleItemClick}
         >
@@ -46,9 +46,9 @@ const Navbar = () => {
   return (
     <div className="navbar select-none">
       {/* Navbar */}
-      <nav className="mx-6 h-20 flex justify-between md:mx-16 md:h-14 lg:h-16 xl:h-20 2xl:h-24">
+      <nav className="mx-6 h-20 flex justify-between md:mx-16 md:h-14 lg:h-16">
         {/* Logo */}
-        <div className="mt-3 h-auto max-w-[6rem] md:max-w-[4.5rem] lg:max-w-[6rem] lg:mt-2 xl:ml-[4rem] xl:max-w-[8rem] 2xl:mt-4 2xl:ml-[8rem] 2xl:max-w-[8rem]">
+        <div className="mt-3 h-auto max-w-[6rem] md:max-w-[4.5rem] lg:max-w-[6rem] lg:mt-2 xl:ml-[4rem] xl:max-w-[6rem]">
           <Link to="/" aria-label="Go to Home">
             <img src="/assets/logos/logo.webp" alt="Logo" />
           </Link>
