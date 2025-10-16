@@ -42,17 +42,7 @@ const BackToTop = () => {
                         `}
       onClick={handleClick}
     >
-      <img
-        src="/assets/up.svg"
-        alt="Back to Top"
-        className="hidden lg:block right-[1.5rem] top-[1rem] arrow"
-      />
       <span>Back to Top</span>
-      <img
-        src="/assets/up.svg"
-        alt="Back to Top"
-        className="hidden lg:block left-[1.5rem] top-[1rem] arrow"
-      />
     </button>
   );
 };
