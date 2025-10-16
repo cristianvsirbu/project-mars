@@ -32,14 +32,9 @@ const BackToTop = () => {
 
   return (
     <button
-      className={`
-                        fixed
-                        navigation_button    
-                        self-center
-                        bottom-[5rem] 
-                        button__style
-                        ${isVisible ? '' : 'hidden'}
-                        `}
+      className={`fixed navigation_button self-center bottom-[5rem] button__style ${
+        isVisible ? '' : 'hidden'
+      }`}
       onClick={handleClick}
     >
       <span>Back to Top</span>
