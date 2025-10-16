@@ -1,18 +1,9 @@
 import { useState, useEffect, useMemo, SetStateAction } from 'react';
-import axios from 'axios';
 import PhotoCard from '../PhotoCard';
 import BackToTop from '../BackToTop';
+import { getNasaManifest, getRoverPhotos } from '../../services/nasaApi';
 
 const Imagery = () => {
-  const API_KEY = import.meta.env.VITE_NASA_API_KEY;
-
-  if (!API_KEY) {
-    return (
-      <div className="flex justify-center items-center h-[80vh]">
-        <p className="text-red-500 text-xl">NASA API key is not configured</p>
-      </div>
-    );
-  }
   const rovers = useMemo(() => ['curiosity', 'opportunity', 'spirit'], []);
 
   const [datesWithPhotos, setDatesWithPhotos] = useState<string[]>([]);
@@ -28,34 +19,21 @@ const Imagery = () => {
       try {
         setLoading(true);
         setApiError(false);
-        const datesPromises = rovers.map((rover) =>
-          axios.get(`https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${API_KEY}`)
-        );
-
+        const datesPromises = rovers.map((rover) => getNasaManifest(rover));
         const datesResponses = await Promise.all(datesPromises);
-
-        // Extracted available Earth dates with photos from the retrieved data for each rover
-        const availableDates = datesResponses.flatMap((response) =>
-          response.data.photo_manifest.photos.map((photo: { earth_date: any }) => photo.earth_date)
+        const availableDates = datesResponses.flatMap((response: any) =>
+          response.photo_manifest.photos.map((photo: { earth_date: any }) => photo.earth_date)
         );
 
-        // Filtered out duplicates and set the available dates
         setDatesWithPhotos(Array.from(new Set(availableDates)));
         setLoading(false);
       } catch (error: any) {
         setLoading(false);
         setApiError(true);
-        if (error.response && error.response.status === 404) {
+        if (error.message && error.message.includes('404')) {
           setErrorMessage('The NASA Mars Rover API appears to be unavailable or has moved.');
         } else {
           setErrorMessage('Could not connect to the NASA Mars Rover API. Please try again later.');
-        }
-        if (process.env.NODE_ENV === 'development') {
-          console.error('NASA API Error:', {
-            status: error.response?.status,
-            statusText: error.response?.statusText,
-            message: error.message,
-          });
         }
       }
     };
@@ -67,31 +45,17 @@ const Imagery = () => {
     const fetchPhotosForDate = async () => {
       try {
         setApiError(false);
-        const photoPromises = rovers.map((rover) =>
-          axios.get(
-            `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?api_key=${API_KEY}&earth_date=${selectedDate}`
-          )
-        );
-
+        const photoPromises = rovers.map((rover) => getRoverPhotos(rover, selectedDate));
         const photoResponses = await Promise.all(photoPromises);
-
-        // Combined photo data from all rovers
-        const combinedData = photoResponses.flatMap((response) => response.data.photos);
+        const combinedData = photoResponses.flatMap((response: any) => response.photos);
 
         setCombinedPhotos(combinedData);
       } catch (error: any) {
         setApiError(true);
-        if (error.response && error.response.status === 404) {
+        if (error.message && error.message.includes('404')) {
           setErrorMessage('The NASA Mars Rover API appears to be unavailable or has moved.');
         } else {
           setErrorMessage('Could not connect to the NASA Mars Rover API. Please try again later.');
-        }
-        if (process.env.NODE_ENV === 'development') {
-          console.error('NASA API Error:', {
-            status: error.response?.status,
-            statusText: error.response?.statusText,
-            message: error.message,
-          });
         }
       }
     };
