@@ -99,9 +99,9 @@ function Characteristics({ data }: any) {
   function generateSimpleDiv(key: string, value: string | number | boolean) {
     return (
       <div key={key} className="md:text-2xl">
-        <div className="flex justify-center items-center xl:justify-start xl:text-start">
-          <span className={`text-orange-600 font-medium md:whitespace-nowrap`}>{key}:</span>
-          <span className="text-slate-400 font-medium ml-2 md:whitespace-nowrap">{value}</span>
+        <div className="flex justify-start xl:justify-start text-start">
+          <span className={`text-orange-600 font-medium`}>{key}:</span>
+          <span className="text-slate-400 font-medium ml-2">{value}</span>
         </div>
       </div>
     );
@@ -111,7 +111,7 @@ function Characteristics({ data }: any) {
     return Object.keys(data).some((subKey) => typeof data[subKey] === 'object');
   }
 
-  return <div className="lg:p-16">{renderCharacteristics(data)}</div>;
+  return <div className="p-8 lg:p-16">{renderCharacteristics(data)}</div>;
 }
 
 export default Characteristics;
