@@ -20,15 +20,16 @@ const Imagery = () => {
   const [combinedPhotos, setCombinedPhotos] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [loadedImagesCount, setLoadedImagesCount] = useState(50);
+  const [apiError, setApiError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const fetchAvailableDates = async () => {
       try {
         setLoading(true);
+        setApiError(false);
         const datesPromises = rovers.map((rover) =>
-          axios.get(
-            `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}/?api_key=${API_KEY}`
-          )
+          axios.get(`https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${API_KEY}`)
         );
 
         const datesResponses = await Promise.all(datesPromises);
@@ -41,8 +42,21 @@ const Imagery = () => {
         // Filtered out duplicates and set the available dates
         setDatesWithPhotos(Array.from(new Set(availableDates)));
         setLoading(false);
-      } catch (error) {
-        console.error(error);
+      } catch (error: any) {
+        setLoading(false);
+        setApiError(true);
+        if (error.response && error.response.status === 404) {
+          setErrorMessage('The NASA Mars Rover API appears to be unavailable or has moved.');
+        } else {
+          setErrorMessage('Could not connect to the NASA Mars Rover API. Please try again later.');
+        }
+        if (process.env.NODE_ENV === 'development') {
+          console.error('NASA API Error:', {
+            status: error.response?.status,
+            statusText: error.response?.statusText,
+            message: error.message,
+          });
+        }
       }
     };
 
@@ -52,6 +66,7 @@ const Imagery = () => {
   useEffect(() => {
     const fetchPhotosForDate = async () => {
       try {
+        setApiError(false);
         const photoPromises = rovers.map((rover) =>
           axios.get(
             `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?api_key=${API_KEY}&earth_date=${selectedDate}`
@@ -64,8 +79,20 @@ const Imagery = () => {
         const combinedData = photoResponses.flatMap((response) => response.data.photos);
 
         setCombinedPhotos(combinedData);
-      } catch (error) {
-        console.error(error);
+      } catch (error: any) {
+        setApiError(true);
+        if (error.response && error.response.status === 404) {
+          setErrorMessage('The NASA Mars Rover API appears to be unavailable or has moved.');
+        } else {
+          setErrorMessage('Could not connect to the NASA Mars Rover API. Please try again later.');
+        }
+        if (process.env.NODE_ENV === 'development') {
+          console.error('NASA API Error:', {
+            status: error.response?.status,
+            statusText: error.response?.statusText,
+            message: error.message,
+          });
+        }
       }
     };
 
@@ -83,6 +110,17 @@ const Imagery = () => {
       {loading ? (
         <div className="h-[80vh] flex justify-center items-center">
           <video autoPlay loop src="/assets/astronaut.webm" className="mx-auto w-[50%] h-[50%]" />
+        </div>
+      ) : apiError ? (
+        <div className="h-[80vh] flex flex-col justify-center items-center">
+          <p className="text-red-500 text-2xl mb-4">NASA Mars Rover API Error</p>
+          <p className="text-white text-xl mb-8">{errorMessage}</p>
+          <button
+            className="button__style navigation_button mb-4 relative inline-block mx-4 lg:w-[5rem] self-center"
+            onClick={() => window.location.reload()}
+          >
+            <span>Try Again</span>
+          </button>
         </div>
       ) : (
         <div className="flex flex-col">
@@ -110,7 +148,7 @@ const Imagery = () => {
           </div>
         </div>
       )}
-      {loadedImagesCount < combinedPhotos.length && (
+      {loadedImagesCount < combinedPhotos.length && !apiError && (
         <button
           className="button__style navigation_button mb-4 relative inline-block mx-4 lg:w-[5rem] self-center"
           onClick={() => setLoadedImagesCount(loadedImagesCount + 50)}
