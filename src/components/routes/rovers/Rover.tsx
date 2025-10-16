@@ -8,7 +8,7 @@ function Rover() {
   const { subcategory, roverId } = useParams();
   const rover = useFetchData('rovers', subcategory, roverId);
   const chars = Array.isArray(rover?.characteristics)
-    ? rover?.characteristics.reduce((acc, curr) => {
+    ? rover?.characteristics.reduce((acc: any, curr: any) => {
         return { ...acc, ...curr };
       }, {})
     : rover?.characteristics;
