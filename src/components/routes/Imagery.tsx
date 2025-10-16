@@ -115,17 +115,7 @@ const Imagery = () => {
           className="button__style navigation_button mb-4 relative inline-block mx-4 lg:w-[5rem] self-center"
           onClick={() => setLoadedImagesCount(loadedImagesCount + 50)}
         >
-          <img
-            src="/assets/down.svg"
-            alt="Load More"
-            className="hidden lg:block right-[1.5rem] top-[1rem] arrow"
-          />
           <span>Load More</span>
-          <img
-            src="/assets/down.svg"
-            alt="Load More"
-            className="hidden lg:block left-[1.5rem] top-[1rem] arrow"
-          />
         </button>
       )}
       <BackToTop />
