@@ -105,17 +105,7 @@ const MissionsPage = () => {
   );
 
   const renderAreaChart = (
-    <div
-      className="
-                 mt-10
-                 md:w-full
-                 md:p-[2rem]
-                 md:h-[40vh]
-                 xl:p-[3rem]
-                 xl:h-[80vh]
-                 select-none
-      "
-    >
+    <div className="mt-10 md:w-full md:p-[2rem] md:h-[40vh] xl:p-[3rem] xl:h-[80vh] select-none">
       <ResponsiveContainer>
         <AreaChart
           data={launchesByDecade}
