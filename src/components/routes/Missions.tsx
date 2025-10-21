@@ -204,9 +204,9 @@ const MissionsPage = () => {
     return (
       <div className="mx-8 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 text-white">
         {missions.map((mission, index) => (
-          <div key={index} className="blur__card p-10 parallax">
+          <div key={index} className="blur__card p-8 parallax">
             {mission.logo && (
-              <div className="w-full h-[20rem]">
+              <div className="w-full h-[14rem]">
                 <img
                   src={mission.logo}
                   className="w-full h-full object-contain"
