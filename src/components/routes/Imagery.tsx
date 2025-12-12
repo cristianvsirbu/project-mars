@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo, SetStateAction } from 'react';
+import { useState, useEffect, SetStateAction } from 'react';
 import PhotoCard from '../PhotoCard';
 import BackToTop from '../BackToTop';
 import { getNasaManifest, getRoverPhotos } from '../../services/nasaApi';
 
 const Imagery = () => {
-  const rovers = useMemo(() => ['curiosity', 'opportunity', 'spirit'], []);
+  const rovers = ['curiosity', 'opportunity', 'spirit'];
 
   const [datesWithPhotos, setDatesWithPhotos] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState('');
