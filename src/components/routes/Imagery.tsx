@@ -3,8 +3,9 @@ import PhotoCard from '../PhotoCard';
 import BackToTop from '../BackToTop';
 import { getNasaManifest, getRoverPhotos } from '../../services/nasaApi';
 
+const rovers = ['curiosity', 'opportunity', 'spirit'];
+
 const Imagery = () => {
-  const rovers = ['curiosity', 'opportunity', 'spirit'];
 
   const [datesWithPhotos, setDatesWithPhotos] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState('');
@@ -39,7 +40,7 @@ const Imagery = () => {
     };
 
     fetchAvailableDates();
-  }, [rovers]);
+  }, []);
 
   useEffect(() => {
     const fetchPhotosForDate = async () => {
