@@ -17,10 +17,9 @@ interface WeatherCardProps {
     sunrise?: string;
     sunset?: string;
   };
-  index: number;
 }
 
-const WeatherCard = ({ weather, index }: WeatherCardProps) => {
+const WeatherCard = ({ weather }: WeatherCardProps) => {
   const weatherItems = [
     {
       label: 'Sol',
@@ -192,8 +191,8 @@ const Weather = () => {
             </p>
           </div>
           <div className="flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-4 4k:grid-cols-7">
-            {weatherData?.map((item, index) => (
-              <WeatherCard key={index} weather={item} index={index} />
+            {weatherData?.map((item) => (
+              <WeatherCard key={item.dateSol} weather={item} />
             ))}
           </div>
         </div>
