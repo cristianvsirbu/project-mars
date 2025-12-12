@@ -69,7 +69,7 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  });
+  },[]);
 
   return (
     <div
