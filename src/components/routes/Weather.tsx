@@ -73,7 +73,6 @@ const WeatherCard = ({ weather, index }: WeatherCardProps) => {
 
   return (
     <div
-      key={index}
       className="grid md:grid-cols-2 parallax blur__card items-center justify-around py-[2rem] mt-8 mx-8"
     >
       <div className="text-[2rem] col-span-2 text-center font-bold italic">{weather.dateUTC}</div>
