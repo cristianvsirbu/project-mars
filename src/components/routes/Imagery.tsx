@@ -64,7 +64,7 @@ const Imagery = () => {
     if (selectedDate) {
       fetchPhotosForDate();
     }
-  }, [rovers, selectedDate]);
+  }, [selectedDate]);
 
   const handleDateSelection = (event: { target: { value: SetStateAction<string> } }) => {
     setSelectedDate(event.target.value);
