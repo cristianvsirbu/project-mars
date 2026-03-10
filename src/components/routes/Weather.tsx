@@ -145,7 +145,6 @@ const Weather = () => {
     const fetchDataAndStore = async () => {
       try {
         const data = await fetch('/api/scraper').then((res) => res.json());
-        console.log(data);
         setWeatherData(data);
         storeDataInLocalStorage(data);
         setLoading(false);
