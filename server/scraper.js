@@ -29,9 +29,6 @@ async function scraper() {
                     .querySelector('.celsius .low')
                     ?.textContent.trim()
                     .replace('Low: ', '');
-                // const pressure = forecastRow?.querySelector('.pressure.max')?.textContent.trim();
-                // const sunrise = forecastRow?.querySelector('.sun.rise')?.textContent.trim();
-                // const sunset = forecastRow?.querySelector('.sun.set')?.textContent.trim();
 
                 return { dateSol, UTC, highCelsius, lowCelsius };
             });
