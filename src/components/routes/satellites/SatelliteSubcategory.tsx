@@ -1,10 +1,8 @@
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
-import { useContext } from 'react';
-import { ModelsDataContext } from '../../models/modelsContext';
+import { modelsData } from '../../models/modelsData';
 
 const SatellitesSubcategory = () => {
   const { subcategory } = useParams();
-  const modelsData = useContext(ModelsDataContext);
   const satelliteCategory = modelsData.find((model) => model.category === 'satellites');
   const subcategoryData = satelliteCategory?.children?.find(
     (sub) => sub.subcategory === subcategory

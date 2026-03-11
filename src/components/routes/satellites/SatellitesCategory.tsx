@@ -1,9 +1,7 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { useContext } from 'react';
-import { ModelsDataContext } from '../../models/modelsContext';
+import { modelsData } from '../../models/modelsData';
 
 const SatellitesCategory = () => {
-  const modelsData = useContext(ModelsDataContext);
   const satelliteCategory = modelsData.find((model) => model.category === 'satellites');
   const location = useLocation();
 

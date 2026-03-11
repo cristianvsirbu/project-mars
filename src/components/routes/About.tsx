@@ -1,9 +1,7 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { ModelsDataContext } from '../models/modelsContext';
-import { useContext } from 'react';
+import { modelsData } from '../models/modelsData';
 
 const About = () => {
-  const modelsData = useContext(ModelsDataContext);
   const categories = modelsData.map((model) => model.category);
   const location = useLocation();
 

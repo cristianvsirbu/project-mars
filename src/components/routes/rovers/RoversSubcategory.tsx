@@ -1,10 +1,9 @@
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
-import { useContext } from 'react';
-import { ModelsDataContext } from '../../models/modelsContext';
+import { modelsData } from '../../models/modelsData';
 
 const RoversSubcategory = () => {
   const { subcategory } = useParams();
-  const modelsData = useContext(ModelsDataContext);
+
   const roverCategory = modelsData.find((model) => model.category === 'rovers');
   const subcategoryData = roverCategory?.children?.find((sub) => sub.subcategory === subcategory);
   const location = useLocation();

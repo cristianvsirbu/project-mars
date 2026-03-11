@@ -10,8 +10,8 @@ import {
   LineChart,
   Line,
 } from 'recharts';
-import { useContext, useState, useEffect } from 'react';
-import { ModelsDataContext } from '../models/modelsContext';
+import { useState, useEffect } from 'react';
+import { modelsData } from '../models/modelsData';
 import BackToTop from '../BackToTop';
 import { useLocation } from 'react-router-dom';
 
@@ -23,8 +23,7 @@ interface MissionType {
 }
 
 const Missions = () => {
-  const data = useContext(ModelsDataContext);
-  const missionsModel = data.find((model) => model.category === 'missions');
+  const missionsModel = modelsData.find((model) => model.category === 'missions');
   const missions: MissionType[] = missionsModel ? (missionsModel as any).missions || [] : [];
 
   const getColorClass = (value: string) => {
@@ -80,8 +79,7 @@ const Missions = () => {
 };
 
 const MissionsPage = () => {
-  const data = useContext(ModelsDataContext);
-  const missionsModel = data.find((model) => model.category === 'missions');
+  const missionsModel = modelsData.find((model) => model.category === 'missions');
   const launchesByDecade = missionsModel ? (missionsModel as any).launches_by_decade : [];
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation();

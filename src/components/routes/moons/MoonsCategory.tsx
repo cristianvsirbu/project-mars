@@ -1,9 +1,7 @@
-import { useContext } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { ModelsDataContext } from '../../models/modelsContext';
+import { modelsData } from '../../models/modelsData';
 
 const MoonsCategory = () => {
-  const modelsData = useContext(ModelsDataContext);
   const moonsCategory = modelsData.find((model) => model.category === 'moons');
   const location = useLocation();
 

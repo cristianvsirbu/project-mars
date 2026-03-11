@@ -1,12 +1,11 @@
-import { useContext } from 'react';
-import { ModelsDataContext } from '../models/modelsContext';
+
+import { modelsData } from '../models/modelsData';
 
 export function useModelData(
   category: string,
   subcategory: string | undefined,
   id: string | undefined
 ) {
-  const modelsData = useContext(ModelsDataContext);
 
   // Find the category (rovers, satellites, moons, etc.)
   const categoryData = modelsData.find((model) => model.category === category);
