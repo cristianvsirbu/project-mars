@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import Characteristics from '../../Characteristics';
-import { useFetchData } from '../../hooks/useFetchData';
+import { useModelData } from '../../hooks/useModelData';
 import Model3D from '../../models/Model3D';
 import BackToTop from '../../BackToTop';
 
@@ -8,7 +8,7 @@ const Satellite = () => {
   const { subcategory, satelliteId } = useParams();
 
   // Used the custom hook to fetch data
-  const satellite = useFetchData('satellites', subcategory, satelliteId);
+  const satellite = useModelData('satellites', subcategory, satelliteId);
   const chars = satellite?.characteristics;
 
   if (!satellite) {

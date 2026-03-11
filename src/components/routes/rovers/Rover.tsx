@@ -1,18 +1,18 @@
 import { useParams } from 'react-router-dom';
-import { useFetchData } from '../../hooks/useFetchData';
+import { useModelData } from '../../hooks/useModelData';
 import Characteristics from '../../Characteristics';
 import Model3D from '../../models/Model3D';
 import BackToTop from '../../BackToTop';
 
 function Rover() {
   const { subcategory, roverId } = useParams();
-  const rover = useFetchData('rovers', subcategory, roverId);
+  const rover = useModelData('rovers', subcategory, roverId);
   const chars = Array.isArray(rover?.characteristics)
     ? rover?.characteristics.reduce((acc: any, curr: any) => {
         return { ...acc, ...curr };
       }, {})
     : rover?.characteristics;
-  
+
   if (!rover) {
     return <div>Rover not found</div>;
   }

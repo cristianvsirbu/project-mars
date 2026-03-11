@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import Characteristics from '../../Characteristics';
-import { useFetchData } from '../../hooks/useFetchData';
+import { useModelData } from '../../hooks/useModelData';
 import Model3D from '../../models/Model3D';
 import BackToTop from '../../BackToTop';
 
 const Moon = () => {
   const { moonId } = useParams();
-  const moon = useFetchData('moons', '', moonId);
+  const moon = useModelData('moons', '', moonId);
   const chars = moon?.characteristics;
 
   if (!moon) {
