@@ -1630,6 +1630,575 @@ export const SATELLITES = {
   ],
 };
 
+export const ROVERS = {
+  name: 'Rovers',
+  category: 'rovers',
+  cover: '/assets/covers/rovers.webp',
+  children: [
+    {
+      name: 'Active Rovers',
+      category: 'rovers',
+      subcategory: 'active',
+      cover: '/assets/covers/active_rovers.webp',
+      children: [
+        {
+          id: 'curiosity',
+          category: 'rovers',
+          subcategory: 'active',
+          name: 'Curiosity',
+          cover: '/assets/rovers/curiosity.webp',
+          model3d: '/assets/models/curiosity_compressed.glb',
+          description:
+            "Curiosity is a car-sized Mars rover exploring Gale crater and Mount Sharp on Mars as part of NASA's Mars Science Laboratory (MSL) mission. Curiosity was launched from Cape Canaveral (CCAFS) on November 26, 2011, at 15:02:00 UTC and landed on Aeolis Palus inside Gale crater on Mars on August 6, 2012, 05:17:57 UTC. The Bradbury Landing site was less than 2.4 km (1.5 mi) from the center of the rover's touchdown target after a 560 million km (350 million mi) journey.Adjusted for inflation, Curiosity has a life-cycle cost of US$3.2 billion in 2020 dollars.",
+          characteristics: [
+            { category: 'General Info', label: 'Owner', value: 'NASA' },
+            { category: 'General Info', label: 'Manufacturer', value: 'Jet Propulsion Laboratory' },
+
+            {
+              category: 'Specifications',
+              label: 'Dimensions',
+              value: '2.9 m × 2.7 m × 2.2 m | 9 ft 6 in × 8 ft 10 in × 7 ft 3 in',
+            },
+            { category: 'Specifications', label: 'Dry mass', value: '899 kg | 1,982 lb' },
+
+            {
+              category: 'Objectives (Biological)',
+              label: 'Objective 1',
+              value: 'Determine the nature and inventory of organic carbon compounds',
+            },
+            {
+              category: 'Objectives (Biological)',
+              label: 'Objective 2',
+              value:
+                'Investigate the chemical building blocks of life (carbon, hydrogen, nitrogen, oxygen, phosphorus, and sulfur)',
+            },
+            {
+              category: 'Objectives (Biological)',
+              label: 'Objective 3',
+              value:
+                'Identify features that may represent the effects of biological processes (biosignatures and biomolecules)',
+            },
+
+            {
+              category: 'Objectives (Geological and geochemical)',
+              label: 'Objective 1',
+              value:
+                'Investigate the chemical, isotopic, and mineralogical composition of the Martian surface and near-surface geological materials',
+            },
+            {
+              category: 'Objectives (Geological and geochemical)',
+              label: 'Objective 2',
+              value: 'Interpret the processes that have formed and modified rocks and soils',
+            },
+
+            {
+              category: 'Objectives (Planetary process)',
+              label: 'Objective 1',
+              value:
+                'Assess long-timescale (i.e., 4-billion-year) Martian atmospheric evolution processes',
+            },
+            {
+              category: 'Objectives (Planetary process)',
+              label: 'Objective 2',
+              value:
+                'Determine present state, distribution, and cycling of water and carbon dioxide',
+            },
+
+            {
+              category: 'Objectives (Surface radiation)',
+              label: 'Objective 1',
+              value:
+                'Characterize the broad spectrum of surface radiation, including galactic and cosmic radiation, solar proton events and secondary neutrons.',
+            },
+            {
+              category: 'Objectives (Surface radiation)',
+              label: 'Objective 2',
+              value:
+                'Measure radiation exposure in the interior of the spacecraft during travel to Mars and on the surface, valuable for future crewed missions.',
+            },
+
+            { category: 'Communication', label: 'UHF', value: '~400 MHz, 2 Mbit/s' },
+            { category: 'Communication', label: 'X band', value: '7–8 GHz, 800 bit/s' },
+
+            { category: 'Power & Launch', label: 'Power', value: 'MMRTG: ~100 W (0.13 hp)' },
+            { category: 'Power & Launch', label: 'Rocket', value: 'Atlas V 541' },
+
+            { category: 'Instruments', label: 'Instrument 1', value: 'APXS' },
+            { category: 'Instruments', label: 'Instrument 2', value: 'ChemCam' },
+            { category: 'Instruments', label: 'Instrument 3', value: 'CheMin' },
+            { category: 'Instruments', label: 'Instrument 4', value: 'DAN' },
+            { category: 'Instruments', label: 'Instrument 5', value: 'Hazcam' },
+            { category: 'Instruments', label: 'Instrument 6', value: 'MAHLI' },
+            { category: 'Instruments', label: 'Instrument 7', value: 'MARDI' },
+            { category: 'Instruments', label: 'Instrument 8', value: 'MastCam' },
+            { category: 'Instruments', label: 'Instrument 9', value: 'Navcam' },
+            { category: 'Instruments', label: 'Instrument 10', value: 'RAD' },
+            { category: 'Instruments', label: 'Instrument 11', value: 'REMS' },
+            { category: 'Instruments', label: 'Instrument 12', value: 'SAM' },
+
+            {
+              category: 'History',
+              label: 'Launched',
+              value: 'November 26, 2011, 15:02 UTC from Cape Canaveral SLC-41',
+            },
+            {
+              category: 'History',
+              label: 'Deployed',
+              value: 'August 6, 2012, 05:17 UTC from the MSL EDLS',
+            },
+            { category: 'History', label: 'Location', value: 'Gale crater, Mars' },
+            {
+              category: 'History',
+              label: 'Travelled',
+              value: '30.00 km | 18.64 mi on Mars as of 30 May 2023',
+            },
+          ],
+        },
+        {
+          id: 'perseverance',
+          category: 'rovers',
+          subcategory: 'active',
+          name: 'Perseverance',
+          cover: '/assets/rovers/perseverance.webp',
+          model3d: '/assets/models/perseverance_compressed.glb',
+          description:
+            "Perseverance, nicknamed Percy, is a car-sized Mars rover designed to explore the Jezero crater on Mars as part of NASA's Mars 2020 mission. It was manufactured by the Jet Propulsion Laboratory and launched on July 30, 2020, at 11:50 UTC.Confirmation that the rover successfully landed on Mars was received on February 18, 2021, at 20:55 UTC. As of 2 September 2023, Perseverance has been active on Mars for 901 sols (926 Earth days, or 2 years, 6 months and 15 days) since its landing. Following the rover's arrival, NASA named the landing site Octavia E. Butler Landing.Perseverance has a similar design to its predecessor rover, Curiosity, although it was moderately upgraded. It carries seven primary payload instruments, nineteen cameras, and two microphones.The rover also carried the mini-helicopter Ingenuity to Mars, an experimental aircraft and technology testbed that made the first powered flight on another planet on April 19, 2021. As of May 26, 2023, it has made 52 successful flights and continues to break its own records for speed, distance and altitude.",
+          characteristics: [
+            { category: 'General Info', label: 'Owner', value: 'NASA' },
+            { category: 'General Info', label: 'Manufacturer', value: 'Jet Propulsion Laboratory' },
+
+            {
+              category: 'Specifications',
+              label: 'Dimensions',
+              value: '2.9 m × 2.7 m × 2.2 m | 9 ft 6 in × 8 ft 10 in × 7 ft 3 in',
+            },
+            { category: 'Specifications', label: 'Dry mass', value: '1,025 kg | 2,260 lb' },
+
+            {
+              category: 'Objectives (Looking for habitability)',
+              label: 'Objective',
+              value: 'Identify past environments that were capable of supporting microbial life.',
+            },
+
+            {
+              category: 'Objectives (Seeking biosignatures)',
+              label: 'Objective',
+              value:
+                'Seek signs of possible past microbial life in those habitable environments, particularly in specific rock types known to preserve signs over time.',
+            },
+
+            {
+              category: 'Objectives (Caching samples)',
+              label: 'Objective',
+              value:
+                "Collect core rock and regolith ('soil') samples and store them within the rover and on the Martian surface (as a backup) for delivery to a future sample return rocket.",
+            },
+
+            {
+              category: 'Objectives (Preparing for humans)',
+              label: 'Objective',
+              value: 'Test oxygen production from the Martian atmosphere.',
+            },
+
+            { category: 'Communication', label: 'UHF', value: '~400 MHz, 2 Mbit/s' },
+            { category: 'Communication', label: 'X band', value: '7–8 GHz, 800-bit/s' },
+
+            { category: 'Power & Launch', label: 'Power', value: 'MMRTG; 110 watt' },
+            { category: 'Power & Launch', label: 'Rocket', value: 'Atlas V 541' },
+
+            { category: 'Instruments', label: 'Instrument 1', value: 'Cachecam' },
+            { category: 'Instruments', label: 'Instrument 2', value: 'EDLC × 2' },
+            { category: 'Instruments', label: 'Instrument 3', value: 'Hazcam × 8' },
+            { category: 'Instruments', label: 'Instrument 4', value: 'Mastcam-Z' },
+            { category: 'Instruments', label: 'Instrument 5', value: 'MEDA' },
+            { category: 'Instruments', label: 'Instrument 6', value: 'Microphones' },
+            { category: 'Instruments', label: 'Instrument 7', value: 'MOXIE' },
+            { category: 'Instruments', label: 'Instrument 8', value: 'Navcam × 2' },
+            { category: 'Instruments', label: 'Instrument 9', value: 'PIXL' },
+            { category: 'Instruments', label: 'Instrument 10', value: 'RIMFAX' },
+            { category: 'Instruments', label: 'Instrument 11', value: 'SHERLOC' },
+            { category: 'Instruments', label: 'Instrument 12', value: 'SuperCam' },
+
+            {
+              category: 'History',
+              label: 'Launched',
+              value: 'July 30, 2020, 11:50 UTC from Cape Canaveral SLC-41',
+            },
+            {
+              category: 'History',
+              label: 'Deployed',
+              value: 'February 18, 2021, 20:55 UTC from the Mars 2020 EDLS',
+            },
+            {
+              category: 'History',
+              label: 'Location',
+              value: '18.447°N 77.402°E, Jezero crater, Mars',
+            },
+            {
+              category: 'History',
+              label: 'Travelled',
+              value: '19.97 km | 12.41 mi as of 31 August 2023',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Inactive Rovers',
+      category: 'rovers',
+      subcategory: 'inactive',
+      cover: '/assets/covers/inactive_rovers.webp',
+      children: [
+        {
+          id: 'sojourner',
+          category: 'rovers',
+          subcategory: 'inactive',
+          name: 'Sojourner',
+          cover: '/assets/rovers/sojourner.webp',
+          description:
+            'Sojourner is a robotic Mars rover that landed in the Ares Vallis channel in the Chryse Planitia region of the Oxia Palus quadrangle on July 4, 1997. Sojourner was operational on Mars for 92 sols (95 Earth days). It was the first wheeled vehicle to rove on a planet other than Earth and formed part of the Mars Pathfinder mission.',
+          characteristics: [
+            { category: 'Mission Duration', label: 'Planned', value: '7 sols (7 days)' },
+            {
+              category: 'Mission Duration',
+              label: 'Mission end',
+              value: '83 sols (85 days) from arrival on Mars',
+            },
+
+            {
+              category: 'Spacecraft Properties',
+              label: 'Dry mass',
+              value: '11.5 kg | 25 lb (rover only)',
+            },
+
+            { category: 'Launch', label: 'Launch date', value: 'December 4, 1996, 06:58:07 UTC' },
+            { category: 'Launch', label: 'Rocket', value: 'Delta II 7925 D240' },
+            { category: 'Launch', label: 'Launch site', value: 'Cape Canaveral LC-17B' },
+            { category: 'Launch', label: 'Contractor', value: 'McDonnell Douglas' },
+
+            { category: 'Deployment', label: 'Deployed from', value: 'Mars Pathfinder' },
+            { category: 'Deployment', label: 'Deployment date', value: 'July 5, 1997' },
+
+            { category: 'End of Mission', label: 'Last contact', value: 'September 27, 1997' },
+
+            { category: 'Landing Info', label: 'Landing date', value: 'July 4, 1997 16:56:55 UTC' },
+            {
+              category: 'Landing Info',
+              label: 'Landing site',
+              value: 'Ares Vallis, Chryse Planitia, Mars',
+            },
+            { category: 'Landing Info', label: 'Coordinates', value: '19°7′48″N 33°13′12″W' },
+            { category: 'Landing Info', label: 'Distance driven', value: '100 m | 330 ft' },
+          ],
+        },
+        {
+          id: 'spirit',
+          category: 'rovers',
+          subcategory: 'inactive',
+          name: 'Spirit',
+          cover: '/assets/rovers/spirit.webp',
+          description:
+            'Spirit, also known as MER-A (Mars Exploration Rover – A) or MER-2, is a Mars robotic rover, active from 2004 to 2010. Spirit was operational on Mars for 2208 sols or 3.3 Martian years (6 years, 77 days). It was one of two rovers of NASA\'s Mars Exploration Rover Mission managed by the Jet Propulsion Laboratory (JPL). Spirit landed successfully within the impact crater Gusev on Mars at 04:35 Ground UTC on January 4, 2004, three weeks before its twin, Opportunity (MER-B), which landed on the other side of the planet. Its name was chosen through a NASA-sponsored student essay competition. The rover got stuck in a "sand trap" in late 2009 at an angle that hampered recharging of its batteries; its last communication with Earth was on March 22, 2010.',
+          characteristics: [
+            {
+              category: 'Mission Duration',
+              label: 'Planned',
+              value: '90 Martian solar days (~92 Earth days)',
+            },
+            {
+              category: 'Mission Duration',
+              label: 'Operational',
+              value: '2269 days from landing to last contact (2208 sols)',
+            },
+            {
+              category: 'Mission Duration',
+              label: 'Mobile',
+              value: '1944 Earth days landing to final embedding (1892 sols)',
+            },
+            {
+              category: 'Mission Duration',
+              label: 'Total',
+              value: '2695 days from landing to mission end (2623 sols)',
+            },
+            {
+              category: 'Mission Duration',
+              label: 'Launch to last contact',
+              value: '6 years, 9 months, 12 days',
+            },
+
+            {
+              category: 'Objectives',
+              label: 'Objective 1',
+              value:
+                'Search for and characterize rocks and soils with clues to past water activity.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 2',
+              value:
+                'Determine the distribution and composition of minerals, rocks, and soils at landing sites.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 3',
+              value: 'Study geologic processes that shaped the terrain and influenced chemistry.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 4',
+              value:
+                'Calibrate and validate observations made by Mars Reconnaissance Orbiter (MRO) instruments.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 5',
+              value:
+                'Search for iron-containing minerals and identify water-related mineral types.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 6',
+              value:
+                'Characterize mineralogy and textures of rocks and soils to understand their formation processes.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 7',
+              value:
+                'Look for geological clues about past environmental conditions when liquid water was present.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 8',
+              value: 'Assess whether those environments were conducive to life.',
+            },
+
+            { category: 'Launch', label: 'Launch date', value: 'June 10, 2003, 17:58:47 UTC' },
+            { category: 'Launch', label: 'Rocket', value: 'Delta II 7925-9.5' },
+            { category: 'Launch', label: 'Launch site', value: 'Cape Canaveral SLC-17A' },
+
+            { category: 'End of Mission', label: 'Declared', value: 'May 25, 2011' },
+            { category: 'End of Mission', label: 'Last contact', value: 'March 22, 2010' },
+
+            { category: 'Spacecraft Properties', label: 'Launch mass (Total)', value: '1,063 kg' },
+            { category: 'Spacecraft Properties', label: 'Launch mass (Rover)', value: '185 kg' },
+            { category: 'Spacecraft Properties', label: 'Launch mass (Lander)', value: '348 kg' },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Launch mass (Backshell/parachute)',
+              value: '209 kg',
+            },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Launch mass (Heat shield)',
+              value: '78 kg',
+            },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Launch mass (Cruise stage)',
+              value: '193 kg',
+            },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Launch mass (Propellant)',
+              value: '50 kg',
+            },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Dry mass (Rover only)',
+              value: '185 kg | 408 lb',
+            },
+            { category: 'Spacecraft Properties', label: 'Power', value: '140 watts' },
+
+            {
+              category: 'Orbital Parameters',
+              label: 'Reference system',
+              value: 'Heliocentric (transfer)',
+            },
+            { category: 'Orbital Parameters', label: 'Spacecraft component', value: 'Rover' },
+
+            {
+              category: 'Landing Info',
+              label: 'Landing date',
+              value: 'January 4, 2004, 04:35 UTC SCET',
+            },
+            { category: 'Landing Info', label: 'Landing site', value: '14.5684°S 175.472636°E' },
+            { category: 'Landing Info', label: 'Distance driven', value: '7.73 km | 4.8 mi' },
+          ],
+        },
+        {
+          id: 'opportunity',
+          category: 'rovers',
+          subcategory: 'inactive',
+          name: 'Opportunity',
+          cover: '/assets/rovers/opportunity.webp',
+          model3d: '/assets/models/opportunity_compressed.glb',
+          description:
+            "Opportunity, also known as MER-B (Mars Exploration Rover – B) or MER-1, is a robotic rover that was active on Mars from 2004 until 2018. Opportunity was operational on Mars for 5111 sols (14 years, 138 days on Earth). Launched on July 7, 2003, as part of NASA's Mars Exploration Rover program, it landed in Meridiani Planum on January 25, 2004, three weeks after its twin, Spirit (MER-A), touched down on the other side of the planet.With a planned 90-sol duration of activity (slightly less than 92.5 Earth days), Spirit functioned until it got stuck in 2009 and ceased communications in 2010, while Opportunity was able to stay operational for 5111 sols after landing, maintaining its power and key systems through continual recharging of its batteries using solar power, and hibernating during events such as dust storms to save power. This careful operation allowed Opportunity to operate for 57 times its designed lifespan, exceeding the initial plan by 14 years, 47 days (in Earth time). By June 10, 2018, when it last contacted NASA, the rover had traveled a distance of 45.16 kilometers (28.06 miles).",
+          characteristics: [
+            { category: 'Mission Duration', label: 'Planned', value: '90 sols (92.5 Earth days)' },
+            {
+              category: 'Mission Duration',
+              label: 'Actual',
+              value: '5,352 sols (8 Mars years) | 5,498 days (15 Earth years)',
+            },
+
+            {
+              category: 'Launch',
+              label: 'Launch date',
+              value: 'July 8, 2003, 03:18 UTC; 20 years ago',
+            },
+            { category: 'Launch', label: 'Rocket', value: 'Delta II Heavy' },
+            { category: 'Launch', label: 'Launch site', value: 'Cape Canaveral SLC-17B' },
+            { category: 'Launch', label: 'Contractor', value: 'Boeing' },
+
+            { category: 'End of Mission', label: 'Declared', value: 'February 13, 2019' },
+            { category: 'End of Mission', label: 'Last contact', value: 'June 10, 2018' },
+
+            {
+              category: 'Objectives',
+              label: 'Objective 1',
+              value:
+                'Search for and characterize rocks and soils with clues to past water activity.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 2',
+              value:
+                'Determine the distribution and composition of minerals, rocks, and soils at landing sites.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 3',
+              value:
+                'Study geologic processes that shaped the terrain and influenced the chemistry.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 4',
+              value:
+                'Calibrate and validate observations made by Mars Reconnaissance Orbiter (MRO) instruments.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 5',
+              value:
+                'Search for iron-containing minerals and identify water-related mineral types.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 6',
+              value:
+                'Characterize the mineralogy and textures of rocks and soils to understand their formation processes.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 7',
+              value:
+                'Look for geological clues about past environmental conditions when liquid water was present.',
+            },
+            {
+              category: 'Objectives',
+              label: 'Objective 8',
+              value: 'Assess whether those environments were conducive to life.',
+            },
+
+            { category: 'Spacecraft Properties', label: 'Launch mass (Total)', value: '1,063 kg' },
+            { category: 'Spacecraft Properties', label: 'Launch mass (Rover)', value: '185 kg' },
+            { category: 'Spacecraft Properties', label: 'Launch mass (Lander)', value: '348 kg' },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Launch mass (Backshell and parachute)',
+              value: '209 kg',
+            },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Launch mass (Heat shield)',
+              value: '78 kg',
+            },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Launch mass (Cruise stage)',
+              value: '193 kg',
+            },
+            {
+              category: 'Spacecraft Properties',
+              label: 'Launch mass (Propellant)',
+              value: '50 kg',
+            },
+
+            {
+              category: 'Landing Info',
+              label: 'Landing date',
+              value: 'January 25, 2004, 05:05 UTC SCET',
+            },
+            {
+              category: 'Landing Info',
+              label: 'Landing site',
+              value: '1.9462°S 354.4734°E, Eagle, Meridiani Planum',
+            },
+            { category: 'Landing Info', label: 'Distance driven', value: '45.16 km | 28.06 mi' },
+          ],
+        },
+        {
+          id: 'zhurong',
+          category: 'rovers',
+          subcategory: 'inactive',
+          name: 'Zhurong',
+          cover: '/assets/rovers/zhurong_2.webp',
+          description:
+            'Zhurong is a Chinese rover on Mars, the country\'s first to land on another planet after it previously landed two rovers on the Moon. The rover is part of the Tianwen-1 mission to Mars conducted by the China National Space Administration (CNSA).Designed for a lifespan of 90 sols (93 Earth days), Zhurong was active for 347 sols (356.5 days) after its deployment on Mars\'s surface. The rover became inactive on 20 May 2022 due to approaching sandstorms and Martian winter, pending its self-awakening with appropriate temperature and sunlight conditions. Zhurong never woke up from its hibernation. The rover was expected to wake in December 2022 as winter in the Martian northern hemisphere drew to a close and sunlight increased, but did not. NASA images showed the rover in the same position where it had entered its hibernation period, almost a year earlier. Zhurong is named after a Chinese mytho-historical figure usually associated with fire and light, as Mars is called "the Planet of Fire" in China and some other countries in East Asia. It was selected by a public online vote held between 20 January 2021 and 28 February 2021, with Zhurong ranking first with 504,466 votes. The name was chosen with the meanings of "igniting the fire of interstellar exploration in China" and "to symbolize the Chinese people\'s determination to explore the stars and to uncover unknowns in the universe".',
+          characteristics: [
+            { category: 'General Info', label: 'Owner', value: 'CNSA' },
+            {
+              category: 'General Info',
+              label: 'Manufacturer',
+              value: 'China Academy of Space Technology',
+            },
+
+            {
+              category: 'Specifications',
+              label: 'Dimensions',
+              value: '2.6 m × 3 m × 1.85 m | 8 ft 6 in × 9 ft 10 in × 6 ft 1 in',
+            },
+            { category: 'Specifications', label: 'Launch mass', value: '240 kg | 530 lb' },
+            { category: 'Specifications', label: 'Power', value: 'Solar arrays' },
+            { category: 'Specifications', label: 'Rocket', value: 'Long March 5' },
+
+            { category: 'Instruments', label: 'Instrument 1', value: 'MarSCoDe' },
+            { category: 'Instruments', label: 'Instrument 2', value: 'MCS' },
+            { category: 'Instruments', label: 'Instrument 3', value: 'MSCam' },
+            { category: 'Instruments', label: 'Instrument 4', value: 'NaTeCam' },
+            { category: 'Instruments', label: 'Instrument 5', value: 'RoMAG' },
+            { category: 'Instruments', label: 'Instrument 6', value: 'RoPeR' },
+
+            {
+              category: 'History',
+              label: 'Launched',
+              value: '23 July 2020, 23:18 UTC from Wenchang LC-101',
+            },
+            {
+              category: 'History',
+              label: 'Deployed',
+              value: '22 May 2021, 02:40 UTC from Tianwen-1 lander',
+            },
+            {
+              category: 'History',
+              label: 'Location',
+              value: '25.102°N 109.914°E, Utopia Planitia, Mars',
+            },
+            {
+              category: 'History',
+              label: 'Travelled',
+              value: '1.921 km | 1.194 mi on Mars as of 5 May 2022',
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
 export const MISSIONS = {
   id: 'missions',
   name: 'Missions',
