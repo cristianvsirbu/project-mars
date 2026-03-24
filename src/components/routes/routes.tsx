@@ -6,22 +6,16 @@ import Weather from './Weather';
 import Partners from './Partners';
 import ErrorPage from './ErrorPage';
 import Missions from './Missions';
-import Mars from './Mars';
-import Moon from './moons/Moon';
-import Rover from './rovers/Rover';
-import Satellite from './satellites/Satellite';
-import MoonsCategory from './moons/MoonsCategory';
-import RoversCategory from './rovers/RoversCategory';
-import SatellitesCategory from './satellites/SatellitesCategory';
-import RoversSubcategory from './rovers/RoversSubcategory';
-import SatellitesSubcategory from './satellites/SatelliteSubcategory';
+import CelestialRouter from './celestial/CelestialRouter';
+import LayoutWrapper from '../LayoutWrapper';
 
 interface RouteObject {
-  path: string;
+  path?: string;
   element: React.ReactNode;
   text?: string;
   errorElement?: React.ReactNode;
   children?: RouteObject[];
+  index?: boolean;
 }
 
 const routes: RouteObject[] = [
@@ -38,53 +32,23 @@ const routes: RouteObject[] = [
       {
         path: 'about',
         text: 'ABOUT',
-        element: <About />,
+        element: <LayoutWrapper />,
         children: [
           {
-            path: 'mars',
-            element: <Mars />,
+            index: true,
+            element: <About />,
           },
           {
-            path: 'moons',
-            element: <MoonsCategory />,
-            children: [
-              {
-                path: ':moonId',
-                element: <Moon />,
-              },
-            ],
+            path: ':category',
+            element: <CelestialRouter />,
           },
           {
-            path: 'rovers',
-            element: <RoversCategory />,
-            children: [
-              {
-                path: ':subcategory',
-                element: <RoversSubcategory />,
-                children: [
-                  {
-                    path: ':roverId',
-                    element: <Rover />,
-                  },
-                ],
-              },
-            ],
+            path: ':category/:subcategory',
+            element: <CelestialRouter />,
           },
           {
-            path: 'satellites',
-            element: <SatellitesCategory />,
-            children: [
-              {
-                path: ':subcategory',
-                element: <SatellitesSubcategory />,
-                children: [
-                  {
-                    path: ':satelliteId',
-                    element: <Satellite />,
-                  },
-                ],
-              },
-            ],
+            path: ':category/:subcategory/:id',
+            element: <CelestialRouter />,
           },
           {
             path: 'missions',

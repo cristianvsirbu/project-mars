@@ -11,9 +11,9 @@ import {
   Line,
 } from 'recharts';
 import { useState, useEffect } from 'react';
-import { modelsData } from '../models/modelsData';
 import BackToTop from '../BackToTop';
 import { useLocation } from 'react-router-dom';
+import { MISSIONS } from '../../lib/constants';
 
 interface MissionType {
   Mission: string;
@@ -23,9 +23,6 @@ interface MissionType {
 }
 
 const Missions = () => {
-  const missionsModel = modelsData.find((model) => model.category === 'missions');
-  const missions: MissionType[] = missionsModel ? (missionsModel as any).missions || [] : [];
-
   const getColorClass = (value: string) => {
     if (value.toLowerCase().includes('fail')) {
       return 'text-red-500';
@@ -39,7 +36,7 @@ const Missions = () => {
 
   return (
     <div className="m-8 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 text-white">
-      {missions.map((mission, index) => (
+      {MISSIONS.missions.map((mission, index) => (
         <div key={index} className="blur__card p-8 parallax">
           {mission.logo && (
             <div className="w-full h-[14rem]">
@@ -79,8 +76,6 @@ const Missions = () => {
 };
 
 const MissionsPage = () => {
-  const missionsModel = modelsData.find((model) => model.category === 'missions');
-  const launchesByDecade = missionsModel ? (missionsModel as any).launches_by_decade : [];
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation();
   const shouldRenderChart = location.pathname === '/about/missions';
@@ -100,7 +95,7 @@ const MissionsPage = () => {
       <ResponsiveContainer>
         <LineChart
           layout="vertical"
-          data={launchesByDecade}
+          data={MISSIONS.launches_by_decade}
           margin={{
             top: 40,
             right: 20,
@@ -170,7 +165,7 @@ const MissionsPage = () => {
     <div className="mt-10 md:w-full md:p-[2rem] md:h-[40vh] xl:p-[3rem] xl:h-[80vh] select-none">
       <ResponsiveContainer>
         <AreaChart
-          data={launchesByDecade}
+          data={MISSIONS.launches_by_decade}
           margin={{ top: 10, right: 30, bottom: 10, left: -30 }}
           className={`backdrop-blur-sm`}
         >
