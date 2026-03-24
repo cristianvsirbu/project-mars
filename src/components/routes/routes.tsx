@@ -1,3 +1,4 @@
+import { RouteObject } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import App from '../../App';
@@ -9,15 +10,6 @@ import Missions from './Missions';
 import CelestialRouter from './celestial/CelestialRouter';
 import LayoutWrapper from '../LayoutWrapper';
 
-interface RouteObject {
-  path?: string;
-  element: React.ReactNode;
-  text?: string;
-  errorElement?: React.ReactNode;
-  children?: RouteObject[];
-  index?: boolean;
-}
-
 const routes: RouteObject[] = [
   {
     path: '/',
@@ -26,12 +18,10 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        text: 'HOME',
         element: <Home />,
       },
       {
         path: 'about',
-        text: 'ABOUT',
         element: <LayoutWrapper />,
         children: [
           {
@@ -58,17 +48,14 @@ const routes: RouteObject[] = [
       },
       {
         path: 'imagery',
-        text: 'IMAGERY',
         element: <Imagery />,
       },
       {
         path: 'weather',
-        text: 'WEATHER',
         element: <Weather />,
       },
       {
         path: 'partners',
-        text: 'PARTNERS',
         element: <Partners />,
       },
     ],
