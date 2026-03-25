@@ -10,10 +10,9 @@ import {
   LineChart,
   Line,
 } from 'recharts';
-import { useState, useEffect } from 'react';
 import BackToTop from '../BackToTop';
-import { useLocation } from 'react-router-dom';
 import { MISSIONS } from '../../lib/constants';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 interface MissionType {
   Mission: string;
@@ -76,19 +75,7 @@ const Missions = () => {
 };
 
 const MissionsPage = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const location = useLocation();
-  const shouldRenderChart = location.pathname === '/about/missions';
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const renderLineChart = (
     <div className="w-full h-[40vh] mt-10">
@@ -235,7 +222,7 @@ const MissionsPage = () => {
 
   return (
     <div className="flex flex-col self-center">
-      {shouldRenderChart && (windowWidth > 767 ? renderAreaChart : renderLineChart)}
+      {isDesktop ? renderAreaChart : renderLineChart}
       <p className="font-bold text-[4rem] text-white text-center blink__word select-none my-10">
         Missions
       </p>

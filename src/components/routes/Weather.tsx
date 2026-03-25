@@ -6,6 +6,7 @@ import sunrise from '/assets/weather/sunrise.svg';
 import sunset from '/assets/weather/sunset.svg';
 import thermometer_colder from '/assets/weather/thermometer_colder.svg';
 import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 interface WeatherCardProps {
   weather: {
@@ -58,29 +59,17 @@ const WeatherCard = ({ weather }: WeatherCardProps) => {
       alt: 'Sunset',
     },
   ];
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  },[]);
+  const isDesktop = useMediaQuery('(min-width:768px)');
 
   return (
-    <div
-      className="grid md:grid-cols-2 parallax blur__card items-center justify-around py-[2rem] mt-8 mx-8"
-    >
+    <div className="grid md:grid-cols-2 parallax blur__card items-center justify-around py-[2rem] mt-8 mx-8">
       <div className="text-[2rem] col-span-2 text-center font-bold italic">{weather.dateUTC}</div>
       {weatherItems.map((item, i) => (
         <div key={i} className="md:flex md:flex-col md:items-center">
           <div key={i} className="w-[6rem] md:w-[8rem]">
             <img src={item.icon} alt={item.alt} className="w-[100%] object-contain" />
           </div>
-          {windowWidth > 767 && (
+          {isDesktop && (
             <div className="text-[1.5rem] text-center text-orange-500">{item.label}</div>
           )}
           <div
