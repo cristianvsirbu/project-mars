@@ -104,7 +104,6 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     ];
     scene.add(...lights);
 
-    // Skip if model path is missing
     if (!modelPath) return;
 
     // Load the 3D model
@@ -135,7 +134,6 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
 
-    // Handle resize
     const resize = () => {
       if (!container) return;
       renderer.setSize(container.clientWidth, container.clientHeight);
@@ -144,11 +142,9 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     };
     window.addEventListener('resize', resize);
 
-    // Cleanup
     return () => {
       window.removeEventListener('resize', resize);
       
-      // Dispose controls
       controls.dispose();
 
       // Remove DOM element but don't dispose the shared renderer
@@ -158,7 +154,6 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
       }
       rendererManager.releaseRenderer();
       
-      // Dispose scene objects
       scene.traverse((object) => {
         if (object instanceof THREE.Mesh) {
           if (object.geometry) object.geometry.dispose();
@@ -172,7 +167,6 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
         }
       });
       
-      // Clear the scene
       while(scene.children.length > 0) {
         scene.remove(scene.children[0]);
       }
@@ -181,7 +175,6 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     };
   }, [modelPath, initialScale, cameraPosition]);
 
-  // Animation loop is now in a separate useEffect to avoid creating multiple animation loops
   useEffect(() => {
     if (!isActive || !sceneRef.current || !cameraRef.current) return;
     
