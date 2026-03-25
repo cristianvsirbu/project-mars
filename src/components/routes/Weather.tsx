@@ -7,17 +7,11 @@ import sunset from '/assets/weather/sunset.svg';
 import thermometer_colder from '/assets/weather/thermometer_colder.svg';
 import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import { storeDataInLocalStorage, getAndCheckDataFromLocalStorage } from '../../lib/utils';
+import { WeatherData } from '../../lib/types';
 
 interface WeatherCardProps {
-  weather: {
-    dateSol: string;
-    dateUTC: string;
-    highCelsius: string;
-    lowCelsius: string;
-    pressure?: string;
-    sunrise?: string;
-    sunset?: string;
-  };
+  weather: WeatherData;
 }
 
 const WeatherCard = ({ weather }: WeatherCardProps) => {
@@ -90,45 +84,7 @@ const WeatherCard = ({ weather }: WeatherCardProps) => {
 const Weather = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [weatherData, setWeatherData] = useState<
-    {
-      dateSol: string;
-      dateUTC: string;
-      highCelsius: string;
-      lowCelsius: string;
-      pressure?: string;
-      sunrise?: string;
-      sunset?: string;
-    }[]
-  >();
-
-  // Function to store data in localStorage with a timestamp
-  function storeDataInLocalStorage(data: any) {
-    const currentTime = new Date().getTime();
-    const dataToStore = {
-      data: data,
-      timestamp: currentTime,
-    };
-    localStorage.setItem('weatherData', JSON.stringify(dataToStore));
-  }
-
-  // Function to retrieve and check data from localStorage
-  function getAndCheckDataFromLocalStorage() {
-    const storedData = localStorage.getItem('weatherData');
-    if (storedData) {
-      const parsedData = JSON.parse(storedData);
-      const { data, timestamp } = parsedData;
-      const currentTime = new Date().getTime();
-      const expirationTime = 24 * 60 * 60 * 1000; // 24 hours
-
-      if (currentTime - timestamp <= expirationTime) {
-        // The data is still valid (less than 24 hours)
-        return data;
-      }
-    }
-    // Data is either not in localStorage or has expired
-    return null;
-  }
+  const [weatherData, setWeatherData] = useState<WeatherData[]>();
 
   useEffect(() => {
     const fetchDataAndStore = async () => {
@@ -145,14 +101,11 @@ const Weather = () => {
       }
     };
 
-    // First, try to get data from localStorage
     let weatherData = getAndCheckDataFromLocalStorage();
 
     if (!weatherData) {
-      // Data is not available or has expired, fetch it
       fetchDataAndStore();
     } else {
-      // Data is available in localStorage, use it
       setWeatherData(weatherData);
       setLoading(false);
     }
