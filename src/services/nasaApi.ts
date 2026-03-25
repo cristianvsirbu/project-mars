@@ -1,4 +1,7 @@
-const makeNasaRequest = async (endpoint: string, params: Record<string, string> = {}) => {
+const makeNasaRequest = async (
+  endpoint: string,
+  params: Record<string, string> = {}
+): Promise<any> => {
   try {
     const url = new URL('/api/nasa-proxy', window.location.origin);
     url.searchParams.append('endpoint', endpoint);
@@ -7,24 +10,26 @@ const makeNasaRequest = async (endpoint: string, params: Record<string, string> 
       url.searchParams.append(key, value);
     });
 
-    const response = await fetch(url.toString());
+    const response = await fetch(url);
 
     if (!response.ok) {
       let errorData: any = {};
       try {
         errorData = await response.json();
       } catch (jsonError) {
-        if (process.env.NODE_ENV === 'development') {
+        if (import.meta.env.DEV) {
           console.error('Failed to parse error response JSON:', jsonError);
         }
-        errorData = { error: `Request failed: ${response.status} (and error response could not be parsed)` };
+        errorData = {
+          error: `Request failed: ${response.status} (and error response could not be parsed)`,
+        };
       }
       throw new Error(errorData.error || `Request failed: ${response.status}`);
     }
 
     return response.json();
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error(
         'NASA API request failed:',
         error instanceof Error ? error.message : 'Unknown error'
