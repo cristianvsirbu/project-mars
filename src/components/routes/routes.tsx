@@ -7,7 +7,7 @@ import Weather from './Weather';
 import Partners from './Partners';
 import ErrorPage from './ErrorPage';
 import Missions from './Missions';
-import CelestialRouter from './celestial/CelestialRouter';
+import CelestialRouter from '../celestial/CelestialRouter';
 import LayoutWrapper from '../LayoutWrapper';
 
 const routes: RouteObject[] = [

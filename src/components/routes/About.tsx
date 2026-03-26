@@ -1,5 +1,5 @@
 import ParallaxCard from '../ParallaxCard';
-import { CELESTIAL_DATA } from '../../lib/constants';
+import { CELESTIAL_DATA, MISSIONS } from '../../lib/constants';
 
 const About = () => {
   const categories = Object.values(CELESTIAL_DATA);
@@ -20,6 +20,15 @@ const About = () => {
             </li>
           );
         })}
+        <li>
+          <li key={MISSIONS.name}>
+            <ParallaxCard
+              link={`/about/${MISSIONS.category}`}
+              imgSrc={MISSIONS.cover}
+              title={MISSIONS.name.toUpperCase()}
+            />
+          </li>
+        </li>
       </ul>
     </div>
   );

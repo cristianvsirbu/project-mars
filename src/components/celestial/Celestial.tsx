@@ -1,12 +1,16 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
-import { INDEXES } from '../../../lib/indexes';
-import Model3D from '../../models/Model3D';
-import BackToTop from '../../BackToTop';
+import { INDEXES } from '../../lib/indexes';
+import Model3D from '../models/Model3D';
+import BackToTop from '../BackToTop';
+import ErrorPage from '../routes/ErrorPage';
 
-const Celestial = ({ id }) => {
+const Celestial = ({ id }: { id: string }) => {
   const { category } = useParams();
-  const item = INDEXES[category][id];
+
+  if (!category || !(category in INDEXES)) {
+    return <ErrorPage />;
+  }
+  const item = INDEXES[category as keyof typeof INDEXES][id];
 
   return (
     <div className="flex flex-col w-full">

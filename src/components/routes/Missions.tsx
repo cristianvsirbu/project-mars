@@ -13,26 +13,20 @@ import {
 import BackToTop from '../BackToTop';
 import { MISSIONS } from '../../lib/constants';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import { getColorClass } from '../../lib/utils';
 
-interface MissionType {
-  Mission: string;
-  Outcome: string;
-  logo?: string;
-  [key: string]: string | undefined;
-}
+const LABEL_MAP: Record<string, string> = {
+  mission: 'Mission',
+  spacecraft: 'Spacecraft',
+  launchDate: 'Launch Date',
+  operator: 'Operator',
+  missionType: 'Mission Type',
+  outcome: 'Outcome',
+  remarks: 'Remarks',
+  carrierRocket: 'Carrier Rocket',
+};
 
 const Missions = () => {
-  const getColorClass = (value: string) => {
-    if (value.toLowerCase().includes('fail')) {
-      return 'text-red-500';
-    } else if (value.toLowerCase().includes('mostly') || value.toLowerCase().includes('partial')) {
-      return 'text-yellow-500';
-    } else if (value.toLowerCase().includes('success')) {
-      return 'text-green-500';
-    }
-    return '';
-  };
-
   return (
     <div className="m-8 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 text-white">
       {MISSIONS.missionsList.map((mission, index) => (
@@ -42,7 +36,7 @@ const Missions = () => {
               <img
                 src={mission.logo}
                 className="w-full h-full object-contain"
-                alt={mission.Mission}
+                alt={mission.mission}
                 loading="lazy"
               />
             </div>
@@ -54,13 +48,13 @@ const Missions = () => {
               }
               return (
                 <li key={key} className={`flex flex-col text-slate-400 font-medium`}>
-                  <strong className="text-orange-500">{key}: </strong>
+                  <strong className="text-orange-500">{LABEL_MAP[key] ?? key}: </strong>
                   <span
                     className={`${
-                      key === 'Mission'
+                      key === 'mission'
                         ? 'font-bold italic text-[1.8rem] xl:text-center text-white'
                         : ''
-                    } ${key === 'Outcome' ? getColorClass(String(value)) : ''}`}
+                    } ${key === 'outcome' ? getColorClass(String(value)) : ''}`}
                   >
                     {String(value)}
                   </span>
@@ -82,7 +76,7 @@ const MissionsPage = () => {
       <ResponsiveContainer>
         <LineChart
           layout="vertical"
-          data={MISSIONS.launches_by_decade}
+          data={MISSIONS.launchesByDecade}
           margin={{
             top: 40,
             right: 20,
@@ -152,7 +146,7 @@ const MissionsPage = () => {
     <div className="mt-10 md:w-full md:p-[2rem] md:h-[40vh] xl:p-[3rem] xl:h-[80vh] select-none">
       <ResponsiveContainer>
         <AreaChart
-          data={MISSIONS.launches_by_decade}
+          data={MISSIONS.launchesByDecade}
           margin={{ top: 10, right: 30, bottom: 10, left: -30 }}
           className={`backdrop-blur-sm`}
         >

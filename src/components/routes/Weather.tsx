@@ -8,11 +8,7 @@ import thermometer_colder from '/assets/weather/thermometer_colder.svg';
 import thermometer_warmer from '/assets/weather/thermometer_warmer.svg';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { storeDataInLocalStorage, getAndCheckDataFromLocalStorage } from '../../lib/utils';
-import { WeatherData } from '../../lib/types';
-
-interface WeatherCardProps {
-  weather: WeatherData;
-}
+import { WeatherCardProps, WeatherData } from '../../lib/types';
 
 const WeatherCard = ({ weather }: WeatherCardProps) => {
   const weatherItems = [

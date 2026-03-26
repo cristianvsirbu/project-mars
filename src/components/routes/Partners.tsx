@@ -1,8 +1,5 @@
-interface Partner {
-  name: string;
-  url: string;
-  logo: string;
-}
+import { Partner } from '../../lib/types';
+
 const Partners = () => {
   const partnerList: Partner[] = [
     {

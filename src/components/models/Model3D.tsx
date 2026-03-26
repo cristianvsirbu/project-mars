@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { useEffect, useRef, useState } from 'react';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { Model3DProps } from '../../lib/types';
 
 // Global renderer manager
 const rendererManager = (() => {
@@ -31,17 +32,13 @@ const rendererManager = (() => {
           sharedRenderer = null;
         }
       } else {
-        console.warn("releaseRenderer called more times than getRenderer. usageCount is already zero.");
+        console.warn(
+          'releaseRenderer called more times than getRenderer. usageCount is already zero.'
+        );
       }
     },
   };
 })();
-
-interface Model3DProps {
-  modelPath: string;
-  initialScale: number;
-  cameraPosition: [number, number, number];
-}
 
 const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -55,7 +52,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     // Set up the scene and camera
     const scene = new THREE.Scene();
     sceneRef.current = scene;
-    
+
     const container = containerRef.current;
     if (!container) return;
 
@@ -79,7 +76,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     const createDirectionalLight = (
       color: THREE.ColorRepresentation,
       intensity: number,
-      position: [number, number, number]
+      position: number[]
     ): THREE.DirectionalLight => {
       const light = new THREE.DirectionalLight(color, intensity);
       light.position.set(position[0], position[1], position[2]);
@@ -144,7 +141,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
 
     return () => {
       window.removeEventListener('resize', resize);
-      
+
       controls.dispose();
 
       // Remove DOM element but don't dispose the shared renderer
@@ -153,43 +150,43 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
         container.removeChild(renderer.domElement);
       }
       rendererManager.releaseRenderer();
-      
+
       scene.traverse((object) => {
         if (object instanceof THREE.Mesh) {
           if (object.geometry) object.geometry.dispose();
           if (object.material) {
             if (Array.isArray(object.material)) {
-              object.material.forEach(material => material.dispose());
+              object.material.forEach((material) => material.dispose());
             } else {
               object.material.dispose();
             }
           }
         }
       });
-      
-      while(scene.children.length > 0) {
+
+      while (scene.children.length > 0) {
         scene.remove(scene.children[0]);
       }
-      
+
       setIsActive(false);
     };
   }, [modelPath, initialScale, cameraPosition]);
 
   useEffect(() => {
     if (!isActive || !sceneRef.current || !cameraRef.current) return;
-    
+
     const scene = sceneRef.current;
     const camera = cameraRef.current;
-    
+
     const animate = () => {
       frameIdRef.current = requestAnimationFrame(animate);
       if (scene) scene.rotation.y += 0.001;
       const renderer = rendererRef.current;
       if (renderer) renderer.render(scene, camera);
     };
-    
+
     animate();
-    
+
     return () => {
       cancelAnimationFrame(frameIdRef.current);
     };

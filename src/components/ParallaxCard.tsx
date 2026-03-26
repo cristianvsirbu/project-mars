@@ -1,11 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-
-interface ParallaxCardProps {
-  link: string;
-  imgSrc: string;
-  title: string;
-}
+import { ParallaxCardProps } from '../lib/types';
 
 const ParallaxCard = ({ link, imgSrc, title }: ParallaxCardProps) => {
   return (

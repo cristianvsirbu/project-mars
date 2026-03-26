@@ -1,8 +1,9 @@
-import { WeatherData } from './types';
+import { WeatherData, IndexableNode, CelestialBody } from './types';
 
-export function buildIndex(object) {
-  if (object.id) {
-    return { [object.id]: object };
+// Transforms data from constants.ts from a multi-level deep structure into an indexed object with id as key and object itself as value to offer a (O)1 search in Celestial.tsx
+export function buildIndex(object: IndexableNode): Record<string, CelestialBody> {
+  if ('id' in object) {
+    return { [object.id]: object as CelestialBody };
   } else if (object.children) {
     return object.children
       .map((obj) => buildIndex(obj))
@@ -11,6 +12,8 @@ export function buildIndex(object) {
     throw new Error(`buildIndex: Object must have either 'id' or 'children' property. `);
   }
 }
+
+// ------------------ Weather Data -------------------------
 
 export function storeDataInLocalStorage(data: WeatherData[]) {
   const currentTime = new Date().getTime();
@@ -30,9 +33,21 @@ export function getAndCheckDataFromLocalStorage(): WeatherData[] | null {
     const expirationTime = 24 * 60 * 60 * 1000; // 24 hours
 
     if (currentTime - timestamp <= expirationTime) {
-      // The data is still valid
       return data;
     }
   }
   return null;
 }
+// --------------------------------------------------------------
+
+// Gets correct colors for different mission outcomes
+export const getColorClass = (value: string) => {
+  if (value.toLowerCase().includes('fail')) {
+    return 'text-red-500';
+  } else if (value.toLowerCase().includes('mostly') || value.toLowerCase().includes('partial')) {
+    return 'text-yellow-500';
+  } else if (value.toLowerCase().includes('success')) {
+    return 'text-green-500';
+  }
+  return '';
+};
