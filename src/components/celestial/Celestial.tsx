@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { INDEXES } from '../../lib/indexes';
-import Model3D from '../models/Model3D';
+import Model3D from './Model3D';
 import BackToTop from '../ui/BackToTop';
 import ErrorPage from '../routes/ErrorPage';
 
