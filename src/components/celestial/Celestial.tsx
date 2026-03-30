@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { INDEXES } from '../../lib/indexes';
 import Model3D from '../models/Model3D';
-import BackToTop from '../BackToTop';
+import BackToTop from '../ui/BackToTop';
 import ErrorPage from '../routes/ErrorPage';
 
 const Celestial = ({ id }: { id: string }) => {

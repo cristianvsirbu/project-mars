@@ -83,7 +83,7 @@ const Navbar = () => {
             ref={dropdownRef}
           >
             {menuIsOpen && (
-              <ul className="flex flex-col  items-center">
+              <ul className="flex flex-col items-center">
                 {navLinks.map((navLink) => (
                   <li
                     key={navLink.label}

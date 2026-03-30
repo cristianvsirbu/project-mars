@@ -1,4 +1,4 @@
-import ParallaxCard from '../ParallaxCard';
+import ParallaxCard from '../ui/ParallaxCard';
 import { CELESTIAL_DATA, MISSIONS } from '../../lib/constants';
 
 const About = () => {

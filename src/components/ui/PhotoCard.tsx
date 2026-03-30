@@ -1,4 +1,4 @@
-import { PhotoCardProps } from '../lib/types';
+import { PhotoCardProps } from '../../lib/types';
 
 const PhotoCard = ({ photo }: PhotoCardProps) => {
   const { camera, earth_date, img_src, rover } = photo;

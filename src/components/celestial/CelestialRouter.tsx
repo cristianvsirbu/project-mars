@@ -1,7 +1,7 @@
 import Celestial from './Celestial';
 import { CELESTIAL_DATA } from '../../lib/constants';
 import { useParams } from 'react-router-dom';
-import ParallaxCard from '../ParallaxCard';
+import ParallaxCard from '../ui/ParallaxCard';
 import ErrorPage from '../routes/ErrorPage';
 
 const CelestialRouter = () => {

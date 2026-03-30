@@ -10,7 +10,7 @@ import {
   LineChart,
   Line,
 } from 'recharts';
-import BackToTop from '../BackToTop';
+import BackToTop from '../ui/BackToTop';
 import { MISSIONS } from '../../lib/constants';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { getColorClass } from '../../lib/utils';

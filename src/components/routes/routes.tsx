@@ -8,7 +8,7 @@ import Partners from './Partners';
 import ErrorPage from './ErrorPage';
 import Missions from './Missions';
 import CelestialRouter from '../celestial/CelestialRouter';
-import LayoutWrapper from '../LayoutWrapper';
+import LayoutWrapper from '../ui/LayoutWrapper';
 
 const routes: RouteObject[] = [
   {
