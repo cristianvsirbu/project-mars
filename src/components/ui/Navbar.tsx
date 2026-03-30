@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import '../index.css';
+import '../../index.css';
 
 type NavLink = {
   path: string;

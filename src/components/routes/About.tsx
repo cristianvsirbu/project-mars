@@ -20,7 +20,6 @@ const About = () => {
             </li>
           );
         })}
-        <li>
           <li key={MISSIONS.name}>
             <ParallaxCard
               link={`/about/${MISSIONS.category}`}
@@ -28,7 +27,6 @@ const About = () => {
               title={MISSIONS.name.toUpperCase()}
             />
           </li>
-        </li>
       </ul>
     </div>
   );
