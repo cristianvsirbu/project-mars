@@ -42,11 +42,12 @@ export function getAndCheckDataFromLocalStorage(): WeatherData[] | null {
 
 // Gets correct colors for different mission outcomes
 export const getColorClass = (value: string) => {
-  if (value.toLowerCase().includes('fail')) {
+  const lowerValue = value.toLowerCase();
+  if (lowerValue.includes('fail')) {
     return 'text-red-500';
-  } else if (value.toLowerCase().includes('mostly') || value.toLowerCase().includes('partial')) {
+  } else if (lowerValue.includes('mostly') || lowerValue.includes('partial')) {
     return 'text-yellow-500';
-  } else if (value.toLowerCase().includes('success')) {
+  } else if (lowerValue.includes('success') || lowerValue.includes('operational')) {
     return 'text-green-500';
   }
   return '';

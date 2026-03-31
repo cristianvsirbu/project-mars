@@ -30,9 +30,9 @@ const Missions = () => {
   return (
     <div className="m-8 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 text-white">
       {MISSIONS.missionsList.map((mission, index) => (
-        <div key={index} className="blur__card p-8 parallax">
+        <div key={index} className="blur__card p-6 parallax">
           {mission.logo && (
-            <div className="w-full h-[14rem]">
+            <div className="w-full h-[10rem]">
               <img
                 src={mission.logo}
                 className="w-full h-full object-contain"
@@ -47,16 +47,19 @@ const Missions = () => {
                 return null;
               }
               return (
-                <li key={key} className={`flex flex-col text-slate-400 font-medium`}>
-                  <strong className="text-orange-500">{LABEL_MAP[key] ?? key}: </strong>
+                <li
+                  key={key}
+                  className={`block text-slate-400 font-medium ${key === 'mission' ? 'text-center my-6' : ''}`}
+                >
+                  {key !== 'mission' && (
+                    <strong className="text-orange-500">{LABEL_MAP[key]}: </strong>
+                  )}
                   <span
                     className={`${
-                      key === 'mission'
-                        ? 'font-bold italic text-[1.8rem] xl:text-center text-white'
-                        : ''
-                    } ${key === 'outcome' ? getColorClass(String(value)) : ''}`}
+                      key === 'mission' ? 'font-bold text-3xl text-white' : ''
+                    } ${key === 'outcome' ? getColorClass(value) : ''}`}
                   >
-                    {String(value)}
+                    {value}
                   </span>
                 </li>
               );
@@ -72,7 +75,7 @@ const MissionsPage = () => {
   const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const renderLineChart = (
-    <div className="w-full h-[40vh] mt-10">
+    <div className="w-full h-[40vh]">
       <ResponsiveContainer>
         <LineChart
           layout="vertical"
@@ -143,7 +146,7 @@ const MissionsPage = () => {
   );
 
   const renderAreaChart = (
-    <div className="mt-10 md:w-full md:p-[2rem] md:h-[40vh] xl:p-[3rem] xl:h-[80vh] select-none">
+    <div className="md:w-full md:p-[2rem] md:h-[40vh] xl:p-[3rem] xl:h-[80vh] select-none">
       <ResponsiveContainer>
         <AreaChart
           data={MISSIONS.launchesByDecade}
@@ -216,9 +219,12 @@ const MissionsPage = () => {
 
   return (
     <div className="flex flex-col self-center">
-      {isDesktop ? renderAreaChart : renderLineChart}
-      <p className="font-bold text-[4rem] text-white text-center blink__word select-none my-10">
+      <p className="font-bold text-[3rem] lg:text-[4rem] text-white text-center blink__word select-none">
         Missions
+      </p>
+      {isDesktop ? renderAreaChart : renderLineChart}
+      <p className="text-[1.3rem] md:text-[1.5rem] xl:text-[1.8rem] text-white text-center mx-4 font-medium">
+        {MISSIONS.description}
       </p>
       <Missions />
       <BackToTop />

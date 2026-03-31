@@ -2244,7 +2244,7 @@ export const MISSIONS = {
   category: 'missions',
   cover: '/assets/covers/missions.webp',
   description:
-    'This is a list of the 50 spacecraft missions (including unsuccessful ones) relating to the planet Mars, such as orbiters and rovers.',
+    'This is a list of spacecraft missions (including unsuccessful ones) relating to the planet Mars, such as orbiters and rovers.',
   launchesByDecade: [
     { decade: '1960s', launches: 12 },
     { decade: '1970s', launches: 11 },
