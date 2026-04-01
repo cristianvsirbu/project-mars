@@ -193,7 +193,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
   }, [isActive]);
 
   return (
-    <div className="flex w-[60%] h-[30vh] md:h-[45vh] lg:h-[55vh] 2xl:h-[80vh]">
+    <div className="flex w-[70%] mx-auto lg:mx-0 h-[30vh] md:w-[50%] md:h-[45vh] lg:w-[45%] lg:h-[55vh] 2xl:h-[80vh]">
       <div ref={containerRef} className="container"></div>
     </div>
   );

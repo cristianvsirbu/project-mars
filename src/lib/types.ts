@@ -40,7 +40,7 @@ export interface CelestialBody {
   characteristics: Characteristic[];
 }
 
-interface Characteristic {
+export interface Characteristic {
   category: string;
   label: string;
   value: string;
