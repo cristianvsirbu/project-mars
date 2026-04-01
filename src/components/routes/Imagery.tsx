@@ -2,6 +2,7 @@ import { useState, useEffect, SetStateAction } from 'react';
 import PhotoCard from '../ui/PhotoCard';
 import BackToTop from '../ui/BackToTop';
 import { getNasaManifest, getRoverPhotos } from '../../services/nasaApi';
+import Loader from '../ui/Loader';
 
 const rovers = ['curiosity', 'opportunity', 'spirit'];
 
@@ -73,7 +74,7 @@ const Imagery = () => {
     <div className="flex flex-col w-full">
       {loading ? (
         <div className="h-[80vh] flex justify-center items-center">
-          <video autoPlay loop src="/assets/astronaut.webm" className="mx-auto w-[50%] h-[50%]" />
+          <Loader />
         </div>
       ) : apiError ? (
         <div className="h-[80vh] flex flex-col justify-center items-center">
