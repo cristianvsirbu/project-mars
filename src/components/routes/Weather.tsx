@@ -39,7 +39,7 @@ const Weather = () => {
   return (
     <div className="text-white">
       <div className="flex flex-col items-center px-5 text-center">
-        <p className="font-bold text-6xl text-white text-center blink__word select-none my-8">
+        <p className="font-bold text-6xl text-white text-center blink__word select-none my-10">
           Weather
         </p>
         <p className="text-xl md:text-2xl font-medium">

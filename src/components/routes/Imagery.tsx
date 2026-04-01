@@ -71,13 +71,13 @@ const Imagery = () => {
 
   return (
     <div className="flex flex-col w-full">
-      <p className="font-bold text-[4rem] text-white text-center blink__word select-none">
+      <p className="my-10 font-bold leading-none text-[4rem] text-white text-center blink__word select-none">
         Imagery
       </p>
       {loading ? (
         <Loader />
       ) : apiError ? (
-        <div className="flex flex-col my-16 justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
           <p className="text-red-500 font-bold text-2xl mb-4">NASA Mars Rover API Error</p>
           <p className="text-white text-xl mb-8">{errorMessage}</p>
           <button
