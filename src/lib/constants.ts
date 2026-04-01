@@ -392,7 +392,7 @@ export const SATELLITES = {
           cover: '/assets/satellites/mars_odyssey.webp',
           model3d: {
             path: '/assets/models/odyssey_compressed.glb',
-            initialScale: 0.5,
+            initialScale: 1,
             cameraPosition: [0, 0, 17],
           },
           description:
@@ -544,7 +544,7 @@ export const SATELLITES = {
           cover: '/assets/satellites/mro.webp',
           model3d: {
             path: '/assets/models/mro_compressed.glb',
-            initialScale: 0.5,
+            initialScale: 1,
             cameraPosition: [0, 0, 17],
           },
           description:
@@ -626,7 +626,7 @@ export const SATELLITES = {
           cover: '/assets/satellites/maven.webp',
           model3d: {
             path: '/assets/models/maven_compressed.glb',
-            initialScale: 0.5,
+            initialScale: 1,
             cameraPosition: [0, 0, 17],
           },
           description:
@@ -2069,7 +2069,7 @@ export const ROVERS = {
           cover: '/assets/rovers/opportunity.webp',
           model3d: {
             path: '/assets/models/opportunity_compressed.glb',
-            initialScale: 1,
+            initialScale: 1.5,
             cameraPosition: [0, 0, 6],
           },
           description:
