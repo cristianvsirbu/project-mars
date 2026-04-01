@@ -14,8 +14,8 @@ const Celestial = ({ id }: { id: string }) => {
   const item = INDEXES[category as keyof typeof INDEXES][id];
 
   return (
-    <div className="flex flex-col w-full my-12 mx-4 lg:mx-auto">
-      <p className="font-bold text-4xl mb-6 md:text-5xl lg:text-6xl text-white text-center blink__word select-none">
+    <div className="flex flex-col w-full my-10 mx-4 lg:mx-auto">
+      <p className="font-bold mb-6 text-4xl md:text-5xl lg:text-6xl text-white text-center blink__word select-none">
         {item.name}
       </p>
       <div className="flex flex-col-reverse lg:flex-row items-start justify-evenly text-xl text-white">
@@ -28,7 +28,7 @@ const Celestial = ({ id }: { id: string }) => {
             cameraPosition={item.model3d.cameraPosition}
           />
         ) : (
-          <div className="mx-auto inline xl:mx-0 h-[25%] md:max-h-[30%] lg:max-h-[40%] xl:max-w-[45%]">
+          <div className=" inline xl:mx-0 h-[25%] md:max-h-[30%] lg:max-h-[40%] xl:max-w-[45%]">
             <img src={item.cover} alt={item.name} className="w-full h-full object-contain p-8" />
           </div>
         )}
