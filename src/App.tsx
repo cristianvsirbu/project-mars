@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
-    <div className="w-full">
+    <div className="w-full min-h-screen">
       <Navbar />
       {/* Line */}
       <img

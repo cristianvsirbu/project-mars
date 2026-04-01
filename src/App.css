@@ -3,7 +3,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  min-width: 280px;
+  /* min-width: 280px; */
+  min-height: 100vh;
   --primary-color: #000213;
   background-color: var(--primary-color);
 }

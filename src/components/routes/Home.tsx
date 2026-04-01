@@ -7,7 +7,7 @@ const Home = () => {
       <div className="sun hidden md:block md:left-[40rem] md:top-[-24rem] lg:left-[58rem] lg:top-[-26rem] xl:left-[50rem] xl:top-[-22rem]" />
 
       <div className="p-4 flex w-full flex-col lg:justify-center">
-        <div className="py-8 px-4 z-10 w-[70%] mx-auto flex flex-col md:my-10 lg:py-16 xl:px-0 blur__card">
+        <div className="py-8 px-4 z-10 w-[70%] mx-auto flex flex-col blur__card">
           {/* Title */}
           <div className="flex flex-col items-center pb-4">
             <h2 className="text-white font-bold text-3xl 4k:text-[3rem]">PROJECT</h2>

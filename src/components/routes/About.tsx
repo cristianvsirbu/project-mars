@@ -6,7 +6,7 @@ const About = () => {
 
   return (
     <div className="w-full h-full">
-      <p className="my-10 font-bold text-[4rem] text-white text-center blink__word select-none">
+      <p className="my-10 font-bold text-4xl md:text-5xl lg:text-6xl text-white text-center blink__word select-none">
         About{' '}
       </p>
       <ul

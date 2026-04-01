@@ -24,7 +24,7 @@ const CelestialRouter = () => {
     if (selectedSubcategory && 'children' in selectedSubcategory) {
       return (
         <>
-          <p className="my-10 font-bold text-[4rem] text-white text-center blink__word select-none">
+          <p className="my-10 font-bold text-4xl md:text-5xl lg:text-6xl text-white text-center blink__word select-none">
             {selectedSubcategory.name}
           </p>
           <div className="my-12 flex flex-col flex-wrap items-center text-3xl text-center text-white font-semibold md:flex-row md:justify-evenly md:text-4xl lg:text-5xl">
@@ -48,7 +48,7 @@ const CelestialRouter = () => {
   if ('children' in selectedCategory) {
     return (
       <>
-        <p className="my-10 font-bold text-[4rem] text-white text-center blink__word select-none">
+        <p className="my-10 font-bold text-4xl md:text-5xl lg:text-6xl text-white text-center blink__word select-none">
           {selectedCategory.name}
         </p>
         <div className="my-12 flex flex-col flex-wrap items-center text-3xl text-center text-white font-semibold md:flex-row md:justify-evenly md:text-4xl lg:text-5xl">

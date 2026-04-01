@@ -15,7 +15,7 @@ const Celestial = ({ id }: { id: string }) => {
 
   return (
     <div className="flex flex-col w-full my-12 mx-4 lg:mx-auto">
-      <p className="font-bold text-4xl mb-6 lg:text-6xl text-white text-center blink__word select-none">
+      <p className="font-bold text-4xl mb-6 md:text-5xl lg:text-6xl text-white text-center blink__word select-none">
         {item.name}
       </p>
       <div className="flex flex-col-reverse lg:flex-row items-start justify-evenly text-xl text-white">
