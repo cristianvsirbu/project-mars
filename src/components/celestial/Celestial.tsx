@@ -30,7 +30,7 @@ const Celestial = ({ id }: { id: string }) => {
             cameraPosition={item.model3d.cameraPosition}
           />
         ) : (
-          <div className=" inline xl:mx-0 h-[25%] md:max-h-[30%] lg:max-h-[40%] xl:max-w-[45%]">
+          <div className="inline xl:mx-0 w-full lg:w-[30%] xl:w-[35%] aspect-square">
             <img src={item.cover} alt={item.name} className="w-full h-full object-contain p-8" />
           </div>
         )}
