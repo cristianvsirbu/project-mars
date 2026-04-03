@@ -8,7 +8,7 @@ import Characteristics from './Characteristics';
 const Celestial = ({ id }: { id: string }) => {
   const { category } = useParams();
 
-  if (!category || !(category in INDEXES)) {
+  if (!category || !Object.hasOwn(INDEXES, category)) {
     return <ErrorPage />;
   }
   const item = INDEXES[category as keyof typeof INDEXES][id];
