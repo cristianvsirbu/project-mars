@@ -27,13 +27,19 @@ export function storeDataInLocalStorage(data: WeatherData[]) {
 export function getAndCheckDataFromLocalStorage(): WeatherData[] | null {
   const storedData = localStorage.getItem('weatherData');
   if (storedData) {
-    const parsedData = JSON.parse(storedData);
-    const { data, timestamp } = parsedData;
-    const currentTime = new Date().getTime();
-    const expirationTime = 24 * 60 * 60 * 1000; // 24 hours
+    try {
+      const parsedData = JSON.parse(storedData);
+      const { data, timestamp } = parsedData;
+      if (typeof timestamp !== 'number' || !Array.isArray(data)) return null;
+      const currentTime = new Date().getTime();
+      const expirationTime = 24 * 60 * 60 * 1000; // 24 hours
 
-    if (currentTime - timestamp <= expirationTime) {
-      return data;
+      if (currentTime - timestamp <= expirationTime) {
+        return data;
+      }
+    } catch (error) {
+      console.error('Corrupted weather data detected: ', error);
+      return null;
     }
   }
   return null;
