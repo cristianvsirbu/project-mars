@@ -1,6 +1,6 @@
 import { WeatherData, IndexableNode, CelestialBody } from './types';
 
-// Transforms data from constants.ts from a multi-level deep structure into an indexed object with id as key and object itself as value to offer a (O)1 search in Celestial.tsx
+// Transforms data from constants.ts from a multi-level deep structure into an indexed object with id as key and object itself as value to offer a O(1) search in Celestial.tsx
 export function buildIndex(object: IndexableNode): Record<string, CelestialBody> {
   if ('id' in object) {
     return { [object.id]: object as CelestialBody };
