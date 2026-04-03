@@ -6,11 +6,14 @@ import ErrorPage from '../routes/ErrorPage';
 
 const CelestialRouter = () => {
   const { category, subcategory, id } = useParams();
-
-  if (!category || !(category in CELESTIAL_DATA)) {
+  const selectedCategory = CELESTIAL_DATA[category as keyof typeof CELESTIAL_DATA];
+  if (
+    !category ||
+    !(category in CELESTIAL_DATA) ||
+    (subcategory && !('children' in selectedCategory))
+  ) {
     return <ErrorPage />;
   }
-  const selectedCategory = CELESTIAL_DATA[category as keyof typeof CELESTIAL_DATA];
 
   if (id) {
     return <Celestial id={id} />;
