@@ -1,12 +1,12 @@
 import { useState, useEffect, SetStateAction } from 'react';
-import PhotoCard from '../PhotoCard';
-import BackToTop from '../BackToTop';
+import PhotoCard from '../ui/PhotoCard';
+import BackToTop from '../ui/BackToTop';
 import { getNasaManifest, getRoverPhotos } from '../../services/nasaApi';
+import Loader from '../ui/Loader';
 
 const rovers = ['curiosity', 'opportunity', 'spirit'];
 
 const Imagery = () => {
-
   const [datesWithPhotos, setDatesWithPhotos] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState('');
   const [combinedPhotos, setCombinedPhotos] = useState<any[]>([]);
@@ -15,30 +15,29 @@ const Imagery = () => {
   const [apiError, setApiError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  useEffect(() => {
-    const fetchAvailableDates = async () => {
-      try {
-        setLoading(true);
-        setApiError(false);
-        const datesPromises = rovers.map((rover) => getNasaManifest(rover));
-        const datesResponses = await Promise.all(datesPromises);
-        const availableDates = datesResponses.flatMap((response: any) =>
-          response.photo_manifest.photos.map((photo: { earth_date: any }) => photo.earth_date)
-        );
+  const fetchAvailableDates = async () => {
+    try {
+      setLoading(true);
+      setApiError(false);
+      const datesPromises = rovers.map((rover) => getNasaManifest(rover));
+      const datesResponses = await Promise.all(datesPromises);
+      const availableDates = datesResponses.flatMap((response: any) =>
+        response.photo_manifest.photos.map((photo: { earth_date: any }) => photo.earth_date)
+      );
 
-        setDatesWithPhotos(Array.from(new Set(availableDates)));
-        setLoading(false);
-      } catch (error: any) {
-        setLoading(false);
-        setApiError(true);
-        if (error.message && error.message.includes('404')) {
-          setErrorMessage('The NASA Mars Rover API appears to be unavailable or has moved.');
-        } else {
-          setErrorMessage('Could not connect to the NASA Mars Rover API. Please try again later.');
-        }
+      setDatesWithPhotos(Array.from(new Set(availableDates)));
+      setLoading(false);
+    } catch (error: any) {
+      setLoading(false);
+      setApiError(true);
+      if (error.message && error.message.includes('404')) {
+        setErrorMessage('The NASA Mars Rover API appears to be unavailable or has moved.');
+      } else {
+        setErrorMessage('Could not connect to the NASA Mars Rover API. Please try again later.');
       }
-    };
-
+    }
+  };
+  useEffect(() => {
     fetchAvailableDates();
   }, []);
 
@@ -72,26 +71,24 @@ const Imagery = () => {
 
   return (
     <div className="flex flex-col w-full">
+      <p className="my-10 font-bold leading-none text-[4rem] text-white text-center blink__word select-none">
+        Imagery
+      </p>
       {loading ? (
-        <div className="h-[80vh] flex justify-center items-center">
-          <video autoPlay loop src="/assets/astronaut.webm" className="mx-auto w-[50%] h-[50%]" />
-        </div>
+        <Loader />
       ) : apiError ? (
-        <div className="h-[80vh] flex flex-col justify-center items-center">
-          <p className="text-red-500 text-2xl mb-4">NASA Mars Rover API Error</p>
+        <div className="flex flex-col justify-center items-center">
+          <p className="text-red-500 font-bold text-2xl mb-4">NASA Mars Rover API Error</p>
           <p className="text-white text-xl mb-8">{errorMessage}</p>
           <button
             className="button__style navigation_button mb-4 relative inline-block mx-4 lg:w-[5rem] self-center"
-            onClick={() => window.location.reload()}
+            onClick={fetchAvailableDates}
           >
             <span>Try Again</span>
           </button>
         </div>
       ) : (
         <div className="flex flex-col">
-          <p className="my-10 font-bold text-[4rem] text-white text-center blink__word select-none">
-            Imagery
-          </p>
           <div className="flex flex-col self-center w-full lg:w-1/2">
             <select
               className="p-2 m-4 blur__card text-orange-500 text-center text-[2rem] lg:text-[3rem] font-bold"

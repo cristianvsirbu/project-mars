@@ -78,7 +78,6 @@ $shadows-big: multiple-box-shadow(150);
   height: 10px;
   background: transparent;
   border-radius: 50%;
-  position: relative;
   animation: slow-pulse 15s infinite;
   animation-direction: alternate;
 }
@@ -88,7 +87,6 @@ $shadows-big: multiple-box-shadow(150);
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  position: absolute;
   background: #fff;
   box-shadow:
     0 0 5px 5px #fff,

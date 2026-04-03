@@ -10,44 +10,34 @@ import {
   LineChart,
   Line,
 } from 'recharts';
-import { useContext, useState, useEffect } from 'react';
-import { ModelsDataContext } from '../models/modelsContext';
-import BackToTop from '../BackToTop';
-import { useLocation } from 'react-router-dom';
+import BackToTop from '../ui/BackToTop';
+import { MISSIONS } from '../../lib/constants';
+import useMediaQuery from '../../hooks/useMediaQuery';
+import { getColorClass } from '../../lib/utils';
 
-interface MissionType {
-  Mission: string;
-  Outcome: string;
-  logo?: string;
-  [key: string]: string | undefined;
-}
+const LABEL_MAP: Record<string, string> = {
+  mission: 'Mission',
+  spacecraft: 'Spacecraft',
+  launchDate: 'Launch Date',
+  operator: 'Operator',
+  missionType: 'Mission Type',
+  outcome: 'Outcome',
+  remarks: 'Remarks',
+  carrierRocket: 'Carrier Rocket',
+};
 
+//TODO: Add filtering/sorting 
 const Missions = () => {
-  const data = useContext(ModelsDataContext);
-  const missionsModel = data.find((model) => model.category === 'missions');
-  const missions: MissionType[] = missionsModel ? (missionsModel as any).missions || [] : [];
-
-  const getColorClass = (value: string) => {
-    if (value.toLowerCase().includes('fail')) {
-      return 'text-red-500';
-    } else if (value.toLowerCase().includes('mostly') || value.toLowerCase().includes('partial')) {
-      return 'text-yellow-500';
-    } else if (value.toLowerCase().includes('success')) {
-      return 'text-green-500';
-    }
-    return '';
-  };
-
   return (
     <div className="m-8 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 4k:grid-cols-6 text-white">
-      {missions.map((mission, index) => (
-        <div key={index} className="blur__card p-8 parallax">
+      {MISSIONS.missionsList.map((mission, index) => (
+        <div key={index} className="blur__card p-6 parallax">
           {mission.logo && (
-            <div className="w-full h-[14rem]">
+            <div className="w-full h-[10rem]">
               <img
                 src={mission.logo}
                 className="w-full h-full object-contain"
-                alt={mission.Mission}
+                alt={mission.mission}
                 loading="lazy"
               />
             </div>
@@ -58,16 +48,19 @@ const Missions = () => {
                 return null;
               }
               return (
-                <li key={key} className={`flex flex-col text-slate-400 font-medium`}>
-                  <strong className="text-orange-500">{key}: </strong>
+                <li
+                  key={key}
+                  className={`block text-slate-400 font-medium ${key === 'mission' ? 'text-center my-6' : ''}`}
+                >
+                  {key !== 'mission' && (
+                    <strong className="text-orange-500">{LABEL_MAP[key]}: </strong>
+                  )}
                   <span
                     className={`${
-                      key === 'Mission'
-                        ? 'font-bold italic text-[1.8rem] xl:text-center text-white'
-                        : ''
-                    } ${key === 'Outcome' ? getColorClass(String(value)) : ''}`}
+                      key === 'mission' ? 'font-bold text-3xl text-white' : ''
+                    } ${key === 'outcome' ? getColorClass(value) : ''}`}
                   >
-                    {String(value)}
+                    {value}
                   </span>
                 </li>
               );
@@ -80,29 +73,14 @@ const Missions = () => {
 };
 
 const MissionsPage = () => {
-  const data = useContext(ModelsDataContext);
-  const missionsModel = data.find((model) => model.category === 'missions');
-  const launchesByDecade = missionsModel ? (missionsModel as any).launches_by_decade : [];
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const location = useLocation();
-  const shouldRenderChart = location.pathname === '/about/missions';
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isDesktop = useMediaQuery('(min-width: 768px)');
 
   const renderLineChart = (
-    <div className="w-full h-[40vh] mt-10">
+    <div className="w-full h-[40vh]">
       <ResponsiveContainer>
         <LineChart
           layout="vertical"
-          data={launchesByDecade}
+          data={MISSIONS.launchesByDecade}
           margin={{
             top: 40,
             right: 20,
@@ -169,10 +147,10 @@ const MissionsPage = () => {
   );
 
   const renderAreaChart = (
-    <div className="mt-10 md:w-full md:p-[2rem] md:h-[40vh] xl:p-[3rem] xl:h-[80vh] select-none">
+    <div className="md:w-full md:p-[2rem] md:h-[40vh] xl:p-[3rem] xl:h-[80vh] select-none">
       <ResponsiveContainer>
         <AreaChart
-          data={launchesByDecade}
+          data={MISSIONS.launchesByDecade}
           margin={{ top: 10, right: 30, bottom: 10, left: -30 }}
           className={`backdrop-blur-sm`}
         >
@@ -242,9 +220,12 @@ const MissionsPage = () => {
 
   return (
     <div className="flex flex-col self-center">
-      {shouldRenderChart && (windowWidth > 767 ? renderAreaChart : renderLineChart)}
-      <p className="font-bold text-[4rem] text-white text-center blink__word select-none my-10">
+      <p className="font-bold text-[3rem] lg:text-[4rem] text-white text-center blink__word select-none">
         Missions
+      </p>
+      {isDesktop ? renderAreaChart : renderLineChart}
+      <p className="text-[1.3rem] md:text-[1.5rem] xl:text-[1.8rem] text-white text-center mx-4 font-medium">
+        {MISSIONS.description}
       </p>
       <Missions />
       <BackToTop />

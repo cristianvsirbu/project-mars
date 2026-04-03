@@ -4,6 +4,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { useEffect, useRef, useState } from 'react';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { Model3DProps } from '../../lib/types';
+import Loader from '../ui/Loader';
 
 // Global renderer manager
 const rendererManager = (() => {
@@ -31,17 +33,13 @@ const rendererManager = (() => {
           sharedRenderer = null;
         }
       } else {
-        console.warn("releaseRenderer called more times than getRenderer. usageCount is already zero.");
+        console.warn(
+          'releaseRenderer called more times than getRenderer. usageCount is already zero.'
+        );
       }
     },
   };
 })();
-
-interface Model3DProps {
-  modelPath: string;
-  initialScale: number;
-  cameraPosition: [number, number, number];
-}
 
 const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -49,13 +47,29 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const frameIdRef = useRef<number>(0);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.length === 0) return;
+      setIsVisible(entries[0].isIntersecting);
+    });
+
+    observer.observe(container);
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     // Set up the scene and camera
     const scene = new THREE.Scene();
     sceneRef.current = scene;
-    
+
     const container = containerRef.current;
     if (!container) return;
 
@@ -79,7 +93,7 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     const createDirectionalLight = (
       color: THREE.ColorRepresentation,
       intensity: number,
-      position: [number, number, number]
+      position: number[]
     ): THREE.DirectionalLight => {
       const light = new THREE.DirectionalLight(color, intensity);
       light.position.set(position[0], position[1], position[2]);
@@ -104,7 +118,6 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     ];
     scene.add(...lights);
 
-    // Skip if model path is missing
     if (!modelPath) return;
 
     // Load the 3D model
@@ -119,13 +132,16 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
         scene.add(gltf.scene);
         gltf.scene.scale.set(initialScale, initialScale, initialScale);
         gltf.scene.position.set(0, -1, 0);
+        setIsLoading(false);
       },
       undefined,
       (error: unknown) => {
         if (error instanceof Error) {
           console.error('Error loading model:', error.message, '\nStack:', error.stack);
+          setIsLoading(false);
         } else {
           console.error('Error loading model:', error);
+          setIsLoading(false);
         }
       }
     );
@@ -135,7 +151,6 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     controls.enableDamping = true;
     controls.rotateSpeed = 0.5;
 
-    // Handle resize
     const resize = () => {
       if (!container) return;
       renderer.setSize(container.clientWidth, container.clientHeight);
@@ -144,11 +159,9 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
     };
     window.addEventListener('resize', resize);
 
-    // Cleanup
     return () => {
       window.removeEventListener('resize', resize);
-      
-      // Dispose controls
+
       controls.dispose();
 
       // Remove DOM element but don't dispose the shared renderer
@@ -157,54 +170,53 @@ const Model3D = ({ modelPath, initialScale, cameraPosition }: Model3DProps) => {
         container.removeChild(renderer.domElement);
       }
       rendererManager.releaseRenderer();
-      
-      // Dispose scene objects
+
       scene.traverse((object) => {
         if (object instanceof THREE.Mesh) {
           if (object.geometry) object.geometry.dispose();
           if (object.material) {
             if (Array.isArray(object.material)) {
-              object.material.forEach(material => material.dispose());
+              object.material.forEach((material) => material.dispose());
             } else {
               object.material.dispose();
             }
           }
         }
       });
-      
-      // Clear the scene
-      while(scene.children.length > 0) {
+
+      while (scene.children.length > 0) {
         scene.remove(scene.children[0]);
       }
-      
+
       setIsActive(false);
     };
   }, [modelPath, initialScale, cameraPosition]);
 
-  // Animation loop is now in a separate useEffect to avoid creating multiple animation loops
   useEffect(() => {
-    if (!isActive || !sceneRef.current || !cameraRef.current) return;
-    
+    if (!isActive || !isVisible || !sceneRef.current || !cameraRef.current) return;
+
     const scene = sceneRef.current;
     const camera = cameraRef.current;
-    
+
     const animate = () => {
       frameIdRef.current = requestAnimationFrame(animate);
       if (scene) scene.rotation.y += 0.001;
       const renderer = rendererRef.current;
       if (renderer) renderer.render(scene, camera);
     };
-    
+
     animate();
-    
+
     return () => {
       cancelAnimationFrame(frameIdRef.current);
     };
-  }, [isActive]);
+  }, [isActive, isVisible]);
 
   return (
-    <div className="flex w-[60%] h-[30vh] md:h-[45vh] lg:h-[55vh] 2xl:h-[80vh]">
-      <div ref={containerRef} className="container"></div>
+    <div className="flex w-[70%] mx-auto lg:mx-0 h-[30vh] md:w-[50%] md:h-[45vh] lg:w-[45%] lg:h-[55vh] 2xl:h-[80vh]">
+      <div ref={containerRef} className="container relative w-full h-full">
+        {isLoading && <Loader />}
+      </div>
     </div>
   );
 };

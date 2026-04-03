@@ -1,21 +1,4 @@
-interface Camera {
-  full_name: string;
-}
-
-interface Rover {
-  name: string;
-}
-
-interface Photo {
-  camera: Camera;
-  earth_date: string;
-  img_src: string;
-  rover: Rover;
-}
-
-interface PhotoCardProps {
-  photo: Photo;
-}
+import { PhotoCardProps } from '../../lib/types';
 
 const PhotoCard = ({ photo }: PhotoCardProps) => {
   const { camera, earth_date, img_src, rover } = photo;

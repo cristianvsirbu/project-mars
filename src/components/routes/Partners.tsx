@@ -1,8 +1,5 @@
-interface Partner {
-  name: string;
-  url: string;
-  logo: string;
-}
+import { Partner } from '../../lib/types';
+
 const Partners = () => {
   const partnerList: Partner[] = [
     {
@@ -38,7 +35,7 @@ const Partners = () => {
   ];
   return (
     <div className="w-full h-full">
-      <p className="my-10 font-bold text-[4rem] text-white text-center blink__word select-none">
+      <p className="my-10 font-bold text-[4rem] text-white text-center blink__word leading-none select-none">
         Our Partners
       </p>
       <div className="flex flex-wrap justify-center">

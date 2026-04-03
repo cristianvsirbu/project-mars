@@ -3,41 +3,38 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="flex flex-col-reverse xl:h-full xl:flex-row xl:items-center xl:justify-center">
-      <div className="sun hidden md:block md:left-[40rem] md:top-[-24rem] lg:left-[58rem] lg:top-[-26rem] xl:left-[50rem] xl:top-[-22rem]" />
-
-      <div className="p-4 flex w-full flex-col lg:justify-center">
-        <div className="py-8 px-4 z-10 w-[70%] mx-auto flex flex-col md:my-10 lg:py-16 xl:px-0 blur__card">
+    <div className='relative'>
+      <div className="sun hidden z-10 md:block md:absolute md:left-[40rem] md:top-[5rem] lg:left-[35rem] lg:top-[2rem] xl:left-[55rem]" />
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly mx-12">
+        <div className="p-4 mb-4 lg:mb-0 lg:p-8 flex w-full flex-col lg:justify-center blur__card lg:max-w-[35%]">
           {/* Title */}
           <div className="flex flex-col items-center pb-4">
-            <h2 className="text-white font-bold text-3xl 4k:text-[3rem]">PROJECT</h2>
+            <h2 className="text-white font-bold text-2xl xl:text-3xl">PROJECT</h2>
             <img
               src="assets/line2.svg"
               className="4k:w-[35%] 4k:pt-2 animate-pulse"
               alt="Pulsing Line"
             />
-            <h1 className="text-7xl text-white  font-extrabold lg:text-7xl 4k:text-[8rem] blink__word">
+            <h1 className="text-5xl text-white  font-extrabold lg:text-7xl 4k:text-[8rem] blink__word">
               MARS
             </h1>
           </div>
           {/* Description */}
 
-          <p className="text-xl text-center font-medium text-slate-500 self-center lg:pb-6 xl:w-4/5 4k:text-2xl">
+          <p className="text-lg text-center font-medium text-slate-500 lg:mb-6 xl:text-xl">
             Welcome to Project Mars, your destination for delving into the captivating world of the
             Red Planet. Embark on an extraordinary journey with the latest and most intriguing
             information about Mars, all in one place. Whether you are an avid space enthusiast or
             just someone curious about the cosmos, Project Mars is here to satisfy your thirst for
             knowledge and wonder.
           </p>
-            <button className="">
-              <Link to="/about/mars" className="button__style  inline-block relative">
-                <span className="">ABOUT MARS</span>
-              </Link>
-            </button>
+          <button className="">
+            <Link to="/about/mars" className="button__style  inline-block relative">
+              <span className="">ABOUT MARS</span>
+            </Link>
+          </button>
         </div>
-      </div>
-      <div className="z-1 flex justify-center items-center w-full">
-        <img src="/assets/mars/M2.webp" className='max-w-[75%] xl:max-w-[85%]' alt="Mars" />
+        <img src="/assets/mars/M2.webp" className="md:max-h-[80vh]" alt="Mars" />
       </div>
     </div>
   );

@@ -56,7 +56,7 @@ align="right">
 
 - **Asset Compression:** All assets, including 3D models, are compressed for optimal network efficiency.
 - **Text Compression (gzip):** Text-based content is compressed to reduce load times and improve performance.
-- **React Context:** Used for managing and sharing state data across component tree without having to pass props manually at every level of nesting (prop drilling).
+- ~~**React Context:** Used for managing and sharing state data across component tree without having to pass props manually at every level of nesting (prop drilling).~~
 - **`node-cache`:** Used for caching data for 24 hours in the **`server`** branch to minimize redundant data fetching.
 - **`localStorage`:** Utilized to store weather data for 24 hours in the **`serverless`** branch function to enhance network efficiency.
 
