@@ -7,7 +7,7 @@
     "path-to-regexp": "^8.2.0"
   },
   "scripts": {
-    "dev": "vite --port 3000",
+    "dev": "vite",
     "build": "npx vite build",
     "preview": "vite preview"
   },
