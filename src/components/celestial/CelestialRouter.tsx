@@ -9,8 +9,8 @@ const CelestialRouter = () => {
   const selectedCategory = CELESTIAL_DATA[category as keyof typeof CELESTIAL_DATA];
   if (
     !category ||
-    !(category in CELESTIAL_DATA) ||
-    (subcategory && !('children' in selectedCategory))
+    !Object.hasOwn(CELESTIAL_DATA, category) ||
+    (subcategory && !Object.hasOwn(selectedCategory, 'children'))
   ) {
     return <ErrorPage />;
   }
