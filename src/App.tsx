@@ -14,7 +14,7 @@ function App() {
         src="/assets/line.svg"
         alt="Line under Navbar"
       />
-      <div className="flex">
+      <div className="hidden md:flex" aria-hidden="true">
         <div id="stars" />
         <div id="stars2" />
         <div id="stars3" />
