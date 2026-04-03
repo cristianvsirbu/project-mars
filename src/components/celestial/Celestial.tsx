@@ -13,6 +13,8 @@ const Celestial = ({ id }: { id: string }) => {
   }
   const item = INDEXES[category as keyof typeof INDEXES][id];
 
+  if (!item) return <ErrorPage />;
+
   return (
     <div className="flex flex-col w-full my-10 mx-4 lg:mx-auto">
       <p className="font-bold mb-6 text-4xl md:text-5xl lg:text-6xl text-white text-center blink__word select-none">
