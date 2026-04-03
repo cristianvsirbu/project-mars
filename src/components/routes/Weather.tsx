@@ -11,6 +11,7 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState<WeatherData[]>();
 
   const fetchDataAndStore = async () => {
+    setError(false);
     setLoading(true);
     try {
       const data = await fetch('/api/scraper').then((res) => res.json());
