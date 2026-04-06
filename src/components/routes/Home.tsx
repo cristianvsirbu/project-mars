@@ -1,9 +1,8 @@
-import '../../styles/output-stars.css';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className='relative'>
+    <div className="relative">
       <div className="sun hidden z-10 md:block md:absolute md:left-[40rem] md:top-[5rem] lg:left-[35rem] lg:top-[2rem] xl:left-[55rem]" />
       <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly mx-12">
         <div className="p-4 mb-4 lg:mb-0 lg:p-8 flex w-full flex-col lg:justify-center blur__card lg:max-w-[35%]">
@@ -34,7 +33,14 @@ const Home = () => {
             </Link>
           </button>
         </div>
-        <img src="/assets/mars/M2.webp" className="md:max-h-[80vh]" alt="Mars" />
+        <picture>
+          <source media="(max-width:767px)" srcSet="/assets/mars/M2-mobile.webp" />
+          <img
+            src="/assets/mars/M2.webp"
+            className="md:max-h-[80vh]"
+            alt="Mars"
+          />
+        </picture>
       </div>
     </div>
   );
