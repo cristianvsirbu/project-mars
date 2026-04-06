@@ -3,6 +3,8 @@ import { Outlet } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/ui/Navbar';
 import { Analytics } from '@vercel/analytics/react';
+import { Suspense } from 'react';
+import Loader from './components/ui/Loader';
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
         <div id="stars2" />
         <div id="stars3" />
       </div>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
       <Analytics />
     </div>
   );
