@@ -1,14 +1,16 @@
+import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
 import Home from './Home';
-import About from './About';
 import App from '../../App';
-import Imagery from './Imagery';
-import Weather from './Weather';
-import Partners from './Partners';
 import ErrorPage from './ErrorPage';
-import Missions from './Missions';
-import CelestialRouter from '../celestial/CelestialRouter';
 import LayoutWrapper from '../ui/LayoutWrapper';
+
+const About = lazy(() => import('./About'));
+const CelestialRouter = lazy(() => import('../celestial/CelestialRouter'));
+const Missions = lazy(() => import('./Missions'));
+const Imagery = lazy(() => import('./Imagery'));
+const Weather = lazy(() => import('./Weather'));
+const Partners = lazy(() => import('./Partners'));
 
 const routes: RouteObject[] = [
   {
